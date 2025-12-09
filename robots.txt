@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+Disallow: /rdv-audit
+Disallow: /offre-recommandation
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /tailwind.config.js
+Disallow: /postcss.config.js
+Disallow: /package.json
+Disallow: /package-lock.json
+
+Sitemap: https://www.am20.fr/sitemap.xml
+
