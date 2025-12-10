@@ -1,14 +1,5 @@
-Content-Security-Policy: default-src 'self';
-  script-src 'self' https://assets.calendly.com 'unsafe-inline' 'unsafe-eval';
-  style-src 'self' 'unsafe-inline' https://assets.calendly.com;
-  connect-src 'self' https://calendly.com https://api.calendly.com;
-  frame-src https://calendly.com;
-  img-src 'self' data: https://assets.calendly.com;
-  object-src 'none';
-  base-uri 'self';
-
-Cross-Origin-Opener-Policy: same-origin
-
-X-Frame-Options: DENY
-
-Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://assets.calendly.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://assets.calendly.com; connect-src 'self' https://calendly.com https://api.calendly.com; frame-src https://calendly.com; frame-ancestors 'self'; img-src 'self' data: https://assets.calendly.com; object-src 'none'; base-uri 'self'; require-trusted-types-for 'script';
+  Cross-Origin-Opener-Policy: same-origin
+  X-Frame-Options: DENY
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
