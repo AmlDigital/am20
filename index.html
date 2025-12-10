@@ -29,9 +29,8 @@
     <meta name="twitter:description" content="Création de sites vitrines performants pour entreprises de services : conversion, SEO avancé, image professionnelle. Basée en Alsace (Obernai), j’accompagne des clients partout en France avec des solutions web modernes, rapides et pensées pour générer des résultats.">
     <meta name="twitter:image" content="https://www.am20.fr/images/og-img.jpg">
 <!-- CSS -->
+    <link rel="preload" href="/dist/style.css" as="style">
     <link rel="stylesheet" href="dist/style.css">
-<!-- WIDGET CALENDLY -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <!-- Données structurées JSON-LD -->
 <script type="application/ld+json">
 {
@@ -127,7 +126,7 @@
         <a href="#hero" class="transition duration-300 hover:scale-110">
             <img src="images/logo/logo-am20.webp" width="100" height="60" alt="Logo de AM 2.0" title="retour en haut de page" class="h-16 w-auto">
         </a>
-        <button class="burger-menu flex flex-col justify-center items-center w-8 h-6 bg-transparent border-none cursor-pointer p-0 lg:hidden" aria-controls="main-nav" aria-expanded="false">
+        <button class="burger-menu flex flex-col justify-center items-center w-8 h-6 bg-transparent border-none cursor-pointer p-0 lg:hidden" aria-controls="main-nav" aria-expanded="false" aria-label="Ouvrir le menu de navigation">
             <span class="line block w-full h-[3px] bg-gradient-accent transition-all duration-300 mb-1.5"></span>
             <span class="line block w-full h-[3px] bg-gradient-accent transition-all duration-300"></span>
         </button>
@@ -380,9 +379,9 @@
     </div> 
     <div class="max-w-7xl mx-auto px-4 lg:px-0 flex flex-col items-center text-center">
         <a href="#contact"
-    class="cta cta-primary block text-center px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 uppercase whitespace-normal">
-    Recevoir mon plan d’action personnalisé
-</a>
+            class="cta cta-primary block text-center px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 uppercase whitespace-normal">
+            Recevoir mon plan d’action personnalisé
+        </a>
         <p class="text-white text-sm italic mt-3 opacity-80">
             Audit 20 min - offert - sans engagement
         </p>
@@ -628,27 +627,23 @@
             </div>
             <div id="case-studies-controls-wrapper" 
             class="hidden lg:flex justify-center items-center mt-8 mb-4 gap-6"> 
-                <button id="case-studies-prev" 
+                <button id="case-studies-prev" aria-label="carte précédente" title="aller à l'exemple précédent"
                         class="
                             p-3 rounded-full bg-bg-1 shadow-md
                             text-secondary fill-current transition-colors duration-300
                             hover:shadow-lg
-                            disabled:text-gray-400 disabled:shadow-none disabled:cursor-not-allowed
-                        ">
-                    <svg class="w-8 h-8 transition-transform duration-300 hover:scale-110 hover:-translate-x-0.5 hover:text-accent" 
-                        aria-label="carte précédente" title="aller à la carte précédente">
+                            disabled:text-gray-400 disabled:shadow-none disabled:cursor-not-allowed">
+                    <svg class="w-8 h-8 transition-transform duration-300 hover:scale-110 hover:-translate-x-0.5 hover:text-accent" aria-hidden="true">
                         <use href="icons.svg#icon-chevron-left"></use>
                     </svg>
                 </button> 
-                <button id="case-studies-next" 
+                <button id="case-studies-next" aria-label="carte suivante" title="aller à l'exemple suivant"
                         class="
                             p-3 rounded-full bg-bg-1 shadow-md
                             text-secondary fill-current transition-colors duration-300
                             hover:shadow-lg
-                            disabled:text-gray-400 disabled:shadow-none disabled:cursor-not-allowed
-                        ">
-                    <svg class="w-8 h-8 transition-transform duration-300 hover:scale-110 hover:translate-x-0.5 hover:text-accent" 
-                        aria-label="carte suivante" title="aller à la carte suivante">
+                            disabled:text-gray-400 disabled:shadow-none disabled:cursor-not-allowed">
+                    <svg class="w-8 h-8 transition-transform duration-300 hover:scale-110 hover:translate-x-0.5 hover:text-accent" aria-hidden="true">
                         <use href="icons.svg#icon-chevron-right"></use>
                     </svg>
                 </button> 
@@ -905,7 +900,7 @@
                     </h2>
                 </div>
                 <div class="relative max-w-sm mx-auto lg:mx-0 lg:max-w-full rounded-lg overflow-hidden shadow-2xl">
-                    <img src="images/illustrations/faq-am20.webp" 
+                    <img src="images/illustrations/faq-am20.webp" width="500" height="400"
                          alt="Image de clavier d'ordinateur avec une touche FAQ" 
                          class="w-full h-auto object-cover transition-transform duration-500 hover:scale-105">
                 </div>
@@ -1283,25 +1278,24 @@
         </div>
     </div>
     <div id="articles-controls-desktop" class="hidden lg:flex justify-center items-center mt-2 mb-4 gap-6">
-        <button id="articles-prev-desktop" 
+        <button id="articles-prev-desktop" aria-label="article précédent" title="passer à l'article précédent"
                 class="
                     p-3 rounded-full bg-bg-1 shadow-md
                     fill-current transition-colors duration-300
                     hover:shadow-lg
                     disabled:text-gray-400 disabled:shadow-none disabled:cursor-not-allowed">
             <svg class="w-8 h-8 transition-transform duration-300 hover:scale-110 hover:-translate-x-0.5 hover:text-accent" 
-                aria-label="article précédent" title="passer à l'article précédent">
+                aria-hidden="true">
                 <use href="icons.svg#icon-chevron-left"></use>
             </svg>
         </button>
-        <button id="articles-next-desktop" 
+        <button id="articles-next-desktop" aria-label="article suivant" title="passer à l'article suivant"
                 class="
                     p-3 rounded-full bg-bg-1 shadow-md
                     fill-current transition-colors duration-300
                     hover:shadow-lg
                     disabled:text-gray-400 disabled:shadow-none disabled:cursor-not-allowed">
-            <svg class="w-8 h-8 transition-transform duration-300 hover:scale-110 hover:translate-x-0.5 hover:text-accent" 
-                aria-label="article suivant" title="passer à l'article suivant">
+            <svg class="w-8 h-8 transition-transform duration-300 hover:scale-110 hover:translate-x-0.5 hover:text-accent" aria-hidden="true">
                 <use href="icons.svg#icon-chevron-right"></use>
             </svg>
         </button>
@@ -1359,8 +1353,8 @@
                 <div class="overflow-hidden relative">  
                     <img src="images/illustrations/reservation-am20.webp" width="500" height="500" alt="image d'un calendrier de réservation" class="w-full h-auto object-cover" loading="lazy">
                     <div class="absolute inset-0 flex flex-col items-center justify-center">
-                        <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/aurore-am20/20min?hide_event_type_details=1&text_color=0e1a35&primary_color=a83287'});return false;"
-                            class="inline-block lg:text-xl uppercase cta cta-primary"
+                        <a href=""
+                            class="inline-block lg:text-xl uppercase cta cta-primary calendly-popup-trigger"
                             role="button">
                             Je bloque mon créneau
                         </a>
@@ -1404,23 +1398,23 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
             <div class="space-y-6 lg:col-span-1">
                 <a href="#hero" aria-label="Retour à l'accueil AM 2.0" class="inline-block transform transition duration-300 hover:scale-110">
-                    <img src="images/logo/logo-light-am20.webp" width="100" height="60" alt="Logo de AM 2.0" title="Retour en haut de page" class="h-16 w-auto" loading="lazy">
+                    <img src="images/logo/logo-light-am20.webp" width="100" height="60" alt="Logo clair de AM 2.0" title="Retour en haut de page" class="h-16 w-auto" loading="lazy">
                 </a>
                 <p class="text-sm text-light max-w-xs">
                     L'expertise stratégique et technique pour transformer votre présence en ligne.
                 </p>
             </div>
             <div class="space-y-4 lg:col-span-1">
-                <h4 class="font-bold uppercase text-accent mb-4 border-b border-accent pb-2">Accès Rapide</h4>
+                <h4 class="font-bold uppercase mb-4 border-b border-accent pb-2">Accès Rapide</h4>
                 <ul class="space-y-6 text-sm">
                     <li><a href="#" class="hover:text-[var(--color-accent)] nav-link-underline-effect transition duration-300">Accueil</a></li>
                     <li><a href="#services" class="hover:text-[var(--color-accent)] nav-link-underline-effect transition duration-300">Services</a></li>
                     <li><a href="#why-am20" class="hover:text-[var(--color-accent)] nav-link-underline-effect transition duration-300">À Propos</a></li>
-                    <li><a href="#contact" class="text-accent border-2 border-accent rounded-lg px-3 py-1.5 inline-block font-semibold transition duration-300 transform hover:scale-105 hover:bg-accent/10">Réserver mon audit</a></li>
+                    <li><a href="#contact" class="border-2 rounded-lg px-3 py-1.5 inline-block font-semibold transition duration-300 transform hover:scale-105 hover:bg-accent/10">Réserver mon audit</a></li>
                 </ul>
             </div>
             <div class="space-y-6 lg:col-span-1">
-                <h4 class="font-bold uppercase text-accent mb-4 border-b border-accent pb-2">Contact</h4>  
+                <h4 class="font-bold uppercase mb-4 border-b border-accent pb-2">Contact</h4>  
                 <div class="space-y-4 text-sm text-gray-300">     
                     <div class="flex items-center space-x-3">
                         <svg class="w-5 h-5 text-light fill-current flex-shrink-0" aria-hidden="true">
@@ -1443,7 +1437,7 @@
                 </div>
             </div>
             <div class="space-y-6 lg:col-span-1">
-                <h4 class="font-bold uppercase text-accent mb-4 border-b border-accent pb-2">Suivez-nous</h4>
+                <h4 class="font-bold uppercase mb-4 border-b border-accent pb-2">Suivez-nous</h4>
                 <div class="flex space-x-6"> 
                     <a href="https://www.linkedin.com/in/aurore-am20/" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir la page LinkedIn d'AM 2.0" 
                        class="text-white fill-current rounded-full p-2 bg-gradient-accent transition duration-300 transform hover:translate-y-[-4px] hover:scale-105">
@@ -1491,7 +1485,6 @@
         </a>  
     </div>
 </div>
-<script src="dist/script.min.js"></script>
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script src="dist/script.min.js" defer></script>
 </body>
 </html>

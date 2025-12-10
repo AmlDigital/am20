@@ -66,6 +66,11 @@ document.addEventListener("DOMContentLoaded", () => {
 // ✅ SLIDER ETUDES DE CAS 
 const initCaseStudiesSlider = () => {
     const slider = document.getElementById("case-studies-slider");
+
+    if (!slider) {
+        return;
+    }
+
     const controlsWrapper = document.getElementById(
         "case-studies-controls-wrapper"
     );
@@ -76,7 +81,7 @@ const initCaseStudiesSlider = () => {
         slider.querySelectorAll(".case-study-card")
     );
 
-    if (!slider || !controlsWrapper || caseStudyCards.length < 2 || !prevButton || !nextButton) {
+    if (!controlsWrapper || caseStudyCards.length < 2 || !prevButton || !nextButton) {
         if (controlsWrapper) controlsWrapper.classList.add("hidden");
         return;
     }
@@ -180,10 +185,14 @@ const initCaseStudiesSlider = () => {
     }, 300));
 };
 
-
 // ✅ SLIDER MINI BLOG 
 const initArticlesSlider = () => {
     const slider = document.getElementById('articles-slider');
+    
+    if (!slider) {
+        return; 
+    }
+    
     const cards = Array.from(slider.querySelectorAll('.article-card'));
     
     const prevButtons = [
@@ -196,7 +205,7 @@ const initArticlesSlider = () => {
         document.getElementById('articles-next-desktop')
     ].filter(btn => btn);
     
-    if (!slider || cards.length === 0 || (prevButtons.length === 0 && nextButtons.length === 0)) return;
+    if (cards.length === 0 || (prevButtons.length === 0 && nextButtons.length === 0)) return;
 
     cards.forEach((card, index) => {
         card.setAttribute('data-card-index', index);
@@ -332,10 +341,11 @@ const initArticlesSlider = () => {
     };
 
     if (typeof debounce === 'function') {
-        slider.removeEventListener('scroll', slider.debouncedUpdate); 
+        if (slider.debouncedUpdate) slider.removeEventListener('scroll', slider.debouncedUpdate); 
         slider.debouncedUpdate = debounce(updateActiveCard, 100);
         slider.addEventListener('scroll', slider.debouncedUpdate);
-        slider.removeEventListener('scroll', slider.debouncedScrollEnd);
+        
+        if (slider.debouncedScrollEnd) slider.removeEventListener('scroll', slider.debouncedScrollEnd);
         slider.debouncedScrollEnd = debounce(handleScrollEnd, 300); 
         slider.addEventListener('scroll', slider.debouncedScrollEnd);
         
@@ -746,7 +756,7 @@ window.toggleArticleCardCollapse = () => {
 
                 clone.innerHTML = `
                     <div class="avis-item-content chat-bubble p-0 overflow-hidden">
-                        <img src="${imagePath}" alt="Illustration de site web réalisé par AM 2.0" class="w-full h-auto object-cover" loading="lazy" aria-hidden="true">
+                        <img src="${imagePath}" alt="Illustration de site web réalisé par AM 2.0" class="w-full h-auto object-cover" loading="lazy" aria-hidden="true" width="355" height="734">
                     </div>
                 `;
 
@@ -828,111 +838,199 @@ window.toggleArticleCardCollapse = () => {
     };
 
 // --- ✅ SLIDER AVIS ---
-    const setupAvisSlider = () => {
-        const slider = document.querySelector(".avis-slider");
-        const avisControlsWrapper = document.querySelector(
-            ".avis-controls-wrapper"
-        );
-        const avisControls = document.querySelector(".avis-bullets");
-        const allCardWrappers = Array.from(
-            slider.querySelectorAll(".avis-card-wrapper")
-        );
+const setupAvisSlider = () => {
+    const slider = document.querySelector(".avis-slider");
+    
+    if (!slider) {
+        if (window.autoSlideInterval) clearInterval(window.autoSlideInterval);
+        return; 
+    }
+    
+    const avisControlsWrapper = document.querySelector(
+        ".avis-controls-wrapper"
+    );
+    const avisControls = document.querySelector(".avis-bullets");
 
-        if (
-            !slider ||
-            !avisControls ||
-            !avisControlsWrapper ||
-            allCardWrappers.length < 2
-        ) {
-            if (window.autoSlideInterval) clearInterval(window.autoSlideInterval);
-            if (avisControlsWrapper) avisControlsWrapper.classList.add("hidden");
-            return;
+    const allCardWrappers = Array.from(
+        slider.querySelectorAll(".avis-card-wrapper")
+    );
+
+    if (
+        !avisControls ||
+        !avisControlsWrapper ||
+        allCardWrappers.length < 2
+    ) {
+        if (window.autoSlideInterval) clearInterval(window.autoSlideInterval);
+        if (avisControlsWrapper) avisControlsWrapper.classList.add("hidden");
+        return;
+    }
+
+    const totalSlides = allCardWrappers.length;
+    let currentIndex = 0;
+
+    avisControlsWrapper.classList.remove("hidden");
+
+    const createBullets = () => {
+        avisControls.innerHTML = "";
+        for (let i = 0; i < totalSlides; i++) {
+            const bullet = document.createElement("span");
+            bullet.classList.add("bullet-trait", "w-8", "h-1", "bg-primary");
+            bullet.dataset.index = i;
+            bullet.classList.toggle("active", i === 0);
+            bullet.classList.toggle("inactive", i !== 0);
+            avisControls.appendChild(bullet);
+
+            bullet.addEventListener("click", () => {
+                goToSlide(i);
+                resetAutoSlide();
+            });
         }
-
-        const totalSlides = allCardWrappers.length;
-        let currentIndex = 0;
-
-        avisControlsWrapper.classList.remove("hidden");
-
-        const createBullets = () => {
-            avisControls.innerHTML = "";
-            for (let i = 0; i < totalSlides; i++) {
-                const bullet = document.createElement("span");
-                bullet.classList.add("bullet-trait", "w-8", "h-1", "bg-primary");
-                bullet.dataset.index = i;
-                bullet.classList.toggle("active", i === 0);
-                bullet.classList.toggle("inactive", i !== 0);
-                avisControls.appendChild(bullet);
-
-                bullet.addEventListener("click", () => {
-                    goToSlide(i);
-                    resetAutoSlide();
-                });
-            }
-        };
-
-        const updateBullets = () => {
-            avisControls.querySelectorAll(".bullet-trait").forEach((bullet) => {
-                const index = parseInt(bullet.dataset.index);
-                bullet.classList.toggle("active", index === currentIndex);
-                bullet.classList.toggle("inactive", index !== currentIndex);
-            });
-        };
-
-        const goToSlide = (index) => {
-            if (index < 0 || index >= totalSlides) return;
-
-            const card = allCardWrappers[index];
-            let scrollOffset = isMobile() ? 24 : 0;
-            let scrollPosition = card.offsetLeft - scrollOffset;
-
-            slider.scroll({
-                left: scrollPosition,
-                behavior: "smooth",
-            });
-
-            currentIndex = index;
-            updateBullets();
-            updateCardVisibility(index);
-        };
-
-        const updateCardVisibility = (activeIndex) => {
-            allCardWrappers.forEach((card, index) => {
-                card.classList.remove("is-hidden");
-                card.style.opacity = "1";
-
-                if (index === activeIndex) {
-                    card.style.opacity = "1";
-                } else if (index === (activeIndex + 1) % totalSlides) {
-                    card.classList.add("is-hidden");
-                } else {
-                    card.style.opacity = "0";
-                }
-            });
-        };
-
-        const startAutoSlide = () => {
-            if (window.autoSlideInterval) clearInterval(window.autoSlideInterval);
-            window.autoSlideInterval = setInterval(() => {
-                currentIndex = (currentIndex + 1) % totalSlides;
-                goToSlide(currentIndex);
-            }, 5000);
-        };
-
-        const resetAutoSlide = () => {
-            clearInterval(window.autoSlideInterval);
-            startAutoSlide();
-        };
-
-        createBullets();
-        goToSlide(0);
-        startAutoSlide();
-
-        slider.addEventListener("touchstart", () =>
-            clearInterval(window.autoSlideInterval)
-        );
-        slider.addEventListener("touchend", resetAutoSlide);
     };
+
+    const updateBullets = () => {
+        avisControls.querySelectorAll(".bullet-trait").forEach((bullet) => {
+            const index = parseInt(bullet.dataset.index);
+            bullet.classList.toggle("active", index === currentIndex);
+            bullet.classList.toggle("inactive", index !== currentIndex);
+        });
+    };
+
+    const goToSlide = (index) => {
+        if (index < 0 || index >= totalSlides) return;
+
+        const card = allCardWrappers[index];
+        let scrollOffset = isMobile() ? 24 : 0;
+        let scrollPosition = card.offsetLeft - scrollOffset;
+
+        slider.scroll({
+            left: scrollPosition,
+            behavior: "smooth",
+        });
+
+        currentIndex = index;
+        updateBullets();
+        updateCardVisibility(index);
+    };
+
+    const updateCardVisibility = (activeIndex) => {
+        allCardWrappers.forEach((card, index) => {
+            card.classList.remove("is-hidden");
+            card.style.opacity = "1";
+
+            if (index === activeIndex) {
+                card.style.opacity = "1";
+            } else if (index === (activeIndex + 1) % totalSlides) {
+                card.classList.add("is-hidden");
+            } else {
+                card.style.opacity = "0";
+            }
+        });
+    };
+
+    const startAutoSlide = () => {
+        if (window.autoSlideInterval) clearInterval(window.autoSlideInterval);
+        window.autoSlideInterval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            goToSlide(currentIndex);
+        }, 5000);
+    };
+
+    const resetAutoSlide = () => {
+        clearInterval(window.autoSlideInterval);
+        startAutoSlide();
+    };
+
+    createBullets();
+    goToSlide(0);
+    startAutoSlide();
+
+    slider.addEventListener("touchstart", () =>
+        clearInterval(window.autoSlideInterval)
+    );
+    slider.addEventListener("touchend", resetAutoSlide);
+};
+
+// --- ✅ CHARGEMENT CALENDLY DIFFÉRÉ (CSS ET JS) ---
+const CALENDLY_URL = 'https://calendly.com/aurore-am20/20min?hide_event_type_details=1&text_color=0e1a35&primary_color=a83287';
+const CALENDLY_SCRIPT_SRC = 'https://assets.calendly.com/assets/external/widget.js';
+const CALENDLY_CSS_SRC = 'https://assets.calendly.com/assets/external/widget.css'; // Nouvelle constante
+
+let isCalendlyScriptLoaded = false;
+let isCalendlyLoading = false;
+
+const loadCalendlyCSS = () => {
+    const link = document.createElement('link');
+    link.href = CALENDLY_CSS_SRC;
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+};
+
+const loadCalendlyScript = () => {
+    if (isCalendlyLoading || isCalendlyScriptLoaded) return Promise.resolve();
+
+    isCalendlyLoading = true;
+    
+    loadCalendlyCSS();
+
+    return new Promise((resolve) => {
+        const script = document.createElement('script');
+        script.src = CALENDLY_SCRIPT_SRC;
+        script.type = 'text/javascript';
+        script.async = true;
+        
+        script.onload = () => {
+            isCalendlyScriptLoaded = true;
+            isCalendlyLoading = false;
+            resolve();
+        };
+
+        script.onerror = () => {
+            isCalendlyLoading = false;
+            console.error("Erreur de chargement du script Calendly.");
+            resolve();
+        };
+        document.body.appendChild(script);
+    });
+};
+
+const handleCalendlyPopup = (event) => {
+    event.preventDefault(); 
+    
+    if (typeof Calendly !== 'undefined' && typeof Calendly.initPopupWidget === 'function') {
+        Calendly.initPopupWidget({ url: CALENDLY_URL });
+        return;
+    }
+    
+    if (isCalendlyScriptLoaded) {
+        setTimeout(() => {
+            if (typeof Calendly !== 'undefined') {
+                 Calendly.initPopupWidget({ url: CALENDLY_URL });
+            } else {
+                console.error("Calendly non défini après chargement.");
+            }
+        }, 50); 
+        return;
+    }
+
+    loadCalendlyScript().then(() => {
+        if (typeof Calendly !== 'undefined') {
+            Calendly.initPopupWidget({ url: CALENDLY_URL });
+        } else {
+            window.location.href = CALENDLY_URL; 
+        }
+    });
+};
+
+const setupCalendlyTrigger = () => {
+    const triggerBtns = document.querySelectorAll(".calendly-popup-trigger");
+    
+    if (triggerBtns.length > 0) {
+        triggerBtns.forEach(button => {
+            button.addEventListener("click", handleCalendlyPopup);
+        });
+    }
+};
+
 
  // --- INIT ---
     setupDeployCardsAnimation(); 
@@ -943,6 +1041,7 @@ window.toggleArticleCardCollapse = () => {
     setupAvisSlider();
     setupFaqAccordion();
     initArticlesSlider(); 
+    setupCalendlyTrigger();
 
     // --- RESIZE ---
     const handleResizeLogic = () => {

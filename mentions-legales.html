@@ -29,9 +29,8 @@
     <meta name="twitter:description" content="Mentions légales de AM 2.0 : informations obligatoires, hébergement, propriété intellectuelle et responsabilités.">
     <meta name="twitter:image" content="https://www.am20.fr/images/og-img.jpg">
 <!-- CSS -->
+    <link rel="preload" href="/dist/style.css" as="style">
     <link rel="stylesheet" href="dist/style.css">
-<!-- WIDGET CALENDLY -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <!-- Données structurées JSON-LD -->
 </head>
 <body class="text-primary text-base lg:text-lg bg-bg-1">
@@ -170,23 +169,23 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
             <div class="space-y-6 lg:col-span-1">
                 <a href="index.html" aria-label="Retour à l'accueil AM 2.0" class="inline-block transform transition duration-300 hover:scale-110">
-                    <img src="images/logo/logo-light-am20.webp" width="100" height="60" alt="Logo de AM 2.0" title="Retour à l'accueil AM 2.0" class="h-16 w-auto" loading="lazy">
+                    <img src="images/logo/logo-light-am20.webp" width="100" height="60" alt="Logo clair de AM 2.0" title="Retour à l'accueil AM 2.0" class="h-16 w-auto" loading="lazy">
                 </a>
                 <p class="text-sm text-light max-w-xs">
                     L'expertise stratégique et technique pour transformer votre présence en ligne.
                 </p>
             </div>
             <div class="space-y-4 lg:col-span-1">
-                <h4 class="font-bold uppercase text-accent mb-4 border-b border-accent pb-2">Accès Rapide</h4>
+                <h4 class="font-bold uppercase mb-4 border-b border-accent pb-2">Accès Rapide</h4>
                 <ul class="space-y-6 text-sm">
                     <li><a href="index.html" class="hover:text-[var(--color-accent)] nav-link-underline-effect transition duration-300">Accueil</a></li>
                     <li><a href="index.html#services" class="hover:text-[var(--color-accent)] nav-link-underline-effect transition duration-300">Services</a></li>
                     <li><a href="index.html#why-am20" class="hover:text-[var(--color-accent)] nav-link-underline-effect transition duration-300">À Propos</a></li>
-                    <li><a href="index.html#contact" class="text-accent border-2 border-accent rounded-lg px-3 py-1.5 inline-block font-semibold transition duration-300 transform hover:scale-105 hover:bg-accent/10">Réserver mon audit</a></li>
+                    <li><a href="index.html#contact" class="border-2 rounded-lg px-3 py-1.5 inline-block font-semibold transition duration-300 transform hover:scale-105 hover:bg-accent/10">Réserver mon audit</a></li>
                 </ul>
             </div>
             <div class="space-y-6 lg:col-span-1">
-                <h4 class="font-bold uppercase text-accent mb-4 border-b border-accent pb-2">Contact</h4>  
+                <h4 class="font-bold uppercase mb-4 border-b border-accent pb-2">Contact</h4>  
                 <div class="space-y-4 text-sm text-gray-300">     
                     <div class="flex items-center space-x-3">
                         <svg class="w-5 h-5 text-light fill-current flex-shrink-0" aria-hidden="true">
@@ -209,7 +208,7 @@
                 </div>
             </div>
             <div class="space-y-6 lg:col-span-1">
-                <h4 class="font-bold uppercase text-accent mb-4 border-b border-accent pb-2">Suivez-nous</h4>
+                <h4 class="font-bold uppercase mb-4 border-b border-accent pb-2">Suivez-nous</h4>
                 <div class="flex space-x-6"> 
                     <a href="https://www.linkedin.com/in/aurore-am20/" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir la page LinkedIn d'AM 2.0" 
                        class="text-white fill-current rounded-full p-2 bg-gradient-accent transition duration-300 transform hover:translate-y-[-4px] hover:scale-105">
@@ -249,6 +248,5 @@
     </div>
 </div>
 <script src="dist/script.min.js"></script>
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>
