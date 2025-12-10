@@ -1031,7 +1031,6 @@ const setupCalendlyTrigger = () => {
     }
 };
 
-
  // --- INIT ---
     setupDeployCardsAnimation(); 
     setupExpandableCards();
