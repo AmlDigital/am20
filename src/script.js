@@ -951,85 +951,52 @@ const setupAvisSlider = () => {
 };
 
 // --- ✅ CHARGEMENT CALENDLY DIFFÉRÉ (CSS ET JS) ---
-const CALENDLY_URL = 'https://calendly.com/aurore-am20/20min?hide_event_type_details=1&text_color=0e1a35&primary_color=a83287';
-const CALENDLY_SCRIPT_SRC = 'https://assets.calendly.com/assets/external/widget.js';
-const CALENDLY_CSS_SRC = 'https://assets.calendly.com/assets/external/widget.css'; // Nouvelle constante
+document.addEventListener('DOMContentLoaded', () => {
+    const CALENDLY_URL = 'https://calendly.com/aurore-am20/20min?hide_event_type_details=1&text_color=0e1a35&primary_color=a83287';
+    const CALENDLY_SCRIPT_SRC = 'https://assets.calendly.com/assets/external/widget.js';
+    const CALENDLY_CSS_SRC = 'https://assets.calendly.com/assets/external/widget.css';
 
-let isCalendlyScriptLoaded = false;
-let isCalendlyLoading = false;
+    let calendlyLoaded = false;
 
-const loadCalendlyCSS = () => {
-    const link = document.createElement('link');
-    link.href = CALENDLY_CSS_SRC;
-    link.rel = 'stylesheet';
-    document.head.appendChild(link);
-};
-
-const loadCalendlyScript = () => {
-    if (isCalendlyLoading || isCalendlyScriptLoaded) return Promise.resolve();
-
-    isCalendlyLoading = true;
-    
-    loadCalendlyCSS();
-
-    return new Promise((resolve) => {
-        const script = document.createElement('script');
-        script.src = CALENDLY_SCRIPT_SRC;
-        script.type = 'text/javascript';
-        script.async = true;
+    const loadCalendly = () => {
+        if (calendlyLoaded) return Promise.resolve();
         
-        script.onload = () => {
-            isCalendlyScriptLoaded = true;
-            isCalendlyLoading = false;
-            resolve();
-        };
+        return new Promise((resolve) => {
+            // CSS
+            const link = document.createElement('link');
+            link.href = CALENDLY_CSS_SRC;
+            link.rel = 'stylesheet';
+            document.head.appendChild(link);
 
-        script.onerror = () => {
-            isCalendlyLoading = false;
-            console.error("Erreur de chargement du script Calendly.");
-            resolve();
-        };
-        document.body.appendChild(script);
-    });
-};
-
-const handleCalendlyPopup = (event) => {
-    event.preventDefault(); 
-    
-    if (typeof Calendly !== 'undefined' && typeof Calendly.initPopupWidget === 'function') {
-        Calendly.initPopupWidget({ url: CALENDLY_URL });
-        return;
-    }
-    
-    if (isCalendlyScriptLoaded) {
-        setTimeout(() => {
-            if (typeof Calendly !== 'undefined') {
-                 Calendly.initPopupWidget({ url: CALENDLY_URL });
-            } else {
-                console.error("Calendly non défini après chargement.");
-            }
-        }, 50); 
-        return;
-    }
-
-    loadCalendlyScript().then(() => {
-        if (typeof Calendly !== 'undefined') {
-            Calendly.initPopupWidget({ url: CALENDLY_URL });
-        } else {
-            window.location.href = CALENDLY_URL; 
-        }
-    });
-};
-
-const setupCalendlyTrigger = () => {
-    const triggerBtns = document.querySelectorAll(".calendly-popup-trigger");
-    
-    if (triggerBtns.length > 0) {
-        triggerBtns.forEach(button => {
-            button.addEventListener("click", handleCalendlyPopup);
+            // JS
+            const script = document.createElement('script');
+            script.src = CALENDLY_SCRIPT_SRC;
+            script.async = true;
+            script.onload = () => {
+                calendlyLoaded = true;
+                resolve();
+            };
+            document.body.appendChild(script);
         });
-    }
-};
+    };
+
+    const openPopup = (e) => {
+        e.preventDefault();
+        loadCalendly().then(() => {
+            if (window.Calendly && typeof Calendly.initPopupWidget === 'function') {
+                Calendly.initPopupWidget({ url: CALENDLY_URL });
+            } else {
+                console.error('Calendly non chargé, ouverture fallback.');
+                window.open(CALENDLY_URL, '_blank');
+            }
+        });
+    };
+
+    document.querySelectorAll('.calendly-popup-trigger').forEach(btn => {
+        btn.addEventListener('click', openPopup);
+    });
+});
+
 
  // --- INIT ---
     setupDeployCardsAnimation(); 

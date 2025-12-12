@@ -1,20 +1,16 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    # Sécurité générale + Calendly fonctionnelle
     Content-Security-Policy = """
       default-src 'self';
-      script-src 'self' https://assets.calendly.com https://calendly.com;
+      script-src 'self' https://assets.calendly.com;
       style-src 'self' 'unsafe-inline' https://assets.calendly.com;
       img-src 'self' data:;
-      connect-src 'self' https://api.netlify.com https://calendly.com;
+      connect-src 'self' https://api.netlify.com https://assets.calendly.com https://calendly.com;
       frame-src https://assets.calendly.com https://calendly.com;
       base-uri 'self';
       form-action 'self';
     """
-    # HSTS : force HTTPS
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    # Pas de X-Frame-Options pour Calendly
-    # Clickjacking géré via frame-src dans CSP
     Cross-Origin-Opener-Policy = "same-origin"
     Cross-Origin-Embedder-Policy = "require-corp"
