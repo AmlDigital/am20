@@ -1,54 +1,9 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    # 1. EN-TÊTE HSTS (HTTP Strict Transport Security)
-    # Force la connexion en HTTPS pour 1 an et inclut les sous-domaines (preload est optionnel au début)
-    # Gravité : Élevée / Moyenne
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-
-    # 2. EN-TÊTE CSP (Content Security Policy)
-    # Gravité : Élevée (Protection XSS, Clickjacking, Trusted Types)
-    # C'est la partie la plus critique et la plus complexe.
-    Content-Security-Policy = """
-      default-src 'self';
-      base-uri 'self';
-      form-action 'self';
-      frame-ancestors 'self' https://calendly.com;  # <-- CRITIQUE pour Calendly (XFO / frame-ancestors)
-      
-      # Scripts autorisés
-      script-src 'self' 'unsafe-inline' https://assets.calendly.com;
-      # Note : 'unsafe-inline' est nécessaire si vous avez du JS inline (style/scripts dans le HTML). Si possible, retirez-le après refactorisation.
-      
-      # Styles autorisés
-      style-src 'self' 'unsafe-inline' https://assets.calendly.com; 
-
-      # Connexions (XHR, fetch) et WebSockets
-      connect-src 'self' https://assets.calendly.com https://calendly.com;
-
-      # Fonts, Images, Media (généralement peu problématique)
-      font-src 'self' https://assets.calendly.com;
-      img-src 'self' data: https:;
-      media-src 'self' data:;
-
-      # Intégration (pour iFrames, si nécessaire)
-      frame-src 'self' https://calendly.com;
-      
-      # Prévention Trusted Types (Meilleure pratique)
-      # require-trusted-types-for 'script'; 
-      # Note : Cette directive est TRES restrictive. Elle pourrait casser le site ou Calendly. Il est conseillé de l'ajouter UNIQUEMENT après avoir vérifié que tout le code (y compris les bibliothèques) est compatible.
-
-    """
-
-    # 3. EN-TÊTE COOP (Cross-Origin-Opener-Policy)
-    # Isole la fenêtre de premier niveau. Utilisez 'same-origin' pour un site mono-domaine.
-    # Gravité : Élevée
     Cross-Origin-Opener-Policy = "same-origin"
-
-    # 4. EN-TÊTE XFO (X-Frame-Options)
-    # Il est partiellement redondant avec 'frame-ancestors' dans la CSP, mais il est toujours bon de le laisser.
-    # Gravité : Élevée
-    X-Frame-Options = "ALLOW-FROM https://calendly.com" # Ou "DENY" si le site n'est jamais intégré ailleurs.
-
-    # 5. Diverses sécurités (Bonnes pratiques)
+    X-Frame-Options = "ALLOW-FROM https://calendly.com"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self' https://calendly.com; script-src 'self' 'unsafe-inline' https://assets.calendly.com; style-src 'self' 'unsafe-inline' https://assets.calendly.com; connect-src 'self' https://assets.calendly.com https://calendly.com; font-src 'self' https://assets.calendly.com; img-src 'self' data: https:; media-src 'self' data:; frame-src 'self' https://calendly.com;"
