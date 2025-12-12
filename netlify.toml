@@ -1,0 +1,21 @@
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Content Security Policy
+    Content-Security-Policy = """
+      default-src 'self';
+      script-src 'self' https://assets.calendly.com;
+      style-src 'self' 'unsafe-inline' https://assets.calendly.com;
+      img-src 'self' data:;
+      connect-src 'self' https://api.netlify.com;
+      frame-ancestors 'none';
+      base-uri 'self';
+      form-action 'self';
+    """
+    # HSTS : force HTTPS
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    # Clickjacking
+    X-Frame-Options = "DENY"
+    # COOP / COEP pour isolation
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Embedder-Policy = "require-corp"
