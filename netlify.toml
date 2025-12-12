@@ -3,7 +3,6 @@
   [headers.values]
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     Cross-Origin-Opener-Policy = "same-origin"
-    X-Frame-Options = "ALLOW-FROM https://calendly.com"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self' https://calendly.com; script-src 'self' 'unsafe-inline' https://assets.calendly.com; style-src 'self' 'unsafe-inline' https://assets.calendly.com; connect-src 'self' https://assets.calendly.com https://calendly.com; font-src 'self' https://assets.calendly.com; img-src 'self' data: https:; media-src 'self' data:; frame-src 'self' https://calendly.com;"
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self' https://calendly.com; script-src 'self' 'unsafe-inline' https://assets.calendly.com https://calendly.com; style-src 'self' 'unsafe-inline' https://assets.calendly.com; connect-src 'self' https://assets.calendly.com https://calendly.com; font-src 'self' https://assets.calendly.com; img-src 'self' data: https:; media-src 'self' data:; frame-src 'self' https://calendly.com;"
