@@ -278,50 +278,69 @@
         </div>
         <div class="max-w-4xl mx-auto border-1 border-accent rounded-[9px] overflow-hidden">
             <div class="inner-card bg-subtle-gradient p-4">
-                <form name="recommandation" id="formulaireRecommandation" netlify-honeypot="bot-field" data-netlify="true">
+               <form name="recommandation" id="formulaireRecommandation" netlify-honeypot="bot-field" data-netlify="true">
                     <input type="hidden" name="form-name" value="recommandation">
                     <div class="hidden">
                         <label>Entreprise : <input name="bot-field"></label>
                     </div>
-                    <h3 class="text-2xl font-bold text-secondary mb-6">Vos informations</h3>
+                    <h3 class="text-2xl font-bold text-secondary mb-6">Vos informations (Le Parrain)</h3>
                     <div class="grid lg:grid-cols-2 gap-6">
                         <div>
-                            <label class="block mb-2 font-semibold text-primary">Nom & prénom</label>
-                            <input name="parrain_nom" type="text" required
+                            <label for="parrain-nom" class="block mb-2 font-semibold text-primary">Nom & prénom *</label>
+                            <input 
+                                name="parrain_nom" 
+                                id="parrain-nom" 
+                                type="text" 
+                                required
+                                maxlength="80"
+                                pattern="^[\p{L}\s'-]+$" 
+                                title="Seules les lettres, les espaces, les tirets et les apostrophes sont autorisés."
                                 class="w-full p-3 rounded-[9px] border border-border bg-bg-2 text-primary focus:outline-[var(--color-accent)]">
                         </div>
                         <div>
-                            <label class="block mb-2 font-semibold text-primary">Nom de votre entreprise</label>
-                            <input name="parrain_entreprise" type="text" required
+                            <label for="parrain-entreprise" class="block mb-2 font-semibold text-primary">Nom de votre entreprise *</label>
+                            <input 
+                                name="parrain_entreprise" 
+                                id="parrain-entreprise"
+                                type="text" 
+                                required
+                                maxlength="100"
                                 class="w-full p-3 rounded-[9px] border border-border bg-bg-2 text-primary focus:outline-[var(--color-accent)]">
                         </div>
                         <div>
-                            <label class="block mb-2 font-semibold text-primary">Adresse email</label>
-                            <input name="parrain_email" type="email" required
+                            <label for="parrain-email" class="block mb-2 font-semibold text-primary">Adresse email *</label>
+                            <input 
+                                name="parrain_email" 
+                                id="parrain-email" 
+                                type="email" 
+                                required
+                                maxlength="100"
+                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                                title="Veuillez entrer une adresse email valide."
                                 class="w-full p-3 rounded-[9px] border border-border bg-bg-2 text-primary focus:outline-[var(--color-accent)]">
                         </div>
                         <div>
-                            <label class="block mb-2 font-semibold text-primary">Avez-vous déjà travaillé avec AM 2.0 ?</label>
-                            <div class="flex space-x-6">
-                                <label class="flex items-center space-x-2">
-                                    <input type="radio" name="parrain_client" value="Oui" required class="accent-secondary">
+                            <label class="block mb-2 font-semibold text-primary">Avez-vous déjà travaillé avec AM 2.0 ? *</label>
+                            <div role="radiogroup" aria-labelledby="parrain-client-label" class="flex space-x-6">
+                                <label for="client-oui" class="flex items-center space-x-2">
+                                    <input type="radio" name="parrain_client" id="client-oui" value="Oui" required class="accent-secondary">
                                     <span class="text-primary">Oui</span>
                                 </label>
-                                <label class="flex items-center space-x-2">
-                                    <input type="radio" name="parrain_client" value="Non" required class="accent-secondary">
+                                <label for="client-non" class="flex items-center space-x-2">
+                                    <input type="radio" name="parrain_client" id="client-non" value="Non" required class="accent-secondary">
                                     <span class="text-primary">Non</span>
                                 </label>
                             </div>
                         </div>
                         <div>
-                            <label class="block mb-2 font-semibold text-primary">Avez-vous un projet en cours chez AM 2.0 ?</label>
-                            <div class="flex space-x-6">
-                                <label class="flex items-center space-x-2">
-                                    <input type="radio" name="parrain_projet" value="Oui" required class="accent-secondary">
+                            <label class="block mb-2 font-semibold text-primary">Avez-vous un projet en cours chez AM 2.0 ? *</label>
+                            <div role="radiogroup" aria-labelledby="parrain-projet-label" class="flex space-x-6">
+                                <label for="projet-oui" class="flex items-center space-x-2">
+                                    <input type="radio" name="parrain_projet" id="projet-oui" value="Oui" required class="accent-secondary">
                                     <span class="text-primary">Oui</span>
                                 </label>
-                                <label class="flex items-center space-x-2">
-                                    <input type="radio" name="parrain_projet" value="Non" required class="accent-secondary">
+                                <label for="projet-non" class="flex items-center space-x-2">
+                                    <input type="radio" name="parrain_projet" id="projet-non" value="Non" required class="accent-secondary">
                                     <span class="text-primary">Non</span>
                                 </label>
                             </div>
@@ -329,32 +348,60 @@
                     </div>
                     <hr class="my-10 border-border">
                     <h3 class="text-2xl font-bold text-secondary mb-6">Entreprise recommandée</h3>
-                    <div class="grid lg:grid-cols-2 gap-6">
+                    <div class="grid lg:grid-cols-2 gap-6">  
                         <div>
-                            <label class="block mb-2 font-semibold text-primary">Nom & prénom</label>
-                            <input name="reco_nom" type="text" required
+                            <label for="reco-nom" class="block mb-2 font-semibold text-primary">Nom & prénom *</label>
+                            <input 
+                                name="reco_nom" 
+                                id="reco-nom"
+                                type="text" 
+                                required
+                                maxlength="80"
+                                pattern="^[\p{L}\s'-]+$" 
+                                title="Seules les lettres, les espaces, les tirets et les apostrophes sont autorisés."
                                 class="w-full p-3 rounded-[9px] border border-border bg-bg-2 text-primary focus:outline-[var(--color-accent)]">
                         </div>
                         <div>
-                            <label class="block mb-2 font-semibold text-primary">Nom de l’entreprise</label>
-                            <input name="reco_entreprise" type="text" required
+                            <label for="reco-entreprise" class="block mb-2 font-semibold text-primary">Nom de l’entreprise *</label>
+                            <input 
+                                name="reco_entreprise" 
+                                id="reco-entreprise"
+                                type="text" 
+                                required
+                                maxlength="100"
                                 class="w-full p-3 rounded-[9px] border border-border bg-bg-2 text-primary focus:outline-[var(--color-accent)]">
                         </div>
                         <div>
-                            <label class="block mb-2 font-semibold text-primary">Email professionnel</label>
-                            <input name="reco_email" type="email" required
+                            <label for="reco-email" class="block mb-2 font-semibold text-primary">Email professionnel *</label>
+                            <input 
+                                name="reco_email" 
+                                id="reco-email" 
+                                type="email" 
+                                required
+                                maxlength="100"
+                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                                title="Veuillez entrer une adresse email valide."
                                 class="w-full p-3 rounded-[9px] border border-border bg-bg-2 text-primary focus:outline-[var(--color-accent)]">
                         </div>
                         <div>
-                            <label class="block mb-2 font-semibold text-primary">Téléphone (optionnel)</label>
-                            <input name="reco_tel" type="text"
+                            <label for="reco-tel" class="block mb-2 font-semibold text-primary">Téléphone (optionnel)</label>
+                            <input 
+                                name="reco_tel" 
+                                id="reco-tel" 
+                                type="tel"
+                                maxlength="20"
+                                pattern="^(\+33|0)[1-9](?:[\s.-]*\d{2}){4}$"
+                                title="Exemple: 06 00 00 00 00 ou +33 6 00 00 00 00"
                                 class="w-full p-3 rounded-[9px] border border-border bg-bg-2 text-primary focus:outline-[var(--color-accent)]">
                         </div>
                         <div class="lg:col-span-2">
-                            <label class="block mb-2 font-semibold text-primary">Souhait du contact</label>
-                            <select name="reco_contact" required
-                                class="w-full p-3 rounded-[9px] border border-border bg-bg-2 text-primary">
-                                <option value="">Sélectionner…</option>
+                            <label for="reco-contact" class="block mb-2 font-semibold text-primary">Souhait du contact *</label>
+                            <select 
+                                name="reco_contact" 
+                                id="reco-contact"
+                                required
+                                class="w-full p-3 rounded-[9px] border border-border bg-bg-2 text-primary focus:outline-[var(--color-accent)]">
+                                <option value="" disabled selected>Sélectionner…</option>
                                 <option>Audit stratégique offert</option>
                                 <option>Prise d'information</option>
                                 <option>À déterminer ensemble</option>
@@ -362,21 +409,18 @@
                         </div>
                     </div>
                     <div class="mt-10 space-y-4">
-                        <label class="flex items-start space-x-3 text-primary">
-                            <input type="checkbox" name="validation" required class="mt-1">
+                        <label for="check-validation" class="flex items-start space-x-3 text-primary">
+                            <input type="checkbox" name="validation" id="check-validation" required class="mt-1 accent-secondary">
                             <span>
                                 Je confirme avoir obtenu l’autorisation de recommander cette entreprise et j’accepte les conditions du programme AM 2.0.
                             </span>
                         </label>
-                        <label class="flex items-start space-x-3 text-primary">
-                            <input type="checkbox" name="rgpd" required class="mt-1">
+                        <label for="check-rgpd" class="flex items-start space-x-3 text-primary">
+                            <input type="checkbox" name="rgpd" id="check-rgpd" required class="mt-1 accent-secondary">
                             <span>
                                 J’accepte que mes informations soient utilisées dans le cadre de ce programme, conformément à la politique de confidentialité.
                             </span>
                         </label>
-                    </div>
-                    <div class="mt-8 mx-auto w-fit">
-                        <div data-netlify-recaptcha="true"></div>
                     </div>
                     <div class="text-center mx-auto w-fit mt-12">
                         <button type="submit" id="submitButton"
@@ -436,6 +480,6 @@
     </div>
 </footer>
 <script src="dist/script.min.js" defer></script>
-<script src="dist/form.min.js"></script>
+<script src="dist/form.min.js" defer></script>
 </body>
 </html>

@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+    
+    // --- FONCTIONS UTILITAIRES ---
     const DESKTOP_BREAKPOINT = 1024;
     const isMobile = () => window.innerWidth < DESKTOP_BREAKPOINT;
+    
+    // Fonction anti-rebond (debounce)
     const debounce = (func, delay) => {
         let timeoutId;
         return function (...args) {
@@ -10,12 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
             }, delay);
         };
     };
+
 // --- CONSTANTES GLOBALES ---
     const burgerBtn = document.querySelector(".burger-menu");
     const mainNav = document.getElementById("main-nav");
     const navLinks = document.querySelectorAll(".main-nav a");
     const currentYearElement = document.getElementById("current-year");
-// --- CONSTANTE POUR LES IMAGES ---
+    
+    // Constante pour les images (AVIS)
     const AVIS_IMAGES = [
         "images/sites-exemples/am2.0-exemple-site3-mbperformance.webp",
         "images/sites-exemples/am2.0-exemple-site4-mbperformance.webp",
@@ -23,11 +29,46 @@ document.addEventListener("DOMContentLoaded", () => {
         "images/sites-exemples/am2.0-exemple-site1-shodokan.webp",
     ];
 
+    // Initialisation de l'année dans le footer
     if (currentYearElement) {
         currentYearElement.textContent = new Date().getFullYear();
     }
 
-// ✅ DÉPLOIEMENT DES CARTES ATTACHÉES 
+// =======================================================
+// 🛡️ NOUVEAU : LOGIQUE DE PROTECTION DES EMAILS (Anti-robots)
+// =======================================================
+    const setupEmailProtection = () => {
+        const links = document.querySelectorAll('.protected-mail');
+        
+        links.forEach(function(link) {
+            
+            const user = link.getAttribute('data-user');
+            const domain = link.getAttribute('data-domain');
+            const fullEmail = user + '@' + domain;
+            
+            // 1. Sauvegarder et vider le contenu (pour le SVG/l'icône)
+            const originalContent = link.innerHTML;
+            link.innerHTML = '';
+            
+            // 2. Réinsérer le contenu original (le SVG)
+            link.insertAdjacentHTML('beforeend', originalContent);
+            
+            // 3. Insérer le texte de l'email reconstitué
+            const textNode = document.createTextNode(fullEmail);
+            link.appendChild(textNode);
+
+            // 4. Gérer le clic pour le mailto
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); 
+                window.location.href = 'mailto:' + fullEmail;
+            });
+        });
+    };
+// =======================================================
+// 🛡️ FIN : LOGIQUE DE PROTECTION DES EMAILS
+// =======================================================
+    
+// --- ✅ DÉPLOIEMENT DES CARTES ATTACHÉES ---
     const setupDeployCardsAnimation = () => {
         const deployCards = document.querySelectorAll('.card-deploy');
         if (deployCards.length === 0) return;
@@ -41,16 +82,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const deployObserver = new IntersectionObserver(function(entries, observer) {
             entries.forEach(entry => {
                 const card = entry.target;
-                const isCardLeft = card.classList.contains('card-left');
-                const isCardRight = card.classList.contains('card-right');
                 
                 if (entry.intersectionRatio > 0) { 
                     card.classList.remove('is-initially-hidden'); 
                     card.classList.add('is-visible'); 
-                    
-                } 
-                
-                else { 
+                } else { 
                     card.classList.add('is-initially-hidden');
                     card.classList.remove('is-visible');
                 }
@@ -63,23 +99,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-// ✅ SLIDER ETUDES DE CAS 
+// --- ✅ SLIDER ETUDES DE CAS ---
 const initCaseStudiesSlider = () => {
     const slider = document.getElementById("case-studies-slider");
 
-    if (!slider) {
-        return;
-    }
+    if (!slider) return;
 
-    const controlsWrapper = document.getElementById(
-        "case-studies-controls-wrapper"
-    );
-
+    const controlsWrapper = document.getElementById("case-studies-controls-wrapper");
     const prevButton = document.getElementById("case-studies-prev");
     const nextButton = document.getElementById("case-studies-next");
-    const caseStudyCards = Array.from(
-        slider.querySelectorAll(".case-study-card")
-    );
+    const caseStudyCards = Array.from(slider.querySelectorAll(".case-study-card"));
 
     if (!controlsWrapper || caseStudyCards.length < 2 || !prevButton || !nextButton) {
         if (controlsWrapper) controlsWrapper.classList.add("hidden");
@@ -88,12 +117,7 @@ const initCaseStudiesSlider = () => {
     
     if (isMobile()) {
         if (controlsWrapper) controlsWrapper.classList.add("hidden");
-        slider.classList.remove(
-            "lg:flex",
-            "lg:flex-nowrap",
-            "lg:overflow-x-scroll",
-            "lg:scrollbar-hide"
-        );
+        slider.classList.remove("lg:flex", "lg:flex-nowrap", "lg:overflow-x-scroll", "lg:scrollbar-hide");
         slider.classList.add("grid", "gap-8");
         caseStudyCards.forEach((card) => {
              card.classList.add("is-active");
@@ -102,12 +126,7 @@ const initCaseStudiesSlider = () => {
         return; 
     }
 
-    slider.classList.add(
-        "lg:flex",
-        "lg:flex-nowrap",
-        "lg:overflow-x-scroll",
-        "lg:scrollbar-hide"
-    );
+    slider.classList.add("lg:flex", "lg:flex-nowrap", "lg:overflow-x-scroll", "lg:scrollbar-hide");
     slider.classList.remove("grid", "gap-8");
     if (controlsWrapper) controlsWrapper.classList.remove("hidden"); 
 
@@ -185,13 +204,11 @@ const initCaseStudiesSlider = () => {
     }, 300));
 };
 
-// ✅ SLIDER MINI BLOG 
+// --- ✅ SLIDER MINI BLOG --- 
 const initArticlesSlider = () => {
     const slider = document.getElementById('articles-slider');
     
-    if (!slider) {
-        return; 
-    }
+    if (!slider) return; 
     
     const cards = Array.from(slider.querySelectorAll('.article-card'));
     
@@ -219,7 +236,6 @@ const initArticlesSlider = () => {
         if (sliderWidth === 0) return; 
 
         let activeIndex = -1;
-
         const viewportCenter = window.innerWidth / 2;
         
         cards.forEach((card, index) => {
@@ -272,7 +288,6 @@ const initArticlesSlider = () => {
             let minDistance = Infinity;
 
             cards.forEach((card, index) => {
-                const cardRect = card.getBoundingClientRect();
                 const cardCenterInSlider = card.offsetLeft + (card.offsetWidth / 2) - slider.scrollLeft;
                 const distance = Math.abs(cardCenterInSlider - sliderCenter);
 
@@ -356,7 +371,7 @@ const initArticlesSlider = () => {
     updateActiveCard();
 };
     
-// ✅ GESTION DES CARTES EXPANSIBLES 
+// --- ✅ GESTION DES CARTES EXPANSIBLES --- 
 let globalToggleCard; 
 
 const smoothScrollToCenter = (element) => {
@@ -479,7 +494,7 @@ window.toggleArticleCardCollapse = () => {
     }
 };
 
-// --- ✅ COMPTEUR EFFECT (HERO)  ---
+// --- ✅ COMPTEUR EFFECT (HERO)  ---
     function countUp(element, duration = 2500) {
         if (element.classList.contains("counting")) return;
 
@@ -570,7 +585,7 @@ window.toggleArticleCardCollapse = () => {
         });
     });
 
-// --- ✅ FAQ ACCORDION  ---
+// --- ✅ FAQ ACCORDION  ---
     const setupFaqAccordion = () => {
         const faqItems = document.querySelectorAll(".faq-item");
 
@@ -626,7 +641,7 @@ window.toggleArticleCardCollapse = () => {
         });
     };
 
-// --- ✅ TIMELINE ANIMEE  ---
+// --- ✅ TIMELINE ANIMEE  ---
     const timelineContainer = document.querySelector(".timeline-container");
     const timelineLine = document.getElementById("timeline-line");
     const timelineItems = document.querySelectorAll(".timeline-item");
@@ -672,11 +687,13 @@ window.toggleArticleCardCollapse = () => {
             }
         });
     }; 
+    
     const timelineObserverOptions = {
         root: null, 
         rootMargin: "0px 0px -20% 0px", 
         threshold: 0.1,
     };
+    
     const horizontalTimelineObserver = new IntersectionObserver(
         (entries, observer) => {
             entries.forEach((entry) => {
@@ -691,12 +708,13 @@ window.toggleArticleCardCollapse = () => {
                     point.classList.add("bg-gradient-dynamic-accent");
                     point.classList.remove("bg-subtle-gradient");
                 } else {
-
+                    // Logique pour quand l'élément sort si nécessaire, ici vide
                 }
             });
         },
         timelineObserverOptions
     );
+    
     const initTimelineAnimation = () => {
         if (!timelineContainer || !timelineLine) return;
         window.removeEventListener("scroll", updateVerticalTimeline);
@@ -711,6 +729,7 @@ window.toggleArticleCardCollapse = () => {
                 point.classList.add("bg-subtle-gradient");
             }
         });
+        
         if (isMobile()) {
             window.addEventListener("scroll", updateVerticalTimeline);
             updateVerticalTimeline();
@@ -719,7 +738,8 @@ window.toggleArticleCardCollapse = () => {
             timelineLine.style.width = "2px"; 
         } else {
             timelineLine.style.height = "2px"; 
-            timelineItems.forEach((item) => {
+            timelineItems.forEach((item, index) => { // S'assurer que chaque item a l'index pour l'observer
+                item.setAttribute('data-timeline-index', index);
                 horizontalTimelineObserver.observe(item);
             });
         }
@@ -754,6 +774,7 @@ window.toggleArticleCardCollapse = () => {
                 const imageIndex = totalCloneIndex % AVIS_IMAGES.length;
                 const imagePath = AVIS_IMAGES[imageIndex];
 
+                // Remplacement du contenu de la carte par l'image
                 clone.innerHTML = `
                     <div class="avis-item-content chat-bubble p-0 overflow-hidden">
                         <img src="${imagePath}" alt="Illustration de site web réalisé par AM 2.0" class="w-full h-auto object-cover" loading="lazy" aria-hidden="true" width="355" height="734">
@@ -785,6 +806,7 @@ window.toggleArticleCardCollapse = () => {
             const column = document.createElement("div");
             column.classList.add("avis-column");
 
+            // Gestion de la classe mobile/desktop pour le centrage si nécessaire
             if (isMobile()) {
                 if (i === 1) {
                     column.classList.add("avis-column-center");
@@ -793,6 +815,7 @@ window.toggleArticleCardCollapse = () => {
                 }
             }
 
+            // Direction du scroll CSS
             if (i === 0) {
                 column.classList.add("scroll-up");
             } else if (i === 1) {
@@ -818,6 +841,7 @@ window.toggleArticleCardCollapse = () => {
             columns[colIndex].appendChild(card);
         });
 
+        // Calcul de la hauteur et de la durée après le chargement des images
         Promise.all(imagesToLoad).then(() => {
             const longestColumnHeight = columns.reduce(
                 (max, col) => Math.max(max, col.scrollHeight),
@@ -953,7 +977,7 @@ const setupAvisSlider = () => {
 // --- ✅ CHARGEMENT CALENDLY DIFFÉRÉ (CSS ET JS) ---
 const CALENDLY_URL = 'https://calendly.com/aurore-am20/20min?hide_event_type_details=1&text_color=0e1a35&primary_color=a83287';
 const CALENDLY_SCRIPT_SRC = 'https://assets.calendly.com/assets/external/widget.js';
-const CALENDLY_CSS_SRC = 'https://assets.calendly.com/assets/external/widget.css'; // Nouvelle constante
+const CALENDLY_CSS_SRC = 'https://assets.calendly.com/assets/external/widget.css';
 
 let isCalendlyScriptLoaded = false;
 let isCalendlyLoading = false;
@@ -1031,7 +1055,8 @@ const setupCalendlyTrigger = () => {
     }
 };
 
- // --- INIT ---
+// --- APPEL DE TOUTES LES FONCTIONS D'INITIALISATION ---
+    setupEmailProtection(); // 🛡️ PROTECTION EMAIL
     setupDeployCardsAnimation(); 
     setupExpandableCards();
     initCaseStudiesSlider(); 
@@ -1042,7 +1067,7 @@ const setupCalendlyTrigger = () => {
     initArticlesSlider(); 
     setupCalendlyTrigger();
 
-    // --- RESIZE ---
+// --- RESIZE : Gestion de la réactivité ---
     const handleResizeLogic = () => {
         initTimelineAnimation();
         setupExpandableCards();
