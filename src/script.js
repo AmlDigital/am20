@@ -35,33 +35,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 // 🛡️ LOGIQUE DE PROTECTION DES EMAILS (Anti-robots)
-    const setupEmailProtection = () => {
-        const links = document.querySelectorAll('.protected-mail');
-        
-        links.forEach(function(link) {
-            
-            const user = link.getAttribute('data-user');
-            const domain = link.getAttribute('data-domain');
-            const fullEmail = user + '@' + domain;
-            
-            // 1. Sauvegarder et vider le contenu (pour le SVG/l'icône)
-            const originalContent = link.innerHTML;
-            link.innerHTML = '';
-            
-            // 2. Réinsérer le contenu original (le SVG)
-            link.insertAdjacentHTML('beforeend', originalContent);
-            
-            // 3. Insérer le texte de l'email reconstitué
-            const textNode = document.createTextNode(fullEmail);
-            link.appendChild(textNode);
+const setupEmailProtection = () => {
+  document.querySelectorAll('.protected-mail').forEach(link => {
+    const user = link.dataset.user;
+    const domain = link.dataset.domain;
 
-            // 4. Gérer le clic pour le mailto
-            link.addEventListener('click', function(e) {
-                e.preventDefault(); 
-                window.location.href = 'mailto:' + fullEmail;
-            });
-        });
-    };
+    if (!user || !domain) return;
+
+    const fullEmail = `${user}@${domain}`;
+
+    // Conserver le SVG sans toucher au DOM lourdement
+    const icon = link.querySelector('svg');
+
+    link.textContent = ''; // clean
+    if (icon) link.appendChild(icon);
+
+    link.appendChild(document.createTextNode(fullEmail));
+    link.href = `mailto:${fullEmail}`;
+  });
+};
+
+document.addEventListener('DOMContentLoaded', setupEmailProtection);
+
     
 // --- ✅ DÉPLOIEMENT DES CARTES ATTACHÉES ---
     const setupDeployCardsAnimation = () => {
