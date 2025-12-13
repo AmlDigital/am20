@@ -34,9 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         currentYearElement.textContent = new Date().getFullYear();
     }
 
-// =======================================================
-// 🛡️ NOUVEAU : LOGIQUE DE PROTECTION DES EMAILS (Anti-robots)
-// =======================================================
+// 🛡️ LOGIQUE DE PROTECTION DES EMAILS (Anti-robots)
     const setupEmailProtection = () => {
         const links = document.querySelectorAll('.protected-mail');
         
@@ -64,9 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     };
-// =======================================================
-// 🛡️ FIN : LOGIQUE DE PROTECTION DES EMAILS
-// =======================================================
     
 // --- ✅ DÉPLOIEMENT DES CARTES ATTACHÉES ---
     const setupDeployCardsAnimation = () => {
@@ -774,7 +769,6 @@ window.toggleArticleCardCollapse = () => {
                 const imageIndex = totalCloneIndex % AVIS_IMAGES.length;
                 const imagePath = AVIS_IMAGES[imageIndex];
 
-                // Remplacement du contenu de la carte par l'image
                 clone.innerHTML = `
                     <div class="avis-item-content chat-bubble p-0 overflow-hidden">
                         <img src="${imagePath}" alt="Illustration de site web réalisé par AM 2.0" class="w-full h-auto object-cover" loading="lazy" aria-hidden="true" width="355" height="734">
@@ -806,7 +800,6 @@ window.toggleArticleCardCollapse = () => {
             const column = document.createElement("div");
             column.classList.add("avis-column");
 
-            // Gestion de la classe mobile/desktop pour le centrage si nécessaire
             if (isMobile()) {
                 if (i === 1) {
                     column.classList.add("avis-column-center");
@@ -815,7 +808,6 @@ window.toggleArticleCardCollapse = () => {
                 }
             }
 
-            // Direction du scroll CSS
             if (i === 0) {
                 column.classList.add("scroll-up");
             } else if (i === 1) {
@@ -841,7 +833,6 @@ window.toggleArticleCardCollapse = () => {
             columns[colIndex].appendChild(card);
         });
 
-        // Calcul de la hauteur et de la durée après le chargement des images
         Promise.all(imagesToLoad).then(() => {
             const longestColumnHeight = columns.reduce(
                 (max, col) => Math.max(max, col.scrollHeight),
@@ -898,7 +889,7 @@ const setupAvisSlider = () => {
         avisControls.innerHTML = "";
         for (let i = 0; i < totalSlides; i++) {
             const bullet = document.createElement("span");
-            bullet.classList.add("bullet-trait", "w-8", "h-1", "bg-primary");
+            bullet.classList.add("bullet-trait", "w-8", "h-1", "bg-secondary");
             bullet.dataset.index = i;
             bullet.classList.toggle("active", i === 0);
             bullet.classList.toggle("inactive", i !== 0);
@@ -975,7 +966,7 @@ const setupAvisSlider = () => {
 };
 
 // --- ✅ CHARGEMENT CALENDLY DIFFÉRÉ (CSS ET JS) ---
-const CALENDLY_URL = 'https://calendly.com/aurore-am20/20min?hide_event_type_details=1&text_color=0e1a35&primary_color=a83287';
+const CALENDLY_URL = 'https://calendly.com/aurore-am20/20min?hide_event_type_details=1&text_color=14244f&primary_color=4d0fa5';
 const CALENDLY_SCRIPT_SRC = 'https://assets.calendly.com/assets/external/widget.js';
 const CALENDLY_CSS_SRC = 'https://assets.calendly.com/assets/external/widget.css';
 

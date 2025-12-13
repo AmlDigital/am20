@@ -3,22 +3,22 @@
 @tailwind utilities;
 /* =================== BASE & RESET ===================== */
 :root {
-  --color-primary: #1a2e66;
-  --color-secondary: #8c2a71;
-  --color-accent: #a83287;
+  --color-primary: #14244f;
+  --color-secondary: #4d0fa5;
+  --color-accent: #8449d9;
   --color-validate: #1fab89;
   --color-background-1: #f0f2f5;
   --color-background-2: #ffffff;
-  --gradient-subtle: linear-gradient(90deg, #1a2e66, #b8c2d9);
-  --base-gradient-accent: linear-gradient(90deg, #1a2e66, #8c2a71);
-  --gradient-accent: linear-gradient(90deg, #1a2e66, #8c2a71);
+  --gradient-subtle: linear-gradient(90deg, #4d0fa5, #b8c2d9);
+  --base-gradient-accent: linear-gradient(90deg, #14244f, #8449d9);
+  --gradient-accent: linear-gradient(90deg, #30026b, #8449d9);
   --gradient-dynamic-accent: linear-gradient(
     90deg,
     var(--color-primary) 0%,
     var(--color-accent) 50%,
     var(--color-primary) 100%
   );
-  --gradient-vertical: linear-gradient(0deg, #8c2a71, #1a2e66);
+  --gradient-vertical: linear-gradient(0deg, #8449d9, #30026b);
   --color-text-dark: #0e1a35;
   --color-text-light: #b8c2d9;
   --shadow-light: rgba(0, 0, 0, 0.1);
@@ -59,7 +59,7 @@ html {
   fill: currentColor;
 }
 .text-gradient {
-  background: linear-gradient(90deg,#1a2e66, #a83287,#a83287);
+  background: linear-gradient(90deg,#230251, #4d0fa5,#8449d9);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -80,7 +80,7 @@ html {
   background-color: var(--color-secondary);
 }
 .bg-secondary-gradient {
-  background: linear-gradient(0deg, #8c2a71 0%, #1a2e66 60%, #0e1a35 100%);
+  background: linear-gradient(0deg, #8449d9 0%, #14244f 60%, #0e1a35 100%);
 }
 .bg-gradient-accent {
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
@@ -279,18 +279,31 @@ h3 {
 /* ====== CTA FULL ====== */
 /* --- 1 --- */
 .cta-primary {
-  background-color: var(--color-accent);
+  background-color: var(--color-secondary);
   color: #fff;
-  border: 2px solid var(--color-accent);
-  box-shadow: 0 4px 10px rgba(168, 50, 135, 0.4);
+  border: 2px solid var(--color-secondary);
+  box-shadow: 0 4px 10px rgba(132, 73, 217, 0.4);
 }
 .cta-primary:hover,
 .cta-primary:focus {
-  background-color: #8c2a71;
+  background-color: #8449d9;
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 6px 15px rgba(168, 50, 135, 0.6);
+  box-shadow: 0 6px 15px rgba(132, 73, 217, 0.6);
 }
 /* --- 2 --- */
+.cta-accent {
+  background-color: var(--color-accent);
+  color: #fff;
+  border: 2px solid var(--color-accent);
+  box-shadow: 0 4px 10px rgba(132, 73, 217, 0.4);
+}
+.cta-accent:hover,
+.cta-accent:focus {
+  background-color: #4d0fa5;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 15px rgba(132, 73, 217, 0.6);
+}
+/* --- 3 --- */
 .cta-secondary {
   background-color: var(--color-primary);
   color: #fff;
@@ -304,18 +317,18 @@ h3 {
   box-shadow: 0 6px 15px rgba(26, 46, 102, 0.6);
 }
 /* ====== CTA OUTLINE ====== */
-/* --- 1 --- */
+/* --- 4 --- */
 .cta-outline-secondary {
   background-color: transparent;
-  color: var(--color-accent);
-  border: 2px solid var(--color-accent);
+  color: var(--color-secondary);
+  border: 2px solid var(--color-secondary);
 }
 .cta-outline-secondary:hover,
 .cta-outline-secondary:focus {
   transform: scale(1.02);
-  box-shadow: 0 0 10px rgba(168, 50, 135, 0.6);
+  box-shadow: 0 0 10px rgba(132, 73, 217, 0.6);
 }
-/* --- 2 --- */
+/* --- 5 --- */
 .cta-outline-ter {
   background-color: transparent;
   color: var(--color-primary);
@@ -326,7 +339,7 @@ h3 {
   transform: scale(1.02);
   box-shadow: 0 0 10px rgba(26, 46, 102, 0.1);
 }
-/* --- 3 --- */
+/* --- 6 --- */
 .cta-text {
   background-color: transparent;
   color: var(--color-primary);
@@ -339,8 +352,8 @@ h3 {
 /* ======= CTA SPECIAL ====== */
 .cta-outline-hero {
   background-color: transparent;
-  color: var(--color-text-light);
-  border: 2px solid var(--color-text-light);
+  color: #fff;
+  border: 2px solid #fff;
 }
 .cta-outline-hero:hover,
 .cta-outline-hero:focus {
@@ -485,7 +498,7 @@ h3 {
 /* Bullets */
 .bullet-trait {
   display: block;
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
   cursor: pointer;
   transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
   border-radius: 9999px;
