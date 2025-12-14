@@ -292,16 +292,24 @@ h3 {
 }
 /* --- 2 --- */
 .cta-accent {
-  background-color: var(--color-accent);
+  background: linear-gradient(90deg, #4d0fa5 0%, #8449d9 100%);
   color: #fff;
-  border: 2px solid var(--color-accent);
-  box-shadow: 0 4px 10px rgba(132, 73, 217, 0.4);
+  border: 2px solid transparent;
+  border-radius: var(--border-radius-cta);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  transition: all 0.3s ease-in-out;
 }
 .cta-accent:hover,
 .cta-accent:focus {
-  background-color: #4d0fa5;
+  background: linear-gradient(90deg, #3b0a87 0%, #6b30b5 100%); /* léger assombrissement du gradient */
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 6px 15px rgba(132, 73, 217, 0.6);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  border-color: transparent;
 }
 /* --- 3 --- */
 .cta-secondary {
@@ -708,6 +716,11 @@ h3 {
 #articles-bullets button.bg-primary {
     background-color: var(--color-primary); 
     width: 28px; 
+}
+
+/* =================== BANDEAU CONTACT ===================== */
+.contact-bg-fixed {
+    background-image: url('../images/illustrations/reservation-am20.webp');
 }
 
 /* =================== DESKTOP ===================== */
