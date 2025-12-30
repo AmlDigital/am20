@@ -228,7 +228,6 @@ document.addEventListener("DOMContentLoaded", () => {
             header.addEventListener("click", () => {
                 const isOpen = item.classList.contains("is-open");
                 
-                // Fermeture des autres
                 faqItems.forEach(other => {
                     if (other !== item && other.classList.contains("is-open")) {
                         other.querySelector(".faq-content").style.maxHeight = "0";
@@ -239,6 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 item.classList.toggle("is-open", !isOpen);
                 content.style.maxHeight = isOpen ? "0" : content.scrollHeight + "px";
+                
                 header.setAttribute("aria-expanded", String(!isOpen));
             });
         });

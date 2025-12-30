@@ -150,51 +150,41 @@
 <!-- HERO -->
 <section id="hero" class="mt-20 lg:mt-10 relative min-h-screen flex flex-col justify-start items-center text-white overflow-hidden bg-cover bg-center bg-no-repeat bg-[url('../images/hero/background-hero-mob.webp')] lg:bg-[url('../images/hero/background-hero-desk.webp')]">
     <div class="absolute inset-0 bg-black/30 z-10"></div>
-    <div class="relative z-20 max-w-7xl w-full flex flex-col lg:flex-row items-center lg:items-center justify-between mx-auto px-4 pt-20 lg:pt-32 pb-12 text-white min-h-screen">
+    <div class="relative z-20 max-w-7xl w-full flex flex-col lg:flex-row items-center justify-between mx-auto px-4 pt-20 lg:pt-32 pb-12 min-h-screen">
         <div class="w-full lg:w-1/2 flex flex-col gap-6 lg:gap-8 text-left">
-            <div class="space-y-4">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl text-white font-bold leading-tight uppercase">
-                    Deviens <span class="text-gradient-green scribble-underline-green">l'évidence</span> sur le web
-                </h1>
-                <h2 class="text-lg lg:text-xl leading-relaxed max-w-xl">
-                    Un site internet pour te reconnecter à tes clients et transformer chaque visite en action.
-                </h2>
-            </div>
-            <div class="key-figures-container flex flex-wrap gap-3 w-full animate-on-scroll">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight uppercase">
+                Deviens <span class="text-gradient-green scribble-underline-green">l'évidence</span> sur le web
+            </h1>
+            <h2 class="text-lg lg:text-xl leading-relaxed max-w-xl">
+                Un site internet pour te reconnecter à tes clients et transformer chaque visite en action.
+            </h2>
+            <div class="flex flex-wrap gap-3 w-full animate-on-scroll">
                 <div class="bg-white/15 backdrop-blur-md border border-white/70 rounded-lg p-3 lg:p-4 flex-1 min-w-[140px] lg:min-w-[180px] flex flex-col">
-                    <span class="text-xl lg:text-2xl font-extrabold mb-1">
-                        <span class="counter text-gradient-green" data-target="30" data-prefix="+" data-suffix="%">+0%</span>
-                    </span>
+                    <span class="counter text-xl lg:text-2xl font-extrabold mb-1 text-gradient-green" data-target="30" data-prefix="+" data-suffix="%">+0%</span>
                     <span class="text-[10px] lg:text-xs font-medium uppercase tracking-wider leading-tight">RDV après optimisation</span>
                 </div>
                 <div class="bg-white/15 backdrop-blur-md border border-white/70 rounded-lg p-3 lg:p-4 flex-1 min-w-[140px] lg:min-w-[180px] flex flex-col">
-                    <span class="text-xl lg:text-2xl font-extrabold mb-1">
-                        <span class="counter text-gradient-green" data-target="20" data-prefix="-" data-suffix="%">-0%</span>
-                    </span>
+                    <span class="counter text-xl lg:text-2xl font-extrabold mb-1 text-gradient-green" data-target="20" data-prefix="-" data-suffix="%">-0%</span>
                     <span class="text-[10px] lg:text-xs font-medium uppercase tracking-wider leading-tight">de CO₂ émis</span>
                 </div>
                 <div class="bg-white/15 backdrop-blur-md border border-white/70 rounded-lg p-3 lg:p-4 flex-1 min-w-[140px] lg:min-w-[180px] flex flex-col">
-                    <span class="text-xl lg:text-2xl font-extrabold mb-1">
-                        <span class="counter text-gradient-green" data-target="10" data-suffix="+ ans">0+ ans</span>
-                    </span>
+                    <span class="counter text-xl lg:text-2xl font-extrabold mb-1 text-gradient-green" data-target="10" data-suffix="+ ans">0+ ans</span>
                     <span class="text-[10px] lg:text-xs font-medium uppercase tracking-wider leading-tight">d'expertise achat</span>
                 </div>
             </div>
-            <div class="cta-container flex flex-col gap-2 w-full lg:w-fit items-center lg:items-start">
+            <div class="flex flex-col gap-2 w-full lg:w-fit items-center">
                 <a href="#" aria-label="accéder au calendrier de réservation AM 2.0" title="ouvrir le calendrier de réservation" class="calendly-popup-trigger cta cta-accent uppercase w-full lg:w-max py-2 lg:px-8 lg:py-5 text-center font-bold text-base lg:text-xl transition-transform hover:scale-105">
                     Je réserve mon diagnostic offert
                 </a>
-                <span class="text-xs lg:text-sm italic opacity-80 text-center w-full">(20min - Sans engagement)</span>
-            </div>
-            <div class="w-full flex justify-center lg:hidden pt-4">
-                <img src="images/hero/am20-hero-mob.webp" width="500" height="500" alt="Personnage super-héros chibi vert et violet symbolisant l’éco-conception web et la performance" class="w-full max-w-[280px] h-auto object-cover drop-shadow-2xl" loading="lazy"  decoding="async">
+                <span class="text-xs lg:text-sm italic opacity-80">(20min - Sans engagement)</span>
             </div>
         </div>
-        <div class="hidden lg:flex lg:w-1/2 pt-12 lg:pt-0 justify-center lg:justify-end">
-            <picture>
-                <source srcset="images/hero/am20-hero-desk.webp" media="(min-width: 768px)">
-                <img src="images/hero/am20-hero-mob.webp" width="1200" height="1200" alt="Personnage super-héros chibi vert et violet symbolisant l’éco-conception web et la performance" class="w-full max-w-sm lg:max-w-xl h-auto object-cover" loading="eager" fetchpriority="high">
-            </picture>
+        <div class="w-full lg:w-1/2 pt-12 lg:pt-0 flex justify-center lg:justify-end">
+            <img src="images/hero/am20-hero-mob.webp" 
+                 width="500" height="500" 
+                 alt="Personnage super-héros chibi vert et violet" 
+                 class="w-full max-w-[280px] lg:max-w-xl h-auto object-cover drop-shadow-2xl" 
+                 loading="eager" fetchpriority="high">
         </div>
     </div>
 </section>
@@ -320,31 +310,32 @@
 <!-- REALISATIONS -->
 <section id="realisations" class="py-20 lg:py-32 bg-gradient-accent text-white">
     <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-20">
-            <h2 class="text-3xl lg:text-5xl font-bold mb-4 uppercase tracking-tight animate-on-scroll opacity-0 translate-y-10 transition-all duration-700">Ils m’ont fait <span class="text-gradient-green scribble-underline-green">confiance</span></h2>
+        <header class="text-center mb-20">
+            <h2 class="text-3xl lg:text-5xl font-bold mb-4 uppercase tracking-tight animate-on-scroll fx-fade-up">
+                Ils m’ont fait <span class="text-gradient-green scribble-underline-green">confiance</span>
+            </h2>
             <h3 class="text-xl lg:text-2xl italic">Ils sont devenus l’évidence sur le web.</h3>
-        </div>
+        </header>
         <div class="flex flex-col lg:flex-row items-center gap-12 mb-32">
             <div class="w-full lg:w-1/2 order-2 lg:order-1">
                 <h4 class="text-2xl lg:text-3xl font-bold mb-6 animate-on-scroll fx-slide-left">MB Performance : De l'ombre à la lumière avec +30% de RDV par mois</h4> 
-                <div class="mb-8">
-                    <p class="text-unvalidate font-bold uppercase tracking-wider text-sm mb-3">
-                        <span class="text-gradient-orange scribble-underline">Le constat :</span>
-                    </p>
-                    <ul class="space-y-2">
-                        <li class="flex items-start gap-3 opacity-80">
-                            <svg class="w-5 h-5 text-unvalidate mt-1 flex-shrink-0" aria-hidden="true"><use href="icons.svg#icon-cross"></use></svg>
-                            <span>Aucune présence web initiale</span>
-                        </li>
-                        <li class="flex items-start gap-3 opacity-80">
-                            <svg class="w-5 h-5 text-unvalidate mt-1 flex-shrink-0" aria-hidden="true"><use href="icons.svg#icon-cross"></use></svg>
-                            <span>Appels irréguliers et non qualifiés</span>
-                        </li>
-                    </ul>
-                </div>
+                <p class="text-unvalidate font-bold uppercase tracking-wider text-sm mb-3">
+                    <span class="text-gradient-orange scribble-underline">Le constat :</span>
+                </p>
+                <ul class="space-y-2 mb-8">
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-unvalidate mt-1 flex-shrink-0" aria-hidden="true"><use href="icons.svg#icon-cross"></use></svg>
+                        <span>Aucune présence web initiale</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-unvalidate mt-1 flex-shrink-0" aria-hidden="true"><use href="icons.svg#icon-cross"></use></svg>
+                        <span>Appels irréguliers et non qualifiés</span>
+                    </li>
+                </ul>
+                <p class="font-bold uppercase tracking-wider text-sm mb-6">
+                    <span class="text-gradient-green scribble-underline scribble-underline-green">La transformation AM 2.0 :</span>
+                </p>
                 <div class="space-y-6 mb-12">
-                    <p class="font-bold uppercase tracking-wider text-sm mb-3">
-                    <span class="text-gradient-green scribble-underline scribble-underline-green">La transformation AM 2.0 :</span></p>
                     <div class="flex gap-4">
                         <svg class="w-6 h-6 text-validate mt-1 flex-shrink-0" aria-hidden="true"><use href="icons.svg#icon-validate"></use></svg>
                         <p><span class="font-bold">Vitesse :</span> Développement sur-mesure, performances Google 100/100.</p>
@@ -354,107 +345,93 @@
                         <p><span class="font-bold">Résultat :</span> <span class="text-gradient-green font-bold">+30% de RDV mensuels</span> depuis la mise en ligne.</p>
                     </div>
                 </div>
-                <div class="speech-bubble p-6 mb-8 border border-gray-200 shadow-sm animate-on-scroll fx-zoom-in">
-                    <p class="italic text-gray-800">“AM 2.0 m’a permis d’offrir une image plus professionnelle. Le résultat dépasse mes attentes.”</p>
-                </div>
-                <div class="flex items-center gap-4 ml-2">
-                    <img src="images/avis/logo-mb-performance.webp" width="168" height="168" alt="Logo de MB Performance" class="w-12 h-12 rounded-full border-2 border-validate object-cover" loading="lazy">
-                    <span class="font-semibold">— Michael B., Dirigeant MB Performance</span>
-                </div>
+                <blockquote class="speech-bubble p-6 mb-8 border border-gray-200 shadow-sm animate-on-scroll fx-zoom-in italic text-gray-800">
+                    “AM 2.0 m’a permis d’offrir une image plus professionnelle. Le résultat dépasse mes attentes.”
+                </blockquote>
+                <footer class="flex items-center gap-4 ml-2">
+                    <img src="images/avis/logo-mb-performance.webp" width="48" height="48" alt="Logo de MB Performance" class="w-12 h-12 rounded-full border-2 border-validate object-cover" loading="lazy">
+                    <cite class="font-semibold not-italic">— Michael B., Dirigeant MB Performance</cite>
+                </footer>
             </div>
             <div class="w-full lg:w-1/2 order-1 lg:order-2">
-                <img src="images/illustrations/exemple-de-site-web-mb-performance-am20.webp" width="800" height="700" alt="Vue du site MB Performance sur ordinateur et smartphone" class="w-full h-auto" loading="lazy">
+                <img src="images/illustrations/exemple-de-site-web-mb-performance-am20.webp" width="800" height="700" alt="Vue du site MB Performance" class="w-full h-auto" loading="lazy">
             </div>
         </div>
         <div class="flex flex-col lg:flex-row-reverse items-center gap-12">
-            <div class="w-full lg:w-1/2 order-2 lg:order-none">
-                <h4 class="text-2xl lg:text-3xl font-bold mb-6 text-left animate-on-scroll fx-slide-right">Dojo Shodokan Vendée : +40% de réservations grâce à une refonte complète.</h4>
-                <div class="mb-8 text-left">
-                    <p class="font-bold uppercase tracking-wider text-sm mb-3 text-unvalidate">
-                        <span class="text-gradient-orange scribble-underline">Le constat :</span>
-                    </p>
-                    <ul class="space-y-2">
-                        <li class="flex items-start gap-3 opacity-80">
-                            <svg class="w-5 h-5 text-unvalidate mt-1 flex-shrink-0" aria-hidden="true"><use href="icons.svg#icon-cross"></use></svg>
-                            <span>Site Wix lent (62/100),</span>
-                        </li>
-                        <li class="flex items-start gap-3 opacity-80">
-                            <svg class="w-5 h-5 text-unvalidate mt-1 flex-shrink-0" aria-hidden="true"><use href="icons.svg#icon-cross"></use></svg>
-                            <span>aucune stratégie de conversion</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="space-y-6 mb-12 text-left">
-                    <p class="text-validate font-bold uppercase tracking-wider text-sm mb-3">
-                        <span class="text-gradient-green scribble-underline scribble-underline-green">La transformation AM 2.0 :</span>
-                    </p>
+            <div class="w-full lg:w-1/2">
+                <h4 class="text-2xl lg:text-3xl font-bold mb-6 animate-on-scroll fx-slide-right">Dojo Shodokan Vendée : +40% de réservations grâce à une refonte complète.</h4>
+                <p class="font-bold uppercase tracking-wider text-sm mb-3 text-unvalidate">
+                    <span class="text-gradient-orange scribble-underline">Le constat :</span>
+                </p>
+                <ul class="space-y-2 mb-8">
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-unvalidate mt-1 flex-shrink-0" aria-hidden="true"><use href="icons.svg#icon-cross"></use></svg>
+                        <span>Site Wix lent (62/100)</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-unvalidate mt-1 flex-shrink-0" aria-hidden="true"><use href="icons.svg#icon-cross"></use></svg>
+                        <span>aucune stratégie de conversion</span>
+                    </li>
+                </ul>
+                <p class="text-validate font-bold uppercase tracking-wider text-sm mb-6">
+                    <span class="text-gradient-green scribble-underline scribble-underline-green">La transformation AM 2.0 :</span>
+                </p>
+                <div class="space-y-6 mb-12">
                     <div class="flex gap-4">
                         <svg class="w-6 h-6 text-validate mt-1 flex-shrink-0" aria-hidden="true"><use href="icons.svg#icon-validate"></use></svg>
-                        <p><span class="font-bold">Performance :</span> Score Google 100/100. Un site fulgurant qui charge instantanément.</p>
+                        <p><span class="font-bold">Performance :</span> Score Google 100/100. Un site fulgurant.</p>
                     </div>
                     <div class="flex gap-4">
                         <svg class="w-6 h-6 text-validate mt-1 flex-shrink-0" aria-hidden="true"><use href="icons.svg#icon-validate"></use></svg>
-                        <p><span class="font-bold">Résultat :</span> <span class="text-gradient-green font-bold">+40% de réservations</span> grâce à un parcours repensé.</p>
+                        <p><span class="font-bold">Résultat :</span> <span class="text-gradient-green font-bold">+40% de réservations</span>.</p>
                     </div>
                 </div>
-                <div class="speech-bubble p-6 mb-8 border border-gray-200 shadow-sm animate-on-scroll fx-zoom-in">
-                    <p class="italic text-gray-800">“Grâce à AM 2.0, notre site a gagné en visibilité et nous apporte davantage de contacts.”</p>
-                </div>
-                <div class="flex items-center gap-4 ml-2">
-                    <img src="images/avis/photo-de-jacques-m.webp" width="168" height="168" alt="Photo de Jacques M." class="w-12 h-12 rounded-full border-2 border-validate object-cover" loading="lazy">
-                    <span class="font-semibold">— Jacques M., Fondateur Dojo Shodokan</span>
-                </div>
+                <blockquote class="speech-bubble p-6 mb-8 border border-gray-200 shadow-sm animate-on-scroll fx-zoom-in italic text-gray-800">
+                    “Grâce à AM 2.0, notre site a gagné en visibilité et nous apporte davantage de contacts.”
+                </blockquote>
+                <footer class="flex items-center gap-4 ml-2">
+                    <img src="images/avis/photo-de-jacques-m.webp" width="48" height="48" alt="Photo de Jacques M." class="w-12 h-12 rounded-full border-2 border-validate object-cover" loading="lazy">
+                    <cite class="font-semibold not-italic">— Jacques M., Fondateur Dojo Shodokan</cite>
+                </footer>
             </div>
-            <div class="w-full lg:w-1/2 order-1 lg:order-none">
-                <img src="images/illustrations/exemple-de-site-web-dojo-shodokan-am20.webp" width="800" height="700" alt="Vue du site du Dojo Shodokan vendée sur ordinateur et sur smartphone" class="w-full h-auto" loading="lazy">
+            <div class="w-full lg:w-1/2">
+                <img src="images/illustrations/exemple-de-site-web-dojo-shodokan-am20.webp" width="800" height="700" alt="Vue du site du Dojo Shodokan" class="w-full h-auto" loading="lazy">
             </div>
         </div>
-        <div class="mt-24 text-center">
-            <p class="text-xl lg:text-2xl font-medium max-w-3xl mx-auto">
-                Deux activités différentes. Une même obsession : <span class="text-gradient-green">arrêter de perdre des clients</span> à cause d’un site mal conçu.
-            </p>
-        </div>
+        <p class="mt-24 text-center text-xl lg:text-2xl font-medium max-w-3xl mx-auto">
+            Deux activités différentes. Une même obsession : <span class="text-gradient-green">arrêter de perdre des clients</span> à cause d’un site mal conçu.
+        </p>
     </div>
 </section>
 <!-- INTERMEDE -->
 <section id="cta-intermediaire" class="py-20 lg:py-32 bg-gradient-accent text-white">
-    <div class="max-w-5xl mx-auto px-4">  
-        <div class="text-center mb-12">
-            <h2 class="text-3xl lg:text-5xl font-bold mb-4 uppercase tracking-tight animate-on-scroll opacity-0 translate-y-10 transition-all duration-700">
-                Ton site peut devenir <span class="text-gradient-green scribble-underline-green">un moteur de RDV</span>
-            </h2>
-            <h3 class="text-xl lg:text-2xl italic">
-                20 minutes pour sauver tes clients… avant qu’ils ne partent chez tes concurrents !
-            </h3>
-        </div>
-        <div class="bg-bg-1 border-2 border-green rounded-lg p-8 lg:p-12 shadow-2xl flex flex-col lg:flex-row items-center gap-10"> 
-            <div class="w-full lg:w-2/5 order-1 lg:order-1">
-                <img src="images/illustrations/diagnostic-stratégique-am20.webp" 
-                     alt="Personnage chibi représentant l'éco-conception web en train d'analyser un ordinateur avec une loupe" 
-                     width="500" height="500"
-                     class="w-full h-auto rounded-lg" loading="lazy">
-            </div>
-            <div class="w-full lg:w-3/5 text-primary flex flex-col order-2 lg:order-2">
-                <h4 class="text-2xl font-bold mb-4 leading-tight text-secondary">
+    <div class="max-w-5xl mx-auto px-4 text-center">  
+        <h2 class="text-3xl lg:text-5xl font-bold mb-4 uppercase tracking-tight animate-on-scroll fx-fade-up">
+            Ton site peut devenir <span class="text-gradient-green scribble-underline-green">un moteur de RDV</span>
+        </h2>
+        <p class="text-xl lg:text-2xl italic mb-12">
+            20 minutes pour sauver tes clients… avant qu’ils ne partent chez tes concurrents !
+        </p>
+        <div class="bg-bg-1 border-2 border-green rounded-lg p-8 lg:p-12 shadow-2xl flex flex-col lg:flex-row items-center gap-10 text-left">  
+            <img src="images/illustrations/diagnostic-stratégique-am20.webp" 
+                 alt="Analyse diagnostic AM 2.0" 
+                 width="500" height="500"
+                 class="w-full lg:w-2/5 h-auto rounded-lg" loading="lazy">
+            <div class="w-full lg:w-3/5 text-primary">
+                <h3 class="text-2xl font-bold mb-4 leading-tight text-secondary">
                     Ton site actuel te fait-il perdre des clients sans que tu le saches ?
-                </h4> 
+                </h3> 
                 <p class="text-lg mb-6 opacity-90">
                     Pendant 20 minutes, on analyse ensemble ton <span class="font-bold">parcours client</span>, ta <span class="font-bold">visibilité locale</span> et tes <span class="font-bold">performances techniques</span>.
+                </p> 
+                <p class="bg-white/60 p-4 rounded-lg border-l-4 border-accent mb-8 text-primary font-medium italic">
+                    Tu repars avec un plan d’action clair, que l’on travaille ensemble ou non.
                 </p>
-                <div class="bg-white/60 p-4 rounded-lg border-l-4 border-accent mb-8">
-                    <p class="text-primary font-medium italic">
-                        Tu repars avec un plan d’action clair, que l’on travaille ensemble ou non.
-                    </p>
-                </div>
-                <div class="flex flex-col items-center lg:items-start gap-2">
-                    <div class="flex flex-col items-center">
-                        <a href="#" aria-label="ouvrir le calendrier pour réserver mon diagnostic stratégique AM 2.0" title="ouvrir le calendrier pour réserver mon créneau" class="calendly-popup-trigger cta cta-accent uppercase py-2 lg:py-4 font-bold text-lg shadow-xl transition-transform text-center min-w-[280px]">
-                            Je réserve mes 20 min avec Aurore
-                        </a>
-                        <span class="text-sm italic text-accent mt-2">
-                            (Diagnostic stratégique offert)
-                        </span>
-                    </div>
+                <div class="flex flex-col items-center">
+                    <a href="#" aria-label="réserver mon diagnostic stratégique" title="ouvrir le calendrier" class="calendly-popup-trigger cta cta-accent uppercase py-2 lg:py-4 font-bold text-lg shadow-xl text-center min-w-[280px]">
+                        Je réserve mes 20 min avec Aurore
+                    </a>
+                    <span class="text-sm italic text-accent mt-2">(Diagnostic stratégique offert)</span>
                 </div>
             </div>
         </div>
@@ -463,33 +440,31 @@
 <!-- ECO CONCEPTION -->
 <section id="eco-conception" class="py-20 lg:py-32 bg-gradient-accent text-white">
     <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl lg:text-5xl font-bold mb-4 uppercase tracking-tight animate-on-scroll opacity-0 translate-y-10 transition-all duration-700">
+        <header class="text-center mb-16">
+            <h2 class="text-3xl lg:text-5xl font-bold mb-4 uppercase tracking-tight animate-on-scroll fx-fade-up">
                 L’éco-conception : moins de pollution, <span class="text-gradient-green scribble-underline-green">plus de résultats</span>
             </h2>
-            <div class="max-w-3xl mx-auto">
-                <h3 class="text-xl lg:text-2xl italic mb-2 mt-16">
+            <div class="max-w-3xl mx-auto mt-16">
+                <h3 class="text-xl lg:text-2xl italic mb-2">
                     <span class="text-gradient-orange scribble-underline font-bold">Spoiler :</span> l’éco-conception, ce n’est pas pour sauver les pandas roux.
                 </h3>
                 <p class="text-xl lg:text-2xl font-bold text-gradient-green mb-6 uppercase animate-on-scroll fx-zoom-in">
                     C’est pour sauver <span class="text-gradient-green scribble-underline-green">ton site.</span>
                 </p>
             </div>
-        </div>
+        </header>
         <div class="flex flex-col lg:flex-row items-center gap-12 mb-24">
-            <div class="w-full lg:w-1/2 order-1">
+            <div class="w-full lg:w-1/2">
                 <p class="text-lg mb-6 leading-relaxed">
-                    NutriScore, étiquette énergie, consommation de carburant… Tes clients scannent tout. 
+                    NutriScore, étiquette énergie,consommation de carburant… Tes clients scannent tout. Tes clients scannent tout. 
                     <span class="font-bold text-gradient-green">Aujourd’hui, 1 consommateur sur 2 choisit une entreprise aussi pour ses engagements.</span>
                 </p>
-                <div class="block lg:hidden w-full mb-8">
-                    <div class="bg-white/10 backdrop-blur-md border-2 border-white/30 p-8 rounded-lg shadow-xl">
-                        <h4 class="font-bold uppercase tracking-widest text-sm mb-4">Le chiffre qui pique :</h4>
-                        <p class="text-4xl font-bold mb-4 text-gradient-orange animate-on-scroll">2g de CO₂</p>
-                        <p class="text-lg opacity-90 leading-relaxed">
-                            C'est l'émission moyenne par page vue. Sur 3000 visites/mois, c’est l'équivalent d'un <span class="text-gradient-orange font-bold scribble-underline">Paris-Strasbourg en voiture</span> chaque année.
-                        </p>
-                    </div>
+                <div class="bg-white/10 backdrop-blur-md border-2 border-white/30 p-8 lg:p-10 rounded-lg shadow-xl mb-8 lg:hidden">
+                    <h4 class="font-bold uppercase tracking-widest text-sm mb-4">Le chiffre qui pique :</h4>
+                    <p class="text-4xl lg:text-5xl font-bold mb-4 text-gradient-orange animate-on-scroll">2g de CO₂</p>
+                    <p class="text-lg opacity-90 leading-relaxed">
+                        C'est l'émission moyenne par page vue. Sur 3000 visites/mois, c’est l'équivalent d'un <span class="text-gradient-orange font-bold scribble-underline">Paris-Strasbourg en voiture</span> chaque année.
+                    </p>
                 </div>
                 <p class="text-lg mb-8 font-medium italic">
                     Un site “poids lourd” qui surchauffe les smartphones, ce n’est plus seulement polluant :
@@ -505,61 +480,50 @@
                     </li>
                 </ul>
             </div>
-            <div class="hidden lg:block lg:w-1/2 order-2">
-                <div class="bg-white/10 backdrop-blur-md border-2 border-white/30 p-10 rounded-lg shadow-xl relative overflow-hidden">
+            <div class="hidden lg:block lg:w-1/2">
+                <div class="bg-white/10 backdrop-blur-md border-2 border-white/30 p-10 rounded-lg shadow-xl">
                     <h4 class="font-bold uppercase tracking-widest mb-4">Le chiffre qui pique :</h4>
                     <p class="text-gradient-orange text-5xl font-bold mb-6">2g de CO₂</p>
                     <p class="text-xl opacity-90 leading-relaxed">
-                        C'est ce qu'émet un site classique à chaque page vue. Sur 3000 visites par mois, c’est l'équivalent d'un <span class="text-gradient-orange scribble-underline font-bold">trajet Paris-Strasbourg en voiture</span> chaque année.
+                        C'est ce qu'émet un site classique à chaque page vue. Sur 3000 visites/mois, c’est l'équivalent d'un <span class="text-gradient-orange scribble-underline font-bold">trajet Paris-Strasbourg en voiture</span> chaque année.
                     </p>
                 </div>
             </div>
         </div>
         <div class="text-center mb-16">
-            <h4 class="text-2xl lg:text-4xl font-bold uppercase mb-12 animate-on-scroll fx-zoom-in">Les 3 piliers du bon sens</h4>
+            <h4 class="text-2xl lg:text-4xl font-bold uppercase mb-12 animate-on-scroll">Les 3 piliers du bon sens</h4>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-                <div class="bg-bg-1 text-secondary p-8 rounded-lg flex flex-col items-center border border-green shadow-lg">
-                    <svg class="w-12 h-12 text-validate mb-6" aria-hidden="true"><use href="icons.svg#icon-bolt"></use></svg>
+                <article class="bg-bg-1 text-secondary p-8 rounded-lg border border-green shadow-lg">
+                    <svg class="w-12 h-12 text-validate mb-6 mx-auto" aria-hidden="true"><use href="icons.svg#icon-bolt"></use></svg>
                     <h5 class="text-xl font-bold mb-4">Vitesse de l’éclair</h5>
-                    <p class="opacity-90">
-                        Un code optimisé, des clients moins frustrés... c’est plus de prise de contact pour ton activité.
-                    </p>
-                </div>
-                <div class="bg-bg-1 text-secondary p-8 rounded-lg flex flex-col items-center border border-green shadow-lg">
-                    <svg class="w-12 h-12 text-validate mb-6" aria-hidden="true"><use href="icons.svg#icon-recycle"></use></svg>
-                    <h5 class="text-xl font-bold mb-4">Durabilité vs obsolescence</h5>
-                    <p class="opacity-90">
-                        Je construis des structures solides. Moins de ressources gaspillées et moins de budget réinvesti inutilement.
-                    </p>
-                </div>
-                <div class="bg-bg-1 text-secondary p-8 rounded-lg flex flex-col items-center border border-green shadow-lg">
-                    <svg class="w-12 h-12 text-validate mb-6" aria-hidden="true"><use href="icons.svg#icon-seedling"></use></svg>
+                    <p class="opacity-90">Un code optimisé, des clients moins frustrés... c’est plus de prise de contact pour ton activité.</p>
+                </article>
+                <article class="bg-bg-1 text-secondary p-8 rounded-lg border border-green shadow-lg">
+                    <svg class="w-12 h-12 text-validate mb-6 mx-auto" aria-hidden="true"><use href="icons.svg#icon-recycle"></use></svg>
+                    <h5 class="text-xl font-bold mb-4">Durabilité durable</h5>
+                    <p class="opacity-90">Je construis des structures solides. Moins de ressources gaspillées et moins de budget réinvesti inutilement.</p>
+                </article>
+                <article class="bg-bg-1 text-secondary p-8 rounded-lg border border-green shadow-lg">
+                    <svg class="w-12 h-12 text-validate mb-6 mx-auto" aria-hidden="true"><use href="icons.svg#icon-seedling"></use></svg>
                     <h5 class="text-xl font-bold mb-4">L’impact environnemental</h5>
-                    <p class="opacity-90">
-                        C’est le bonus AM 2.0 : performer sans laisser une trace indélébile derrière soi.
-                    </p>
-                </div>
+                    <p class="opacity-90">C’est le bonus AM 2.0 : performer sans laisser une trace indélébile derrière soi.</p>
+                </article>
             </div>
         </div>
-        <div class="flex justify-center mb-20">
-            <div class="max-w-md w-full px-8">
-                <img src="images/illustrations/eco-conception-am20-mob.webp" alt="Personnage chibi représentant l'éco-conception web de AM 2.0" class="w-full h-auto drop-shadow-[0_0_30px_rgba(137,217,87,0.4)]" width="500" height="500" loading="lazy">
-            </div>
+        <div class="flex flex-col items-center mb-20">
+            <img src="images/illustrations/eco-conception-am20-mob.webp" alt="Eco-conception AM 2.0" class="w-full max-w-md h-auto drop-shadow-[0_0_30px_rgba(137,217,87,0.4)]" width="500" height="500" loading="lazy">
         </div>
-        <div class="max-w-4xl mx-auto text-center">
+        <footer class="max-w-4xl mx-auto text-center">
             <p class="text-xl lg:text-2xl mb-10 leading-relaxed">
-                <strong>L’éco-conception</strong>, <strong>la performance</strong> et <strong>le parcours client</strong> ne sont pas une philosophie abstraite. 
-                Ça se traduit par <span class="font-bold text-gradient-green scribble-underline-green">des choix concrets.</span>
-            </p>    
-        <div class="flex flex-col items-center gap-3">
-            <a href="#reservation" aria-label="accéder à la section pour réserver mon diagnostic stratégique offert" title="accéder à la réservation de l'audit stratégique" class="cta cta-accent uppercase py-2 lg:py-4 font-bold text-lg inline-block hover:scale-105 transition-transform">
-                échanger sur mon impact numérique
-            </a>
-        <span class="opacity-80 tracking-wide italic">
-            (Diagnostic stratégique offert)
-        </span>
-    </div>
-</div>
+                <strong>L’éco-conception</strong>, la performance et le parcours client ne sont pas une philosophie abstraite. Ça se traduit par <span class="font-bold text-gradient-green scribble-underline-green"> des choix concrets.</span>
+            </p>     
+            <div class="flex flex-col items-center">
+                <a href="#reservation" class="cta cta-accent uppercase py-2 lg:py-4 font-bold text-lg hover:scale-105 transition-transform text-center min-w-[280px]">
+                    échanger sur mon impact numérique
+                </a>
+                <span class="opacity-80 italic mt-2">(Diagnostic stratégique offert)</span>
+            </div>
+        </footer>
     </div>
 </section>
 <!-- PROCESS -->
@@ -702,7 +666,7 @@
                 </div>
             </div>
             <div class="group relative bg-white/10 backdrop-blur-md border-2 border-green p-8 lg:p-12 rounded-2xl shadow-xl mt-10 lg:mt-0" aria-label="Offre Vitrine PERFORMANCE">
-                <div class="absolute -top-12 right-6 text-gradient-green px-4 py-1 scribble-underline-green font-bold text-sm uppercase tracking-widest" aria-label="Recommandé">Le plus complet</div>
+                <div class="absolute -top-4 right-6 text-gradient-green px-4 mb-2 scribble-underline-green font-bold text-sm uppercase tracking-widest" aria-label="Recommandé">Le plus complet</div>
                 <div class="flex items-center gap-3 mb-6">
                     <svg class="w-8 h-8 text-green-light" aria-hidden="true"><use href="icons.svg#icon-king"></use></svg>
                     <h3 class="text-2xl font-bold uppercase tracking-wider">Vitrine PERFORMANCE</h3>
@@ -746,19 +710,19 @@
 <!-- RESERVATION -->
 <section id="reservation" class="py-20 lg:py-32 bg-bg-1 text-primary">
     <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl lg:text-5xl font-bold mb-4 uppercase tracking-tight text-gradient animate-on-scroll opacity-0 translate-y-10 transition-all duration-700">
+        <header class="text-center mb-16">
+            <h2 class="text-3xl lg:text-5xl font-bold mb-4 uppercase tracking-tight text-gradient animate-on-scroll fx-fade-up">
                 Fais le point sur ce qui bloque vraiment
             </h2>
             <h3 class="text-xl lg:text-2xl italic text-validate">
                 Ton <span class="font-bold scribble-underline-green">diagnostic stratégique offert</span> (20 minutes chrono)
             </h3>
-        </div>
+        </header>
         <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">  
             <div class="w-full lg:w-5/12">
-                <a href="#" aria-label="ouvrir le calendrier pour réserver mon diagnostic de site offert" title="accéder à la réservation" class="calendly-popup-trigger group block relative overflow-hidden">
+                <a href="#" aria-label="réserver mon diagnostic" title="accéder à la réservation" class="calendly-popup-trigger group block relative overflow-hidden">
                     <img src="images/illustrations/am20-analyse-ton-site-web-mob.webp" 
-                         alt="Personnage chibi en detective avec une loupe symbolisant l'analyse stratégique de ton site web" 
+                         alt="Analyse stratégique" 
                          width="500" height="500"
                          class="w-full h-auto transition-transform duration-500 group-hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-validate/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -771,80 +735,72 @@
                     Ton site te fait perdre des clients… et tu ne le sais peut-être même pas.
                 </p>
                 <p class="mb-10">
-                    <strong>Pendant 20 minutes</strong>, on analyse ensemble <span class="font-bold text-gradient-orange scribble-underline animate-on-scroll fx-zoom-in">tout ce qui ralentit ton business</span> : <strong>vitesse</strong>, <strong>parcours client</strong>, <strong>visibilité locale</strong> et <strong>impact numérique.</strong> Tu repars avec un plan d’action concret, que l’on travaille ensemble ou non.
+                    <strong>Pendant 20 minutes</strong>, on analyse ensemble <span class="font-bold text-gradient-orange scribble-underline animate-on-scroll fx-zoom-in">tout ce qui ralentit ton business</span> : vitesse, parcours client, visibilité et impact numérique.
                 </p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                    <div class="flex gap-4">
-                        <div class="flex-shrink-0 w-12 h-12 bg-validate/10 rounded-lg flex items-center justify-center animate-on-scroll fx-slide-left">
+                    <div class="flex gap-4 animate-on-scroll fx-slide-left">
+                        <div class="flex-shrink-0 w-12 h-12 bg-validate/10 rounded-lg flex items-center justify-center">
                             <svg class="w-6 h-6 text-accent fill-current" aria-hidden="true"><use href="icons.svg#icon-bolt"></use></svg>
                         </div>
-                        <div>
-                            <h4 class="font-bold uppercase tracking-widest mb-1 text-gradient animate-on-scroll fx-slide-left">Performance & vitesse</h4>
-                            <p class="leading-snug">On identifie tout ce qui fait fuir tes visiteurs (temps de chargement, fluidité mobile).</p>
-                        </div>
+                        <p class="leading-snug">
+                            <strong class="block font-bold uppercase tracking-widest text-sm mb-1 text-gradient">Performance & vitesse</strong>
+                            On identifie tout ce qui fait fuir tes visiteurs (temps de chargement, fluidité mobile).
+                        </p>
                     </div>
-                    <div class="flex gap-4">
-                        <div class="flex-shrink-0 w-12 h-12 bg-validate/10 rounded-lg flex items-center justify-center animate-on-scroll fx-slide-left delay-200">
+                    <div class="flex gap-4 animate-on-scroll fx-slide-left delay-200">
+                        <div class="flex-shrink-0 w-12 h-12 bg-validate/10 rounded-lg flex items-center justify-center">
                             <svg class="w-6 h-6 text-accent fill-current" aria-hidden="true"><use href="icons.svg#icon-arrow-locate"></use></svg>
                         </div>
-                        <div>
-                            <h4 class="font-bold uppercase tracking-widest mb-1 text-gradient animate-on-scroll fx-slide-left delay-200">Parcours client & UX</h4>
-                            <p class="leading-snug">On détecte les frictions : CTA dispersés, parcours trop long ou complexe.</p>
-                        </div>
+                        <p class="leading-snug">
+                            <strong class="block font-bold uppercase tracking-widest text-sm mb-1 text-gradient">Parcours client & UX</strong>
+                            On détecte les frictions : CTA dispersés, parcours trop long ou complexe.
+                        </p>
                     </div>
-                    <div class="flex gap-4">
-                        <div class="flex-shrink-0 w-12 h-12 bg-validate/10 rounded-lg flex items-center justify-center animate-on-scroll fx-slide-left delay-300">
+                    <div class="flex gap-4 animate-on-scroll fx-slide-left delay-300">
+                        <div class="flex-shrink-0 w-12 h-12 bg-validate/10 rounded-lg flex items-center justify-center">
                             <svg class="w-6 h-6 text-accent fill-current" aria-hidden="true"><use href="icons.svg#icon-locate"></use></svg>
                         </div>
-                        <div>
-                            <h4 class="font-bold uppercase tracking-widest mb-1 text-gradient animate-on-scroll fx-slide-left delay-300">SEO local & technique</h4>
-                            <p class="leading-snug">Vérification des mots-clés et de l'architecture pour être visible au bon moment.</p>
-                        </div>
+                        <p class="leading-snug">
+                            <strong class="block font-bold uppercase tracking-widest text-sm mb-1 text-gradient">SEO local</strong>
+                            Vérification des mots-clés et de l'architecture pour être visible au bon moment.
+                        </p>
                     </div>
-                    <div class="flex gap-4">
-                        <div class="flex-shrink-0 w-12 h-12 bg-validate/10 rounded-lg flex items-center justify-center animate-on-scroll fx-slide-left delay-400">
+                    <div class="flex gap-4 animate-on-scroll fx-slide-left delay-400">
+                        <div class="flex-shrink-0 w-12 h-12 bg-validate/10 rounded-lg flex items-center justify-center">
                             <svg class="w-6 h-6 text-accent fill-current" aria-hidden="true"><use href="icons.svg#icon-seedling"></use></svg>
                         </div>
-                        <div>
-                            <h4 class="font-bold uppercase tracking-widest mb-1 text-gradient animate-on-scroll fx-slide-left delay-400">Impact numérique</h4>
-                            <p class="leading-snug">Optimisation de l'empreinte carbone sans sacrifier l'efficacité commerciale.</p>
-                        </div>
+                        <p class="leading-snug">
+                            <strong class="block font-bold uppercase tracking-widest text-sm mb-1 text-gradient">Impact numérique</strong>
+                            Optimisation de l'empreinte carbone sans sacrifier l'efficacité commerciale.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="mt-20 flex flex-col lg:flex-row gap-12 items-center">
-            <div class="w-full lg:w-1/2 space-y-4">
-                <h3 class="text-2xl font-bold mb-6 text-validate scribble-underline-green">Tu repars avec :</h3>
+            <div class="w-full lg:w-1/2">
+                <h3 class="text-2xl font-bold mb-6 text-validate scribble-underline-green inline-block">Tu repars avec :</h3>
                 <ul class="space-y-6">
                     <li class="flex items-start gap-4">
-                        <div class="flex-shrink-0 w-6 h-6 mt-1">
-                            <svg class="w-full h-full text-validate" aria-hidden="true"><use href="icons.svg#icon-validate"></use></svg>
-                        </div>
-                        <p><strong class="text-validate-dark font-bold">Un plan d’action clair et priorisé</strong> pour corriger les freins immédiatement.</p>
+                        <svg class="w-6 h-6 text-validate flex-shrink-0 mt-1" aria-hidden="true"><use href="icons.svg#icon-validate"></use></svg>
+                        <p><strong class="text-validate-dark">Un plan d’action clair</strong> pour corriger les freins immédiatement.</p>
                     </li>
                     <li class="flex items-start gap-4">
-                        <div class="flex-shrink-0 w-6 h-6 mt-1">
-                            <svg class="w-full h-full text-validate" aria-hidden="true"><use href="icons.svg#icon-validate"></use></svg>
-                        </div>
-                        <p><strong class="text-validate-dark font-bold">Des recommandations concrètes</strong> sur la vitesse, l'UX et le SEO.</p>
+                        <svg class="w-6 h-6 text-validate flex-shrink-0 mt-1" aria-hidden="true"><use href="icons.svg#icon-validate"></use></svg>
+                        <p><strong class="text-validate-dark">Des recommandations concrètes</strong> sur la vitesse, l'UX et le SEO.</p>
                     </li>
                     <li class="flex items-start gap-4">
-                        <div class="flex-shrink-0 w-6 h-6 mt-1">
-                            <svg class="w-full h-full text-validate" aria-hidden="true"><use href="icons.svg#icon-validate"></use></svg>
-                        </div>
-                        <p><strong class="text-validate-dark font-bold">Une vision complète</strong> de tes axes d'amélioration, même si on ne travaille pas ensemble.</p>
+                        <svg class="w-6 h-6 text-validate flex-shrink-0 mt-1" aria-hidden="true"><use href="icons.svg#icon-validate"></use></svg>
+                        <p><strong class="text-validate-dark">Une vision complète</strong> de tes axes d'amélioration, même si on ne travaille pas ensemble.</p>
                     </li>
                 </ul>
             </div>
-            <div class="w-full lg:w-1/2 animate-on-scroll">
-                <a href="#" aria-label="ouvrir le calendrier pour réserver mon diagnostic offert" title="réserver mon créneau" class="calendly-popup-trigger group block transition-transform duration-500 -mx-12 lg:mx-0">
-                    <img src="images/illustrations/prendre-rdv-am20-mob.webp" 
-                         alt="Calendrier de réservation" 
-                         width="500" height="500"
-                         class="w-full h-auto" loading="lazy">
-                </a>
-            </div>
+            <a href="#" aria-label="réserver mon diagnostic" title="réserver mon créneau" class="calendly-popup-trigger w-full lg:w-1/2 transition-transform duration-500 hover:scale-105">
+                <img src="images/illustrations/prendre-rdv-am20-mob.webp" 
+                     alt="Calendrier de réservation" 
+                     width="500" height="500"
+                     class="w-full h-auto" loading="lazy">
+            </a>
         </div>
     </div>
 </section>
@@ -852,100 +808,82 @@
 <section id="faq" class="py-20 lg:py-32 bg-gradient-accent text-white overflow-hidden">
     <div class="max-w-7xl mx-auto px-4">
         <div class="flex flex-col lg:flex-row gap-16 items-start">
-            <div class="w-full lg:w-1/3">
-                <h2 class="text-3xl lg:text-5xl font-bold mb-8 uppercase tracking-tight text-center lg:text-left animate-on-scroll opacity-0 translate-y-10 transition-all duration-700">
+            <header class="w-full lg:w-1/3">
+                <h2 class="text-3xl lg:text-5xl font-bold mb-8 uppercase tracking-tight text-center lg:text-left animate-on-scroll fx-fade-up">
                     <span class="scribble-underline-green text-gradient-green">Les réponses</span> à tes dernières hésitations
                 </h2>
-                <div class="relative group">
-                    <img src="Images/illustrations/faq-am20.webp" 
-                         alt="Personnage chibi représentant l'éco conception web adossé à un point d'interrogation" 
-                         width="500" height="500"
-                         class="w-full h-auto" loading="lazy">
-                </div>
-            </div>
+                <img src="Images/illustrations/faq-am20.webp" 
+                     alt="Illustration FAQ AM 2.0" 
+                     width="500" height="500"
+                     class="w-full h-auto" loading="lazy">
+            </header>
             <div class="w-full lg:w-2/3 space-y-4"> 
                 <div class="faq-item border border-white/10 rounded-xl bg-white/5 overflow-hidden transition-all duration-300">
                     <button class="faq-toggle w-full flex items-center justify-between p-6 text-left group" aria-expanded="false" aria-controls="faq1">
                         <span class="text-lg font-bold pr-4">1. Est-ce que je serai propriétaire de mon site ?</span>
-                        <div class="faq-icon-wrapper flex-shrink-0 w-6 h-6 relative">
-                            <svg class="icon-plus absolute inset-0 w-full h-full text-green-light transition-all duration-300 opacity-100 rotate-0" aria-hidden="true"><use href="icons.svg#icon-plus"></use></svg>
-                            <svg class="icon-minus absolute inset-0 w-full h-full text-green-light transition-all duration-300 opacity-0 -rotate-90" aria-hidden="true"><use href="icons.svg#icon-minus"></use></svg>
-                        </div>
+                        <svg class="w-6 h-6 text-green-light transition-transform duration-300 group-aria-expanded:rotate-45" aria-hidden="true">
+                            <use href="icons.svg#icon-plus"></use>
+                        </svg>
                     </button>
                     <div id="faq1" class="faq-content max-h-0 transition-all duration-500 ease-in-out">
-                        <div class="p-6 pt-0 opacity-80 leading-relaxed border-t border-white/5">
+                        <p class="p-6 pt-0 opacity-80 leading-relaxed border-t border-white/5">
                             "Oui, à 100 %. Je mets en place ton hébergement (inclus) et ta plateforme de rendez-vous en ton nom. Tu es propriétaire du code source et de tous tes comptes. Contrairement aux agences qui te 'louent' un site, avec AM 2.0, tu as les pleins pouvoirs sur tes outils."
-                        </div>
+                        </p>
                     </div>
                 </div>
                 <div class="faq-item border border-white/10 rounded-xl bg-white/5 overflow-hidden transition-all duration-300">
                     <button class="faq-toggle w-full flex items-center justify-between p-6 text-left group" aria-expanded="false" aria-controls="faq2">
                         <span class="text-lg font-bold pr-4">2. Pourrai-je modifier moi-même le contenu ?</span>
-                        <div class="faq-icon-wrapper flex-shrink-0 w-6 h-6 relative">
-                            <svg class="icon-plus absolute inset-0 w-full h-full text-green-light transition-all duration-300 opacity-100 rotate-0" aria-hidden="true"><use href="icons.svg#icon-plus"></use></svg>
-                            <svg class="icon-minus absolute inset-0 w-full h-full text-green-light transition-all duration-300 opacity-0 -rotate-90" aria-hidden="true"><use href="icons.svg#icon-minus"></use></svg>
-                        </div>
+                        <svg class="w-6 h-6 text-green-light transition-transform duration-300 group-aria-expanded:rotate-45" aria-hidden="true"><use href="icons.svg#icon-plus"></use></svg>
                     </button>
                     <div id="faq2" class="faq-content max-h-0 transition-all duration-500 ease-in-out">
-                        <div class="p-6 pt-0 opacity-80 leading-relaxed border-t border-white/5">
+                        <p class="p-6 pt-0 opacity-80 leading-relaxed border-t border-white/5">
                             "Pour garantir une performance Google de 95+/100 et une sécurité totale, je travaille sans CMS lourd (type WordPress ou Wix). Tu n'as pas à mettre les mains dans le code. En revanche, tu restes totalement maître de tes disponibilités et de tes réservations sur ta plateforme dédiée (Calendly, Doctolib, etc.). Pour les mises à jour de contenu, on peut mettre en place un suivi mensuel après la livraison."
-                        </div>
+                        </p>
                     </div>
                 </div>
                 <div class="faq-item border border-white/10 rounded-xl bg-white/5 overflow-hidden transition-all duration-300">
                     <button class="faq-toggle w-full flex items-center justify-between p-6 text-left group" aria-expanded="false" aria-controls="faq3">
                         <span class="text-lg font-bold pr-4">3. Dois-je m'occuper de la structure ou du texte ?</span>
-                        <div class="faq-icon-wrapper flex-shrink-0 w-6 h-6 relative">
-                            <svg class="icon-plus absolute inset-0 w-full h-full text-green-light transition-all duration-300 opacity-100 rotate-0" aria-hidden="true"><use href="icons.svg#icon-plus"></use></svg>
-                            <svg class="icon-minus absolute inset-0 w-full h-full text-green-light transition-all duration-300 opacity-0 -rotate-90" aria-hidden="true"><use href="icons.svg#icon-minus"></use></svg>
-                        </div>
+                        <svg class="w-6 h-6 text-green-light transition-transform duration-300 group-aria-expanded:rotate-45" aria-hidden="true"><use href="icons.svg#icon-plus"></use></svg>
                     </button>
                     <div id="faq3" class="faq-content max-h-0 transition-all duration-500 ease-in-out">
-                        <div class="p-6 pt-0 opacity-80 leading-relaxed border-t border-white/5">
+                        <p class="p-6 pt-0 opacity-80 leading-relaxed border-t border-white/5">
                             "Absolument pas. C’est mon métier. Je ne suis pas une simple exécutante : j’analyse ton marché et tes mots-clés pour concevoir une structure et un contenu qui convertissent. Je te soumets ma stratégie, je t’explique mes choix, et on avance ensemble."
-                        </div>
+                        </p>
                     </div>
                 </div>
                 <div class="faq-item border border-white/10 rounded-xl bg-white/5 overflow-hidden transition-all duration-300">
                     <button class="faq-toggle w-full flex items-center justify-between p-6 text-left group" aria-expanded="false" aria-controls="faq4">
                         <span class="text-lg font-bold pr-4">4. Combien de temps dure la création ?</span>
-                        <div class="faq-icon-wrapper flex-shrink-0 w-6 h-6 relative">
-                            <svg class="icon-plus absolute inset-0 w-full h-full text-green-light transition-all duration-300 opacity-100 rotate-0" aria-hidden="true"><use href="icons.svg#icon-plus"></use></svg>
-                            <svg class="icon-minus absolute inset-0 w-full h-full text-green-light transition-all duration-300 opacity-0 -rotate-90" aria-hidden="true"><use href="icons.svg#icon-minus"></use></svg>
-                        </div>
+                        <svg class="w-6 h-6 text-green-light transition-transform duration-300 group-aria-expanded:rotate-45" aria-hidden="true"><use href="icons.svg#icon-plus"></use></svg>
                     </button>
                     <div id="faq4" class="faq-content max-h-0 transition-all duration-500 ease-in-out">
-                        <div class="p-6 pt-0 opacity-80 leading-relaxed border-t border-white/5">
+                        <p class="p-6 pt-0 opacity-80 leading-relaxed border-t border-white/5">
                             "C'est très rapide. Grâce à mes propres templates de code optimisé, je livre un site Vitrine Conversion en 5 à 7 jours ouvrés et un site Vitrine Performance en 10 à 15 jours ouvrés. Ces délais dépendent aussi de ta réactivité lors de nos échanges !"
-                        </div>
+                        </p>
                     </div>
                 </div>
                 <div class="faq-item border border-white/10 rounded-xl bg-white/5 overflow-hidden transition-all duration-300">
                     <button class="faq-toggle w-full flex items-center justify-between p-6 text-left group" aria-expanded="false" aria-controls="faq5">
                         <span class="text-lg font-bold pr-4">5. Comment se passe le suivi du projet ?</span>
-                        <div class="faq-icon-wrapper flex-shrink-0 w-6 h-6 relative">
-                            <svg class="icon-plus absolute inset-0 w-full h-full text-green-light transition-all duration-300 opacity-100 rotate-0" aria-hidden="true"><use href="icons.svg#icon-plus"></use></svg>
-                            <svg class="icon-minus absolute inset-0 w-full h-full text-green-light transition-all duration-300 opacity-0 -rotate-90" aria-hidden="true"><use href="icons.svg#icon-minus"></use></svg>
-                        </div>
+                        <svg class="w-6 h-6 text-green-light transition-transform duration-300 group-aria-expanded:rotate-45" aria-hidden="true"><use href="icons.svg#icon-plus"></use></svg>
                     </button>
                     <div id="faq5" class="faq-content max-h-0 transition-all duration-500 ease-in-out">
-                        <div class="p-6 pt-0 opacity-80 leading-relaxed border-t border-white/5">
+                        <p class="p-6 pt-0 opacity-80 leading-relaxed border-t border-white/5">
                             "Transparence totale. Tu as accès à un espace Airtable dédié pour suivre l’avancée en temps réel. Avant la mise en ligne finale, je te livre une version de démo complète : tu as 7 jours pour la tester sous toutes les coutures avant qu'on ne branche ton nom de domaine."
-                        </div>
+                        </p>
                     </div>
                 </div>
                 <div class="faq-item border border-white/10 rounded-xl bg-white/5 overflow-hidden transition-all duration-300">
                     <button class="faq-toggle w-full flex items-center justify-between p-6 text-left group" aria-expanded="false" aria-controls="faq6">
                         <span class="text-lg font-bold pr-4">6. Quelles sont les modalités de paiement ?</span>
-                        <div class="faq-icon-wrapper flex-shrink-0 w-6 h-6 relative">
-                            <svg class="icon-plus absolute inset-0 w-full h-full text-green-light transition-all duration-300 opacity-100 rotate-0" aria-hidden="true"><use href="icons.svg#icon-plus"></use></svg>
-                            <svg class="icon-minus absolute inset-0 w-full h-full text-green-light transition-all duration-300 opacity-0 -rotate-90" aria-hidden="true"><use href="icons.svg#icon-minus"></use></svg>
-                        </div>
+                        <svg class="w-6 h-6 text-green-light transition-transform duration-300 group-aria-expanded:rotate-45" aria-hidden="true"><use href="icons.svg#icon-plus"></use></svg>
                     </button>
                     <div id="faq6" class="faq-content max-h-0 transition-all duration-500 ease-in-out">
-                        <div class="p-6 pt-0 opacity-80 leading-relaxed border-t border-white/5">
+                        <p class="p-6 pt-0 opacity-80 leading-relaxed border-t border-white/5">
                             "Le lancement du projet se fait après notre diagnostic stratégique. Je demande un acompte de 50 % pour démarrer la conception, et le solde de 50 % est réglé juste avant la livraison finale."
-                        </div>
+                        </p>
                     </div>
                 </div>
             </div>
