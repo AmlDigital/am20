@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-// --- FONCTIONS UTILITAIRES ---
+    // --- FONCTIONS UTILITAIRES ---
     const DESKTOP_BREAKPOINT = 1024;
     const isMobile = () => window.innerWidth < DESKTOP_BREAKPOINT;
     
+    // Optimisation pour les calculs lourds au scroll
     const debounce = (func, delay) => {
         let timeoutId;
         return function (...args) {
@@ -14,17 +15,18 @@ document.addEventListener("DOMContentLoaded", () => {
         };
     };
 
-// --- CONSTANTES GLOBALES ---
+    // --- CONSTANTES GLOBALES ---
     const burgerBtn = document.querySelector(".burger-menu");
     const mainNav = document.getElementById("main-nav");
     const navLinks = document.querySelectorAll(".main-nav a");
     const currentYearElement = document.getElementById("current-year");
 
+    // Mise à jour automatique de l'année au pied de page
     if (currentYearElement) {
         currentYearElement.textContent = new Date().getFullYear();
     }
 
-// --- EFFET DE CLIC CTA (SNIPER MODE) ---
+    // --- EFFET DE CLIC CTA (SNIPER MODE) ---
     const setupSniperClick = () => {
         const ctas = document.querySelectorAll(".cta-accent, .calendly-popup-trigger");
 
@@ -58,10 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-// --- DETECTION SECTION ACTIVE (NAV HIGHLIGHT) ---
+    // --- DETECTION SECTION ACTIVE (NAV HIGHLIGHT) ---
     const setupActiveMenuOnScroll = () => {
         const sections = document.querySelectorAll("section[id], header[id]");
-        const navLinks = document.querySelectorAll(".main-nav a:not(.cta)");
+        const links = document.querySelectorAll(".main-nav a:not(.cta)");
 
         const observerOptions = {
             root: null,
@@ -74,12 +76,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (entry.isIntersecting) {
                     const id = entry.target.getAttribute("id");
                     
-                    navLinks.forEach((link) => {
+                    links.forEach((link) => {
                         link.classList.remove("active", "scribble-underline-green");
-                        
                         if (link.getAttribute("href") === `#${id}`) {
-                            link.classList.add("active");
-                            link.classList.add("scribble-underline-green");
+                            link.classList.add("active", "scribble-underline-green");
                         }
                     });
                 }
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sections.forEach((section) => observer.observe(section));
     };
 
-// --- GESTION APPARITION FAB MOBILE ---
+    // --- GESTION APPARITION FAB MOBILE ---
     const setupMobileFabScroll = () => {
         const fab = document.getElementById('mobile-fab');
         if (!fab) return;
@@ -104,10 +104,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         window.addEventListener('scroll', () => {
             requestAnimationFrame(handleScroll);
-        });
+        }, { passive: true });
     };
 
-// --- PROTECTION EMAIL ---
+    // --- PROTECTION EMAIL ---
     const setupEmailProtection = () => {
         document.querySelectorAll('.protected-mail').forEach(link => {
             const user = link.dataset.user;
@@ -122,15 +122,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-// --- COMPTEUR EFFECT ---
+    // --- COMPTEUR EFFECT ---
     function countUp(element, duration = 2500) {
         if (element.classList.contains("counting")) return;
         const target = parseInt(element.getAttribute("data-target"));
         const prefix = element.getAttribute("data-prefix") || "";
         const suffix = element.getAttribute("data-suffix") || "";
         if (isNaN(target)) return;
+        
         let startTime = performance.now();
         element.classList.add("counting");
+        
         const step = (currentTime) => {
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
@@ -145,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
         requestAnimationFrame(step);
     }
 
-// --- TIMELINE (PROGRESSION & GHOST TEXTS) ---
+    // --- TIMELINE PROGRESSION ---
     const handleTimelineProgress = () => {
         const container = document.getElementById('timeline-container');
         const progressLine = document.getElementById('progress-line');
@@ -164,134 +166,122 @@ document.addEventListener("DOMContentLoaded", () => {
             const stepRect = step.getBoundingClientRect();
 
             if (stepRect.top + (stepRect.height / 4) < triggerPoint) {
-                if (dot) {
-                    dot.classList.add('bg-validate', 'shadow-[0_0_15px_rgba(137,217,87,0.8)]', 'scale-125');
-                    dot.classList.remove('bg-white/20');
-                }
+                if (dot) dot.classList.add('bg-validate', 'scale-125');
                 if (ghost) ghost.classList.add('active');
             } else {
-                if (dot) {
-                    dot.classList.remove('bg-validate', 'shadow-[0_0_15px_rgba(137,217,87,0.8)]', 'scale-125');
-                    dot.classList.add('bg-white/20');
-                }
+                if (dot) dot.classList.remove('bg-validate', 'scale-125');
                 if (ghost) ghost.classList.remove('active');
             }
         });
     };
 
-// --- ANIMATIONS (INTERSECTION OBSERVER) ---
-    const animatedElements = document.querySelectorAll(".animate-on-scroll");
-    const animationObserver = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                const element = entry.target;
-                if (entry.isIntersecting) {
-                    element.classList.add("animated");
-                    element.classList.remove("opacity-0", "translate-y-10");
-                    element.classList.add("opacity-100", "translate-y-0");
+    // --- ANIMATIONS D'APPARITION ---
+    const setupAnimations = () => {
+        const animatedElements = document.querySelectorAll(".animate-on-scroll");
+        const animationObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const element = entry.target;
+                        element.classList.add("animated", "opacity-100", "translate-y-0");
+                        element.classList.remove("opacity-0", "translate-y-10");
 
-                    const countersToAnimate = element.querySelectorAll(".counter");
-                    countersToAnimate.forEach((counter) => countUp(counter));
-                }
-            });
-        },
-        { threshold: 0.1 }
-    );
-    animatedElements.forEach((el) => animationObserver.observe(el));
+                        // Lancement des compteurs s'ils sont dans l'élément
+                        element.querySelectorAll(".counter").forEach(counter => countUp(counter));
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+        animatedElements.forEach((el) => animationObserver.observe(el));
+    };
 
-// --- BURGER MENU ---
+    // --- GESTION MENU BURGER ---
     if (burgerBtn && mainNav) {
-        burgerBtn.addEventListener("click", () => {
-            const isExpanded = burgerBtn.getAttribute("aria-expanded") === "true";
-            const action = isExpanded ? "remove" : "add";
+        const toggleMenu = (forceClose = false) => {
+            const isOpen = forceClose ? true : burgerBtn.getAttribute("aria-expanded") === "true";
+            const action = isOpen ? "remove" : "add";
+            
             document.body.classList[action]("no-scroll");
-            burgerBtn.setAttribute("aria-expanded", String(!isExpanded));
+            burgerBtn.setAttribute("aria-expanded", String(!isOpen));
             mainNav.classList[action]("is-active");
             burgerBtn.classList[action]("is-active");
+        };
+
+        burgerBtn.addEventListener("click", () => toggleMenu());
+        
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                if (mainNav.classList.contains("is-active")) toggleMenu(true);
+            });
         });
     }
-    navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-            if (mainNav?.classList.contains("is-active")) {
-                document.body.classList.remove("no-scroll");
-                burgerBtn.setAttribute("aria-expanded", "false");
-                mainNav.classList.remove("is-active");
-                burgerBtn.classList.remove("is-active");
-            }
-        });
-    });
 
-// --- FAQ ACCORDION ---
-   const setupFaqAccordion = () => {
-    const faqItems = document.querySelectorAll(".faq-item");
+    // --- FAQ ACCORDION ---
+    const setupFaqAccordion = () => {
+        const faqItems = document.querySelectorAll(".faq-item");
+        faqItems.forEach((item) => {
+            const header = item.querySelector(".faq-toggle");
+            const content = item.querySelector(".faq-content");
+            if (!header || !content) return;
 
-    faqItems.forEach((item) => {
-        const header = item.querySelector(".faq-toggle");
-        const content = item.querySelector(".faq-content");
+            header.addEventListener("click", () => {
+                const isOpen = item.classList.contains("is-open");
+                
+                // Fermeture des autres
+                faqItems.forEach(other => {
+                    if (other !== item && other.classList.contains("is-open")) {
+                        other.querySelector(".faq-content").style.maxHeight = "0";
+                        other.classList.remove("is-open");
+                        other.querySelector(".faq-toggle").setAttribute("aria-expanded", "false");
+                    }
+                });
 
-        if (!header || !content) return;
-
-        header.addEventListener("click", () => {
-            const isCurrentlyOpen = item.classList.contains("is-open");
-
-            faqItems.forEach((otherItem) => {
-                if (otherItem !== item && otherItem.classList.contains("is-open")) {
-                    otherItem.querySelector(".faq-content").style.maxHeight = "0";
-                    otherItem.classList.remove("is-open");
-                    otherItem.querySelector(".faq-toggle").setAttribute("aria-expanded", "false");
-                }
+                item.classList.toggle("is-open", !isOpen);
+                content.style.maxHeight = isOpen ? "0" : content.scrollHeight + "px";
+                header.setAttribute("aria-expanded", String(!isOpen));
             });
-
-            if (isCurrentlyOpen) {
-                content.style.maxHeight = "0";
-                item.classList.remove("is-open");
-                header.setAttribute("aria-expanded", "false");
-            } else {
-                item.classList.add("is-open");
-                content.style.maxHeight = content.scrollHeight + "px";
-                header.setAttribute("aria-expanded", "true");
-            }
         });
-    });
-};
+    };
 
-// --- CALENDLY ---
+    // --- CALENDLY ---
     const CALENDLY_URL = 'https://calendly.com/aurore-am20/20min?hide_event_type_details=1&text_color=14244f&primary_color=4d0fa5';
-    let isCalendlyScriptLoaded = false;
+    let isCalendlyLoaded = false;
 
     const loadCalendly = () => {
-        if (isCalendlyScriptLoaded) return Promise.resolve();
+        if (isCalendlyLoaded) return Promise.resolve();
         return new Promise((resolve) => {
             const link = document.createElement('link');
             link.href = 'https://assets.calendly.com/assets/external/widget.css';
             link.rel = 'stylesheet';
             document.head.appendChild(link);
+            
             const script = document.createElement('script');
             script.src = 'https://assets.calendly.com/assets/external/widget.js';
             script.async = true;
-            script.onload = () => { isCalendlyScriptLoaded = true; resolve(); };
+            script.onload = () => { isCalendlyLoaded = true; resolve(); };
             document.body.appendChild(script);
         });
     };
 
-    const setupCalendlyTrigger = () => {
-        document.querySelectorAll(".calendly-popup-trigger").forEach(btn => {
-            btn.addEventListener("click", (e) => {
-                e.preventDefault();
-                loadCalendly().then(() => {
-                    if (window.Calendly) Calendly.initPopupWidget({ url: CALENDLY_URL });
-                });
+    document.querySelectorAll(".calendly-popup-trigger").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            loadCalendly().then(() => {
+                if (window.Calendly) Calendly.initPopupWidget({ url: CALENDLY_URL });
             });
         });
-    };
+    });
 
-// --- INITIALISATIONS ---
+    // --- INITIALISATION FINALE ---
     setupEmailProtection();
     setupFaqAccordion();
-    setupCalendlyTrigger();
     setupSniperClick(); 
     setupActiveMenuOnScroll();
     setupMobileFabScroll();
+    setupAnimations();
     
-    window.addEventListener("scroll", handleTimelineProgress);
+    // Initialisation immédiate de la timeline au chargement
+    handleTimelineProgress();
+    window.addEventListener("scroll", handleTimelineProgress, { passive: true });
 });
