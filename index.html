@@ -187,7 +187,7 @@
                 <span class="text-xs lg:text-sm italic opacity-80 text-center w-full">(20min - Sans engagement)</span>
             </div>
             <div class="w-full flex justify-center lg:hidden pt-4">
-                <img src="images/hero/am20-hero-mob.webp" width="500" height="500" alt="Personnage super-héros chibi vert et violet symbolisant l’éco-conception web et la performance" class="w-full max-w-[280px] h-auto object-cover drop-shadow-2xl">
+                <img src="images/hero/am20-hero-mob.webp" width="500" height="500" alt="Personnage super-héros chibi vert et violet symbolisant l’éco-conception web et la performance" class="w-full max-w-[280px] h-auto object-cover drop-shadow-2xl" loading="lazy"  decoding="async">
             </div>
         </div>
         <div class="hidden lg:flex lg:w-1/2 pt-12 lg:pt-0 justify-center lg:justify-end">
@@ -247,24 +247,18 @@
                 </ul>
             </div>
             <div class="hidden lg:block lg:w-1/2 order-1 lg:order-2">
-                <img 
-                    src="images/illustrations/am20-chaque-jour-ton-site-te-fait-perdre-des-clients-desk.webp" 
-                    alt="Personnage chibi qui s'énerve devant un ordinateur qui fume" 
-                    width="1200" 
-                    height="1200"
-                    class="w-full h-auto rounded-lg"
-                    loading="lazy">
+               <picture>
+                    <source media="(min-width: 1024px)" srcset="images/illustrations/am20-chaque-jour-ton-site-te-fait-perdre-des-clients-desk.webp">
+                    <img src="" alt="Personnage chibi qui s'énerve devant un ordinateur qui fume" width="1200" height="1200" class="w-full h-auto rounded-lg" loading="lazy">
+                </picture>
             </div>
         </div>
         <div class="flex flex-col lg:flex-row items-center gap-12 pt-12 border-t border-white/10">
             <div class="hidden lg:block lg:w-1/2">
-               <img 
-                    src="images/illustrations/la-solution-am20-desk.webp" 
-                    alt="Photo d’Aurore, fondatrice d’AM 2.0, dos à dos avec un personnage chibi symbolisant l’éco-conception web" 
-                    width="1200" 
-                    height="1200"
-                    class="w-full h-auto"
-                    loading="lazy">
+                <picture>
+                    <source media="(min-width: 1024px)" srcset="images/illustrations/la-solution-am20-desk.webp">
+                    <img src="" alt="Photo d’Aurore, fondatrice d’AM 2.0, dos à dos avec un personnage chibi symbolisant l’éco-conception web" width="1200" height="1200" class="w-full h-auto" loading="lazy">
+                </picture>
             </div>
             <div class="w-full lg:w-1/2">
                 <h2 class="text-gradient text-3xl lg:text-4xl font-bold mb-4 leading-tight animate-on-scroll fx-slide-right">
@@ -433,27 +427,20 @@
                 20 minutes pour sauver tes clients… avant qu’ils ne partent chez tes concurrents !
             </h3>
         </div>
-        <div class="bg-bg-1 border-2 border-green rounded-lg p-8 lg:p-12 shadow-2xl flex flex-col lg:flex-row items-center gap-10">
-            <div class="hidden lg:block lg:w-2/5">
+        <div class="bg-bg-1 border-2 border-green rounded-lg p-8 lg:p-12 shadow-2xl flex flex-col lg:flex-row items-center gap-10"> 
+            <div class="w-full lg:w-2/5 order-1 lg:order-1">
                 <img src="images/illustrations/diagnostic-stratégique-am20.webp" 
                      alt="Personnage chibi représentant l'éco-conception web en train d'analyser un ordinateur avec une loupe" 
                      width="500" height="500"
                      class="w-full h-auto rounded-lg" loading="lazy">
             </div>
-            <div class="w-full lg:w-3/5 text-primary flex flex-col">
+            <div class="w-full lg:w-3/5 text-primary flex flex-col order-2 lg:order-2">
                 <h4 class="text-2xl font-bold mb-4 leading-tight text-secondary">
                     Ton site actuel te fait-il perdre des clients sans que tu le saches ?
-                </h4>
-                
+                </h4> 
                 <p class="text-lg mb-6 opacity-90">
                     Pendant 20 minutes, on analyse ensemble ton <span class="font-bold">parcours client</span>, ta <span class="font-bold">visibilité locale</span> et tes <span class="font-bold">performances techniques</span>.
                 </p>
-                <div class="block lg:hidden w-full mb-6">
-                    <img src="images/illustrations/diagnostic-stratégique-am20.webp" 
-                         alt="Personnage chibi représentant l'éco-conception web en train d'analyser un ordinateur avec une loupe" 
-                         width="500" height="500" 
-                         class="w-full h-auto rounded-lg" loading="lazy">
-                </div>
                 <div class="bg-white/60 p-4 rounded-lg border-l-4 border-accent mb-8">
                     <p class="text-primary font-medium italic">
                         Tu repars avec un plan d’action clair, que l’on travaille ensemble ou non.
@@ -770,13 +757,10 @@
         <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">  
             <div class="w-full lg:w-5/12">
                 <a href="#" aria-label="ouvrir le calendrier pour réserver mon diagnostic de site offert" title="accéder à la réservation" class="calendly-popup-trigger group block relative overflow-hidden">
-                    <picture>
-                        <source srcset="images/illustrations/am20-analyse-ton-site-web-desk.webp" media="(min-width: 1024px)">
-                        <img src="images/illustrations/am20-analyse-ton-site-web-mob.webp" 
-                             alt="Personnage chibi en detective avec une loupe symbolisant l'analyse stratégique de ton site web" 
-                             width="500" height="500"
-                             class="w-full h-auto transition-transform duration-500 group-hover:scale-105" loading="lazy">
-                    </picture>
+                    <img src="images/illustrations/am20-analyse-ton-site-web-mob.webp" 
+                         alt="Personnage chibi en detective avec une loupe symbolisant l'analyse stratégique de ton site web" 
+                         width="500" height="500"
+                         class="w-full h-auto transition-transform duration-500 group-hover:scale-105" loading="lazy">
                     <div class="absolute inset-0 bg-validate/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <span class="bg-white text-secondary px-6 py-2 rounded-lg font-bold shadow-lg">Analyser mon site</span>
                     </div>
@@ -855,13 +839,10 @@
             </div>
             <div class="w-full lg:w-1/2 animate-on-scroll">
                 <a href="#" aria-label="ouvrir le calendrier pour réserver mon diagnostic offert" title="réserver mon créneau" class="calendly-popup-trigger group block transition-transform duration-500 -mx-12 lg:mx-0">
-                    <picture>
-                        <source srcset="images/illustrations/prendre-rdv-am20-desk.webp" media="(min-width: 1024px)">
-                        <img src="images/illustrations/prendre-rdv-am20-mob.webp" 
-                            alt="Calendrier de réservation" 
-                            width="500" height="500"
-                            class="w-full h-auto" loading="lazy">
-                    </picture>
+                    <img src="images/illustrations/prendre-rdv-am20-mob.webp" 
+                         alt="Calendrier de réservation" 
+                         width="500" height="500"
+                         class="w-full h-auto" loading="lazy">
                 </a>
             </div>
         </div>
@@ -880,7 +861,6 @@
                          alt="Personnage chibi représentant l'éco conception web adossé à un point d'interrogation" 
                          width="500" height="500"
                          class="w-full h-auto" loading="lazy">
-                    <div class="absolute -inset-4 bg-validate/10 blur-3xl -z-10 rounded-full"></div>
                 </div>
             </div>
             <div class="w-full lg:w-2/3 space-y-4"> 
