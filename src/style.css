@@ -7,6 +7,7 @@
   --color-secondary: #4d0fa5;
   --color-accent: #8449d9;
   --color-validate: #478722;
+  --color-validate-dark: #1F7A4A;
   --color-green-accent: #c9e265;
   --color-orange : #ff7f32 ;
   --color-background-1: #f0f2f5;
@@ -93,6 +94,10 @@ h3 {
 }
 .text-validate {
   color: var(--color-validate);
+  fill: currentColor;
+}
+.text-validate-dark {
+  color: var(--color-validate-dark);
   fill: currentColor;
 }
 .text-unvalidate {
