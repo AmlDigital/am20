@@ -30,7 +30,7 @@
     <meta name="twitter:image" content="https://www.am20.fr/images/og-img.jpg">
 <!-- CSS -->
     <link rel="preload" href="/dist/style.css" as="style">
-    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="dist/style.css">
 <!-- Données structurées JSON-LD -->
 </head>
 <body class="text-primary text-base lg:text-lg bg-bg-1">
@@ -171,88 +171,67 @@
 </section>
 </main>
 <!-- FOOTER -->
-<footer class="bg-footer text-white pt-16 pb-24 lg:pb-8 border-t border-green">
+<footer class="bg-footer text-white pt-16 pb-32 lg:pb-8 border-t border-green">
     <div class="max-w-7xl mx-auto px-4 lg:px-0">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
-            <div class="space-y-6 lg:col-span-1 text-center lg:text-left flex flex-col items-center lg:items-start">
-                <a href="index.html#hero" aria-label="Retour à l'accueil AM 2.0" class="inline-block transform transition duration-300 hover:scale-110">
-                    <img src="images/logo/logo-am20.webp" width="500" height="500" alt="Logo de AM 2.0" title="Retour en haut de page" class="h-20 w-auto" loading="lazy">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">  
+            <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
+                <a href="index.html#hero" aria-label="Retour à l'accueil" class="mb-6 transform transition duration-300 hover:scale-110">
+                    <img src="images/logo/logo-am20.webp" width="100" height="100" alt="Logo AM 2.0" class="h-20 w-auto" loading="lazy">
                 </a>
-                <p class="text-sm text-light max-w-xs font-medium">
-                    Deviens l'évidence sur le web.
-                </p>
-                <div class="relative inline-flex items-center pl-12 pr-4 py-2 rounded-full bg-gradient-green text-white text-sm text-left font-medium shadow-sm mx-8 lg:mx-0">
-                    <div class="absolute -left-3 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-green border-2 border-white overflow-hidden">
-                        <img src="images/illustrations/icon-badge.webp" alt="Badge éco-conception" class="w-full h-full object-cover">
-                    </div>
-                    <div class="leading-tight ml-2 text-xs">
-                        <div>Ce site émet moins de CO₂ qu’un email avec une pièce jointe.</div>
-                        <div class="text-xs opacity-80">(1,6 g/page • −20 % CO₂)</div>
+                <p class="text-sm text-light max-w-xs font-medium mb-6">Deviens l'évidence sur le web</p>     
+                <div class="relative inline-flex items-center pl-10 pr-4 py-2 rounded-full bg-gradient-green text-white font-medium shadow-sm animate-on-scroll fx-slide-left">
+                    <img src="images/illustrations/icon-badge.webp" alt="Eco-badge" class="absolute -left-3 w-12 h-12 rounded-full border-2 border-white object-cover" aria-hidden="true">
+                    <div class="leading-tight text-[10px] ml-2">
+                        <span>Ce site émet moins de CO₂ qu’un email.</span>
+                        <span class="block opacity-80">(1,6 g/page • −20 % CO₂)</span>
                     </div>
                 </div>
             </div>
-            <div class="space-y-4 lg:col-span-1">
+            <nav aria-label="Navigation de pied de page">
                 <h4 class="font-bold uppercase mb-4 border-b border-accent pb-2">Accès Rapide</h4>
-                <ul class="space-y-4 text-sm">
-                    <li><a href="index.html#diagnostic" class="hover:text-[var(--color-accent)] nav-link-underline-effect transition duration-300">Le concept AM 2.0</a></li>
-                    <li><a href="index.html#realisations" class="hover:text-[var(--color-accent)] nav-link-underline-effect transition duration-300">Résultats & Avis</a></li>
-                    <li><a href="#tarifs" class="hover:text-[var(--color-accent)] nav-link-underline-effect transition duration-300">Offres création web</a></li>
-                    <li><a href="index.html#faq" class="hover:text-[var(--color-accent)] nav-link-underline-effect transition duration-300">FAQ</a></li>
-                    <li><a href="index.html#reservation" class="hover:text-[var(--color-accent)] nav-link-underline-effect transition duration-300">Le Diagnostic AM 2.0 (offert)</a></li>
+                <ul class="space-y-4 text-sm list-none p-0">
+                    <li><a href="index.html#diagnostic" class="hover:text-accent transition duration-300">Le concept AM 2.0</a></li>
+                    <li><a href="index.html#realisations" class="hover:text-accent transition duration-300">Résultats & Avis</a></li>
+                    <li><a href="index.html#tarifs" class="hover:text-accent transition duration-300">Offres création web</a></li>
+                    <li><a href="index.html#faq" class="hover:text-accent transition duration-300">FAQ</a></li>
+                    <li><a href="index.html#reservation" class="hover:text-accent transition duration-300">Diagnostic offert</a></li>
                 </ul>
-            </div>
-            <div class="space-y-6 lg:col-span-1">
-                <h4 class="font-bold uppercase mb-4 border-b border-accent pb-2">Contact</h4>  
-                <div class="space-y-4 text-sm text-gray-300">     
-                    <div class="flex flex-col space-y-2">
-                        <p>Un projet urgent ?</p>
-                        <div class="flex items-center space-x-3">
-                            <a href="#" class="protected-mail hover:text-[var(--color-accent)] transition duration-300 font-bold"
-                            data-user="contact"
-                            data-domain="am20.fr">
-                            </a>
-                        </div>
-                        <p class="text-[10px] uppercase tracking-wider text-gradient-green italic">Je réponds sous 24h</p>
-                    </div>      
-                    <div class="flex items-start space-x-3 pt-2">
-                        <svg class="w-5 h-5 text-light fill-current flex-shrink-0 mt-0.5" aria-hidden="true">
-                            <use href="icons.svg#icon-locate"></use>
-                        </svg>
-                        <span class="leading-relaxed">Basée en Alsace - Accompagnement partout en France</span>
+            </nav>
+            <div class="space-y-4">
+                <h4 class="font-bold uppercase mb-4 border-b border-accent pb-2">Contact</h4>
+                <div class="text-sm text-gray-300">
+                    <p class="mb-2">Un projet urgent ?</p>
+                    <a href="#" class="protected-mail block hover:text-accent transition duration-300 font-bold mb-1" data-user="contact" data-domain="am20.fr"></a>
+                    <p class="text-[10px] uppercase tracking-wider text-gradient-green italic mb-4">Réponse sous 24h</p>
+                    
+                    <div class="flex items-start gap-3 border-t border-white/5 pt-4">
+                        <svg class="w-5 h-5 text-light fill-current flex-shrink-0" aria-hidden="true"><use href="icons.svg#icon-locate"></use></svg>
+                        <span class="leading-tight text-xs">Basée en Alsace - Accompagnement partout en France</span>
                     </div>
                 </div>
             </div>
-            <div class="space-y-6 lg:col-span-1">
+            <div class="space-y-6">
                 <h4 class="font-bold uppercase mb-4 border-b border-accent pb-2">Suivez-moi</h4>
-                <div class="flex space-x-4"> 
-                    <a href="https://www.linkedin.com/in/aurore-am20/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn d'AM 2.0" 
-                       class="text-white fill-current rounded-full p-2 bg-gradient-accent hover:bg-accent transition duration-300 transform hover:-translate-y-1">
-                        <svg class="w-6 h-6" aria-hidden="true">
-                            <use href="icons.svg#icon-linkedin"></use>
-                        </svg>
+                <div class="flex gap-4"> 
+                    <a href="https://www.linkedin.com/in/aurore-am20/" target="_blank" rel="noopener" aria-label="LinkedIn" class="p-2 bg-gradient-accent rounded-full hover:-translate-y-1 transition-transform">
+                        <svg class="w-6 h-6 fill-white"><use href="icons.svg#icon-linkedin"></use></svg>
                     </a>
-                    <a href="https://www.instagram.com/am2.0_sites_web/" target="_blank" rel="noopener noreferrer" aria-label="Instagram d'AM 2.0" 
-                       class="text-white fill-current rounded-full p-2 bg-gradient-accent hover:bg-accent transition duration-300 transform hover:-translate-y-1">
-                        <svg class="w-6 h-6" aria-hidden="true">
-                            <use href="icons.svg#icon-instagram"></use>
-                        </svg>
+                    <a href="https://www.instagram.com/am2.0_sites_web/" target="_blank" rel="noopener" aria-label="Instagram" class="p-2 bg-gradient-accent rounded-full hover:-translate-y-1 transition-transform">
+                        <svg class="w-6 h-6 fill-white"><use href="icons.svg#icon-instagram"></use></svg>
                     </a>
-                    <a href="https://www.facebook.com/share/1AGtSiAVGz/" target="_blank" rel="noopener noreferrer" aria-label="Facebook d'AM 2.0" 
-                       class="text-white fill-current rounded-full p-2 bg-gradient-accent hover:bg-accent transition duration-300 transform hover:-translate-y-1">
-                        <svg class="w-6 h-6" aria-hidden="true">
-                            <use href="icons.svg#icon-facebook"></use>
-                        </svg>
+                    <a href="https://www.facebook.com/share/1AGtSiAVGz/" target="_blank" rel="noopener" aria-label="Facebook" class="p-2 bg-gradient-accent rounded-full hover:-translate-y-1 transition-transform">
+                        <svg class="w-6 h-6 fill-white"><use href="icons.svg#icon-facebook"></use></svg>
                     </a>
                 </div>
             </div>
         </div>
-        <div class="mt-16 pt-10 border-t border-gray-700/50 flex flex-col md:flex-row md:justify-between md:items-center text-[10px] lg:text-xs text-gray-400">
+        <div class="mt-16 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-400">
             <p>© <span id="current-year"></span> AM 2.0. Tous droits réservés.</p>
-            <div class="flex flex-wrap gap-x-4 lg:gap-x-8 mt-4 md:mt-0">
-                <a href="mentions-legales.html" target="_blank" class="hover:text-white transition duration-300">Mentions Légales</a>
-                <a href="#" target="_blank" class="text-white underline">Confidentialité</a>
-                <a href="cgv.html" target="_blank" class="hover:text-white transition duration-300">CGV</a>
-            </div>
+            <nav class="flex gap-6 mt-4 md:mt-0">
+                <a href="mentions-legales.html" class="hover:text-white">Mentions Légales</a>
+                <a href="#" class="text-white underline">Confidentialité</a>
+                <a href="cgv.html" class="hover:text-white">CGV</a>
+            </nav>
         </div>
     </div>
 </footer>
