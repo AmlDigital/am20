@@ -128,20 +128,20 @@
 <!-- HEADER -->
 <header id="main-header" class="fixed w-full top-0 p-2 z-50 bg-bg-2 shadow-lg custom-border-bottom">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-4">
-        <a href="#hero" class="transition duration-300 hover:scale-110">
-            <img src="images/logo/logo-am20.webp" width="128" height="128" alt="Logo de AM 2.0" title="retour à l'accueil" class="h-16 w-auto">
+        <a href="#hero" class="transition duration-300 hover:scale-110" aria-label="Accueil AM 2.0">
+            <img src="images/logo/logo-am20.webp" width="128" height="128" alt="Logo" class="h-16 w-auto" fetchpriority="high">
         </a>
-        <button class="burger-menu flex flex-col justify-center items-center w-8 h-6 bg-transparent border-none cursor-pointer p-0 lg:hidden" aria-controls="main-nav" aria-expanded="false" aria-label="Ouvrir le menu de navigation">
+        <button class="burger-menu flex flex-col justify-center items-center w-8 h-6 lg:hidden" aria-controls="main-nav" aria-expanded="false" aria-label="Menu">
             <span class="line block w-full h-[3px] bg-gradient-accent transition-all duration-300 mb-1.5"></span>
             <span class="line block w-full h-[3px] bg-gradient-accent transition-all duration-300"></span>
         </button>
         <nav id="main-nav" class="main-nav fixed top-0 right-0 h-screen w-3/4 bg-primary transform translate-x-full transition duration-400 ease-in-out z-40 pt-20 shadow-heavy lg:static lg:h-auto lg:w-auto lg:bg-transparent lg:transform-none lg:p-0 lg:shadow-none">
-            <ul class="list-none flex flex-col items-center gap-8 lg:flex-row lg:gap-8">
-                <li><a href="#diagnostic" class="block uppercase lg:normal-case py-4 text-center text-gradient font-semibold text-xl transition duration-300 hover:bg-accent lg:py-0 lg:hover:bg-transparent lg:hover:no-underline lg:hover:text-transparent nav-link-gradient nav-link-underline-effect">Le concept</a></li>
-                <li><a href="#realisations" class="block uppercase lg:normal-case py-4 text-center text-gradient font-semibold text-xl transition duration-300 hover:bg-accent lg:py-0 lg:hover:bg-transparent lg:hover:no-underline lg:hover:text-transparent nav-link-gradient nav-link-underline-effect">Résultats</a></li>
-                <li><a href="#eco-conception" class="block uppercase lg:normal-case py-4 text-center text-gradient font-semibold text-xl transition duration-300 hover:bg-accent lg:py-0 lg:hover:bg-transparent lg:hover:no-underline lg:hover:text-transparent nav-link-gradient nav-link-underline-effect">L'approche AM 2.0</a></li>
-                <li><a href="#tarifs" class="block uppercase lg:normal-case py-4 text-center text-gradient font-semibold text-xl transition duration-300 hover:bg-accent lg:py-0 lg:hover:bg-transparent lg:hover:no-underline lg:hover:text-transparent nav-link-gradient nav-link-underline-effect">Offres</a></li>
-                <li><a href="#" aria-label="accéder au calendrier de réservation AM 2.0" title="ouvrir le calendrier de réservation" class="calendly-popup-trigger cta cta-accent uppercase lg:normal-case mx-2">Mon diagnostic offert</a></li>
+            <ul class="flex flex-col items-center gap-8 lg:flex-row lg:gap-8 list-none">
+                <li><a href="#diagnostic" class="block uppercase lg:normal-case py-4 lg:py-0 text-center text-gradient font-semibold text-xl nav-link-gradient nav-link-underline-effect transition duration-300">Le concept</a></li>
+                <li><a href="#realisations" class="block uppercase lg:normal-case py-4 lg:py-0 text-center text-gradient font-semibold text-xl nav-link-gradient nav-link-underline-effect transition duration-300">Résultats</a></li>
+                <li><a href="#eco-conception" class="block uppercase lg:normal-case py-4 lg:py-0 text-center text-gradient font-semibold text-xl nav-link-gradient nav-link-underline-effect transition duration-300">L'approche</a></li>
+                <li><a href="#tarifs" class="block uppercase lg:normal-case py-4 lg:py-0 text-center text-gradient font-semibold text-xl nav-link-gradient nav-link-underline-effect transition duration-300">Offres</a></li>
+                <li><a href="#" class="calendly-popup-trigger cta cta-accent uppercase lg:normal-case mx-2">Mon diagnostic offert</a></li>
             </ul>
         </nav>
     </div>
