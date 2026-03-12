@@ -908,7 +908,7 @@ function finalizeWithRedirect(btn, message, url) {
         if (url) {
             window.location.href = url;
         } else {
-    // Fail-safe si l'URL est manquante
+// Fail-safe si l'URL est manquante
             location.reload(); 
         }
     }, 4500);
@@ -923,29 +923,29 @@ function downloadFile(content, filename, type, isDataURL = false) {
 }
 async function buildClientSite(config) {
     try {
-    // --- RÉCUPÉRATION DES VARIABLES MANQUANTES ---
+// --- RÉCUPÉRATION DES VARIABLES MANQUANTES ---
         const mode = config.selectedMode || 'web'; 
         const companyName = (config.header?.companyName || "Ma-Vitrine").toUpperCase().replace(/\s+/g, '-');
-    // 1. Détermination du template source
+// 1. Détermination du template source
         const templateId = config.template || 'moderne';
         const isLinkedIn = config.meta?.type === 'linkedin-kit';
         const templatePath = isLinkedIn ? `template-linkedin-${templateId}.html` : `template-${templateId}.html`;
-    // 2. Récupération du code vierge
+// 2. Récupération du code vierge
         const response = await fetch(templatePath);
         if (!response.ok) throw new Error("Impossible de charger le template source");
         let html = await response.text();
-    // 3. NETTOYAGE 
+// 3. NETTOYAGE 
         html = html.replace(/<script src="config\.js"><\/script>/g, '');
-    // 4. INJECTION DES DONNÉES 
+// 4. INJECTION DES DONNÉES 
         const configJson = JSON.stringify(config);
         if (html.includes('/*CONFIG_EXPORT*/')) {
             html = html.replace('/*CONFIG_EXPORT*/', configJson);
         } else {
-    // Sécurité : si le commentaire n'est pas là, on remplace la balise entière
+// Sécurité : si le commentaire n'est pas là, on remplace la balise entière
             const newTag = `<script id="export-data" type="application/json">${configJson}<\/script>`;
             html = html.replace(/<script id="export-data".*?<\/script>/s, newTag);
         }
-    // --- 5. GÉNÉRATION DU JSON-LD "EN DUR"  ---
+// --- 5. GÉNÉRATION DU JSON-LD "EN DUR"  ---
         if (mode !== 'linkedin') {
             const leg = config.legal || {};
             const fullAddr = leg.address || "";
@@ -980,7 +980,7 @@ async function buildClientSite(config) {
                 html = html.replace('</head>', `${scriptTag}\n</head>`);
             }
         }
-    // --- 4. AJOUT : Balises Open Graph  ---
+// --- 4. AJOUT : Balises Open Graph  ---
         const ogImageUrl = "https://www.vitrine-express.net/assets/og-img-ve.jpg"; 
         const ogTags = `
         <meta property="og:title" content="${config.meta?.title || companyName}" />
@@ -994,15 +994,15 @@ async function buildClientSite(config) {
         <meta name="twitter:description" content="${config.meta?.description || ''}">
         `;
         html = html.replace('<!-- og -->', ogTags);
-    // 5. REMPLACEMENT DYNAMIQUE DES CONTENUS (Sync config -> HTML)
+// 5. REMPLACEMENT DYNAMIQUE DES CONTENUS (Sync config -> HTML)
         const kit = config.linkedinKit || {};
-    // On utilise des regex pour cibler le contenu entre les balises avec les IDs spécifiques
+// On utilise des regex pour cibler le contenu entre les balises avec les IDs spécifiques
         html = html.replace(/(id="li-title">)(.*?)(<\/h1>)/, `$1${config.hero?.title || ''}$3`);
         html = html.replace(/(id="v1-title">)(.*?)(<\/h2>)/, `$1${kit.vignette1Title || ''}$3`);
         html = html.replace(/(id="v1-cta">)(.*?)(<\/div>)/, `$1${config.contact?.ctaLabel || ''}$3`);
         html = html.replace(/(id="v2-title">)(.*?)(<\/h2>)/, `$1${kit.vignette2Title || ''}$3`);
         html = html.replace(/(id="v2-cta">)(.*?)(<\/div>)/, `$1${kit.vignette2Cta || ''}$3`);
-    // 6. INJECTION DU STYLE (Couleurs personnalisées)
+// 6. INJECTION DU STYLE (Couleurs personnalisées)
         if (config.colors) {
             const customStyles = `
             <style id="custom-theme-vars">
@@ -1014,7 +1014,7 @@ async function buildClientSite(config) {
             </style>`;
             html = html.replace('</head>', `${customStyles}\n</head>`);
         }
-    /// 5. FIX DU RENDU : On s'assure que CONFIG est bien défini avant renderTemplate
+// 5. FIX DU RENDU : On s'assure que CONFIG est bien défini avant renderTemplate
         const configInit = `
         <script>
             window.localConfig = JSON.parse(document.getElementById('export-data').textContent);
@@ -1031,46 +1031,46 @@ async function buildClientSite(config) {
     }
 }
 // --- TRACKING MAIL & AFFICHAGE CONDITIONNEL ---
-const emailInput = document.getElementById("lead-email");
-const validateBtn = document.getElementById("lead-email-validate");
-const iaSection = document.getElementById("section-ia");
-const iaContainer = iaSection?.querySelector(".space-y-6");
-const btnGenerateAI = document.getElementById("btn-generate-ai");
-const aiButtonText = document.getElementById("ai-button-text");
-let iaElements = [];
+    const emailInput = document.getElementById("lead-email");
+    const validateBtn = document.getElementById("lead-email-validate");
+    const iaSection = document.getElementById("section-ia");
+    const iaContainer = iaSection?.querySelector(".space-y-6");
+    const btnGenerateAI = document.getElementById("btn-generate-ai");
+    const aiButtonText = document.getElementById("ai-button-text");
+    let iaElements = [];
 // Masquer tous les éléments IA (sauf input email)
-if (iaContainer) {
-    iaElements = Array.from(iaContainer.children).filter(el => !el.classList.contains("input-group"));
-    iaElements.forEach(el => (el.style.display = "none"));
-}
+    if (iaContainer) {
+        iaElements = Array.from(iaContainer.children).filter(el => !el.classList.contains("input-group"));
+        iaElements.forEach(el => (el.style.display = "none"));
+    }
 // --- MESSAGE D'ERREUR EMAIL ---
-let errorMsg = document.createElement("p");
-errorMsg.className = "text-xs text-red-400 mt-1";
-errorMsg.style.display = "none";
-errorMsg.innerText = "Merci de renseigner un email valide.";
-emailInput?.closest("div.flex")?.insertAdjacentElement("afterend", errorMsg);
+    let errorMsg = document.createElement("p");
+    errorMsg.className = "text-xs text-red-400 mt-1";
+    errorMsg.style.display = "none";
+    errorMsg.innerText = "Merci de renseigner un email valide.";
+    emailInput?.closest("div.flex")?.insertAdjacentElement("afterend", errorMsg);
 // --- VALIDATION EMAIL ---
-function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-function markButtonValidated() {
-    if (!validateBtn) return;
-    validateBtn.style.background = "#10B981";
-    validateBtn.innerHTML = '<span style="color:white; font-weight:bold; font-size:1.2rem;">✓</span>';
-    validateBtn.disabled = true;
-}
-function showIASection() {
-    iaElements.forEach(el => (el.style.display = "block"));
-    iaSection.dataset.sent = "true";
-}
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+    function markButtonValidated() {
+        if (!validateBtn) return;
+        validateBtn.style.background = "#10B981";
+        validateBtn.innerHTML = '<span style="color:white; font-weight:bold; font-size:1.2rem;">✓</span>';
+        validateBtn.disabled = true;
+    }
+    function showIASection() {
+        iaElements.forEach(el => (el.style.display = "block"));
+        iaSection.dataset.sent = "true";
+    }
 // --- STOCKAGE EMAIL ---
-function saveEmailLocally(email) {
-    localStorage.setItem("lead_email", email);
-}
+    function saveEmailLocally(email) {
+        localStorage.setItem("lead_email", email);
+    }
 // --- ENVOI A NETLIFY ---
-function sendProgressToNetlify(isFinal = false) {
-    const email = localStorage.getItem("lead_email");
-    if (!email) return;
+    function sendProgressToNetlify(isFinal = false) {
+        const email = localStorage.getItem("lead_email");
+        if (!email) return;
 // Si déjà envoyé
     if (isFinal && sessionStorage.getItem('lead_sent_final')) return;
     if (!isFinal && sessionStorage.getItem('lead_sent_progress')) return;
@@ -1104,90 +1104,72 @@ function sendProgressToNetlify(isFinal = false) {
     }
 }
 // --- SI EMAIL DÉJÀ STOCKÉ ---
-const storedEmail = localStorage.getItem("lead_email");
-if (storedEmail && isValidEmail(storedEmail)) {
-    if (emailInput) emailInput.value = storedEmail;
-    markButtonValidated();
-    showIASection();
-    saveEmailLocally(storedEmail);
-    sendProgressToNetlify(false); 
-}
+    const storedEmail = localStorage.getItem("lead_email");
+    if (storedEmail && isValidEmail(storedEmail)) {
+        if (emailInput) emailInput.value = storedEmail;
+        markButtonValidated();
+        showIASection();
+        saveEmailLocally(storedEmail);
+        sendProgressToNetlify(false); 
+    }
 // --- BOUTON VALIDATION EMAIL ---
-validateBtn?.addEventListener("click", () => {
-    const email = emailInput?.value.trim() || "";
-    if (!isValidEmail(email)) {
-        errorMsg.style.display = "block";
-        return;
-    }
-    errorMsg.style.display = "none";
-    markButtonValidated();
-    showIASection();
-    saveEmailLocally(email);
-    sendProgressToNetlify(false); 
-});
-// --- BOUTON GENERER MES TEXTES (IA) ---
-btnGenerateAI?.addEventListener("click", async () => {
-    if (!emailInput?.value || !isValidEmail(emailInput.value.trim())) {
-        alert("Merci de renseigner un email valide avant de générer tes textes.");
-        emailInput.focus();
-        return;
-    }
-    const mode = (typeof localConfig !== "undefined" && localConfig.selectedMode) || "full";
-    const userData = {
-        email: emailInput.value.trim(),
-        expertise: document.getElementById("ai-expertise").value.trim(),
-        mode: mode,
-        probleme: document.getElementById("ai-question-1").value.trim(),
-        services: [
-            document.getElementById("ai-service-1").value,
-            document.getElementById("ai-service-2").value,
-            document.getElementById("ai-service-3").value
-        ].filter(v => v.trim() !== ""),
-        benefice: document.getElementById("ai-question-2").value.trim(),
-        differenciation: document.getElementById("ai-diff-unknown").checked
-            ? "UNKNOWN"
-            : document.getElementById("ai-question-3").value.trim(),
-        doutes: document.getElementById("ai-doubt-unknown").checked
-            ? "UNKNOWN"
-            : [
-                document.getElementById("ai-doubt-1").value,
-                document.getElementById("ai-doubt-2").value,
-                document.getElementById("ai-doubt-3").value
-            ].filter(v => v.trim() !== ""),
-        style: document.getElementById("ai-style-select").value,
-        contact: document.getElementById("ai-contact-select").value
-    };
-    const originalContent = aiButtonText.innerHTML;
-    aiButtonText.innerHTML = "🪄 RÉDACTION EN COURS...";
-    aiButtonText.parentElement.disabled = true;
-    try {
-        const response = await fetch("/.netlify/functions/ask-claude", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(userData)
-        });
-        const result = await response.json();
-        if (!response.ok || result.error) {
-            alert("Erreur IA ou service indisponible. Réessaye plus tard.");
-            aiButtonText.innerHTML = originalContent;
-            aiButtonText.parentElement.disabled = false;
+    validateBtn?.addEventListener("click", () => {
+        const email = emailInput?.value.trim() || "";
+        if (!isValidEmail(email)) {
+            errorMsg.style.display = "block";
             return;
-        }
-        fillFieldsFromAI(result);
-        aiButtonText.innerHTML = "✨ TES TEXTES ONT ÉTÉ CRÉÉS !";
-        aiButtonText.parentElement.disabled = false;
-        setTimeout(() => (aiButtonText.innerHTML = originalContent), 3000);
-        sendProgressToNetlify(true); // ENVOI FINAL
-    } catch (err) {
-        console.error(err);
-        alert("Erreur réseau ou serveur. Réessaye plus tard.");
-        aiButtonText.innerHTML = originalContent;
-        aiButtonText.parentElement.disabled = false;
     }
-});
+        errorMsg.style.display = "none";
+        markButtonValidated();
+        showIASection();
+        saveEmailLocally(email);
+        sendProgressToNetlify(false); 
+    });
+// --- OVERLAY PENDANT LA GENERATION IA ---
+function createAIOverlay() {
+    if (document.getElementById('ai-loading-overlay')) return;
+    const overlay = document.createElement('div');
+    overlay.id = 'ai-loading-overlay';
+    overlay.className = "fixed inset-0 z-[9999] flex items-center justify-center bg-white/90 backdrop-blur-sm";
+    overlay.style.display = "none"; 
+    overlay.innerHTML = `
+        <div class="flex flex-col items-center p-8 text-center bg-white rounded-3xl shadow-2xl border border-slate-100">
+            <div class="w-24 h-24 mb-6 bg-white rounded-full shadow-xl shadow-violet-200/50 flex items-center justify-center animate-bounce">
+                <svg class="w-14 h-14" viewBox="0 0 640 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="gradient-sparkle-wand" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#8449d9" />
+                            <stop offset="100%" stop-color="#22c55e" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M295.4 37L310.2 73.8L347 88.6C350 89.8 352 92.8 352 96C352 99.2 350 102.2 347 103.4L310.2 118.2L295.4 155C294.2 158 291.2 160 288 160C284.8 160 281.8 158 280.6 155L265.8 118.2L229 103.4C226 102.2 224 99.2 224 96C224 92.8 226 89.8 229 88.6L265.8 73.8L280.6 37C281.8 34 284.8 32 288 32C291.2 32 294.2 34 295.4 37zM142.7 105.7L164.2 155.8L214.3 177.3C220.2 179.8 224 185.6 224 192C224 198.4 220.2 204.2 214.3 206.7L164.2 228.2L142.7 278.3C140.2 284.2 134.4 288 128 288C121.6 288 115.8 284.2 113.3 278.3L91.8 228.2L41.7 206.7C35.8 204.2 32 198.4 32 192C32 185.6 35.8 179.8 41.7 177.3L91.8 155.8L113.3 105.7C115.8 99.8 121.6 96 128 96C134.4 96 140.2 99.8 142.7 105.7zM496 368C502.4 368 508.2 371.8 510.7 377.7L532.2 427.8L582.3 449.3C588.2 451.8 592 457.6 592 464C592 470.4 588.2 476.2 582.3 478.7L532.2 500.2L510.7 550.3C508.2 556.2 502.4 560 496 560C489.6 560 483.8 556.2 481.3 550.3L459.8 500.2L409.7 478.7C403.8 476.2 400 470.4 400 464C400 457.6 403.8 451.8 409.7 449.3L459.8 427.8L481.3 377.7C483.8 371.8 489.6 368 496 368zM492 64C503 64 513.6 68.4 521.5 76.2L563.8 118.5C571.6 126.4 576 137 576 148C576 159 571.6 169.6 563.8 177.5L475.6 265.7L374.3 164.4L462.5 76.2C470.4 68.4 481 64 492 64zM76.2 462.5L340.4 198.3L441.7 299.6L177.5 563.8C169.6 571.6 159 576 148 576C137 576 126.4 571.6 118.5 563.8L76.2 521.5C68.4 513.6 64 503 64 492C64 481 68.4 470.4 76.2 462.5z" 
+                    fill="url(#gradient-sparkle-wand)" />
+                </svg>
+            </div>
+            <h3 class="text-xl font-black uppercase tracking-tight text-[#8449d9] mb-2">Rédaction en cours...</h3>
+            <p class="text-slate-500 max-w-xs text-sm leading-relaxed">
+                L'intelligence artificielle prépare tes textes personnalisés. <br>
+                <span class="font-semibold text-[#8449d9]">Ne ferme pas cette fenêtre.</span>
+            </p>
+        </div>
+    `;
+    document.body.appendChild(overlay);
+}
+function showAIOverlay() {
+    createAIOverlay(); 
+    const ov = document.getElementById('ai-loading-overlay');
+    if (ov) ov.style.display = 'flex';
+}
+function hideAIOverlay() {
+    const ov = document.getElementById('ai-loading-overlay');
+    if (ov) {
+        ov.style.display = 'none';
+        ov.remove(); 
+    }
+}
 // --- FONCTIONS DEDIEES A LA GENERATION IA  ---
 async function generateWithAI() {
-    const botTrap = document.getElementById('ai-bot-catcher').value;
+    const botTrap = document.getElementById('ai-bot-catcher')?.value || "";
     if (botTrap) return; 
 // --- LIMITE QUOTIDIENNE ---
     const today = new Date().toLocaleDateString();
@@ -1197,6 +1179,7 @@ async function generateWithAI() {
     }
     const btnText = document.getElementById('ai-button-text');
     const originalContent = btnText.innerHTML;
+    const overlay = document.getElementById('ai-loading-overlay');
 // --- GESTION DES LIMITES ---
     if (usage.count >= 2) {
         showAlerteIA(
@@ -1266,7 +1249,7 @@ async function generateWithAI() {
     const userData = {
         email: email,
         expertise: expertise,
-        mode: localConfig.selectedMode || 'full',
+        mode: (window.localConfig && localConfig.selectedMode) ? localConfig.selectedMode : 'full',
         probleme: document.getElementById('ai-question-1').value,
         services: [
             document.getElementById('ai-service-1').value,
@@ -1291,6 +1274,7 @@ async function generateWithAI() {
 // --- ETAT VISUEL "EN COURS" ---
         btnText.innerHTML = "🪄 RÉDACTION EN COURS...";
         btnText.parentElement.disabled = true;
+        if (overlay) overlay.style.display = 'flex';
         const response = await fetch('/.netlify/functions/ask-claude', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -1321,12 +1305,15 @@ async function generateWithAI() {
 // 5. Remplissage des champs et synchronisation
         fillFieldsFromAI(result); 
         if (typeof sync === 'function') sync();
+        sendProgressToNetlify(true);
 // 6. État visuel "Succès"
         btnText.innerHTML = "✨ TES TEXTES ONT ÉTÉ CRÉÉS !";
         btnText.parentElement.disabled = false;
+        if (overlay) overlay.style.display = 'none';
         setTimeout(() => { btnText.innerHTML = originalContent; }, 3000);
     } catch (error) {
-        console.error("Erreur:", error);
+        console.error("Erreur IA:", error);
+        if (overlay) overlay.style.display = 'none';
         showAlerteIA(
             "Erreur",
             "Désolé, l'assistance est momentanément indisponible.<br>Tu peux compléter ta vitrine en t'aidant des instructions affichées à l'écran ou revenir plus tard."
@@ -1335,6 +1322,7 @@ async function generateWithAI() {
         btnText.parentElement.disabled = false;
     }
 }
+document.getElementById("btn-generate-ai")?.addEventListener("click", generateWithAI);
 // Masquage des inputs doutes / différenciation si unknown coché
 function toggleDoubtInputs(isDisabled) {
     const container = document.getElementById('ai-doubts-container');
@@ -1583,7 +1571,7 @@ function switchPreview(mode) {
             try {
                 Object.assign(localConfig, JSON.parse(saved));
                 applyPracticalDefaults();
-        // --- SYNCHRO MODÈLE & CATÉGORIE ---
+// --- SYNCHRO MODÈLE & CATÉGORIE ---
             const selectedTemplateId = localConfig.meta?.template || localConfig.template;
         if (selectedTemplateId) {
             const frame = document.getElementById('preview-frame');
@@ -1609,7 +1597,7 @@ function switchPreview(mode) {
                 console.log("Mode Custom détecté au chargement :", selectedTemplateId);
             }
         }
-        // --- SYNCHRO VISUELLE DES COULEURS ---
+// --- SYNCHRO VISUELLE DES COULEURS ---
             if (localConfig.colors) {
                 Object.entries(localConfig.colors).forEach(([key, colorVal]) => {
                     const input = document.getElementById(`cp-${key}`);
@@ -1620,7 +1608,7 @@ function switchPreview(mode) {
                     if (previewSquare) previewSquare.style.backgroundColor = colorVal;
                 });
             }
-        // --- SYNCHRO LOGO / NOM ENTREPRISE ---
+// --- SYNCHRO LOGO / NOM ENTREPRISE ---
             if (localConfig.header) {
                 const useTextOnly = localConfig.header.useTextOnly;
                 const toggle = document.getElementById('no-logo-toggle');
@@ -1629,12 +1617,12 @@ function switchPreview(mode) {
                 const nameInput = document.getElementById('input-company-name');
                 if (nameInput) nameInput.value = localConfig.header.companyName || "";
             }
-        // --- SYNCHRO IMAGES ---
+// --- SYNCHRO IMAGES ---
             if (localConfig.header?.logo) updateImageUI('header', 'logo', localConfig.header.logo);
             if (localConfig.hero?.img) updateImageUI('hero', 'img', localConfig.hero.img);
             if (localConfig.about?.img) updateImageUI('about', 'img', localConfig.about.img);
             if (localConfig.practical?.hoursImg) updateImageUI('practical', 'hoursImg', localConfig.practical.hoursImg);
-        // --- SYNCHRO GALERIE ---
+// --- SYNCHRO GALERIE ---
             const g = localConfig.gallery || {};
             const galToggle = document.getElementById('toggle-gallery');
             const galFields = document.getElementById('gallery-editor-content');
@@ -1647,7 +1635,7 @@ function switchPreview(mode) {
             localConfig.gallery?.images?.forEach((imgObj, index) => {
                 if (imgObj.src) updateGalleryImageUI(index, imgObj.src);
             });
-        // --- SYNCHRO INFOS PRATIQUES ---
+// --- SYNCHRO INFOS PRATIQUES ---
             if (localConfig.practical) {
                 const p = localConfig.practical;
                 const isEnabled = p.show === true;
@@ -1666,10 +1654,10 @@ function switchPreview(mode) {
                 if (ctaToggle) ctaToggle.checked = p.showMapBtn !== false;
                 setPracticalMode(p.displayMode || 'text');
             }
-        // --- SYNCHRO TOGGLE FIGURES ---
+// --- SYNCHRO TOGGLE FIGURES ---
             const toggleFigures = document.getElementById('toggle-figures');
             if (toggleFigures) toggleFigures.checked = localConfig.hero?.showFigures !== false;
-        // --- SYNCHRO FAQ propre (comme pour Avis) ---
+// --- SYNCHRO FAQ propre  ---
             const toggleFaq = document.getElementById('toggle-faq');
             const fieldsFaq = document.getElementById('faq-editor-content');
             if (!localConfig.faq) localConfig.faq = { show: true, title: "Questions fréquentes", items: [] };
@@ -1679,7 +1667,7 @@ function switchPreview(mode) {
                 fieldsFaq.style.opacity = isFaqEnabled ? "1" : "0.3";
                 fieldsFaq.style.pointerEvents = isFaqEnabled ? "auto" : "none";
             }
-        // --- SYNCHRO AVIS ---
+// --- SYNCHRO AVIS ---
             if (localConfig.testimonials) {
                 const isAvisEnabled = localConfig.testimonials.show !== false;
                 const toggleAvis = document.getElementById('toggle-testimonials');
@@ -1690,14 +1678,14 @@ function switchPreview(mode) {
                     fieldsAvis.style.pointerEvents = isAvisEnabled ? "auto" : "none";
                 }
             }
-        // --- FORCE LE CHECK VISUEL DES RADIOS ---
+// --- FORCE LE CHECK VISUEL DES RADIOS ---
             if (localConfig.selectedMode) {
                 const radio = document.querySelector(`input[name="config-type"][value="${localConfig.selectedMode}"]`);
                 if (radio) radio.checked = true;
             }
-        // --- SYNCHRO BARRE DE PROGRESSION ---
+// --- SYNCHRO BARRE DE PROGRESSION ---
             if (localConfig.lastStep) updateProgressBar(localConfig.lastStep);
-        // --- RESTAURATION DES BOUTONS "VALIDÉ" ---
+// --- RESTAURATION DES BOUTONS "VALIDÉ" ---
             if (localConfig.steps) {
                 Object.keys(localConfig.steps).forEach(sectionId => {
                     if (localConfig.steps[sectionId] === true) {
@@ -1740,6 +1728,16 @@ function switchPreview(mode) {
     checkLegalValidity();
     checkLinkedinValidity();
     checkGlobalValidation();
+// --- FORCE LE MASQUAGE GALERIE AU DEMARRAGE ---
+    const currentGalCount = localConfig.gallery?.displayCount || 3;
+    const galSelectMenu = document.querySelector('select[onchange*="updateGalleryGrid"]');
+    if (galSelectMenu) galSelectMenu.value = currentGalCount;
+    updateGalleryGrid(currentGalCount);
+// --- FORCE LE MASQUAGE FAQ AU DEMARRAGE ---
+    const currentFaqCount = localConfig.faq?.displayCount || 3;
+    const faqSelectMenu = document.querySelector('select[onchange*="updateFaqDisplayCount"]');
+    if (faqSelectMenu) faqSelectMenu.value = currentFaqCount;
+    updateFaqDisplayCount(currentFaqCount);
 // --- TRACKING MAIL ---
     const finalBtn = document.getElementById('final-cta-button');
     if (finalBtn) {
@@ -2261,10 +2259,20 @@ function updateTestimonial(index, key, value) {
 // --- LOGIQUE DÉDIÉE À LA SECTION GALERIE ---
 function updateGalleryGrid(count) {
     const num = parseInt(count);
+    if (!num) return;
+    if (!localConfig.gallery) localConfig.gallery = {};
+    localConfig.gallery.displayCount = num;
     const items = document.querySelectorAll('.gal-item');
     items.forEach((item, index) => {
-        index < num ? item.classList.remove('hidden') : item.classList.add('hidden');
+        if (index < num) {
+            item.classList.remove('hidden');
+            item.style.display = ""; 
+        } else {
+            item.classList.add('hidden');
+            item.style.display = "none"; 
+        }
     });
+    if (!localConfig.gallery.images) localConfig.gallery.images = [];
     if (num > localConfig.gallery.images.length) {
         for (let i = localConfig.gallery.images.length; i < num; i++) {
             localConfig.gallery.images.push({ src: "", cap: "" });
@@ -2425,17 +2433,14 @@ function initPracticalDefaults() {
     localConfig.practical.mapBtnLabel = "Voir l'itinéraire";
     localConfig.practical.displayMode = localConfig.practical.displayMode || 'text';
     localConfig.practical.showMapBtn = localConfig.practical.showMapBtn !== undefined ? localConfig.practical.showMapBtn : true;
-    
     if (!localConfig.practical.hoursItems) {
         localConfig.practical.hoursItems = fixedLabels.map(l => ({ label: l, time: "—" }));
     }
     const isEnabled = localConfig.practical.show;
     const mainToggle = document.getElementById('toggle-practical');
     if (mainToggle) mainToggle.checked = isEnabled;
-
     const infoCard = document.getElementById('practical-info-card');
     const fieldsContainer = document.getElementById('practical-content'); 
-
     if (isEnabled) {
         infoCard?.classList.add('hidden');
         fieldsContainer?.classList.remove('hidden');
@@ -2621,14 +2626,19 @@ function toggleSectionVisibility(section, isVisible) {
 // --- LOGIQUE DÉDIÉE A LA FAQ ---
 function updateFaqDisplayCount(count) {
     const selectedCount = parseInt(count);
-    if (!localConfig.faq) localConfig.faq = { show: true, title: "Questions fréquentes", items: [], displayCount: 3 };
+    if (!selectedCount) return;
+    if (!localConfig.faq) localConfig.faq = { show: true, title: "Questions fréquentes", items: [] };
     localConfig.faq.displayCount = selectedCount;
-
     for (let i = 0; i < 5; i++) {
         const el = document.getElementById(`faq-item-${i}`);
-        if (!el) continue;
-        if (i < selectedCount) el.classList.remove('hidden');
-        else el.classList.add('hidden');
+        if (!el) continue;  
+        if (i < selectedCount) {
+            el.classList.remove('hidden');
+            el.style.display = ""; 
+        } else {
+            el.classList.add('hidden');
+            el.style.display = "none";
+        }
     }
     markSectionDirty('section-faq', "Valider la faq");
     if (localConfig.steps) localConfig.steps['section-faq'] = false;
@@ -2978,13 +2988,28 @@ function validateIdentite() {
 function adaptUIForTemplate(templateId) {
     const tmpl = TEMPLATES_DB.find(t => t.id === templateId);
     if (!tmpl) return;
-    const heroImageZone = document.getElementById('drop-zone-hero')?.closest('.input-group');
-    if (heroImageZone) {
-        if (tmpl.hasHeroImg) {
-            heroImageZone.classList.remove('hidden');
-        } else {
-            heroImageZone.classList.add('hidden');
-        }
+    const dropZone = document.getElementById('drop-zone-hero');
+    if (!dropZone) return;
+    const existingOverlay = dropZone.querySelector('.no-image-overlay');
+    if (existingOverlay) existingOverlay.remove();
+    if (tmpl.hasHeroImg) {
+        dropZone.style.opacity = "1";
+        dropZone.style.pointerEvents = "auto";
+        dropZone.classList.remove('cursor-not-allowed');
+    } else {
+// Mode SANS IMAGE : on crée l'overlay
+        dropZone.style.pointerEvents = "none";
+        dropZone.classList.add('cursor-not-allowed');
+        const overlay = document.createElement('div');
+        overlay.className = 'no-image-overlay animate-fadeIn';
+        overlay.innerHTML = `
+            <svg class="w-12 h-12 text-slate-300 mb-2" viewBox="0 0 640 640" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M431.2 476.5L163.5 208.8C141.1 240.2 128 278.6 128 320C128 426 214 512 320 512C361.5 512 399.9 498.9 431.2 476.5zM476.5 431.2C498.9 399.8 512 361.4 512 320C512 214 426 128 320 128C278.5 128 240.1 141.1 208.8 163.5L476.5 431.2zM64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320z"/>
+            </svg>
+            <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Modèle "${tmpl.name}"</p>
+            <p class="text-xs text-slate-400 italic">Cette mise en page n'utilise pas d'image en accueil.</p>
+        `;
+        dropZone.appendChild(overlay);
     }
     checkAccueilValidity();
 }

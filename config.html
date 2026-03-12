@@ -499,10 +499,11 @@
                 <div class="flex flex-col gap-2 mt-8">
                     <label class="font-bold text-white/90 text-sm uppercase">Quel style te ressemble le plus ?</label>
                     <select id="ai-style-select" class="w-full input-figure-select">
-                        <option value="expert">Expert</option>
-                        <option value="humain">Humain</option>
-                        <option value="direct">Direct</option>
-                        <option value="premium">Premium</option>
+                        <option value="humain">Humain (vouvoiement)</option>
+                        <option value="expert">Expert (vouvoiement)</option>
+                        <option value="premium">Premium (vouvoiement)</option>
+                        <option value="direct">Chaleureux (tutoiement)</option>
+                        <option value="direct">Direct (tutoiement)</option>
                     </select>
                 </div>
                 <div class="flex flex-col gap-2 mt-8">
@@ -927,9 +928,9 @@
                 oninput="updateText('gallery', 'title', this.value)" 
                 class="input-text-standard">
         </div>
-        <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center justify-between mb-4 mt-2">
             <span class="text-xs font-semibold text-slate-500 uppercase">Afficher :</span>
-            <select onchange="updateGalleryGrid(this.value)" class="input-text-standard w-48">
+            <select onchange="updateGalleryGrid(this.value)" class="input-figure-num w-48">
                 <option value="3">3 images</option>
                 <option value="6">6 images</option>
             </select>
@@ -1431,7 +1432,7 @@
         </div>
         <div class="flex items-center justify-between">
             <span class="text-xs font-semibold text-slate-500 uppercase">Afficher :</span>
-            <select onchange="updateFaqDisplayCount(this.value)" class="input-text-standard w-48">
+            <select onchange="updateFaqDisplayCount(this.value)" class="input-figure-num w-48">
                 <option value="3">3 questions</option>
                 <option value="4">4 questions</option>
                 <option value="5">5 questions</option>
