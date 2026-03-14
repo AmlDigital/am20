@@ -173,13 +173,13 @@ window.handleFinalAction = function() {
     console.log("Mode sélectionné avant redirection :", mode);
     switch (mode) {
         case 'web':
-            stripeUrl = "https://buy.stripe.com/test_aFacN46iOgsj2pIgl3frW03";
+            stripeUrl = "https://buy.stripe.com/dRm5kDgqO0no1d52QqcbC04";
             break;
         case 'linkedin':
-            stripeUrl = "https://buy.stripe.com/test_bJedR8fTo1xp9Sa4ClfrW05";
+            stripeUrl = "https://buy.stripe.com/9B6dR93E29XYdZR8aKcbC05";
             break;
         case 'full':
-            stripeUrl = "https://buy.stripe.com/test_bJe8wOfTob7Z8O67OxfrW04";
+            stripeUrl = "https://buy.stripe.com/14A4gzcay8TU3ldfDccbC03";
             break;
         default:
             alert("Merci de sélectionner un format (Web, LinkedIn ou Combo) avant de continuer.");
@@ -187,7 +187,7 @@ window.handleFinalAction = function() {
     }
     const finalText = document.getElementById('final-cta-text');
     if (finalText) {
-        finalText.innerText = "Redirection vers Stripe...";
+        finalText.innerText = "Vers page de paiement...";
     }
     setTimeout(() => {
         console.log("Redirection vers :", stripeUrl);
@@ -829,7 +829,8 @@ function disableIframeScaling(doc) {
 function updateModifierBtnUI() {
     const btn = document.querySelector('#update-action-container button');
     const microCopy = document.getElementById('modifier-micro-copy');
-    if (!btn || !microCopy || !window.localConfig) return;
+    const infoCopy = document.getElementById('update-info-copy'); // nouvel ID
+    if (!btn || !microCopy || !window.localConfig || !infoCopy) return;
     const mode = localConfig.selectedMode;
     const siteId = localConfig.meta?.netlifySiteId;
     const SECRET_HASH = "1a10705c240715d8c19d0dad3c5a59c9d18afc9a9d60c0755c46dd3fbb8c8360";
@@ -838,44 +839,45 @@ function updateModifierBtnUI() {
     btn.disabled = false;
     btn.classList.remove('opacity-50','cursor-not-allowed','pointer-events-none');
     microCopy.classList.remove('text-red-400','text-green-400');
+    infoCopy.innerText = "";
 // MODE LINKEDIN
     if (mode === "linkedin") {
         btn.innerHTML = `<span>Mettre mon kit LinkedIn à jour</span>`;
         microCopy.innerText = "✨ Modifications illimitées offertes";
         microCopy.classList.add("text-green-400");
+        infoCopy.innerText = "Tu pourras télécharger tes nouveaux jpg LinkedIn";
         return;
     }
 // MODE WEB / FULL
     btn.innerHTML = `<span>Mettre ma vitrine à jour</span>`;
+    if (mode === "web") {
+        infoCopy.innerText = "Ta vitrine sera mise à jour en ligne automatiquement";
+    } else if (mode === "full") {
+        infoCopy.innerText = "Ta vitrine web sera mise à jour en ligne et tu pourras télécharger tes nouveaux jpg LinkedIn";
+    }
     const delay = 72 * 60 * 60 * 1000;
     const now = Date.now();
     if (siteId && !isAdmin) {
         const lastDeploy = parseInt(localStorage.getItem(`last_deploy_${siteId}`));
         if (!lastDeploy) {
-    // jamais modifié
             microCopy.innerText = "✅ Une modification possible aujourd'hui";
             microCopy.classList.add("text-accent");
             return;
         }
         const diff = now - lastDeploy;
         if (diff < delay) {
-    // BLOQUÉ
             const remaining = delay - diff;
             const hours = Math.floor(remaining / (1000*60*60));
             const minutes = Math.floor((remaining % (1000*60*60)) / (1000*60));
             btn.disabled = true;
             btn.classList.add('opacity-50','cursor-not-allowed','pointer-events-none');
-            microCopy.innerText =
-                `⏳ Encore ${hours}h ${minutes}min avant la prochaine modification`;
+            microCopy.innerText = `⏳ Encore ${hours}h ${minutes}min avant la prochaine modification`;
             microCopy.classList.add("text-orange-400");
         } else {
-    // AUTORISÉ
             microCopy.innerText = "✅ Une modification possible aujourd'hui";
             microCopy.classList.add("text-accent");
-
         }
     } else {
-    // ADMIN
         microCopy.innerText = isAdmin
             ? "⚡ MODE ADMIN : modifications illimitées"
             : "✅ Une modification possible aujourd'hui";

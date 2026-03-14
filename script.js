@@ -134,7 +134,7 @@ document.addEventListener('keydown', (e) => {
         });
     };
 // --- GESTION DE CALENDLY ---
-const CALENDLY_URL = 'https://calendly.com/aurore-am20/20min?hide_event_type_details=1&text_color=14244f&primary_color=4d0fa5';
+const CALENDLY_URL = 'https://calendly.com/appel-decouverte-am20/20min?hide_event_type_details=1&text_color=14244f&primary_color=4d0fa5';
 document.addEventListener('click', function (e) {
     const btn = e.target.closest('.calendly-popup-trigger');
     if (btn) {
