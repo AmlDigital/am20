@@ -59,17 +59,21 @@ document.addEventListener('keydown', (e) => {
 // --- PROTECTION EMAIL ---
     const setupEmailProtection = () => {
         document.querySelectorAll('.protected-mail').forEach(link => {
-            const user = link.dataset.user;
-            const domain = link.dataset.domain;
-            if (!user || !domain) return;
-            const fullEmail = `${user}@${domain}`;
-            const icon = link.querySelector('svg');
-            link.textContent = '';
-            if (icon) link.appendChild(icon);
-            link.appendChild(document.createTextNode(fullEmail));
-            link.href = `mailto:${fullEmail}`;
+            const u = link.dataset.u; 
+            const d = link.dataset.d; 
+            if (!u || !d) return;
+            try {
+                const user = atob(u);
+                const domain = atob(d);
+                const fullEmail = `${user}@${domain}`;
+                link.href = `mailto:${fullEmail}`;
+                link.title = fullEmail; 
+            } catch (e) {
+                console.error("Erreur de décodage mail:", e);
+            }
         });
     };
+    document.addEventListener('DOMContentLoaded', setupEmailProtection);
 // --- TIMELINE PROGRESSION ---
     const handleTimelineProgress = () => {
         const container = document.getElementById('timeline-container');

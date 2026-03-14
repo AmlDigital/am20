@@ -308,6 +308,7 @@ function showImportStatus(status) {
     if (status === 'success') {
         success.classList.remove('hidden');
         action.classList.remove('hidden');
+        updateModifierBtnUI();
     } else {
         error.classList.remove('hidden');
     }
@@ -779,6 +780,46 @@ function disableIframeScaling(doc) {
         });
     };
 }
+function updateModifierBtnUI() {
+    const btn = document.querySelector('#update-action-container button');
+    if (!btn || !window.localConfig) return; // Sécurité si config pas encore chargée
+
+    const mode = localConfig.selectedMode;
+    const siteId = localConfig.meta?.netlifySiteId;
+    const SECRET_HASH = "1a10705c240715d8c19d0dad3c5a59c9d18afc9a9d60c0755c46dd3fbb8c8360";
+    const isAdmin = localStorage.getItem('_vxe_node') === SECRET_HASH;
+
+    // 1. Reset des styles (on enlève les classes de blocage au cas où)
+    btn.disabled = false;
+    btn.classList.remove('opacity-50', 'cursor-not-allowed', 'pointer-events-none');
+
+    // 2. Cas particulier LinkedIn : Bouton toujours actif
+    if (mode === 'linkedin') {
+        btn.innerHTML = `<span>Mettre à jour mon Kit LinkedIn</span>`;
+        return;
+    }
+
+    // 3. Cas Web/Full : On vérifie le chrono
+    if (siteId && !isAdmin) {
+        const lastDeploy = localStorage.getItem(`last_deploy_${siteId}`);
+        const delay = 72 * 60 * 60 * 1000;
+        const now = Date.now();
+
+        if (lastDeploy && (now - lastDeploy) < delay) {
+            const remainingTime = delay - (now - lastDeploy);
+            const hoursLeft = Math.ceil(remainingTime / (1000 * 60 * 60));
+
+            btn.disabled = true;
+            btn.classList.add('opacity-50', 'cursor-not-allowed', 'pointer-events-none');
+            // Micro-copy dynamique !
+            btn.innerHTML = `<span>⏳ Modif possible dans ${hoursLeft}h</span>`;
+            return;
+        }
+    }
+
+    // 4. Libellé par défaut si tout est OK
+    btn.innerHTML = `<span>Mettre ma vitrine à jour</span>`;
+}
 async function triggerQuickUpdate() {
     const btn = document.querySelector('#update-action-container button');
     if (!btn) return;
@@ -794,12 +835,9 @@ async function triggerQuickUpdate() {
 // On n'applique la restriction QUE si l'utilisateur n'est pas Admin
     if (isPushingToNetlify && siteId && !isAdmin) { 
         const lastDeploy = localStorage.getItem(`last_deploy_${siteId}`);
-        const now = Date.now();
         const delay = 72 * 60 * 60 * 1000; 
-        if (lastDeploy && (now - lastDeploy) < delay) {
-            const remainingTime = delay - (now - lastDeploy);
-            const hoursLeft = Math.ceil(remainingTime / (1000 * 60 * 60));
-            alert(`⌛ Limite de 3 jours active.\n\nEncore environ ${hoursLeft}h d'attente.`);
+        if (lastDeploy && (Date.now() - lastDeploy) < delay) {
+            updateModifierBtnUI(); 
             return;
         }
     }
@@ -825,6 +863,7 @@ async function triggerQuickUpdate() {
 // Persistance locale
             localStorage.setItem('vitrine_express_progression', JSON.stringify(localConfig));
             localStorage.setItem(`last_deploy_${result.siteId}`, Date.now());
+            setTimeout(updateModifierBtnUI, 500);
         }
 // --- ÉTAPE 2 : TÉLÉCHARGEMENT DE LA SAUVEGARDE (Fichier HTML) ---
         const finalHtml = await buildClientSite(localConfig); 
@@ -888,6 +927,7 @@ async function triggerQuickUpdate() {
         console.error("Erreur :", error);
         btn.innerHTML = originalContent;
         btn.classList.remove('pointer-events-none', 'opacity-80');
+        updateModifierBtnUI();
     }
 }
 // On garde le bouton désactivé pour confirmer que c'est fini
@@ -1071,11 +1111,8 @@ async function buildClientSite(config) {
 function sendProgressToNetlify(isFinal = false) {
     const email = localStorage.getItem("lead_email");
     if (!email) return;
-
-    // Protection contre les envois en double
     if (isFinal && sessionStorage.getItem('lead_sent_final')) return;
     if (!isFinal && sessionStorage.getItem('lead_sent_progress')) return;
-
     const lastStep = localConfig?.lastStep || "section-ia";
     const SEQUENCE = [
         'section-vitrine','section-model','section-couleurs','section-identite',
@@ -1084,35 +1121,28 @@ function sendProgressToNetlify(isFinal = false) {
         'section-contact','section-social','section-seo','section-legale',
         'section-hebergement','section-linkedin-kit','section-finale'
     ];
-    
     const stepIndex = SEQUENCE.indexOf(lastStep);
-    const progress = Math.round(((stepIndex + 1) / SEQUENCE.length) * 100);
-
-    // Objet simple pour l'encodage
+    const progressValue = Math.round(((stepIndex + 1) / SEQUENCE.length) * 100);
     const data = {
-        "form-name": "lead-vitrine",
+        "form-name": "lead-vitrine", 
         "email": email,
         "status": isFinal ? "TERMINE" : "EN_COURS_OU_ABANDON",
         "step": lastStep,
-        "progress": progress + "%"
+        "progress": progressValue + "%"
     };
-
-    // Encodage manuel (comme dans ton ancien code qui fonctionnait)
     const encodedData = Object.keys(data)
         .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
         .join("&");
-
     if (isFinal) {
         sessionStorage.setItem('lead_sent_final', 'true');
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: encodedData
-        });
+        }).catch(err => console.error("Netlify Error:", err));
     } else {
         sessionStorage.setItem('lead_sent_progress', 'true');
-        // Pour navigator.sendBeacon, on envoie directement la string encodée
-        navigator.sendBeacon("/", encodedData);
+        navigator.sendBeacon("/", new URLSearchParams(data));
     }
 }
 // --- SI EMAIL DÉJÀ STOCKÉ ---
@@ -3672,31 +3702,36 @@ function encode(data) {
 }
 document.getElementById("help-form")?.addEventListener("submit", function(e) {
   e.preventDefault();
+  
   const form = e.target;
   const btn = form.querySelector('button[type="submit"]');
   const originalBtnText = btn.innerText;
+  
+  // État de chargement
   btn.disabled = true;
   btn.innerText = "Envoi en cours...";
   btn.style.opacity = "0.7";
+
+  // Utilisation de URLSearchParams (natif et ultra-fiable pour x-www-form-urlencoded)
   const formData = new FormData(form);
-  const data = {};
-  formData.forEach((value, key) => (data[key] = value));
+  const body = new URLSearchParams(formData).toString();
+
   fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: encode(data),
+    body: body,
   })
   .then(res => {
     if (res.ok) {
       form.classList.add("hidden");
-      document.getElementById("help-success").classList.remove("hidden");
+      document.getElementById("help-success")?.classList.remove("hidden");
     } else {
-      throw new Error("Erreur serveur");
+      throw new Error("Réponse serveur incorrecte");
     }
   })
   .catch(err => {
-    alert("Oups ! Une erreur est survenue lors de l'envoi. Merci de réessayer.");
     console.error("Erreur Netlify:", err);
+    alert("Oups ! Une erreur est survenue. Vérifie ta connexion ou réessaye.");
   })
   .finally(() => {
     btn.disabled = false;
