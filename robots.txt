@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /tailwind.config.js
+Disallow: /postcss.config.js
+Disallow: /package.json
+Disallow: /package-lock.json
+
+Sitemap: https://www.am20.fr/sitemap.xml
+

@@ -2,78 +2,75 @@ document.addEventListener("DOMContentLoaded", () => {
 // --- FONCTIONS UTILITAIRES ---
     const DESKTOP_BREAKPOINT = 1024;
     const isMobile = () => window.innerWidth < DESKTOP_BREAKPOINT;
-// --- MAJ DATE FOOTER ---
-    const currentYearElement = document.getElementById("current-year");
-    if (currentYearElement) {
-        currentYearElement.textContent = new Date().getFullYear();
-    }
-// --- GESTION DE LA MODALE PREVIEW ---
-const previewModal = document.getElementById('preview-modal');
-const previewImg = document.getElementById('preview-img'); 
-const openPreview = (imagePath) => {
-    if (!previewModal || !previewImg) return;
-    previewImg.src = imagePath;
-    const scrollContainer = previewModal.querySelector('.overflow-y-auto');
-    if (scrollContainer) scrollContainer.scrollTop = 0;
-    previewModal.classList.remove('hidden');
-    previewModal.classList.add('flex');
-    document.body.style.overflow = 'hidden';
-};
-const closePreview = () => {
-    if (!previewModal) return;
-    previewModal.classList.add('hidden');
-    previewModal.classList.remove('flex');
-    document.body.style.overflow = '';
-};
-window.openPreview = openPreview;
-window.closePreview = closePreview;
-if (previewModal) {
-    previewModal.addEventListener('click', (e) => {
-        if (e.target === previewModal) closePreview();
-    });
-}
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closePreview();
-});
-// --- EFFET DE CLIC CTA (SNIPER MODE) ---
-    const setupSniperClick = () => {
-        const ctas = document.querySelectorAll(".cta-accent, .calendly-popup-trigger");
-        ctas.forEach(cta => {
-            cta.addEventListener("click", function(e) {
-                if (this.classList.contains('animating')) return;
-                this.classList.add('animating');
-                const ripple = document.createElement("span");
-                ripple.classList.add("ripple-circle");
-                this.appendChild(ripple);
-                requestAnimationFrame(() => {
-                    ripple.classList.add("ripple-animate");
-                });
-                setTimeout(() => { this.classList.add('cta-clicked'); }, 100);
-                setTimeout(() => {
-                    this.classList.remove('cta-clicked', 'animating');
-                }, 1000);
-                ripple.addEventListener("animationend", () => { ripple.remove(); });
+// --- ANIMATIONS D'APPARITION ---
+    const setupAnimations = () => {
+        const animatedElements = document.querySelectorAll(".animate-on-scroll");
+        const animationObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    element.classList.add("animated", "opacity-100", "translate-y-0");
+                    element.classList.remove("opacity-0", "translate-y-10");
+                }
             });
-        });
+        }, { threshold: 0.1 });
+        animatedElements.forEach((el) => animationObserver.observe(el));
     };
-// --- PROTECTION EMAIL ---
-    const setupEmailProtection = () => {
-        document.querySelectorAll('.protected-mail').forEach(link => {
-            const u = link.dataset.u; 
-            const d = link.dataset.d; 
-            if (!u || !d) return;
-            try {
-                const user = atob(u);
-                const domain = atob(d);
-                const fullEmail = `${user}@${domain}`;
-                link.href = `mailto:${fullEmail}`;
-                link.title = fullEmail; 
-            } catch (e) {
-                console.error("Erreur de décodage mail:", e);
+// --- GESTION DU MENU BURGER ---
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const burgerIcon = document.getElementById('burger-icon');
+const closeIcon = document.getElementById('close-icon');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    burgerIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+    document.body.classList.toggle('overflow-hidden');
+}
+menuBtn.addEventListener('click', toggleMenu);
+mobileLinks.forEach(link => {
+    link.addEventListener('click', toggleMenu);
+});
+// --- GESTION DU ZOOM SUR LES IMAGES ---
+window.openLightbox = function(src) {
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    if (lightbox && img) {
+        img.src = src;
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+        document.body.style.overflow = 'hidden'; 
+    }
+};
+window.closeLightbox = function() {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+        document.body.style.overflow = 'auto'; 
+    }
+};
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+});
+// --- GESTION DES BULLETS CAROUSEL ---
+const carousel = document.getElementById('mobile-carousel');
+const dots = document.querySelectorAll('#carousel-dots .carousel-dot'); 
+if (carousel && dots.length > 0) {
+    carousel.addEventListener('scroll', () => {
+        const scrollLeft = carousel.scrollLeft;
+        const itemWidth = carousel.querySelector('div').offsetWidth + 24; 
+        const activeIndex = Math.round(scrollLeft / itemWidth);
+        dots.forEach((dot, index) => {
+            if (index === activeIndex) {    
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
             }
         });
-    };
-    document.addEventListener('DOMContentLoaded', setupEmailProtection);
+    });
+}
 // --- TIMELINE PROGRESSION ---
     const handleTimelineProgress = () => {
         const container = document.getElementById('timeline-container');
@@ -97,20 +94,6 @@ document.addEventListener('keydown', (e) => {
             }
         });
     };
-// --- ANIMATIONS D'APPARITION ---
-    const setupAnimations = () => {
-        const animatedElements = document.querySelectorAll(".animate-on-scroll");
-        const animationObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const element = entry.target;
-                    element.classList.add("animated", "opacity-100", "translate-y-0");
-                    element.classList.remove("opacity-0", "translate-y-10");
-                }
-            });
-        }, { threshold: 0.1 });
-        animatedElements.forEach((el) => animationObserver.observe(el));
-    };
 // --- FAQ ACCORDION ---
     const setupFaqAccordion = () => {
         const faqItems = document.querySelectorAll(".faq-item");
@@ -133,53 +116,34 @@ document.addEventListener('keydown', (e) => {
             });
         });
     };
-// --- GESTION DE CALENDLY ---
-const CALENDLY_URL = 'https://calendly.com/appel-decouverte-am20/20min?hide_event_type_details=1&text_color=14244f&primary_color=4d0fa5';
-document.addEventListener('click', function (e) {
-    const btn = e.target.closest('.calendly-popup-trigger');
-    if (btn) {
-        e.preventDefault();
-        e.stopPropagation(); 
-        executeCalendlyLogic();
-    }
-});
-function executeCalendlyLogic() {
-    const loader = document.getElementById('calendly-loader');
-    if (loader) loader.classList.remove('hidden'); 
-    const launch = () => {
-        if (window.Calendly) {
-            const existing = document.querySelector('.calendly-overlay');
-            if (existing) existing.remove();
-            Calendly.initPopupWidget({ url: CALENDLY_URL });
-            const checkExist = setInterval(() => {
-                const calendlyPopup = document.querySelector('.calendly-overlay');
-                if (calendlyPopup) {
-                    clearInterval(checkExist);
-                    setTimeout(() => {
-                        if (loader) loader.classList.add('hidden'); 
-                        calendlyPopup.classList.add('active'); 
-                    }, 1500);
-                }
-            }, 100);
+// --- PROTECTION EMAIL ---
+const setupEmailProtection = () => {
+    document.querySelectorAll('.protected-mail').forEach(link => {
+        const u = link.dataset.u; 
+        const d = link.dataset.d; 
+        if (!u || !d) return;
+        try {
+            const user = atob(u);
+            const domain = atob(d);
+            const fullEmail = `${user}@${domain}`;
+            link.href = `mailto:${fullEmail}`;
+            link.title = fullEmail; 
+            if (link.innerHTML.trim() === "") {
+                link.textContent = fullEmail;
+            }
+        } catch (e) {
+            console.error("Erreur de décodage mail:", e);
         }
-    };
-    if (!window.Calendly) {
-        const link = document.createElement('link');
-        link.href = 'https://assets.calendly.com/assets/external/widget.css';
-        link.rel = 'stylesheet';
-        document.head.appendChild(link);
-        const script = document.createElement('script');
-        script.src = 'https://assets.calendly.com/assets/external/widget.js';
-        script.onload = launch;
-        document.body.appendChild(script);
-    } else {
-        launch();
+    });
+};
+// --- MAJ DATE FOOTER ---
+    const currentYearElement = document.getElementById("current-year");
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
     }
-}
 // --- INITIALISATION FINALE ---
     setupEmailProtection();
-    setupFaqAccordion();
-    setupSniperClick(); 
+    setupFaqAccordion(); 
     setupAnimations();
     handleTimelineProgress();
     window.addEventListener("scroll", handleTimelineProgress, { passive: true });
