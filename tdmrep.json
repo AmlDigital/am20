@@ -1,0 +1,15 @@
+{
+  "@context": "https://www.w3.org/ns/tdmrep#",
+  "type": "Policy",
+  "rightsHolders": [
+    {
+      "name": "AM 2.0 - Aurore Muller",
+      "email": "contact@am20.fr"
+    }
+  ],
+  "policy": {
+    "availability": "https://www.am20.fr/cgv",
+    "tdmAllowed": true,
+    "attribution": "required"
+  }
+}

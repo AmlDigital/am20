@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow" /><!-- Page indexée -->
+    <meta name="tdm-reservation" content="1">
+    <meta name="tdm-policy" content="https://www.am20.fr/politique-tdm">
 <!-- Title & description -->
     <title>Profils LinkedIn & Site web pour indépendants | Attire plus de clients</title>
     <meta name="description" content="Transforme ton profil LinkedIn et ta présence en ligne en vitrine claire qui attire des clients. Refonte complète, stratégie et site web. Résultat en moins de 7 jours.">
@@ -32,115 +34,127 @@
     <link rel="preload" href="/dist/style.css" as="style">
     <link rel="preload" as="image" href="images/hero/bannieres-linkedin-am20.webp" media="(max-width: 1023px)" fetchpriority="high">
 <!-- CSS -->
-    <link rel="preload" href="dist/style.css" as="style">
     <link rel="stylesheet" href="dist/style.css">
 <!-- Données structurées JSON-LD -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://www.am20.fr/#organization",
-  "name": "AM 2.0",
-  "description": "AM 2.0 accompagne les indépendants et entrepreneurs dans la création d’une vitrine digitale claire et stratégique pour attirer des clients. Refonte LinkedIn, stratégie de contenu et création de landing pages optimisées.",
-  "url": "https://www.am20.fr",
-  "image": "https://www.am20.fr/images/og-img.jpg",
-  "logo": "https://www.am20.fr/images/logo-am20.png",
-  "email": "contact@am20.fr",
-  "telephone": "+33 3 69 99 90 81",
-  "priceRange": "€€",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Obernai",
-    "postalCode": "67210",
-    "addressRegion": "Grand Est",
-    "addressCountry": "FR"
-  },
-  "areaServed": [
-  {
-    "@type": "Country",
-    "name": "France"
-  }
-],
-  "foundingDate": "2026",
-  "knowsAbout": [
-    "refonte profil LinkedIn",
-    "branding LinkedIn",
-    "landing page",
-    "stratégie de contenu",
-    "positionnement offre",
-    "conversion de visiteurs en clients"
-  ],
-  "serviceType": [
-  "Optimisation LinkedIn",
-  "Création de landing page",
-  "Stratégie de contenu",
-  "Personal branding"
-],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Offres AM 2.0",
-    "itemListElement": [
+  "@graph": [
     {
-        "@type": "Offer",
-        "name": "Audit stratégique",
-        "price": "0",
-        "priceCurrency": "EUR",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Audit de profil LinkedIn",
-          "description": "Analyse offerte du profil LinkedIn pour identifier les axes d’amélioration et clarifier le positionnement."
+      "@type": "WebSite",
+      "@id": "https://www.am20.fr/#website",
+      "url": "https://www.am20.fr",
+      "name": "AM 2.0",
+      "publisher": {
+        "@id": "https://www.am20.fr/#organization"
+    },
+      "inLanguage": "fr-FR"
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.am20.fr/#organization",
+      "name": "AM 2.0",
+      "description": "AM 2.0 accompagne les entrepreneurs dans la création de vitrines digitales : Refonte LinkedIn, stratégie de contenu et landing pages.",
+      "url": "https://www.am20.fr",
+      "image": "https://www.am20.fr/images/og-img.jpg",
+      "logo": "https://www.am20.fr/images/logo-am20.png",
+      "email": "contact@am20.fr",
+      "telephone": "+33 3 67 99 90 81",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Obernai",
+        "postalCode": "67210",
+        "addressRegion": "Grand Est",
+        "addressCountry": "FR"
+    },
+    "areaServed": [
+    {
+        "@type": "Country",
+        "name": "France"
+    }
+    ],
+    "foundingDate": "2026",
+    "knowsAbout": [
+        "refonte profil LinkedIn",
+        "branding LinkedIn",
+        "landing page",
+        "stratégie de contenu",
+        "positionnement offre",
+        "conversion de visiteurs en clients"
+    ],
+    "serviceType": [
+    "Optimisation LinkedIn",
+    "Création de landing page",
+    "Stratégie de contenu",
+    "Personal branding"
+    ],
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Offres AM 2.0",
+        "itemListElement": [
+        {
+            "@type": "Offer",
+            "name": "Audit stratégique",
+            "price": "0",
+            "priceCurrency": "EUR",
+            "itemOffered": {
+            "@type": "Service",
+            "name": "Audit de profil LinkedIn",
+            "description": "Analyse offerte du profil LinkedIn pour identifier les axes d’amélioration et clarifier le positionnement."
+            }
+        },
+        {
+            "@type": "Offer",
+            "name": "Pack Vitr'In",
+            "price": "239",
+            "priceCurrency": "EUR",
+            "itemOffered": {
+            "@type": "Service",
+            "name": "Refonte de profil LinkedIn",
+            "description": "Transformation complète du profil LinkedIn pour clarifier l’offre, renforcer la crédibilité et attirer des prospects qualifiés."
+            }
+        },
+        {
+            "@type": "Offer",
+            "name": "Pack Brand'In",
+            "price": "339",
+            "priceCurrency": "EUR",
+            "itemOffered": {
+            "@type": "Service",
+            "name": "Stratégie LinkedIn et contenu",
+            "description": "Profil optimisé + stratégie de contenu pour gagner en visibilité et générer des opportunités business."
+            }
+        },
+        {
+            "@type": "Offer",
+            "name": "Pack Land'In",
+            "price": "559",
+            "priceCurrency": "EUR",
+            "itemOffered": {
+            "@type": "Service",
+            "name": "Création de landing page",
+            "description": "Landing page stratégique alignée avec le profil LinkedIn pour convertir les visiteurs en prospects."
+            }
         }
-      },
-      {
-        "@type": "Offer",
-        "name": "Pack Vitr'In",
-        "price": "239",
-        "priceCurrency": "EUR",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Refonte de profil LinkedIn",
-          "description": "Transformation complète du profil LinkedIn pour clarifier l’offre, renforcer la crédibilité et attirer des prospects qualifiés."
-        }
-      },
-      {
-        "@type": "Offer",
-        "name": "Pack Brand'In",
-        "price": "339",
-        "priceCurrency": "EUR",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Stratégie LinkedIn et contenu",
-          "description": "Profil optimisé + stratégie de contenu pour gagner en visibilité et générer des opportunités business."
-        }
-      },
-      {
-        "@type": "Offer",
-        "name": "Pack Land'In",
-        "price": "559",
-        "priceCurrency": "EUR",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Création de landing page",
-          "description": "Landing page stratégique alignée avec le profil LinkedIn pour convertir les visiteurs en prospects."
-        }
-      }
+        ]
+    },
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "contact@am20.fr",
+        "areaServed": "FR",
+        "availableLanguage": "fr"
+    },
+    "founder": {
+        "@type": "Person",
+        "name": "Aurore M.",
+        "jobTitle": "Consultante en stratégie digitale et design de conversion"
+    },
+    "sameAs": [
+        "https://www.linkedin.com/in/aurore-am20"
     ]
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "customer support",
-    "email": "contact@am20.fr",
-    "areaServed": "FR",
-    "availableLanguage": "fr"
-  },
-  "founder": {
-    "@type": "Person",
-    "name": "Aurore Muller",
-    "jobTitle": "Consultante en stratégie digitale et design de conversion"
-  },
-  "sameAs": [
-    "https://www.linkedin.com/in/aurore-am20"
-  ]
+    }
 }
 </script>
 </head>
@@ -159,12 +173,12 @@
         </a>
 <!-- Menu desktop -->
         <nav class="hidden lg:flex items-center gap-8" aria-label="Navigation principale">
-            <a href="#solution" role="menuitem" class="text-sm font-bold text-gradient transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#5b3cc4] hover:to-[#ff4f6d]">SOLUTION AM 2.0</a>
-            <a href="#portfolio" role="menuitem" class="text-sm font-bold text-gradient transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#5b3cc4] hover:to-[#ff4f6d]">REALISATIONS</a>
-            <a href="#tarifs" role="menuitem" class="text-sm font-bold text-gradient transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#5b3cc4] hover:to-[#ff4f6d]">OFFRES</a>
-            <a href="#avis" role="menuitem" class="text-sm font-bold text-gradient transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#5b3cc4] hover:to-[#ff4f6d]">AVIS</a>
-            <a href="#faq" role="menuitem" class="text-sm font-bold text-gradient transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#5b3cc4] hover:to-[#ff4f6d]">FAQ</a>
-            <a href="#contact" role="menuitem" class="bg-gradient-to-r from-[#ff4f6d] to-[#5b3cc4] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:shadow-lg hover:shadow-[#5b3cc4]/30 transition-all">LANCER MA VITRINE</a>
+            <a href="#solution" class="text-sm font-bold text-gradient transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#5b3cc4] hover:to-[#ff4f6d]">SOLUTION AM 2.0</a>
+            <a href="#portfolio" class="text-sm font-bold text-gradient transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#5b3cc4] hover:to-[#ff4f6d]">REALISATIONS</a>
+            <a href="#tarifs" class="text-sm font-bold text-gradient transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#5b3cc4] hover:to-[#ff4f6d]">OFFRES</a>
+            <a href="#avis" class="text-sm font-bold text-gradient transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#5b3cc4] hover:to-[#ff4f6d]">AVIS</a>
+            <a href="#faq" class="text-sm font-bold text-gradient transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#5b3cc4] hover:to-[#ff4f6d]">FAQ</a>
+            <a href="#contact" class="bg-gradient-to-r from-[#ff4f6d] to-[#5b3cc4] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:shadow-lg hover:shadow-[#5b3cc4]/30 transition-all">LANCER MA VITRINE</a>
         </nav>
         <button id="menu-btn" aria-controls="mobile-menu" aria-expanded="false" aria-label="Ouvrir le menu" class="lg:hidden text-gray-900 w-10 h-10 flex items-center justify-center">
             <svg id="burger-icon" class="w-8 h-8" fill="url(#gradient-hero-icon)" viewBox="0 0 640 640">
@@ -1595,10 +1609,10 @@
                             <div>
                                 <h3 class="text-xl font-black uppercase tracking-[0.2em] text-gradient-accent mb-6">Contact</h3>
                                 <div class="flex gap-4">
-                                    <a href="https://www.linkedin.com/in/aurore-am20/" target="_blank" class="w-12 h-12 flex items-center justify-center bg-slate-50 rounded-2xl hover:bg-gradient-accent hover:text-white transition-all group shadow-sm">
+                                    <a href="https://www.linkedin.com/in/aurore-am20/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 flex items-center justify-center bg-slate-50 rounded-2xl hover:bg-gradient-accent hover:text-white transition-all group shadow-sm">
                                         <svg class="w-6 h-6 group-hover:fill-[#ff4f6d]" fill="url(#gradient-hero-icon)" viewBox="0 0 24 24" role="img" aria-label="logo linkedIn"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                                     </a>
-                                    <a href="https://wa.me/33367999081" target="_blank" class="w-12 h-12 flex items-center justify-center bg-slate-50 rounded-2xl hover:bg-gradient-accent hover:text-white transition-all group shadow-sm">
+                                    <a href="https://wa.me/33367999081" target="_blank" rel="noopener noreferrer" class="w-12 h-12 flex items-center justify-center bg-slate-50 rounded-2xl hover:bg-gradient-accent hover:text-white transition-all group shadow-sm">
                                         <svg class="w-6 h-6 group-hover:fill-[#ff4f6d]" fill="url(#gradient-hero-icon)" viewBox="0 0 24 24" role="img" aria-label="logo whatsapp"><path d="M12.031 2c-5.511 0-9.989 4.478-9.989 9.989 0 1.762.457 3.479 1.323 4.992l-1.405 5.127 5.251-1.378c1.472.802 3.125 1.225 4.815 1.225h.005c5.511 0 9.989-4.478 9.989-9.989 0-2.663-1.037-5.166-2.921-7.051-1.884-1.884-4.387-2.922-7.068-2.922zM16.669 16.445c-.255.717-1.492 1.314-2.062 1.393-.517.073-1.191.131-3.238-.72-2.618-1.088-4.303-3.748-4.433-3.921-.131-.173-1.066-1.417-1.066-2.705 0-1.288.675-1.921.916-2.181.241-.26.526-.325.7-.325s.349.001.5.01c.158.009.371-.06.58.444.214.517.733 1.787.797 1.918.064.131.107.283.021.454-.086.173-.131.283-.26.433-.129.151-.272.337-.389.454-.129.13-.264.271-.114.526.151.255.671 1.107 1.44 1.791.99.882 1.825 1.155 2.083 1.285.257.129.407.108.558-.065.151-.173.649-.757.822-1.016.173-.259.346-.216.584-.129.239.086 1.514.714 1.774.843.26.13.433.195.498.303.064.108.064.627-.191 1.344z"/></svg>
                                     </a>
                                     <a href="#" class="protected-mail w-12 h-12 flex items-center justify-center bg-slate-50 rounded-2xl hover:bg-gradient-accent hover:text-white transition-all group shadow-sm" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg==">
@@ -1618,7 +1632,7 @@
             <p>© <span id="current-year"></span> AM 2.0 • Tous droits réservés.</p>
             <div class="flex gap-6">
                 <a href="mentions-legales.html" class="hover:text-[#ff4f6d] transition-colors">Mentions</a>
-                <a href="mentions-legales.html" class="hover:text-[#ff4f6d] transition-colors">RGPD</a>
+                <a href="politique-confidentialite.html" class="hover:text-[#ff4f6d] transition-colors">RGPD</a>
                 <a href="cgv.html" class="hover:text-[#ff4f6d] transition-colors">CGV</a>
             </div>
         </div>

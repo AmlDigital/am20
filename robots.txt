@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Content-Signal: nosnippet, noarchive
 
 Disallow: /src/
 Disallow: /node_modules/
@@ -9,4 +10,3 @@ Disallow: /package.json
 Disallow: /package-lock.json
 
 Sitemap: https://www.am20.fr/sitemap.xml
-
