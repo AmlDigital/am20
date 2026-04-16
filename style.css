@@ -234,7 +234,7 @@ h3 {
 }
 .carousel-dot.active {
     width: 3.5rem; 
-    background-color: #886bdd; 
+    background-color: #5b3cc4; 
     opacity: 1;
 }
 .portfolio-pill {
@@ -281,7 +281,7 @@ h3 {
     left: 1rem;
     top: 0;
     width: 2px;
-    background: linear-gradient(180deg, #5b3cc4,  #886bdd);
+    background: linear-gradient(180deg, #5b3cc4,  #ff4f6d);
     height: 0%; 
     transition: height 0.1s ease-out;
     box-shadow: 0 0 15px rgba(126, 87, 217, 0.5);
