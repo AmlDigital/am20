@@ -12,6 +12,7 @@
   --shadow-light: rgba(0, 0, 0, 0.1);
   --shadow-heavy: rgba(0, 0, 0, 0.2);
   --transition-speed: 0.3s;
+  --color-background: #15171e;
 }
 body,
 html {
@@ -30,7 +31,7 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   line-height: 1.6;
-  background-color: #f9fAfb;
+  background-color:#15171e;
 }
 h1,
 h2,
@@ -47,6 +48,9 @@ h3 {
 .text-primary {
   color: var(--color-primary);
 }
+.text-light {
+  color: var(--color-text-light)
+};
 .text-secondary {
   color: var(--color-secondary);
 }
@@ -70,7 +74,7 @@ h3 {
   display: inline-block;
 }
 .text-gradient-accent {
-  background: linear-gradient(90deg,#3a2791 0%, #8449d9 100%);
+  background: linear-gradient(90deg,#eae5f8 0%, #886bdd 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -140,7 +144,7 @@ h3 {
     height: 100%;
     z-index: -1; 
     overflow: hidden;
-    background-color: var(--color-background-1);
+    background-color: var(--color-background);
 }
 .blob {
     position: absolute;
@@ -181,10 +185,10 @@ h3 {
     left: 0; 
     width: 100%;
     z-index: 100;
-    background-color: rgba(248, 249, 250, 0.7);
+    background-color: rgba(21, 23, 30, 0.7); 
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
     transition: all 0.3s ease;
 }
 .header-main::after {
@@ -217,6 +221,14 @@ h3 {
     width: 2.75rem; 
     height: 2.75rem; 
     object-fit: contain; 
+}
+/* =================== FOOTER ===================== */
+.footer-main {
+  background-color: rgba(21, 23, 30, 0.7); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+  transition: all 0.3s ease;
 }
 /* =================== PORTFOLIO ===================== */
 .snap-center {
@@ -281,7 +293,7 @@ h3 {
     left: 1rem;
     top: 0;
     width: 2px;
-    background: linear-gradient(180deg, #5b3cc4,  #ff4f6d);
+    background: linear-gradient(180deg, #5b3cc4,  #eae5f8);
     height: 0%; 
     transition: height 0.1s ease-out;
     box-shadow: 0 0 15px rgba(126, 87, 217, 0.5);
@@ -296,7 +308,7 @@ h3 {
     opacity: 1;
     filter: blur(0);
     transform: scale(1.05);
-    background: linear-gradient(90deg, #8449d9,  #886bdd);
+    background: linear-gradient(90deg, #eae5f8,  #886bdd);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;

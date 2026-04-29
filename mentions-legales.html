@@ -20,23 +20,23 @@
 <!-- CSS -->
     <link rel="stylesheet" href="dist/style.css">
 </head>
-<body class="text-primary text-base lg:text-lg bg-bg-1">
+<body class="text-light text-base lg:text-lg bg-bg-1">
 <!-- HEADER -->
 <header class="fixed top-0 left-0 w-full z-[100] bg-white/90 backdrop-blur-md border-b border-gray-100 header-main">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <a href="index.html#hero" class="logo-group group shrink-0">
-            <img src="images/logo/logo-am20.webp" alt="Logo AM 2.0" class="h-10 w-auto">
+            <img src="images/logo/logo-am20.webp" alt="Logo AM 2.0" class="h-10 w-auto" width="500" height="500">
         </a>
 <!-- Menu desktop -->
-        <nav class="hidden lg:flex items-center gap-8">
-            <a href="index.html#solution" class="text-sm font-bold text-gradient transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#5b3cc4] hover:to-[#886bdd]">SOLUTION AM 2.0</a>
-            <a href="index.html#portfolio" class="text-sm font-bold text-gradient transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#5b3cc4] hover:to-[#886bdd]">REALISATIONS</a>
-            <a href="index.html#tarifs" class="text-sm font-bold text-gradient transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#5b3cc4] hover:to-[#886bdd]">OFFRES</a>
-            <a href="index.html#avis" class="text-sm font-bold text-gradient transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#5b3cc4] hover:to-[#886bdd]">AVIS</a>
-            <a href="index.html#faq" class="text-sm font-bold text-gradient transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#5b3cc4] hover:to-[#886bdd]">FAQ</a>
-            <a href="index.html#contact" class="bg-gradient-to-r from-[#886bdd] to-[#5b3cc4] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:shadow-lg hover:shadow-[#5b3cc4]/30 transition-all">LANCER MA VITRINE</a>
+        <nav class="hidden lg:flex items-center gap-8" aria-label="Navigation principale">
+            <a href="index.html#solution" class="text-sm font-bold text-gradient-accent transition-all duration-300 hover:underline">SOLUTION AM 2.0</a>
+            <a href="index.html#portfolio" class="text-sm font-bold text-gradient-accent transition-all duration-300 hover:underline">REALISATIONS</a>
+            <a href="index.html#tarifs" class="text-sm font-bold text-gradient-accent transition-all duration-300 hover:text-transparent hover:underline">OFFRES</a>
+            <a href="index.html#avis" class="text-sm font-bold text-gradient-accent transition-all duration-300 hover:text-transparent hover:underline">AVIS</a>
+            <a href="index.html#faq" class="text-sm font-bold text-gradient-accent transition-all duration-300 hover:text-transparent hover:underline">FAQ</a>
+            <a href="index.html#contact" class="bg-gradient-to-r from-[#3a2791] to-[#8449d9] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:shadow-lg hover:shadow-[#5b3cc4]/30 transition-all">LANCER MA VITRINE</a>
         </nav>
-        <button id="menu-btn" class="lg:hidden text-gray-900 w-10 h-10 flex items-center justify-center">
+        <button id="menu-btn" aria-controls="mobile-menu" aria-expanded="false" aria-label="Ouvrir le menu" class="lg:hidden text-gray-900 w-10 h-10 flex items-center justify-center">
             <svg id="burger-icon" class="w-8 h-8" fill="url(#gradient-hero-icon)" viewBox="0 0 640 640">
                 <path d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/>
             </svg>
@@ -46,13 +46,13 @@
         </button>
     </div>
 <!-- Menu mobile -->
-    <div id="mobile-menu" class="hidden lg:hidden absolute top-20 left-0 w-full bg-white border-b border-gray-100 shadow-xl flex flex-col p-6 gap-6 animate-slide-down text-center">
+    <div id="mobile-menu" role="menu" class="hidden lg:hidden absolute top-20 left-0 w-full bg-[#15171e] border-b border-gray-100 shadow-xl flex flex-col p-6 gap-6 animate-slide-down text-center">
         <a href="index.html#solution" class="mobile-link text-lg font-bold text-gradient-accent">SOLUTION AM 2.0</a>
         <a href="index.html#portfolio" class="mobile-link text-lg font-bold text-gradient-accent">REALISATIONS</a>
         <a href="index.html#tarifs" class="mobile-link text-lg font-bold text-gradient-accent">OFFRES</a>
         <a href="index.html#avis" class="mobile-link text-lg font-bold text-gradient-accent">AVIS</a>
         <a href="index.html#faq" class="mobile-link text-lg font-bold text-gradient-accent">FAQ</a>
-        <a href="index.html#contact" class="bg-gradient-to-r from-[#886bdd] to-[#5b3cc4] text-white px-6 py-4 rounded-full font-bold text-center">LANCER MA VITRINE</a>
+        <a href="index.html#contact" class="bg-gradient-to-r from-[#3a2791] to-[#8449d9] text-white px-6 py-4 rounded-full font-bold text-center">LANCER MA VITRINE</a>
     </div>
 </header>
 <main>
@@ -64,8 +64,8 @@
                 <h1 class="text-3xl lg:text-5xl font-extrabold uppercase tracking-tight text-center">
                     <span class="text-gradient-accent italic block mb-2">Mentions</span> Légales
                 </h1>
-                <p class="pt-2 text-center text-gray-600">(Conformément à la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique)</p>
-                <p class="text-center text-gray-500 text-xs mt-1">Dernière mise à jour : Avril 2026</p>
+                <p class="pt-2 text-center">(Conformément à la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique)</p>
+                <p class="text-center text-xs mt-1">Dernière mise à jour : Avril 2026</p>
             </div>
             <div class="max-w-4xl mx-auto text-left space-y-12"> 
                 <div class="space-y-4">
@@ -113,7 +113,7 @@
                     <p class="text-lg">
                         Sauf mention contraire, ces éléments sont la propriété exclusive de <strong>Aurore Muller (AM 2.0)</strong>.
                     </p>
-                    <p class="text-lg font-semibold bg-slate-50 p-4 border-l-4 border-accent rounded-2xl">
+                    <p class="text-lg font-semibold bg-slate-50 p-4 border-l-4 border-accent rounded-2xl text-primary">
                         Toute reproduction, représentation, modification, adaptation, redistribution ou exploitation, totale ou partielle, des contenus du site est strictement interdite sans autorisation écrite préalable d'Aurore Muller.
                     </p>
                 </div>
@@ -131,7 +131,7 @@
                 </div>
                 <div class="space-y-4">
                     <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">6. Protection des Données & Cookies</h2>
-                    <p class="text-lg font-semibold text-[#5b3cc4]">Respect de la vie privée et transparence :</p>
+                    <p class="text-lg font-semibold text-gradient-accent">Respect de la vie privée et transparence :</p>
                     <ul class="list-disc list-inside space-y-4 text-lg ml-4">
                         <li>
                             <strong>Collecte limitée :</strong> Le site am20.fr limite la collecte de données au strict nécessaire. Seul le formulaire "Analyse offerte" (via l'outil tiers Fillout) recueille des informations (nom, email, URL LinkedIn) dans le but exclusif de traiter votre demande et d'assurer le suivi commercial.
@@ -161,7 +161,7 @@
     </section>
 </main>
 <!-- FOOTER -->
-<footer class="border-t border-secondary pt-20 pb-10 bg-slate-50/50">
+<footer class="border-t border-secondary pt-20 pb-10 footer-main">
     <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
         <defs>
             <linearGradient id="gradient-hero-icon" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -176,15 +176,15 @@
                 <div class="flex items-center gap-5">
                     <div class="relative flex-shrink-0">
                         <div class="absolute inset-0 bg-gradient-accent rounded-full blur-sm opacity-50"></div>
-                        <img src="images/logo/profil-aurore-am20.webp" alt="Aurore - AM 2.0" class="relative w-20 h-20 aspect-square rounded-full border-2 border-white object-cover shadow-xl">
+                        <img src="images/logo/profil-aurore-am20.webp" alt="Aurore - AM 2.0" class="relative w-20 h-20 aspect-square rounded-full border-2 border-white object-cover shadow-xl" loading="lazy" width="500" height="500">
                     </div>
                     <div>
-                        <p class="text-xl font-bold uppercase tracking-widest text-gradient leading-tight">Aurore - AM 2.0</p>
+                        <p class="text-xl font-bold uppercase tracking-widest text-gradient-accent leading-tight">Aurore - AM 2.0</p>
                         <p class="text-gradient-accent italic text-sm">Branding LinkedIn & Sites web</p>
                     </div>
                 </div>
-                <h2 class="text-xl leading-relaxed font-normal text-handwrite text-gray-600 italic">
-                    J’aide les entrepreneurs à transformer leur profil LinkedIn et leur présence digitale en véritables leviers d’acquisition.
+                <h2 class="text-xl leading-relaxed font-normal text-handwrite text-light italic">
+                    Je structure la présence digitale & l’image des solopreneurs & freelances pour générer des opportunités.
                 </h2>
             </div>
             <div class="lg:col-span-8">
@@ -192,7 +192,7 @@
                     <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-accent opacity-[0.03] rounded-full -mr-16 -mt-16"></div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
                         <div>
-                            <h3 class="text-xl font-black uppercase tracking-[0.2em] text-gradient-accent mb-6">Navigation</h3>
+                            <h3 class="text-xl font-black uppercase tracking-[0.2em] text-gradient mb-6">Navigation</h3>
                             <nav class="space-y-4">
                                 <a href="index.html#solution" class="group flex items-center gap-3 text-primary hover:text-[#5b3cc4] transition-all font-bold">
                                     <span class="w-1.5 h-1.5 rounded-full bg-[#5b3cc4] group-hover:bg-[#886bdd] transition-all"></span>
@@ -214,10 +214,10 @@
                         </div>
                         <div class="flex flex-col justify-between">
                             <div>
-                                <h3 class="text-xl font-black uppercase tracking-[0.2em] text-gradient-accent mb-6">Contact</h3>
+                                <h3 class="text-xl font-black uppercase tracking-[0.2em] text-gradient mb-6">Contact</h3>
                                 <div class="flex gap-4">
                                     <a href="https://www.linkedin.com/in/aurore-am20/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 flex items-center justify-center bg-slate-50 rounded-2xl hover:bg-gradient-accent hover:text-white transition-all group shadow-sm">
-                                        <svg class="w-6 h-6 group-hover:fill-[#886bdd]" fill="url(#gradient-hero-icon)" viewBox="0 0 24 24" role="img" aria-label="logo-linkedIn"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                        <svg class="w-6 h-6 group-hover:fill-[#886bdd]" fill="url(#gradient-hero-icon)" viewBox="0 0 24 24" role="img" aria-label="logo linkedIn"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                                     </a>
                                     <a href="https://wa.me/33367999081" target="_blank" rel="noopener noreferrer" class="w-12 h-12 flex items-center justify-center bg-slate-50 rounded-2xl hover:bg-gradient-accent hover:text-white transition-all group shadow-sm">
                                         <svg class="w-6 h-6 group-hover:fill-[#886bdd]" fill="url(#gradient-hero-icon)" viewBox="0 0 24 24" role="img" aria-label="logo whatsapp"><path d="M12.031 2c-5.511 0-9.989 4.478-9.989 9.989 0 1.762.457 3.479 1.323 4.992l-1.405 5.127 5.251-1.378c1.472.802 3.125 1.225 4.815 1.225h.005c5.511 0 9.989-4.478 9.989-9.989 0-2.663-1.037-5.166-2.921-7.051-1.884-1.884-4.387-2.922-7.068-2.922zM16.669 16.445c-.255.717-1.492 1.314-2.062 1.393-.517.073-1.191.131-3.238-.72-2.618-1.088-4.303-3.748-4.433-3.921-.131-.173-1.066-1.417-1.066-2.705 0-1.288.675-1.921.916-2.181.241-.26.526-.325.7-.325s.349.001.5.01c.158.009.371-.06.58.444.214.517.733 1.787.797 1.918.064.131.107.283.021.454-.086.173-.131.283-.26.433-.129.151-.272.337-.389.454-.129.13-.264.271-.114.526.151.255.671 1.107 1.44 1.791.99.882 1.825 1.155 2.083 1.285.257.129.407.108.558-.065.151-.173.649-.757.822-1.016.173-.259.346-.216.584-.129.239.086 1.514.714 1.774.843.26.13.433.195.498.303.064.108.064.627-.191 1.344z"/></svg>
@@ -238,7 +238,7 @@
         <div class="pt-8 border-t border-gray-200/60 flex flex-col md:flex-row justify-between items-center gap-6 text-[13px] font-medium text-gray-400">
             <p>© <span id="current-year"></span> AM 2.0 • Tous droits réservés.</p>
             <div class="flex gap-6">
-                <a href="mentions-legales.html" class="text-secondary italic">Mentions</a>
+                <a href="#" class="text-[#886bdd] italic">Mentions</a>
                 <a href="politique-confidentialite.html" class="hover:text-[#886bdd] transition-colors">RGPD</a>
                 <a href="cgv.html" class="hover:text-[#886bdd] transition-colors">CGV</a>
             </div>

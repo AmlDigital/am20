@@ -20,23 +20,23 @@
 <!-- CSS -->
     <link rel="stylesheet" href="dist/style.css">
 </head>
-<body class="text-primary text-base lg:text-lg bg-bg-1">
+<body class="text-light text-base lg:text-lg bg-bg-1">
 <!-- HEADER -->
 <header class="fixed top-0 left-0 w-full z-[100] bg-white/90 backdrop-blur-md border-b border-gray-100 header-main">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <a href="index.html#hero" class="logo-group group shrink-0">
-            <img src="images/logo/logo-am20.webp" alt="Logo AM 2.0" class="h-10 w-auto">
+            <img src="images/logo/logo-am20.webp" alt="Logo AM 2.0" class="h-10 w-auto" width="500" height="500">
         </a>
 <!-- Menu desktop -->
-        <nav class="hidden lg:flex items-center gap-8">
-            <a href="index.html#solution" class="text-sm font-bold text-gradient transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#5b3cc4] hover:to-[#886bdd]">SOLUTION AM 2.0</a>
-            <a href="index.html#portfolio" class="text-sm font-bold text-gradient transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#5b3cc4] hover:to-[#886bdd]">REALISATIONS</a>
-            <a href="index.html#tarifs" class="text-sm font-bold text-gradient transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#5b3cc4] hover:to-[#886bdd]">OFFRES</a>
-            <a href="index.html#avis" class="text-sm font-bold text-gradient transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#5b3cc4] hover:to-[#886bdd]">AVIS</a>
-            <a href="index.html#faq" class="text-sm font-bold text-gradient transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#5b3cc4] hover:to-[#886bdd]">FAQ</a>
-            <a href="index.html#contact" class="bg-gradient-to-r from-[#886bdd] to-[#5b3cc4] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:shadow-lg hover:shadow-[#5b3cc4]/30 transition-all">LANCER MA VITRINE</a>
+        <nav class="hidden lg:flex items-center gap-8" aria-label="Navigation principale">
+            <a href="index.html#solution" class="text-sm font-bold text-gradient-accent transition-all duration-300 hover:underline">SOLUTION AM 2.0</a>
+            <a href="index.html#portfolio" class="text-sm font-bold text-gradient-accent transition-all duration-300 hover:underline">REALISATIONS</a>
+            <a href="index.html#tarifs" class="text-sm font-bold text-gradient-accent transition-all duration-300 hover:text-transparent hover:underline">OFFRES</a>
+            <a href="index.html#avis" class="text-sm font-bold text-gradient-accent transition-all duration-300 hover:text-transparent hover:underline">AVIS</a>
+            <a href="index.html#faq" class="text-sm font-bold text-gradient-accent transition-all duration-300 hover:text-transparent hover:underline">FAQ</a>
+            <a href="index.html#contact" class="bg-gradient-to-r from-[#3a2791] to-[#8449d9] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:shadow-lg hover:shadow-[#5b3cc4]/30 transition-all">LANCER MA VITRINE</a>
         </nav>
-        <button id="menu-btn" class="lg:hidden text-gray-900 w-10 h-10 flex items-center justify-center">
+        <button id="menu-btn" aria-controls="mobile-menu" aria-expanded="false" aria-label="Ouvrir le menu" class="lg:hidden text-gray-900 w-10 h-10 flex items-center justify-center">
             <svg id="burger-icon" class="w-8 h-8" fill="url(#gradient-hero-icon)" viewBox="0 0 640 640">
                 <path d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/>
             </svg>
@@ -46,13 +46,13 @@
         </button>
     </div>
 <!-- Menu mobile -->
-    <div id="mobile-menu" class="hidden lg:hidden absolute top-20 left-0 w-full bg-white border-b border-gray-100 shadow-xl flex flex-col p-6 gap-6 animate-slide-down text-center">
+    <div id="mobile-menu" role="menu" class="hidden lg:hidden absolute top-20 left-0 w-full bg-[#15171e] border-b border-gray-100 shadow-xl flex flex-col p-6 gap-6 animate-slide-down text-center">
         <a href="index.html#solution" class="mobile-link text-lg font-bold text-gradient-accent">SOLUTION AM 2.0</a>
         <a href="index.html#portfolio" class="mobile-link text-lg font-bold text-gradient-accent">REALISATIONS</a>
         <a href="index.html#tarifs" class="mobile-link text-lg font-bold text-gradient-accent">OFFRES</a>
         <a href="index.html#avis" class="mobile-link text-lg font-bold text-gradient-accent">AVIS</a>
         <a href="index.html#faq" class="mobile-link text-lg font-bold text-gradient-accent">FAQ</a>
-        <a href="index.html#contact" class="bg-gradient-to-r from-[#886bdd] to-[#5b3cc4] text-white px-6 py-4 rounded-full font-bold text-center">LANCER MA VITRINE</a>
+        <a href="index.html#contact" class="bg-gradient-to-r from-[#3a2791] to-[#8449d9] text-white px-6 py-4 rounded-full font-bold text-center">LANCER MA VITRINE</a>
     </div>
 </header>
 <main>
@@ -63,10 +63,10 @@
                 <h1 class="text-3xl lg:text-5xl font-extrabold uppercase tracking-tight text-center">
                     Conditions Générales <span class="text-gradient-accent italic block mb-2">de Vente</span>
                 </h1>
-                <p class="pt-2 text-center text-gray-600 font-semibold italic text-sm lg:text-base">
+                <p class="pt-2 text-center text-light font-semibold italic text-sm lg:text-base">
                     Prestations de Conseil en Image Numérique & Design Web (B2B)
                 </p>
-                <p class="text-center text-gray-500 text-xs mt-1">Dernière mise à jour : Avril 2026</p>
+                <p class="text-center text-light text-xs mt-1">Dernière mise à jour : Avril 2026</p>
             </div>
             <div class="max-w-4xl mx-auto text-left space-y-12"> 
                 <div class="space-y-4">
@@ -74,7 +74,7 @@
                     <p class="text-lg">
                         Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles entre <strong>Aurore Muller (AM 2.0)</strong>, Entrepreneur Individuel (ci-après « le Prestataire ») et tout professionnel ou représentant d’association (ci-après « le Client »).
                     </p>
-                    <p class="text-lg font-semibold bg-slate-50 p-4 border-l-4 border-accent rounded-2xl italic">
+                    <p class="text-lg font-semibold bg-slate-50 p-4 border-l-4 border-accent rounded-2xl italic text-primary">
                         Les services proposés sont exclusivement destinés à un usage professionnel. Le Client reconnaît agir dans le cadre de son activité professionnelle.
                     </p>
                 </div>
@@ -98,7 +98,7 @@
                 </div>
                 <div class="space-y-4">
                     <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">3. Acceptation des CGV</h2>
-                    <p class="text-lg font-semibold border-l-4 border-accent rounded-2xl pl-4 bg-slate-50 p-2">Toute commande implique l’acceptation pleine et entière des présentes CGV.</p>
+                    <p class="text-lg font-semibold border-l-4 border-accent rounded-2xl pl-4 bg-slate-50 p-2 text-primary">Toute commande implique l’acceptation pleine et entière des présentes CGV.</p>
                     <p class="text-lg">Cette acceptation peut se matérialiser par :</p>
                     <ul class="list-disc list-inside space-y-2 text-lg ml-4">
                         <li>La signature d’un devis</li>
@@ -147,32 +147,32 @@
                         </div>
                         <div class="space-y-4">
                             <h3 class="text-xl font-bold">6.2. Modalités de paiement</h3>
-                            <p class="text-lg font-semibold italic text-gray-700">Le règlement s'effectue par carte bancaire via la plateforme sécurisée Stripe.</p>
+                            <p class="text-lg font-semibold italic text-gradient-accent">Le règlement s'effectue par carte bancaire via la plateforme sécurisée Stripe.</p>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-slate-50 p-5 rounded-2xl border-l-4 border-secondary">
-                                    <p class="font-bold text-lg mb-2 underline text-secondary">Prestations LinkedIn</p>
-                                    <ul class="list-disc list-inside space-y-2 text-base">
+                                    <p class="font-bold text-lg mb-2 underline text-accent">Prestations LinkedIn</p>
+                                    <ul class="list-disc list-inside space-y-2 text-base text-primary">
                                         <li><strong>Acompte :</strong> 50% à la commande.</li>
                                         <li><strong>Solde :</strong> Avant livraison, au maximum <strong>30 jours</strong> après l'acompte.</li>
                                         <li><span class="text-secondary font-bold">Facilité :</span> Possibilité de règlement en <strong>2 mensualités</strong>.</li>
                                     </ul>
                                 </div>  
                                 <div class="bg-slate-50 p-5 rounded-2xl border-l-4 border-secondary">
-                                    <p class="font-bold text-lg mb-2 underline text-secondary">Prestations Web</p>
-                                    <ul class="list-disc list-inside space-y-2 text-base">
+                                    <p class="font-bold text-lg mb-2 underline text-accent">Prestations Web</p>
+                                    <ul class="list-disc list-inside space-y-2 text-base text-primary">
                                         <li><strong>Acompte :</strong> 33% à la commande.</li>
                                         <li><strong>Solde :</strong> Avant livraison, au maximum <strong>60 jours</strong> après l'acompte.</li>
                                         <li><span class="text-secondary font-bold">Facilité :</span> Possibilité de règlement en <strong>3 mensualités</strong>.</li>
                                     </ul>
                                 </div>
                             </div>
-                            <p class="text-sm italic bg-gray-100 p-3 rounded-lg mt-4">
+                            <p class="text-sm italic bg-gray-100 p-3 rounded-lg mt-4 text-primary">
                                 Le paiement de l'acompte (ou de la première mensualité) valide la commande et vaut acceptation sans réserve des présentes CGV. La livraison finale n'intervient qu'après encaissement intégral des sommes dues.
                             </p>
                         </div>
                         <div class="p-5 border-l-4 border-red-500 bg-red-50 rounded-2xl">
                             <h3 class="text-lg font-bold text-red-700 underline mb-3">6.3. Retards de paiement (Art. L441-10 du Code de commerce)</h3>
-                            <div class="space-y-3 text-base">
+                            <div class="space-y-3 text-base text-red-700">
                                 <p>
                                     Tout retard de paiement donnera lieu, de plein droit et sans rappel préalable, à l’application de <strong>pénalités de retard calculées au taux de 10 % annuel</strong> sur le montant impayé.
                                 </p>
@@ -196,7 +196,7 @@
                 <div class="space-y-4">
                     <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">8. Révisions</h2>
                     <p class="text-lg">Le Prestataire propose des <strong>révisions illimitées</strong> afin de garantir la pleine satisfaction du Client, sous réserve du respect du périmètre initial défini au devis.</p> 
-                    <div class="bg-slate-50 p-6 rounded-2xl space-y-4 border border-secondary">
+                    <div class="bg-slate-50 p-6 rounded-2xl space-y-4 border border-secondary text-primary">
                         <p class="text-lg font-bold text-secondary italic underline">Durée et Fin de validité :</p>
                         <p class="text-lg">La période de révisions s'étend sur un délai maximum de :</p>
                         <ul class="list-disc list-inside space-y-2 text-lg ml-4">
@@ -231,7 +231,7 @@
                         <li>Accès Canva</li>
                         <li>Mise en ligne web ou remise des accès techniques</li>
                     </ul>
-                    <p class="text-lg font-semibold border-l-4 border-accent rounded-2xl pl-4 bg-slate-50 p-2">
+                    <p class="text-lg font-semibold border-l-4 border-accent rounded-2xl pl-4 bg-slate-50 p-2 text-primary">
                         Le Prestataire se réserve le droit de suspendre toute livraison, de bloquer ou de désactiver un accès technique en cas de défaut de paiement, jusqu’à régularisation complète de la situation.
                     </p>
                 </div>
@@ -242,7 +242,7 @@
                         <li>Transmettre les éléments nécessaires dans les délais</li>
                         <li>Valider les livrables dans un délai raisonnable</li>
                     </ul>
-                    <p class="text-lg font-semibold border-l-4 border-accent rounded-2xl pl-4 bg-slate-50 p-2">Le Client est seul responsable des contenus (images, logos, textes) qu'il fournit au Prestataire. Il garantit détenir les droits nécessaires à leur exploitation.</p>
+                    <p class="text-lg font-semibold border-l-4 border-accent rounded-2xl pl-4 bg-slate-50 p-2 text-primary">Le Client est seul responsable des contenus (images, logos, textes) qu'il fournit au Prestataire. Il garantit détenir les droits nécessaires à leur exploitation.</p>
                 </div>
                 <div class="space-y-4">
                     <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">11. Responsabilité</h2>
@@ -250,7 +250,7 @@
                     <p class="text-lg">Toutefois, il ne peut garantir les résultats commerciaux (nombre de vues, de leads ou de ventes) liés à l'utilisation des livrables, ceux-ci dépendant de facteurs extérieurs (algorithmes, marché, activité du Client).</p>
                     <p class="text-lg">Le Prestataire ne pourra être tenu responsable des dommages indirects, perte de chiffre d’affaires, perte de données ou préjudice commercial.</p>
                     <p class="text-lg">Le Client est seul responsable de l’exploitation des livrables et des résultats obtenus suite à leur utilisation.</p>
-                    <p class="text-lg font-semibold border-l-4 border-accent rounded-2xl pl-4 bg-slate-50 p-2">La responsabilité du Prestataire est strictement limitée au montant de la prestation facturée.</p>
+                    <p class="text-lg font-semibold border-l-4 border-accent rounded-2xl pl-4 bg-slate-50 p-2 text-primary">La responsabilité du Prestataire est strictement limitée au montant de la prestation facturée.</p>
                 </div>
                 <div class="space-y-4">
                     <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">12. Propriété intellectuelle</h2>
@@ -263,7 +263,7 @@
                     <p class="text-lg">
                         Toute reproduction, revente, diffusion ou exploitation des livrables en dehors du cadre prévu initialement devra faire l’objet d’un accord écrit préalable du Prestataire.
                     </p>
-                    <p class="text-lg font-semibold border-l-4 border-secondary rounded-2xl pl-4 bg-slate-50 p-2">
+                    <p class="text-lg font-semibold border-l-4 border-secondary rounded-2xl pl-4 bg-slate-50 p-2 text-primary">
                         Le Prestataire se réserve le droit de présenter les réalisations (y compris avant/après) dans son portfolio et ses supports de communication, sauf demande écrite contraire du Client.
                     </p>
                 </div>
@@ -290,10 +290,10 @@
                     </ul>
                     <div class="bg-red-50 p-4 border-l-4 border-red-500 rounded-2xl">
                         <p class="text-lg font-bold text-red-700">Annulation par le Prestataire :</p>
-                        <p class="text-base mt-2">
+                        <p class="text-base mt-2 text-red-700">
                             Le Prestataire se réserve le droit d’interrompre ou d’annuler une prestation en cas de manquement du Client, notamment:
                         </p>
-                        <ul class="list-disc list-inside text-base ml-4 mt-2">
+                        <ul class="list-disc list-inside text-base ml-4 mt-2 text-red-700">
                             <li>Non-paiement ou retard de paiement</li>
                             <li>Absence de réponse ou de collaboration du Client</li>
                             <li>Fourniture d’informations erronées ou incomplètes</li>
@@ -315,7 +315,7 @@
     </section>
 </main>
 <!-- FOOTER -->
-<footer class="border-t border-secondary pt-20 pb-10 bg-slate-50/50">
+<footer class="border-t border-secondary pt-20 pb-10 footer-main">
     <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
         <defs>
             <linearGradient id="gradient-hero-icon" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -330,15 +330,15 @@
                 <div class="flex items-center gap-5">
                     <div class="relative flex-shrink-0">
                         <div class="absolute inset-0 bg-gradient-accent rounded-full blur-sm opacity-50"></div>
-                        <img src="images/logo/profil-aurore-am20.webp" alt="Aurore - AM 2.0" class="relative w-20 h-20 aspect-square rounded-full border-2 border-white object-cover shadow-xl">
+                        <img src="images/logo/profil-aurore-am20.webp" alt="Aurore - AM 2.0" class="relative w-20 h-20 aspect-square rounded-full border-2 border-white object-cover shadow-xl" loading="lazy" width="500" height="500">
                     </div>
                     <div>
-                        <p class="text-xl font-bold uppercase tracking-widest text-gradient leading-tight">Aurore - AM 2.0</p>
+                        <p class="text-xl font-bold uppercase tracking-widest text-gradient-accent leading-tight">Aurore - AM 2.0</p>
                         <p class="text-gradient-accent italic text-sm">Branding LinkedIn & Sites web</p>
                     </div>
                 </div>
-                <h2 class="text-xl leading-relaxed font-normal text-handwrite text-gray-600 italic">
-                    J’aide les entrepreneurs à transformer leur profil LinkedIn et leur présence digitale en véritables leviers d’acquisition.
+                <h2 class="text-xl leading-relaxed font-normal text-handwrite text-light italic">
+                    Je structure la présence digitale & l’image des solopreneurs & freelances pour générer des opportunités.
                 </h2>
             </div>
             <div class="lg:col-span-8">
@@ -346,7 +346,7 @@
                     <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-accent opacity-[0.03] rounded-full -mr-16 -mt-16"></div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
                         <div>
-                            <h3 class="text-xl font-black uppercase tracking-[0.2em] text-gradient-accent mb-6">Navigation</h3>
+                            <h3 class="text-xl font-black uppercase tracking-[0.2em] text-gradient mb-6">Navigation</h3>
                             <nav class="space-y-4">
                                 <a href="index.html#solution" class="group flex items-center gap-3 text-primary hover:text-[#5b3cc4] transition-all font-bold">
                                     <span class="w-1.5 h-1.5 rounded-full bg-[#5b3cc4] group-hover:bg-[#886bdd] transition-all"></span>
@@ -368,7 +368,7 @@
                         </div>
                         <div class="flex flex-col justify-between">
                             <div>
-                                <h3 class="text-xl font-black uppercase tracking-[0.2em] text-gradient-accent mb-6">Contact</h3>
+                                <h3 class="text-xl font-black uppercase tracking-[0.2em] text-gradient mb-6">Contact</h3>
                                 <div class="flex gap-4">
                                     <a href="https://www.linkedin.com/in/aurore-am20/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 flex items-center justify-center bg-slate-50 rounded-2xl hover:bg-gradient-accent hover:text-white transition-all group shadow-sm">
                                         <svg class="w-6 h-6 group-hover:fill-[#886bdd]" fill="url(#gradient-hero-icon)" viewBox="0 0 24 24" role="img" aria-label="logo linkedIn"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
@@ -394,7 +394,7 @@
             <div class="flex gap-6">
                 <a href="mentions-legales.html" class="hover:text-[#886bdd] transition-colors">Mentions</a>
                 <a href="politique-confidentialite.html" class="hover:text-[#886bdd] transition-colors">RGPD</a>
-                <a href="cgv.html" class="text-secondary italic">CGV</a>
+                <a href="#" class="text-[#886bdd] italic">CGV</a>
             </div>
         </div>
     </div>
