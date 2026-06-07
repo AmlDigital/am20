@@ -43,49 +43,52 @@
       "url": "https://www.am20.fr",
       "name": "AM 2.0",
       "inLanguage": "fr-FR",
+      "description": "Expert en optimisation de parcours digitaux et conversion à Obernai",
       "publisher": {
         "@id": "https://www.am20.fr/#organization"
       }
     },
+
     {
-      "@type": "ProfessionalService",
+      "@type": ["ProfessionalService", "LocalBusiness", "Organization"],
       "@id": "https://www.am20.fr/#organization",
       "name": "AM 2.0",
       "url": "https://www.am20.fr",
       "image": "https://www.am20.fr/images/og-img.jpg",
-      "logo": "https://www.am20.fr/images/logo-am20.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.am20.fr/images/logo-am20.png"
+      },
+
       "email": "contact@am20.fr",
-      "telephone": "+33 3 67 99 90 81",
+      "telephone": "+33367999081",
       "priceRange": "€€",
-      "description": "AM 2.0 accompagne les indépendants, associations et petites structures dans l'optimisation de leur présence digitale grâce à l'analyse des parcours utilisateurs, l'amélioration de la conversion, la création de sites web stratégiques, l'optimisation LinkedIn et les stratégies de visibilité locale.",
-      
+      "description": "AM 2.0 accompagne les indépendants et associations à Obernai et en Alsace dans l'optimisation de leur présence digitale grâce à l'analyse des parcours utilisateurs, l'amélioration de la conversion, la création de sites web stratégiques et l'optimisation LinkedIn.",
       "address": {
         "@type": "PostalAddress",
         "postalCode": "67210",
         "addressLocality": "Obernai",
-        "addressRegion": "Grand Est",
+        "addressRegion": "Bas-Rhin",
         "addressCountry": "FR"
       },
-      "areaServed": [
-        {
-            "@type": "AdministrativeArea",
-            "name": "Grand Est"
-        },
-        {
-            "@type": "AdministrativeArea",
-            "name": "Bas-Rhin"
-        },
-        {
-            "@type": "AdministrativeArea",
-            "name": "Haut-Rhin"
-        }
-      ],
+
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 48.4614,
+        "longitude": 7.4822
+      },
+
+        "areaServed": [
+        { "@type": "Place", "name": "France" },
+        { "@type": "AdministrativeArea", "name": "Grand Est" }
+    ],
       
       "founder": {
         "@type": "Person",
         "name": "Aurore Muller",
         "jobTitle": "Consultante en parcours digitaux et optimisation de conversion"
       },
+
       "knowsAbout": [
         "parcours utilisateur",
         "parcours client",
@@ -100,6 +103,7 @@
         "identité digitale",
         "acquisition client"
       ],
+
       "serviceType": [
         "Audit de présence digitale",
         "Analyse de parcours utilisateur",
@@ -109,6 +113,7 @@
         "Stratégie Instagram",
         "SEO local"
       ],
+
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Services AM 2.0",
@@ -128,6 +133,7 @@
               }
             }
           },
+
           {
             "@type": "ListItem",
             "position": 2,
@@ -143,6 +149,7 @@
               }
             }
           },
+
           {
             "@type": "ListItem",
             "position": 3,
@@ -158,6 +165,7 @@
               }
             }
           },
+
           {
             "@type": "ListItem",
             "position": 4,
@@ -175,6 +183,7 @@
           }
         ]
       },
+
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer support",
@@ -182,6 +191,7 @@
         "availableLanguage": "fr",
         "areaServed": "FR"
       },
+
       "sameAs": [
         "https://www.linkedin.com/in/aurore-am20"
       ]
@@ -1123,11 +1133,11 @@
                 <div class="px-1 flex-1">
                     <h4 class="font-bold text-gray-200 text-base">Une activité locale enfin visible</h4>
                     <p class="text-sm text-gray-200 mt-2">
-                        <span class="bg-gray-500 text-gray-200 text-[9px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider inline-block mr-1">Contexte</span> 
+                        <span class="bg-gray-700 text-gray-100 text-[9px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider inline-block mr-1">Contexte</span> 
                         Une visibilité qui reposait essentiellement sur une fiche Google et quelques annuaires en ligne.
                     </p>
                     <p class="text-sm text-gray-200 mt-2">
-                        <span class="bg-gray-300 text-[#8449d9] text-[9px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider inline-block mr-1">Solution</span> 
+                        <span class="bg-gray-300 text-[#3a2791] text-[9px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider inline-block mr-1">Solution</span> 
                         Création d'une page dédiée optimisée pour les recherches locales et conçue pour rassurer les débutants avant leur premier essai.
                     </p>
                     <p class="text-sm text-gray-200 mt-2">
@@ -1257,6 +1267,7 @@
                     <div class="bg-[#0B0C10] aspect-[9/16] w-full lg:w-auto lg:h-[400px] mx-auto rounded-xl flex items-center justify-center relative overflow-hidden border border-white/5 dynamic-video-container">
                         <video 
                             id="instagramReel"
+                            poster="images/insta-project/couverture-insta-reel-am20.webp"
                             class="w-full h-full object-cover relative z-10"
                             src="images/insta-project/video-insta-am20.mp4" 
                             width="1080" height="1550"
@@ -1725,7 +1736,7 @@
                             <path d="M568.4 37.7C578.2 34.2 589 36.7 596.4 44C603.8 51.3 606.2 62.2 602.7 72L424.7 568.9C419.7 582.8 406.6 592 391.9 592C377.7 592 364.9 583.4 359.6 570.3L295.4 412.3C290.9 401.3 292.9 388.7 300.6 379.7L395.1 267.3C400.2 261.2 399.8 252.3 394.2 246.7C388.6 241.1 379.6 240.7 373.6 245.8L261.2 340.1C252.1 347.7 239.6 349.7 228.6 345.3L70.1 280.8C57 275.5 48.4 262.7 48.4 248.5C48.4 233.8 57.6 220.7 71.5 215.7L568.4 37.7z"/>
                         </svg>
                     </div>
-                    <h4 class="font-bold text-white text-base md:text-lg">Tu es prêt à avancer ?</h4>
+                    <h3 class="font-bold text-white text-base md:text-lg">Tu es prêt à avancer ?</h3>
                 </div>
     <!-- Texte et puces -->
                 <p class="text-base text-gray-200 leading-relaxed">
@@ -1769,7 +1780,7 @@
                             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                         </svg>
                     </div>
-                    <h4 class="font-bold text-white text-base md:text-lg">Besoin d'un premier échange avant de te lancer ?</h4>
+                    <h3 class="font-bold text-white text-base md:text-lg">Besoin d'un premier échange avant de te lancer ?</h3>
                 </div>
     <!-- Texte et puces  -->
                 <p class="text-base text-gray-300 leading-relaxed">
