@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow"><!-- Page NON indexée -->
+<!-- SEO -->
+    <title>Formulaire de diagnostic initial | AM 2.0</title>
+    <meta name="description" content="Réponds à quelques questions pour identifier tes points de friction et opportunités. Reçois une première restitution personnalisée offerte de ta présence en ligne.">
+<!-- Canonical -->
+    <link rel="canonical" href="https://www.am20.fr/diagnostic-offert">
+<!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+    <link rel="icon" href="images/favicon/favicon16.png" sizes="16x16"/>
+    <link rel="icon" href="images/favicon/favicon32.png" sizes="32x32"/>
+    <link rel="icon" href="images/favicon/android192.png" sizes="192x192"/>
+    <link rel="icon" href="images/favicon/android512.png" sizes="512x512"/>    
+    <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png"/>
+<!-- Open Graph -->
+    <meta property="og:title" content="Diagnostic préliminaire offert de présence en ligne - AM 2.0">
+    <meta property="og:description" content="Identifie tes points de friction et opportunités. Réponds aux questions pour obtenir ton diagnostic offert.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.am20.fr/diagnostic-offert">
+    <meta property="og:image" content="https://www.am20.fr/images/og-img.jpg">
+<!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Diagnostic préliminaire offert de présence en ligne - AM 2.0">
+    <meta name="twitter:description" content="Identifie tes points de friction et opportunités. Réponds aux questions pour obtenir ta restitution personnalisée.">
+<!-- CSS -->
+    <link rel="stylesheet" href="dist/style.css">
+</head>
+<body class="bg-[#0B0C10] text-white font-sans antialiased m-0 p-0 relative min-h-screen overflow-x-hidden selection:bg-[#8449d9]/30">
+    <div class="fixed inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_-10%,rgba(132,73,217,0.18),transparent)] pointer-events-none z-0"></div>
+    <div class="fixed bottom-[-10%] right-[10%] w-[450px] h-[450px] bg-cyan-500/10 blur-[120px] rounded-full pointer-events-none z-0"></div>
+    <div class="fixed inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none z-0"></div>
+    <div class="relative z-10 w-full">
+<div class="text-white font-sans antialiased min-h-screen relative overflow-x-hidden flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"> 
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#8449d9]/10 blur-[140px] pointer-events-none rounded-full"></div>
+    <div class="w-full max-w-6xl relative z-10">
+        <div class="text-center mb-10 space-y-4">
+            <span id="badge-title" class="bg-white/5 text-cyan-300 font-medium px-4 py-1.5 rounded-full text-xs md:text-sm border border-white/10 inline-block tracking-wide uppercase">
+                Diagnostic Offert
+            </span>
+            <h1 id="main-title" class="text-3xl md:text-5xl font-black text-white tracking-tight leading-tight">
+                Demande <span class="bg-gradient-to-r from-[#8449d9] to-cyan-400 bg-clip-text text-transparent italic">ton pré-diagnostic</span>
+            </h1>
+            <div id="intro-texts" class="space-y-3 pt-2">
+                <p id="main-intro" class="text-gray-300 text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto">
+                    La première étape consiste à réaliser un diagnostic préliminaire de ta présence en ligne afin d'identifier les principaux points de friction et les opportunités d'amélioration.
+                </p>
+                <p class="text-sm text-gray-400 font-light italic">
+                    Réponds à quelques questions afin que je puisse analyser ta situation et préparer une première restitution personnalisée.
+                </p>
+            </div>
+        </div>
+        <form id="diagnostic-form" name="diagnostic-general" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="bg-[#16171a] border border-white/10 rounded-2xl p-6 md:p-10 shadow-2xl space-y-8">   
+            <p class="hidden">
+                <label>Ne pas remplir ce champ si vous êtes un humain : <input name="bot-field" /></label>
+            </p>
+            <input type="hidden" name="form-source-type" id="form-source-type" value="global">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <label class="block text-sm font-medium text-gray-200">Nom / Prénom <span class="text-cyan-400">*</span></label>
+                    <input type="text" name="nom" required autocomplete="name" class="w-full bg-[#111215] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#8449d9] focus:ring-1 focus:ring-[#8449d9] transition-all">
+                </div>
+                <div class="space-y-2">
+                    <label class="block text-sm font-medium text-gray-200">Entreprise <span class="text-cyan-400">*</span></label>
+                    <input type="text" name="entreprise" required autocomplete="organization" class="w-full bg-[#111215] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#8449d9] focus:ring-1 focus:ring-[#8449d9] transition-all">
+                </div>
+                <div class="sm:col-span-2 space-y-2">
+                    <label class="block text-sm font-medium text-gray-200">Adresse email <span class="text-cyan-400">*</span></label>
+                    <input type="email" name="email" required autocomplete="email" class="w-full bg-[#111215] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#8449d9] focus:ring-1 focus:ring-[#8449d9] transition-all">
+                </div>
+            </div>
+            <div class="space-y-4 pt-4 border-t border-white/5">
+                <label class="block text-base font-bold text-white tracking-wide">Quel(s) canal(aux) souhaites-tu faire analyser ? <span class="text-cyan-400">*</span></label>   
+                <div class="grid grid-cols-1 gap-3">
+                    <div id="channel-linkedin" class="channel-wrapper flex items-start gap-3 p-3 bg-[#111215] rounded-xl border border-white/5">
+                        <input type="checkbox" name="canaux[]" value="linkedin" id="chk-linkedin" class="w-5 h-5 rounded mt-0.5 accent-[#8449d9] cursor-pointer">
+                        <label for="chk-linkedin" class="text-white font-medium cursor-pointer select-none">LinkedIn</label>
+                    </div>
+                    <div id="channel-web" class="channel-wrapper flex items-start gap-3 p-3 bg-[#111215] rounded-xl border border-white/5">
+                        <input type="checkbox" name="canaux[]" value="web" id="chk-web" class="w-5 h-5 rounded mt-0.5 accent-[#8449d9] cursor-pointer">
+                        <label for="chk-web" class="text-white font-medium cursor-pointer select-none">Site Web</label>
+                    </div>
+                    <div id="channel-instagram" class="channel-wrapper p-3 bg-[#111215] rounded-xl border border-white/5 space-y-3">
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" name="canaux[]" value="instagram" id="chk-instagram" class="w-5 h-5 rounded mt-0.5 accent-[#8449d9] cursor-pointer">
+                            <label for="chk-instagram" class="text-white font-medium cursor-pointer select-none">Instagram</label>
+                        </div>
+                        <div id="insta-alert" class="hidden bg-[#8449d9]/10 border border-[#8449d9]/40 p-4 rounded-xl space-y-3 mt-2">
+                            <p class="text-sm text-amber-300 font-semibold flex items-center gap-1.5">
+                                ⚠️ Instagram (sélection sur candidature)
+                            </p>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                L’accompagnement Instagram est réservé à un nombre limité de projets afin de garantir un suivi qualitatif et stratégique. Si ton objectif concerne Instagram, tu peux déposer une candidature dédiée.
+                            </p>
+                            <a href="candidature-instagram.html" class="inline-flex text-xs font-bold text-white bg-gradient-to-r from-[#8449d9] to-cyan-400 px-4 py-2 rounded-full hover:scale-105 transition-transform">
+                                Accéder à la candidature Instagram
+                            </a>
+                        </div>
+                    </div>
+                    <div id="channel-autre" class="channel-wrapper p-3 bg-[#111215] rounded-xl border border-white/5 space-y-3">
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" name="canaux[]" value="autre" id="chk-autre" class="w-5 h-5 rounded mt-0.5 accent-[#8449d9] cursor-pointer">
+                            <label for="chk-autre" class="text-white font-medium cursor-pointer select-none">Autre (à préciser)</label>
+                        </div>
+                        <input type="text" name="precision-canal-autre" id="input-autre-precision" placeholder="Précise l'autre canal..." class="hidden w-full bg-[#16171a] border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#8449d9]">
+                    </div>
+                </div>
+                <button type="button" id="btn-show-all-channels" class="hidden text-xs text-cyan-400 hover:text-cyan-300 font-bold items-center gap-1 mt-2 cursor-pointer">
+                    + Je souhaite également faire analyser d'autres canaux
+                </button>
+            </div>
+            <div id="section-links" class="space-y-4 pt-4 border-t border-white/5 hidden">
+                <label class="block text-base font-bold text-white tracking-wide">Lien(s) à analyser</label>
+                <div class="grid grid-cols-1 gap-4">
+                    <div id="field-link-linkedin" class="hidden space-y-1.5">
+                        <label class="text-xs font-medium text-gray-400">Lien vers ton profil ou page LinkedIn <span class="text-cyan-400">*</span></label>
+                        <input type="url" name="lien-linkedin" placeholder="https://www.linkedin.com/in/..." class="w-full bg-[#111215] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#8449d9]">
+                    </div>
+                    <div id="field-link-web" class="hidden space-y-1.5">
+                        <label class="text-xs font-medium text-gray-400">Lien vers ton Site Web <span class="text-cyan-400">*</span></label>
+                        <input type="url" name="lien-web" placeholder="https://mon-site.com" class="w-full bg-[#111215] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#8449d9]">
+                    </div>
+                    <div id="field-link-instagram" class="hidden space-y-1.5">
+                        <label class="text-xs font-medium text-gray-400">Lien vers ton compte Instagram <span class="text-cyan-400">*</span></label>
+                        <input type="url" name="lien-instagram" placeholder="https://www.instagram.com/..." class="w-full bg-[#111215] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#8449d9]">
+                    </div>
+                    <div id="field-link-autre" class="hidden space-y-1.5">
+                        <label class="text-xs font-medium text-gray-400">Lien ressource optionnel (Autre)</label>
+                        <input type="url" name="lien-autre" placeholder="https://..." class="w-full bg-[#111215] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#8449d9]">
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-3 pt-4 border-t border-white/5">
+                <label class="block text-base font-bold text-white tracking-wide">Quel est ton objectif principal ? <span class="text-cyan-400">*</span></label>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <label class="flex items-center gap-3 p-3 bg-[#111215] border border-white/5 rounded-xl cursor-pointer select-none">
+                        <input type="radio" name="objectif" value="clients" required class="w-4 h-4 accent-[#8449d9]">
+                        <span class="text-sm text-gray-200">Trouver plus de clients</span>
+                    </label>
+                    <label class="flex items-center gap-3 p-3 bg-[#111215] border border-white/5 rounded-xl cursor-pointer select-none">
+                        <input type="radio" name="objectif" value="visibilite" class="w-4 h-4 accent-[#8449d9]">
+                        <span class="text-sm text-gray-200">Développer ma visibilité</span>
+                    </label>
+                    <label id="opt-credibilite" class="flex items-center gap-3 p-3 bg-[#111215] border border-white/5 rounded-xl cursor-pointer select-none">
+                        <input type="radio" name="objectif" value="credibilite" class="w-4 h-4 accent-[#8449d9]">
+                        <span class="text-sm text-gray-200">Renforcer ma crédibilité</span>
+                    </label>
+                    <label class="flex items-center gap-3 p-3 bg-[#111215] border border-white/5 rounded-xl cursor-pointer select-none">
+                        <input type="radio" name="objectif" value="image" class="w-4 h-4 accent-[#8449d9]">
+                        <span class="text-sm text-gray-200">Améliorer mon image de marque</span>
+                    </label>
+                    <div class="sm:col-span-2 p-3 bg-[#111215] border border-white/5 rounded-xl space-y-2">
+                        <label class="flex items-center gap-3 cursor-pointer select-none">
+                            <input type="radio" name="objectif" id="rad-obj-autre" value="autre" class="w-4 h-4 accent-[#8449d9]">
+                            <span class="text-sm text-gray-200">Autre</span>
+                        </label>
+                        <input type="text" name="precision-objectif-autre" id="input-obj-precision" placeholder="Précise ton objectif..." class="hidden w-full bg-[#16171a] border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-[#8449d9]">
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-3 pt-4 border-t border-white/5">
+                <label class="block text-base font-bold text-white tracking-wide">À quel stade en es-tu aujourd'hui ? <span class="text-cyan-400">*</span></label>
+                <div class="space-y-2">
+                    <label class="flex items-center gap-3 p-3 bg-[#111215] border border-white/5 rounded-xl cursor-pointer select-none">
+                        <input type="radio" name="avancement" value="demarre" required class="w-4 h-4 accent-[#8449d9]">
+                        <span class="text-sm text-gray-200">Je démarre</span>
+                    </label>
+                    <label class="flex items-center gap-3 p-3 bg-[#111215] border border-white/5 rounded-xl cursor-pointer select-none">
+                        <input type="radio" name="avancement" value="limite" class="w-4 h-4 accent-[#8449d9]">
+                        <span class="text-sm text-gray-200">J'ai déjà mis des choses en place mais les résultats sont limités</span>
+                    </label>
+                    <label class="flex items-center gap-3 p-3 bg-[#111215] border border-white/5 rounded-xl cursor-pointer select-none">
+                        <input type="radio" name="avancement" value="optimiser" class="w-4 h-4 accent-[#8449d9]">
+                        <span class="text-sm text-gray-200">Ma présence est bien en place mais j'aimerais l'optimiser</span>
+                    </label>
+                </div>
+            </div>
+            <div class="space-y-2 pt-4 border-t border-white/5">
+                <label class="block text-base font-bold text-white tracking-wide">Souhaites-tu ajouter un contexte particulier ?</label>
+                <textarea name="contexte" rows="4" placeholder="Objectifs chiffrés, problématiques actuelles, contraintes..." class="w-full bg-[#111215] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#8449d9]"></textarea>
+            </div>
+            <div class="bg-gradient-to-b from-[#16171a] to-[#8449d9]/5 border border-[#8449d9]/30 rounded-2xl p-6 space-y-4">
+                <h4 id="workflow-title" class="font-bold text-white text-base">Comment se déroule le pré-diagnostic ?</h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="space-y-1">
+                        <div class="text-xs font-bold text-cyan-300 uppercase tracking-wide">1. Analyse</div>
+                        <p id="wf-step1" class="text-xs text-gray-400 leading-relaxed">J'étudie les canaux et supports sélectionnés.</p>
+                    </div>
+                    <div class="space-y-1">
+                        <div class="text-xs font-bold text-[#a370f7] uppercase tracking-wide">2. Restitution</div>
+                        <p id="wf-step2" class="text-xs text-gray-400 leading-relaxed">Nous échangeons lors d'une visio afin de faire le point sur les constats observés.</p>
+                    </div>
+                    <div class="space-y-1">
+                        <div class="text-xs font-bold text-cyan-300 uppercase tracking-wide">3. Recommandations</div>
+                        <p id="wf-step3" class="text-xs text-gray-400 leading-relaxed">Je t'indique les opportunités d'amélioration les plus pertinentes pour atteindre tes objectifs.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-2">
+                <label class="flex items-start gap-3 cursor-pointer select-none">
+                    <input type="checkbox" name="rgpd_consent" required class="w-5 h-5 rounded mt-0.5 accent-[#8449d9] shrink-0">
+                    <span id="rgpd-text" class="text-xs text-gray-400 leading-relaxed">
+                        J'accepte que les données saisies dans ce formulaire soient exclusivement exploitées pour analyser ma situation digitale et encadrer la restitution de mon diagnostic offert (aucun usage publicitaire ou marketing ultérieur). <span class="text-cyan-400">*</span>
+                    </span>
+                </label>
+            </div>
+            <div class="pt-2 text-center">
+                <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#8449d9] via-[#a370f7] to-cyan-400 text-white px-8 py-4 rounded-full text-base font-bold transition-all duration-500 hover:scale-[1.02] shadow-[0_4px_20px_rgba(132,73,217,0.25)] hover:shadow-[0_8px_30px_rgba(132,73,217,0.5)] group relative overflow-hidden cursor-pointer">
+                    <span class="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white/20 opacity-40 group-hover:animate-shine"></span>
+                    <span id="submit-btn-text" class="tracking-wide">Demander mon pré-diagnostic</span>
+                    <svg class="w-5 h-5 group-hover:translate-x-1.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<footer class="relative w-full border-t border-white/5 py-12 mt-20 overflow-hidden">
+    <div class="absolute inset-x-0 bottom-2 flex justify-center items-center select-none overflow-hidden tracking-tighter opacity-[0.02] pointer-events-none z-0">
+        <span class="text-[16vw] font-black uppercase leading-none bg-gradient-to-b from-white to-transparent bg-clip-text text-transparent font-sans">
+            AM 2.0
+        </span>
+    </div>
+    <div class="max-w-6xl mx-auto px-6 relative z-10 space-y-10"> 
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 pb-8 border-b border-white/5">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-white/5 w-full lg:border-b-0 lg:pb-0">    
+                <div class="lg:col-span-12 space-y-5">
+                    <h3 class="text-base font-medium text-gray-200 tracking-tight">
+                        AM 2.0 à Obernai • Spécialisé dans l'optimisation de présence digitale <br>dans tout le Bas-Rhin, en Alsace et partout en France.
+                    </h3>
+                    <div class="flex items-center gap-5">
+                        <div class="shrink-0 w-16 h-16 rounded-full overflow-hidden border border-white/10 shadow-inner bg-[#16171a]">
+                            <img src="images/logo/profil-aurore-am20.webp" 
+                                 alt="Aurore - Consultante en optimisation de parcours digitaux" 
+                                 width="500" height="500"
+                                 class="w-full h-full object-cover"
+                                 loading="lazy">
+                        </div>
+                        <div class="space-y-1">
+                            <ul class="space-y-0.5 list-disc list-outside pl-4">
+                                <li class="text-sm md:text-base text-gray-300 font-light leading-relaxed">
+                                    Optimisation des parcours digitaux 
+                                </li>
+                                <li class="text-sm md:text-base text-gray-300 font-light leading-relaxed">
+                                    Création de sites web orientés conversion
+                                </li>
+                                <li class="text-sm md:text-base text-gray-300 font-light leading-relaxed">
+                                    Optimisation LinkedIn et Instagram
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col items-center sm:flex-row sm:flex-wrap gap-6 text-xs font-mono tracking-wide shrink-0">
+                <a href="https://wa.me/33367999081" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center gap-2 group">
+                    <svg class="w-4 h-4 fill-current text-white/40 group-hover:text-white transition-colors duration-300 shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.003 5.37 5.373 0 12 0c3.212.001 6.231 1.253 8.5 3.528C22.77 5.804 24 8.824 24 12c-.003 6.63-5.373 12-12 12-2.003-.001-3.974-.501-5.729-1.457L0 24zm6.59-4.846c1.665.988 3.308 1.48 4.938 1.482 5.503 0 9.977-4.475 9.98-9.984C21.568 5.483 17.26 1.196 12 1.196 6.74 1.196 2.44 5.485 2.437 10.747c-.002 1.714.463 3.39 1.346 4.877l-.462 1.687 1.733-.455c1.428.778 2.915 1.189 4.413 1.193l.58-.004z"/>
+                    </svg>
+                    <span>WhatsApp</span>
+                </a>
+                <span class="text-white/10 hidden sm:inline">|</span>
+                <a href="index.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/10 hover:border-cyan-400 text-gray-400 hover:text-white px-6 py-3 rounded-full font-medium transition-all duration-300 bg-white/5 hover:bg-white/10 transform hover:-translate-y-0.5 whitespace-nowrap normal-case font-sans">
+                    <span>Vers le site</span>
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-gray-500 font-mono">
+            <div>
+                &copy; <span id="current-year"></span> AM 2.0. Tous droits réservés.
+            </div>
+            <div class="flex gap-4 tracking-wider relative z-20">
+                <a href="mentions-legales.html" class="hover:text-white transition-colors">MENTIONS & RGPD</a>
+                <span class="text-white/10">|</span>
+                <a href="cgv.html" class="hover:text-white transition-colors">CGV</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- MODALE DE CONFIRMATION -->
+<div id="success-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div id="modal-backdrop" class="absolute inset-0 bg-[#0b0c0e]/80 backdrop-blur-md opacity-0 transition-opacity duration-300"></div>
+    <div id="modal-content" class="bg-[#16171a] border border-white/10 rounded-2xl max-w-lg w-full p-6 md:p-8 shadow-2xl space-y-6 relative z-10 scale-95 opacity-0 transition-all duration-300 transform">
+        <div class="text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-[#8449d9] to-cyan-400 p-0.5 shadow-[0_4px_20px_rgba(132,73,217,0.3)]">
+                <div class="w-full h-full bg-[#16171a] rounded-full flex items-center justify-center">
+                    <svg class="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="text-center space-y-2">
+            <h2 class="text-2xl md:text-3xl font-black text-white tracking-tight">Merci pour ta confiance !</h2>
+            <p class="text-sm text-gray-300 font-light">Ta demande de diagnostic a bien été enregistrée.</p>
+        </div>
+        <div class="bg-[#111215] border border-white/5 rounded-xl p-5 space-y-4 relative overflow-hidden before:absolute before:top-0 before:left-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-[#8449d9] before:to-cyan-400">
+           <h4 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                <svg class="w-4 h-4 text-cyan-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Quelle est la suite ?</span>
+            </h4>
+            <div class="space-y-3 text-xs md:text-sm text-gray-400 leading-relaxed">
+                <p>Je reviens vers toi <strong class="text-white font-semibold">sous 48 heures maximum</strong> par e-mail ou par messagerie.</p>
+                <p>Je te proposerai un <strong class="text-cyan-300 font-semibold">créneau d'échange en visio</strong> afin de te présenter de vive voix le diagnostic réalisé et faire le point sur ta présence en ligne.</p>
+            </div>
+        </div>
+        <div class="pt-2 text-center">
+            <button id="btn-close-modal" class="w-full sm:w-auto inline-flex items-center justify-center bg-white/5 border border-white/10 hover:border-cyan-400 text-gray-300 hover:text-white px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer">
+                Fermer
+            </button>
+        </div>
+    </div>
+</div>
+<script src="dist/form.min.js" defer></script>
+</body>
+</html>

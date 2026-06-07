@@ -4,10 +4,10 @@
 <!-- Metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow" /><!-- Page indexée -->
-<!-- Title & description -->
+    <meta name="robots" content="index,follow">
+<!-- SEO -->
     <title>Conditions Générales de Vente (CGV) | AM 2.0</title>
-    <meta name="description" content="Consultez les Conditions Générales de Vente de AM 2.0 : prestations, obligations, délais, responsabilités, facturation, droits d’auteur et cadre contractuel.">
+    <meta name="description" content="Consultez les Conditions Générales de Vente des prestations de services et accompagnements proposés par AM 2.0.">
 <!-- Canonical -->
     <link rel="canonical" href="https://www.am20.fr/cgv" />
 <!-- Favicon -->
@@ -17,388 +17,666 @@
     <link rel="icon" href="images/favicon/android192.png" sizes="192x192"/>
     <link rel="icon" href="images/favicon/android512.png" sizes="512x512"/>    
     <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png"/>
+<!-- Open Graph -->
+    <meta property="og:title" content="Conditions Générales de Vente - AM 2.0">
+    <meta property="og:description" content="Cadre juridique et conditions de vente des services AM 2.0.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.am20.fr/cgv">
+    <meta property="og:image" content="https://www.am20.fr/images/og-img.jpg">
+<!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Conditions Générales de Vente - AM 2.0">
+    <meta name="twitter:description" content="Cadre juridique et conditions de vente des services AM 2.0.">
 <!-- CSS -->
     <link rel="stylesheet" href="dist/style.css">
 </head>
-<body class="text-light text-base lg:text-lg bg-bg-1">
-<!-- HEADER -->
-<header class="fixed top-0 left-0 w-full z-[100] bg-white/90 backdrop-blur-md border-b border-gray-100 header-main">
+<body class="bg-[#0B0C10] text-white font-sans antialiased m-0 p-0 relative min-h-screen overflow-x-hidden selection:bg-[#8449d9]/30">
+    <div class="fixed inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_-10%,rgba(132,73,217,0.18),transparent)] pointer-events-none z-0"></div>
+    <div class="fixed bottom-[-10%] right-[10%] w-[450px] h-[450px] bg-cyan-500/10 blur-[120px] rounded-full pointer-events-none z-0"></div>
+    <div class="fixed inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none z-0"></div>
+    <div class="relative z-10 w-full">
+<!-- ===== HEADER ===== -->
+<header class="fixed top-0 left-0 w-full z-[100] bg-[#0B0C10]/60 backdrop-blur-xl border-b border-white/5 transition-all duration-500">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="index.html#hero" class="logo-group group shrink-0">
-            <img src="images/logo/logo-am20.webp" alt="Logo AM 2.0" class="h-10 w-auto" width="500" height="500">
+<!-- Logo -->
+        <a href="index.html#hero" class="logo-group group shrink-0 transition-transform duration-300 hover:scale-105">
+            <img src="images/logo/logo-am20.webp" alt="Logo AM 2.0" class="h-9 w-auto brightness-110" width="500" height="500">
         </a>
-<!-- Menu desktop -->
-        <nav class="hidden lg:flex items-center gap-8" aria-label="Navigation principale">
-            <a href="index.html#solution" class="text-sm font-bold text-gradient-accent transition-all duration-300 hover:underline">SOLUTION AM 2.0</a>
-            <a href="index.html#portfolio" class="text-sm font-bold text-gradient-accent transition-all duration-300 hover:underline">REALISATIONS</a>
-            <a href="index.html#tarifs" class="text-sm font-bold text-gradient-accent transition-all duration-300 hover:text-transparent hover:underline">OFFRES</a>
-            <a href="index.html#avis" class="text-sm font-bold text-gradient-accent transition-all duration-300 hover:text-transparent hover:underline">AVIS</a>
-            <a href="index.html#faq" class="text-sm font-bold text-gradient-accent transition-all duration-300 hover:text-transparent hover:underline">FAQ</a>
-            <a href="index.html#contact" class="bg-gradient-to-r from-[#3a2791] to-[#8449d9] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:shadow-lg hover:shadow-[#5b3cc4]/30 transition-all">LANCER MA VITRINE</a>
+<!-- Navigation Desktop -->
+        <nav class="hidden lg:flex items-center gap-10" aria-label="Navigation principale">
+            <a href="index.html#hero" class="nav-link text-xs font-semibold tracking-widest text-gray-400 hover:text-white transition-all duration-300 uppercase flex items-center gap-2">
+                <span class="bullet w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse opacity-0 transition-opacity duration-300"></span> Accueil
+            </a>
+            <a href="index.html#approche" class="nav-link text-xs font-semibold tracking-widest text-gray-400 hover:text-white transition-all duration-300 uppercase flex items-center gap-2">
+                <span class="bullet w-1.5 h-1.5 bg-[#8449d9] rounded-full animate-pulse opacity-0 transition-opacity duration-300"></span> Solution
+            </a>
+            <a href="index.html#projets" class="nav-link text-xs font-semibold tracking-widest text-gray-400 hover:text-white transition-all duration-300 uppercase flex items-center gap-2">
+                <span class="bullet w-1.5 h-1.5 bg-[#8449d9] rounded-full animate-pulse opacity-0 transition-opacity duration-300"></span> Réalisations
+            </a>
+            <a href="index.html#avis" class="nav-link text-xs font-semibold tracking-widest text-gray-400 hover:text-white transition-all duration-300 uppercase flex items-center gap-2">
+                <span class="bullet w-1.5 h-1.5 bg-[#8449d9] rounded-full animate-pulse opacity-0 transition-opacity duration-300"></span> Avis
+            </a>
+            <a href="index.html#about" class="nav-link text-xs font-semibold tracking-widest text-gray-400 hover:text-white transition-all duration-300 uppercase flex items-center gap-2">
+                <span class="bullet w-1.5 h-1.5 bg-[#8449d9] rounded-full animate-pulse opacity-0 transition-opacity duration-300"></span> A propos
+            </a>
+            <a href="index.html#faq" class="nav-link text-xs font-semibold tracking-widest text-gray-400 hover:text-white transition-all duration-300 uppercase flex items-center gap-2">
+                <span class="bullet w-1.5 h-1.5 bg-[#8449d9] rounded-full animate-pulse opacity-0 transition-opacity duration-300"></span> FAQ
+            </a>
+            <a href="index.html#contact" class="relative group overflow-hidden bg-white text-black px-7 py-3 rounded-full font-bold text-xs tracking-wider uppercase transition-all duration-300 hover:bg-[#8449d9] hover:text-white hover:shadow-[0_0_30px_rgba(132,73,217,0.4)]">
+                Obtenir mon diagnostic
+            </a>
         </nav>
-        <button id="menu-btn" aria-controls="mobile-menu" aria-expanded="false" aria-label="Ouvrir le menu" class="lg:hidden text-gray-900 w-10 h-10 flex items-center justify-center">
-            <svg id="burger-icon" class="w-8 h-8" fill="url(#gradient-hero-icon)" viewBox="0 0 640 640">
-                <path d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/>
-            </svg>
-            <svg id="close-icon" class="hidden w-8 h-8 fill-[#886bdd]" viewBox="0 0 640 640">
-                <path d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM231 231C240.4 221.6 255.6 221.6 264.9 231L319.9 286L374.9 231C384.3 221.6 399.5 221.6 408.8 231C418.1 240.4 418.2 255.6 408.8 264.9L353.8 319.9L408.8 374.9C418.2 384.3 418.2 399.5 408.8 408.8C399.4 418.1 384.2 418.2 374.9 408.8L319.9 353.8L264.9 408.8C255.5 418.2 240.3 418.2 231 408.8C221.7 399.4 221.6 384.2 231 374.9L286 319.9L231 264.9C221.6 255.5 221.6 240.3 231 231z"/>
-            </svg>
+<!-- BOUTON BURGER -->
+        <button id="menu-btn" aria-controls="mobile-menu" aria-expanded="false" aria-label="Ouvrir le menu" class="lg:hidden text-white w-10 h-10 flex flex-col items-center justify-center gap-1.5 relative z-[110]">
+            <span id="burger-top" class="w-7 h-0.5 bg-white transition-all duration-300 origin-center"></span>
+            <span id="burger-bottom" class="w-7 h-0.5 bg-white transition-all duration-300 origin-center"></span>
         </button>
     </div>
-<!-- Menu mobile -->
-    <div id="mobile-menu" role="menu" class="hidden lg:hidden absolute top-20 left-0 w-full bg-[#15171e] border-b border-gray-100 shadow-xl flex flex-col p-6 gap-6 animate-slide-down text-center">
-        <a href="index.html#solution" class="mobile-link text-lg font-bold text-gradient-accent">SOLUTION AM 2.0</a>
-        <a href="index.html#portfolio" class="mobile-link text-lg font-bold text-gradient-accent">REALISATIONS</a>
-        <a href="index.html#tarifs" class="mobile-link text-lg font-bold text-gradient-accent">OFFRES</a>
-        <a href="index.html#avis" class="mobile-link text-lg font-bold text-gradient-accent">AVIS</a>
-        <a href="index.html#faq" class="mobile-link text-lg font-bold text-gradient-accent">FAQ</a>
-        <a href="index.html#contact" class="bg-gradient-to-r from-[#3a2791] to-[#8449d9] text-white px-6 py-4 rounded-full font-bold text-center">LANCER MA VITRINE</a>
-    </div>
 </header>
-<main>
-<!-- MAIN CONTENT -->
-    <section id="cgv" class="mt-40 mb-20 bg-bg-1"> 
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="block mt-20 mb-12">
-                <h1 class="text-3xl lg:text-5xl font-extrabold uppercase tracking-tight text-center">
-                    Conditions Générales <span class="text-gradient-accent italic block mb-2">de Vente</span>
-                </h1>
-                <p class="pt-2 text-center text-light font-semibold italic text-sm lg:text-base">
-                    Prestations de Conseil en Image Numérique & Design Web (B2B)
+<!-- Navigation Mobile -->
+<div id="mobile-menu" class="fixed inset-0 z-[95] bg-[#0B0C10]/98 backdrop-blur-2xl transform -translate-y-full transition-transform duration-500 ease-out flex flex-col justify-center items-center lg:hidden">
+    <nav class="flex flex-col items-center gap-8 text-center">
+        <a href="index.html#hero" class="mobile-nav-link text-lg font-bold tracking-widest text-gray-400 hover:text-white transition-colors uppercase">Accueil</a>
+        <a href="index.html#approche" class="mobile-nav-link text-lg font-bold tracking-widest text-gray-400 hover:text-white transition-colors uppercase">Solution</a>
+        <a href="index.html#projets" class="mobile-nav-link text-lg font-bold tracking-widest text-gray-400 hover:text-white transition-colors uppercase">Réalisations</a>
+        <a href="index.html#avis" class="mobile-nav-link text-lg font-bold tracking-widest text-gray-400 hover:text-white transition-colors uppercase">Avis</a>
+        <a href="index.html#about" class="mobile-nav-link text-lg font-bold tracking-widest text-gray-400 hover:text-white transition-colors uppercase">A propos</a>
+        <a href="index.html#faq" class="mobile-nav-link text-lg font-bold tracking-widest text-gray-400 hover:text-white transition-colors uppercase">FAQ</a>
+        <a href="index.html#contact" class="mobile-nav-link mt-4 inline-flex bg-gradient-to-r from-[#8449d9] to-cyan-400 text-white px-8 py-4 rounded-full font-bold text-sm tracking-wider uppercase">
+            Obtenir mon diagnostic
+        </a>
+    </nav>
+</div>
+<!-- ================= CONDITIONS GÉNÉRALES DE VENTE ================= -->
+<section id="cgv" class="py-24 px-4 max-w-5xl mx-auto border-t border-white/10 mt-20 text-gray-300 font-light leading-relaxed">
+    <div class="mb-16 text-center relative group">
+        <div class="absolute -inset-4 bg-gradient-to-r from-[#8449d9] via-[#a370f7] to-cyan-400 rounded-3xl opacity-10 blur-xl"></div>
+        <span class="text-sm md:text-base font-bold tracking-widest text-[#a370f7] uppercase block mb-2">
+            [ Cadre Juridique et Commercial ]
+        </span>
+        <h1 class="text-3xl md:text-5xl font-black text-white tracking-tight">
+            Conditions Générales de Vente<br>
+            <span class="bg-gradient-to-r from-[#8449d9] to-cyan-400 bg-clip-text text-transparent italic text-2xl md:text-4xl">AM 2.0 - En vigueur au 2 juin 2026</span>
+        </h1>
+        <p class="text-sm text-gray-400 mt-4 max-w-xl mx-auto">
+            Les présentes CGV régissent les relations contractuelles suite au diagnostic offert et s'appliquent exclusivement aux clients professionnels et aux structures associatives. Aucun service n'est vendu aux particuliers (B2C).
+        </p>
+    </div>
+    <div class="space-y-12 bg-[#16171a] p-8 md:p-12 rounded-2xl border border-white/10 shadow-2xl"> 
+<!-- ARTICLE 1 -->
+        <div class="space-y-4">
+            <h2 class="text-xl font-bold text-white border-b border-white/5 pb-2 leading-snug">
+                <span class="text-[#a370f7] block md:inline-block md:mr-2 mb-1 md:mb-0">ARTICLE 1</span> Mentions Légales et Champ d'Application
+            </h2>
+            <p>
+                Les présentes Conditions Générales de Vente (CGV) constituent le socle unique de la relation commerciale entre les parties. Elles régissent sans réserve toutes les prestations de services fournies par :
+            </p>
+            <ul class="space-y-2 pl-6 list-none relative">
+                <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]"><strong class="text-white font-medium">Entreprise Individuelle (Micro-entreprise) :</strong> AM 2.0 - Mme Muller Aurore</li>
+                <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]"><strong class="text-white font-medium">Siège social :</strong> 8 rue du Général Leclerc, 67210 Obernai</li>
+                <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]"><strong class="text-white font-medium">SIRET :</strong> 999 214 158 00019 (Immatriculée au RNE : 999 214 158)</li>
+                <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]"><strong class="text-white font-medium">Code APE :</strong> 62.01Z</li>
+                <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]"><strong class="text-white font-medium">Téléphone :</strong> (+33) 3 67 99 90 81</li>
+                <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]">
+                    <a href="#" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg==" class="protected-mail text-cyan-400 font-medium hover:text-white transition-colors duration-300 inline-flex items-center gap-1.5 group">
+                        <span class="mail-text"></span>
+                    </a>
+                </li>
+            </ul>
+            <p>
+                Les présentes CGV s’appliquent exclusivement aux clients professionnels (personnes physiques ou morales agissant dans le cadre de leur activité professionnelle, commerciale, industrielle, artisanale ou libérale) ainsi qu’aux associations (ci-après <span class="text-white font-medium">« le Client »</span>). AM 2.0 ne vend aucune prestation aux particuliers (B2C).
+            </p>
+        </div>
+<!-- ARTICLE 2 -->
+        <div class="space-y-4">
+            <h2 class="text-xl font-bold text-white border-b border-white/5 pb-2 leading-snug">
+                <span class="text-[#a370f7] block md:inline-block md:mr-2 mb-1 md:mb-0">ARTICLE 2</span> 
+                Commande, Formation du Contrat et Rétractation
+            </h2>
+            <div class="space-y-3">
+                <h3 class="text-base font-bold text-[#a370f7]">2.1 Diagnostic offert et valeur pré-contractuelle</h3>
+                <p>
+                    AM 2.0 peut proposer un diagnostic initial offert. Ce diagnostic est fourni à titre indicatif et gracieux. Il ne constitue pas un engagement contractuel de la part d'AM 2.0 et n'engage pas le Client à passer commande. Les conclusions de ce diagnostic peuvent servir de base à l'établissement de la proposition commerciale.
                 </p>
-                <p class="text-center text-light text-xs mt-1">Dernière mise à jour : Avril 2026</p>
-            </div>
-            <div class="max-w-4xl mx-auto text-left space-y-12"> 
-                <div class="space-y-4">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">1. Objet et champ d’application</h2>
-                    <p class="text-lg">
-                        Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles entre <strong>Aurore Muller (AM 2.0)</strong>, Entrepreneur Individuel (ci-après « le Prestataire ») et tout professionnel ou représentant d’association (ci-après « le Client »).
+                
+                <h3 class="text-base font-bold text-[#a370f7] pt-2">2.2 Formation du contrat</h3>
+                <p>
+                    Toute commande est formalisée par l'envoi d'une proposition tarifaire, d'un devis ou d'une proposition commerciale suite au diagnostic par AM 2.0.
+                </p>
+                <div class="bg-gradient-to-b from-[#16171a] to-[#8449d9]/5 p-5 rounded-xl border-2 border-[#8449d9]/30 shadow-sm my-4">
+                    <p class="text-sm font-semibold tracking-wider text-white mb-1 uppercase flex items-center gap-2">
+                        <svg class="w-4 h-4 text-[#a370f7]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Durée de validité des offres
                     </p>
-                    <p class="text-lg font-semibold bg-slate-50 p-4 border-l-4 border-accent rounded-2xl italic text-primary">
-                        Les services proposés sont exclusivement destinés à un usage professionnel. Le Client reconnaît agir dans le cadre de son activité professionnelle.
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Toute proposition commerciale ou devis émis par AM 2.0 est valable pour une durée ferme de <span class="text-white font-bold">trente (30) jours calendaires</span> à compter de sa date d'émission. Passé ce délai, et à défaut de validation par le versement effectif de l'acompte (ou de la première mensualité pour les abonnements sans acompte), la proposition devient caduque. Le Client devra alors impérativement recontacter AM 2.0 pour établir une nouvelle proposition.
                     </p>
                 </div>
-                <div class="space-y-4">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">2. Identification du prestataire</h2>
-                    <ul class="list-none space-y-2 text-lg">
-                        <li><strong>Nom commercial :</strong> AM 2.0</li>
-                        <li><strong>Statut juridique :</strong> Entrepreneur Individuel (Micro-entreprise)</li>
-                        <li><strong>Nom et Prénom du responsable :</strong> Muller Aurore</li>
-                        <li><strong>Adresse du siège social :</strong> 8 rue du Général Leclerc 67210 Obernai</li>
-                        <li><strong>Numéro SIRET :</strong> 999 214 158 00019</li>
-                        <li><strong>Immatriculée au RNE :</strong> 999 214 158</li>
-                        <li><strong>Code APE :</strong> 62.01Z</li>
-                        <li><strong>Téléphone :</strong> (+33) 3 67 99 90 81</li>
-                        <li><strong>E-mail :</strong> <a href="#" class="protected-mail text-secondary hover:underline" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg=="></a></li>
-                        <li>
-                            <strong>Régime de TVA :</strong> Franchise en base – TVA non applicable, 
-                            <span class="font-semibold italic text-sm">article 293 B du Code Général des Impôts</span>.
+                <p>
+                    L'acceptation du devis, de la proposition ou les échanges d'e-mails n’engagent fermement AM 2.0 qu’à compter de la :
+                </p>
+                <ul class="space-y-2 pl-6 list-none">
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]">Pour les  prestations ponctuelles au forfait : <span class="text-white font-medium">Réception effective de l'acompte</span> convenu.</li>
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-cyan-400">Pour les abonnements (hors création web asso) : <span class="text-white font-medium">Réception de la première mensualité</span>.</li>
+                </ul>
+            </div>
+            <div class="space-y-2 pt-2">
+                <h3 class="text-base font-bold text-[#a370f7]">2.3 Absence de droit de rétractation</h3>
+                <p>
+                    Les prestations étant conclues exclusivement à distance et entre professionnels ou structures assimilées (B2B / Associations), <span class="text-white font-medium">aucun droit de rétractation de 14 jours n'est applicable</span>, conformément au Code de la consommation français. L'exécution des prestations débute immédiatement après la validation de la commande selon les modalités de l'article 2.2.
+                </p>
+            </div>
+        </div>
+<!-- ARTICLE 3 -->
+        <div class="space-y-4">
+            <h2 class="text-xl font-bold text-white border-b border-white/5 pb-2 leading-snug">
+                <span class="text-[#a370f7] block md:inline-block md:mr-2 mb-1 md:mb-0">ARTICLE 3</span> Tarifs et Révision
+            </h2>
+            <p>
+                Les tarifs des prestations sont ceux indiqués sur la proposition commerciale ou le devis accepté. Pour les abonnements, le tarif mensuel est précisé. Ils sont exprimés en Euros (€) et s'entendent Net de taxe : <span class="text-white italic bg-white/5 px-2 py-0.5 rounded border border-white/10 text-sm">« TVA non applicable, article 293 B du Code Général des Impôts »</span>.
+            </p>
+            <p>
+                AM 2.0 se réserve le droit de modifier ses tarifs à tout moment. Les prestations projets en cours restent soumises au prix initial. Pour les abonnements, toute modification tarifaire sera notifiée au Client un mois avant son application. En cas de reprise d'un abonnement après interruption (voir Article 4.5), le tarif en vigueur au moment de la reprise sera appliqué.
+            </p>
+        </div>
+<!-- ARTICLE 4 -->
+        <div class="space-y-4">
+            <h2 class="text-xl font-bold text-white border-b border-white/5 pb-2 leading-snug">
+                <span class="text-[#a370f7] block md:inline-block md:mr-2 mb-1 md:mb-0">ARTICLE 4</span> Modalités de Paiement, Abonnements et Défauts
+            </h2>
+            <div class="space-y-2">
+                <h3 class="text-base font-bold text-[#a370f7]">4.1 Échéancier de paiement des projets</h3>
+                <ul class="space-y-3 pl-6 list-none">
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]">
+                        <strong class="text-white font-medium text-gray-200">Prestations ponctuelles au forfait (Audits, Analyses, Réseaux Sociaux, Configuration d'Outils Tiers, etc.) :</strong> 
+                        <p class="text-base text-gray-300 mt-1">
+                            Pour toutes les missions hors création de site web (incluant notamment les audits, packs LinkedIn/Instagram, paramétrage de fiches Google, Calendly, Tally, etc.) : un acompte de <span class="text-white font-medium">50 % est exigé à la commande</span>, et le solde de <span class="text-white font-medium">50 % impérativement avant la livraison finale</span> des accès ou livrables.
+                        </p>
+                    </li>
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]">
+                        <strong class="text-white font-medium">Création de Sites Web (hors offre asso) :</strong> 33 % d'acompte à la commande, 33 % en cours de projet, et 34 % de solde impérativement avant la mise en ligne.
+                    </li>
+                </ul>
+            </div>
+            <div class="space-y-2 pt-2">
+                <h3 class="text-base font-bold text-[#a370f7]">4.2 Modalités spécifiques aux Abonnements</h3>
+                <ul class="space-y-3 pl-6 list-none">
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-cyan-400">
+                        <strong class="text-white font-medium">Création de pages web Associations (Offre à engagement) :</strong> Un paiement initial équivalent à 3 mensualités est exigé à la commande (acompte de démarrage). Le paiement des mensualités suivantes s'effectue par virement mensuel à mettre en place par le Client, débutant trois (3) mois après ce premier paiement.
+                    </li>
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]">
+                        <strong class="text-white font-medium">Autres Abonnements (Accompagnement saisonnier, Optimisation continue, Insta sur devis) :</strong> Aucun acompte n'est requis. L'accompagnement et l'exécution des prestations débutent <span class="text-white underline decoration-[#a370f7]">après réception du paiement de la première mensualité</span>.
+                    </li>
+                </ul>
+            </div>
+            <div class="space-y-2 pt-2">
+                <h3 class="text-base font-bold text-[#a370f7]">4.3 Règle stricte sur la livraison et encadrement des acomptes</h3>
+                <p>
+                    Pour les projets, aucun livrable ne sera transmis avant le paiement intégral du solde. Les acomptes versés engagent les ressources d'AM 2.0. En cas d'annulation par le Client, les sommes déjà versées restent acquises à AM 2.0 à titre d'indemnisation forfaitaire.
+                </p>
+            </div>
+            <div class="space-y-2 pt-2">
+                <h3 class="text-base font-bold text-[#a370f7]">4.4 Moyens de paiement et Virement Mensuel</h3>
+                <p>
+                    Les règlements s'effectuent par Virement bancaire ou par carte bancaire via Stripe.
+                </p>
+                <div class="text-white bg-white/5 p-4 rounded-lg border border-amber-400 space-y-2">
+                    <p class="flex items-center gap-2 text-white font-bold uppercase tracking-wider text-sm">
+                        ⚠️ Obligation de Virement Mensuel
+                    </p>
+                    <p class="text-sm leading-relaxed">
+                        Pour tous les abonnements, le Client s'engage formellement à mettre en place un <span class="underline decoration-amber-400 font-bold">virement bancaire mensuel</span>. AM 2.0 ne procède à aucun prélèvement automatique. 
+                    </p>
+                    <p class="text-sm leading-relaxed text-white font-semibold flex items-start gap-2.5 uppercase tracking-wider">
+                        <svg class="w-5 h-5 text-amber-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                            Fenêtre de paiement obligatoire : 
+                    </p>
+                    <p class="text-sm leading-relaxed">
+                        Qu'il s'agisse d'un virement permanent ou d'un virement ponctuel exécuté manuellement, le Client a l'obligation stricte de s'assurer que les fonds soient émis et crédités sur le compte d'AM 2.0 impérativement <span class="underline decoration-amber-400 font-bold">entre le premier (1er) et le cinq (5) de chaque mois civil.</span>
+                    </p>
+                </div>
+            </div>
+            <div class="space-y-2 pt-2">
+                <h3 class="text-base font-bold text-[#a370f7]">4.5 Défaut de paiement des abonnements et clause de sauvegarde</h3>
+                <ul class="space-y-3 pl-6 list-none text-base">
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-red-400">
+                        <strong class="text-white font-medium underline decoration-red-400">Arrêt de prestation automatique :</strong> Si une mensualité d'abonnement n'est pas effectivement créditée sur le compte d'AM 2.0 au plus tard le <span class="text-white font-bold text-base">vingt (20) du mois en cours</span> (soit 15 jours calendaires après la date limite du 5), AM 2.0 interrompra de plein droit et immédiatement l'exécution de toutes les prestations (coupure des accès, arrêt de la communication, etc.).
+                    </li>
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-gray-500">
+                        <strong class="text-white font-medium">Conditions de reprise :</strong> Le Client pourra demander la réactivation de son abonnement ultérieurement. Cependant, l'exécution des prestations ne reprendra <span class="text-white font-medium underline decoration-amber-400">qu'après réception effective d'une nouvelle mensualité complète</span>, et l'abonnement sera automatiquement réévalué au <span class="text-white font-bold">tarif en vigueur</span> au jour de cette reprise.
+                    </li>
+                </ul>
+                <!-- Bloc de régularité et anti-abus mis à jour -->
+                <div class="p-5 bg-gradient-to-b from-[#16171a] to-[#8449d9]/5 rounded-xl border-2 border-[#8449d9]/30 flex items-start gap-3 mt-4">
+                    <svg class="w-5 h-5 text-[#a370f7] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                    <div class="text-sm leading-relaxed">
+                        <strong class="text-white font-bold uppercase tracking-wider block mb-2 text-xs">Clause de régularité et anti-abus</strong>
+                        <p class="text-gray-300 mb-3">
+                            Les abonnements proposés par AM 2.0 ont pour vocation un accompagnement continu et une planification de la charge de travail. Afin de prévenir les comportements abusifs ou instables, les règles suivantes s'appliquent :
+                        </p>
+                        <ul class="space-y-2.5">
+                            <li class="text-gray-300">
+                                <strong class="text-white font-medium text-[#a370f7]">• Retards de paiement répétés :</strong> Le respect de la fenêtre de paiement (du 1 au 5 du mois) est essentiel. Le fait pour un Client de régler sa mensualité au-delà du cinq (5) du mois de manière répétée, <span class="text-white font-semibold underline decoration-amber-400/60">constatée plus de trois (3) fois par période de 12 mois glissants,</span> l'expose à une résiliation immédiate et de plein droit de son abonnement à l'initiative d'AM 2.0.
+                            </li>
+                            <li class="text-gray-300">
+                                <strong class="text-white font-medium text-amber-400">• Limitation de l'intermittence :</strong> Le Client est autorisé à résilier puis à réactiver un même abonnement (ou un abonnement équivalent) <span class="text-white font-semibold underline decoration-[#a370f7]">qu'une seule fois par période de douze (12) mois glissants</span>. Toute demande de réabonnement supplémentaire au cours de cette période pourra être refusée de plein droit par AM 2.0.
+                            </li>
+                            <li class="text-gray-300">
+                                <strong class="text-white font-medium text-cyan-400">• Incidents de paiement majeurs :</strong> AM 2.0 se réserve le droit de refuser définitivement toute nouvelle prestation ou abonnement à un Client ayant fait l'objet de <span class="text-white font-semibold underline decoration-cyan-400/50">deux (2) défauts de paiement</span> (constatés après le 20 du mois), consécutifs ou non.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- ARTICLE 5  -->
+        <div class="space-y-4">
+            <h2 class="text-xl font-bold text-white border-b border-white/5 pb-2 leading-snug">
+                <span class="text-[#a370f7] block md:inline-block md:mr-2 mb-1 md:mb-0">ARTICLE 5</span> Périmètre et Exécution des Abonnements
+            </h2>
+            <p>
+                AM 2.0 propose différents niveaux d'abonnement dont le périmètre exact est défini dans la proposition commerciale. De manière générale :
+            </p>
+            <div class="space-y-2">
+                <h3 class="text-base font-bold text-[#a370f7]">5.1 Accompagnement digital saisonnier (Web & Insta)</h3>
+                <p>Cet abonnement comprend des interventions limitées à <span class="text-white font-medium">quatre (4) périodes par an maximum</span>, correspondant aux changements de saison ou événements majeurs du Client. Il inclut :</p>
+                <ul class="space-y-1 pl-6 list-none text-base relative">
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]"><strong class="text-white font-medium">Site Web :</strong> Petites modifications de contenu (textes/images saisonniers), mise à jour d'agenda (sans création de page spécifique), activation/désactivation de bandeaux d'info/promo ou de popups existants.<span class="text-white font-medium underline decoration-cyan-400">à l'exclusion de toute nouvelle page web ou refonte complète</span>.</li>
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]"><strong class="text-white font-medium">Instagram :</strong> Création et publication de deux (2) actions de communication dédiées par période (par exemple : 1 post + 1 story, ou 1 carrousel + 1 post), planifiées avec le Client autour de l'événement.</li>
+                </ul>
+            </div>
+            <div class="space-y-2 pt-2">
+                <h3 class="text-base font-bold text-[#a370f7]">5.2 Optimisation continue de présence digitale</h3>
+                <p>Cet abonnement prévoit un entretien régulier de contenu, <span class="text-white font-medium">au-delà des 4 fois par an</span>, pouvant couvrir toute l'année. Il se limite strictement à l'optimisation de l'existant :</p>
+                <ul class="space-y-1 pl-6 list-none text-base relative">
+                    <li class="relative before:content-['•'] before:absolute before:-left-4"><strong class="text-white font-medium">Site Web :</strong> Changements de textes, d'images, ajout/modification de popups et bandeaux, ajustements légers de visuels (CTA, couleurs de sections), <span class="text-white font-medium underline decoration-cyan-400">à l'exclusion de toute nouvelle page web ou refonte complète</span>.</li>
+                    <li class="relative before:content-['•'] before:absolute before:-left-4"><strong class="text-white font-medium">Instagram :</strong> AM 2.0 ne propose pas de forfait de publication récurrent hebdomadaire fixe (type Community Management). Le périmètre d'intervention sur Instagram dans ce cadre est <span class="text-white font-medium underline decoration-cyan-400">défini spécifiquement avec le Client sur devis</span>, déterminant le volume et le type de contenus mensuels.</li>
+                </ul>
+            </div>
+            <div class="space-y-2 pt-2">
+                <h3 class="text-base font-bold text-[#a370f7]">5.3 Interventions sur Outils tiers & Écosystème digital</h3>
+                <p class="text-base">Selon les besoins spécifiques du Client, l'abonnement peut intégrer la gestion et la maintenance technique d'outils tiers connectés à son activité. Ces interventions incluent notamment :</p>
+                <ul class="space-y-1 pl-6 list-none text-sm relative">
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]"><strong class="text-white font-medium text-gray-200">Outils de planification :</strong> Configuration et tenue à jour des créneaux, événements ou formulaires de prise de rendez-vous (ex: <span class="text-white font-medium">Calendly</span>, Tally).</li>
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]"><strong class="text-white font-medium text-gray-200">Visibilité locale :</strong> Optimisation, mises à jour des horaires et actualisations régulières des fiches d'établissement (<span class="text-white font-medium">Google Business Profile</span> / Google Maps).</li>
+                </ul>
+                <div class="bg-white/5 p-3 rounded-xl border border-white/10 text-sm italic max-w-max">
+                    <strong class="text-gray-200 font-medium">Note :</strong> L'inclusion de ces outils tiers est optionnelle et doit être explicitement mentionnée et chiffrée dans la proposition commerciale initiale pour être opposable à AM 2.0.
+                </div>
+            </div>
+        </div>
+<!-- ARTICLE 6  -->
+        <div class="space-y-4">
+            <h2 class="text-xl font-bold text-white border-b border-white/5 pb-2 leading-snug">
+                <span class="text-[#a370f7] block md:inline-block md:mr-2 mb-1 md:mb-0">ARTICLE 6</span> Durée maximale des Projets, Dépassement et Abandon
+            </h2>
+            <p class="text-base text-gray-300">
+                Afin de garantir la bonne gestion de son planning et la disponibilité de ses ressources, chaque <span class="text-white font-medium">prestation ponctuelle au forfait</span> (hors abonnements) est strictement encadrée par une durée maximale d'exécution :
+            </p>
+            <ul class="space-y-1.5 pl-6 list-none mb-4 text-sm">
+                <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]">
+                    <span class="text-white font-medium">Audits, analyses, packs LinkedIn/Instagram :</span> 30 jours maximum entre le versement de l'acompte et la livraison finale.
+                </li>
+                <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]">
+                    <span class="text-white font-medium">Création ou refonte de sites internet :</span> 60 jours maximum entre le versement de l'acompte et la livraison finale.
+                </li>
+            </ul>
+            <p class="text-sm text-gray-300">
+                Si le projet est mis en pause ou ralenti du fait du Client (retard dans la transmission des contenus, validations tardives, etc.) et dépasse cette durée maximale, AM 2.0 pourra suspendre immédiatement l'exécution des travaux. La reprise ne pourra se faire qu'en fonction des disponibilités du planning d'AM 2.0 et au tarif en vigueur.
+            </p>
+            <div class="p-5 bg-gradient-to-b from-[#16171a] to-[#8449d9]/5 rounded-xl border-2 border-[#8449d9]/30 flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#a370f7] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+                <div class="text-sm leading-relaxed">
+                    <strong class="text-white font-bold uppercase tracking-wider block mb-2 text-xs">Clause d'abandon définitif</strong>
+                    <p class="text-gray-300 mb-3">
+                        Tout projet demeurant sans réponse, sans validation ou sans action concrète du Client pendant plus de <span class="text-white font-medium">quatre-vingt-dix (90) jours calendaires</span> sera considéré comme définitivement abandonné. Les sommes et acomptes déjà versés restent intégralement acquis à AM 2.0 à titre d'indemnité forfaitaire et ne feront l'objet d'aucun remboursement.
+                    </p>
+                    <div class="pt-2 border-t border-white/5 text-gray-300 space-y-2">
+                        <p class="inline-flex items-start gap-1.5 text-white font-semibold uppercase text-xs tracking-wider">
+                            ⚠️ Règle stricte en cas de reprise :
+                        </p>
+                        <p class="text-gray-300">
+                            Si le Client souhaite relancer les travaux après ce délai de 90 jours, le projet initial est considéré comme clos. La demande sera traitée comme une <span class="text-white font-medium">nouvelle commande totalement indépendante</span>. 
+                        </p>
+                        <p class="text-gray-300">
+                            Elle nécessitera l'établissement d'un nouveau devis au tarif en vigueur au jour de la reprise, le paiement intégral d'un <span class="text-white font-medium">nouvel acompte</span>, et la fixation d'un nouveau calendrier. <span class="text-white font-medium underline decoration-[#a370f7]">Aucun report d'acompte antérieur, aucune ristourne, remise ou déduction de prix</span> ne sera accordée, même si les nouvelles prestations s'appuient sur les bases, discussions ou éléments déjà commencés lors du projet abandonné.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>      
+<!-- ARTICLE 7  -->
+        <div class="space-y-4">
+            <h2 class="text-xl font-bold text-white border-b border-white/5 pb-2 leading-snug">
+                <span class="text-[#a370f7] block md:inline-block md:mr-2 mb-1 md:mb-0">ARTICLE 7</span> Retards de Paiement et Pénalités Légales
+            </h2>
+            <p class="text-base text-gray-300">
+                Conformément à la réglementation en vigueur, tout défaut ou retard de paiement par rapport aux échéances fixées aux présentes CGV entraîne l'application de plein droit des sanctions financières suivantes.
+            </p>
+
+            <!-- 7.1 : Cas des projets au forfait -->
+            <div class="space-y-2">
+                <h3 class="text-base font-bold text-[#a370f7]">7.1 Prestations ponctuelles au forfait</h3>
+                <p class="text-sm text-gray-300">
+                    Les factures d'acomptes intermédiaires ou de solde émises par AM 2.0 sont payables dès réception. AM 2.0 se réserve explicitement le droit de <span class="text-white font-medium">différer toute mise en ligne, livraison ou transfert des accès techniques</span> tant que l'intégralité des sommes facturées n'a pas été acquittée. 
+                </p>
+                <p class="text-base text-gray-300">
+                    Si le Client refuse ou néglige de régler une facture intermédiaire ou le solde d'un projet finalisé prêt à être livré, les pénalités définies à l'article 7.3 commencent à courir automatiquement à compter du jour suivant la date d'échéance portée sur la facture.
+                </p>
+            </div>
+
+            <!-- 7.2 : Cas des abonnements -->
+            <div class="space-y-2 pt-2">
+                <h3 class="text-base font-bold text-[#a370f7]">7.2 Abonnements mensuels</h3>
+                <p class="text-base text-gray-300">
+                    Pour les abonnements, l'absence de crédit effectif sur le compte d'AM 2.0 <span class="text-white font-medium">après le vingt (20) du mois en cours</span> constitue un retard de paiement caractérisé. 
+                </p>
+                <p class="text-base text-gray-300">
+                    En plus de la suspension immédiate des prestations et des accès prévue à l'article 4.5, ce retard déclenche automatiquement l'application des pénalités financières décrites ci-dessous sur les sommes restant dues.
+                </p>
+            </div>
+
+            <!-- 7.3 : Le calcul légal unique -->
+            <div class="space-y-2 pt-2">
+                <h3 class="text-base font-bold text-[#a370f7]">7.3 Taux des pénalités et indemnités forfaitaires</h3>
+                <p class="text-base text-gray-300">
+                    Toute somme non réglée à son échéance (facture de projet ou mensualité d'abonnement au-delà du 20) entraînera, de plein droit et sans mise en demeure préalable :
+                </p>
+                <ul class="space-y-2 pl-6 list-none text-base">
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-amber-400">
+                        <strong class="text-white font-medium">Pénalités de retard :</strong> Calculées sur la base du taux d'intérêt appliqué par la Banque Centrale Européenne (BCE) à son opération de refinancement la plus récente, <span class="text-white font-medium">majoré de dix (10) points de pourcentage.</span>
+                    </li>
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-cyan-400">
+                        <strong class="text-white font-medium">Frais de recouvrement :</strong> Une indemnité forfaitaire de <span class="text-white font-medium">quarante (40) euros (40 €)</span> due de plein droit pour chaque facture ou mensualité impayée, conformément aux articles L.441-10 et D.441-5 du Code de commerce.
+                    </li>
+                </ul>
+            </div>
+        </div>
+<!-- ARTICLE 8  -->
+        <div class="space-y-4">
+            <h2 class="text-xl font-bold text-white border-b border-white/5 pb-2 leading-snug">
+                <span class="text-[#a370f7] block md:inline-block md:mr-2 mb-1 md:mb-0">ARTICLE 8</span> Collaboration, Validation et Contenus
+            </h2>
+            
+            <!-- 8.1 : Fourniture et responsabilité des contenus -->
+            <div class="space-y-2">
+                <h3 class="text-base font-bold text-[#a370f7]">8.1 Fourniture et responsabilité légale des contenus</h3>
+                <p class="text-base text-gray-300 leading-relaxed">
+                    Le Client s'engage à fournir à AM 2.0 l'ensemble des éléments indispensables à l'exécution de la mission (liens d'accès, photos, images, textes via le formulaire de onboarding ou par e-mail). 
+                </p>
+                <p class="text-base text-gray-300 leading-relaxed">
+                    Le Client est <span class="text-white font-medium">seul responsable de la légalité et de la propriété des contenus</span> qu'il transmet. S'il fournit des photographies ou vidéos incluant des personnes physiques (particulièrement des mineurs), il garantit expressément disposer des <span class="text-white font-medium">décharges écrites de droit à l'image</span> nécessaires. 
+                </p>
+                <p class="text-base text-gray-300 leading-relaxed">
+                    Pour la création de sites internet, le Client fournit ses propres textes de CGV, Mentions Légales et Politiques de Confidentialité clés en main. AM 2.0 n’effectue qu'un simple copier-coller technique et décline toute responsabilité quant à leur conformité réglementaire.
+                </p>
+                
+                <!-- Droit de réserve / Éthique -->
+                <div class="p-3.5 bg-red-900/10 border border-red-500/20 rounded-lg text-xs text-gray-300 space-y-1">
+                    <span class="text-red-400 font-bold uppercase tracking-wider block">🚫 Clause d'éthique et droit de réserve</span>
+                    AM 2.0 se réserve le droit de refuser tout contenu ou de rompre immédiatement le contrat si le projet est lié à des activités contraires aux lois, ou à des thématiques jugées inappropriées par AM 2.0, notamment : systèmes pyramidaux ou MLM, offres de gains financiers miracles, contenus à caractère violent, sexuel, haineux, raciste ou homophobe. Ce refus n'ouvre droit à aucune indemnité pour le Client.
+                </div>
+            </div>
+
+            <!-- 8.2 : Relances et silence -->
+            <div class="space-y-2 pt-2">
+                <h3 class="text-base font-bold text-[#a370f7]">8.2 Relances et validation par le silence</h3>
+                <p class="text-base text-gray-300 leading-relaxed">
+                    Le Client doit se rendre disponible et réactif par voie électronique. À défaut de réponse ou de retours du Client dans un délai de <span class="text-white font-medium">sept (7) jours calendaires</span> à compter d'une demande de validation ou de transmission d'éléments par AM 2.0, cette dernière pourra considérer les éléments transmis comme définitivement validés et poursuivre légitimement l'exécution des étapes suivantes.
+                </p>
+            </div>
+
+            <!-- 8.3 : Processus de validation des projets -->
+            <div class="space-y-2 pt-2">
+                <h3 class="text-base font-bold text-[#a370f7]">8.3 Processus de validation des prestations au forfait</h3>
+                <p class="text-base text-gray-300 leading-relaxed">
+                    Pour toute prestation ponctuelle au forfait, un premier point d’étape en visioconférence est fixé dans les <span class="text-white font-medium">quinze (15) jours suivant le versement de l’acompte</span> afin de figer la direction artistique (DA) et la structure du projet. Les règles de validation suivantes s'appliquent de manière stricte :
+                </p>
+                
+                <ul class="space-y-2.5 pl-6 list-none text-base text-gray-300">
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]">
+                        <strong class="text-white font-medium text-gray-200">Identités visuelles, profils et feeds réseaux sociaux :</strong> AM 2.0 soumet un maximum de <span class="text-white font-medium">deux (2) à trois (3) propositions de directions graphiques</span> lors du premier point. La proposition sélectionnée par le Client devient la base de travail définitive. Toute demande ultérieure visant à revenir sur une autre proposition ou à modifier radicalement la DA sera assimilée à une modification majeure et refusée, ou facturée en supplément.
+                    </li>
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]">
+                        <strong class="text-white font-medium text-gray-200">Création ou refonte de sites internet :</strong> AM 2.0 présente un plan de site idéal. Le Client peut y apporter ses préférences et modifications lors du premier point d'étape. Côté visuel, AM 2.0 soumet <span class="text-white font-medium">une (1) à deux (2) maquettes graphiques ciblées</span> (notamment la section Hero et les composants clés). Une fois ces éléments validés par le Client, l'intégration technique commence.
+                    </li>
+                </ul>
+                <div class="bg-white/5 p-3 rounded-xl border border-white/10 text-sm italic max-w-max">
+                    <strong class="text-gray-200 font-medium">Note :</strong> Le Client peut demander des ajustements mineurs et précis tout au long du calendrier imparti, mais l’exclusion de toute refonte intégrale ou changement de direction en cours de route reste absolue.
+                </div>
+            </div>
+        </div>
+<!-- ARTICLE 9  -->
+        <div class="space-y-4">
+            <h2 class="text-xl font-bold text-white border-b border-white/5 pb-2 leading-snug">
+                <span class="text-[#a370f7] block md:inline-block md:mr-2 mb-1 md:mb-0">ARTICLE 9</span> Engagement, Reconduction et Résiliation des Abonnements
+            </h2>
+            <p>
+                Tous les abonnements proposés par AM 2.0 sont <span class="text-white font-medium">reconductibles tacitement</span> de mois en mois.
+            </p>
+            <ul class="space-y-3 pl-6 list-none">
+                <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-cyan-400">
+                    <strong class="text-white font-medium">Abonnement Création Web Associations :</strong> Soumis à un <span class="text-white font-medium">engagement minimum ferme de douze (12) mois</span>. Le Client peut y mettre fin après cette période initiale, sous réserve d'un préavis de un (1) mois, notifié par e-mail écrit à <a href="#" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg==" class="protected-mail text-cyan-400 font-medium hover:text-white transition-colors duration-300 inline-flex items-center gap-1.5 group">
+                    <span class="mail-text"></span>
+                </a>.
+                </li>
+                <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]">
+                    <strong class="text-white font-medium">Autres Abonnements (Saisonnier, Optimisation continue, Insta sur devis) :</strong> Conclus <span class="text-white font-medium">sans engagement de durée</span>. Le Client peut y mettre fin à tout moment, sous réserve du respect d'un <span class="text-white font-medium">préavis de un (1) mois</span>, notifié par e-mail écrit à <a href="#" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg==" class="protected-mail text-cyan-400 font-medium hover:text-white transition-colors duration-300 inline-flex items-center gap-1.5 group">
+                    <span class="mail-text"></span>
+                </a>. La mensualité entamée reste due.
+                </li>
+            </ul>
+        </div>
+<!-- ARTICLE 10  -->
+        <div class="space-y-4">
+            <h2 class="text-xl font-bold text-white border-b border-white/5 pb-2 leading-snug">
+                <span class="text-[#a370f7] block md:inline-block md:mr-2 mb-1 md:mb-0">ARTICLE 10</span> Responsabilité, Hébergement et Services Tiers
+            </h2>
+            <div class="space-y-2">
+                <h3 class="text-base font-bold text-[#a370f7]">10.1 Obligation de moyens</h3>
+                <p>
+                    AM 2.0 est soumise à une obligation de moyens dans le cadre de la réalisation de ses prestations. Compte tenu des caractéristiques changeantes du réseau internet, des algorithmes tiers (LinkedIn, Instagram, Google) et de la dépendance vis-à-vis de la mise en application par le Client, <span class="text-white font-medium">AM 2.0 ne souscrit à aucune obligation de résultat</span> (aucune garantie d'augmentation de chiffre d'affaires, de nombre de leads ou de statistiques d'abonnés).
+                </p>
+                <p>
+                    Les prestations de référencement naturel (SEO), d'optimisation de visibilité ou d'optimisation de conversion sont réalisées selon les bonnes pratiques connues au jour de la prestation. AM 2.0 ne garantit aucun positionnement particulier dans les moteurs de recherche ni aucun volume de trafic ou de demandes.
+                </p>
+            </div>
+            <div class="space-y-2 pt-2">
+                <h3 class="text-base font-bold text-[#a370f7]">10.2 Services tiers et hébergement</h3>
+                <p>
+                    AM 2.0 ne saurait être tenue pour responsable des dysfonctionnements, coupures, pertes d'accès, ralentissements ou indisponibilités résultant des services fournis par des prestataires tiers (hébergeur, registraire de nom de domaine, plateforme de paiement Stripe, infrastructures de réseaux sociaux LinkedIn/Instagram, services SaaS, etc.).
+                </p>
+            </div>
+            <div class="space-y-2 pt-2">
+                <h3 class="text-base font-bold text-[#a370f7]">10.3 Plafonnement de responsabilité</h3>
+                <p>
+                    En tout état de cause, si la responsabilité d'AM 2.0 devait être engagée, le montant total des dommages-intérêts auquel elle pourrait être condamnée est <span class="text-white font-medium underline decoration-cyan-400 decoration-2">expressément plafonné à la somme totale effectivement payée par le Client</span> pour la prestation ou l'abonnement précis (sur la durée du manquement) à l'origine du litige.
+                </p>
+            </div>
+        </div>
+<!-- ARTICLE 11 -->
+        <div class="space-y-4">
+            <h2 class="text-xl font-bold text-white border-b border-white/5 pb-2 leading-snug">
+                <span class="text-[#a370f7] block md:inline-block md:mr-2 mb-1 md:mb-0">ARTICLE 11</span> Force Majeure
+            </h2>
+            <p>
+                Aucune des parties ne pourra être tenue responsable d'un retard ou d'une inexécution totale ou partielle résultant de la survenance d'un cas de force majeure au sens de l'article 1218 du Code civil français.
+            </p>
+        </div>
+<!-- ARTICLE 12  -->
+        <div class="space-y-4">
+            <h2 class="text-xl font-bold text-white border-b border-white/5 pb-2 leading-snug">
+                <span class="text-[#a370f7] block md:inline-block md:mr-2 mb-1 md:mb-0">ARTICLE 12</span> Propriété Intellectuelle et Portfolio
+            </h2>
+            <div class="space-y-2">
+                <h3 class="text-base font-bold text-[#a370f7]">12.1 Propriété d'AM 2.0</h3>
+                <p>
+                    AM 2.0 reste propriétaire exclusive de ses méthodes d'audit, de ses frameworks de réflexion, de son savoir-faire, de ses processus de conversion ainsi que de l'ensemble de ses fichiers sources techniques ou graphiques utilisés pour réaliser la prestation.
+                </p>
+            </div>
+            <div class="space-y-2 pt-2">
+                <h3 class="text-base font-bold text-[#a370f7]">12.2 Transfert de propriété des livrables</h3>
+                <p>
+                    Le transfert de propriété des livrables finaux (bannières LinkedIn, chartes et directions artistiques, livrables finaux d'audits, codes et structures de sites web créés) au profit du Client n'intervient qu'après le <span class="text-white font-medium">paiement intégral et effectif du prix global</span> (acomptes et solde pour les projets, mensualités dues pour les abonnements).
+                </p>
+            </div>
+            <div class="space-y-2 pt-2">
+                <h3 class="text-base font-bold text-[#a370f7]">12.3 Référence commerciale (Portfolio)</h3>
+                <p>
+                    Le Client autorise expressément AM 2.0 à citer sa dénomination sociale, son nom commercial, son logo et à diffuser des visuels ou captures d'écran des réalisations à titre de référence commerciale dans son portfolio, sur son site internet ou ses réseaux sociaux professionnels. <span class="text-white font-medium">Cette autorisation est consentie à titre gratuit</span>, sauf demande d'exclusion formulée par écrit par le Client dès l'établissement de la commande.
+                </p>
+            </div>
+        </div>
+<!-- ARTICLE 13  -->
+        <div class="space-y-4">
+            <h2 class="text-xl font-bold text-white border-b border-white/5 pb-2 leading-snug">
+                <span class="text-[#a370f7] block md:inline-block md:mr-2 mb-1 md:mb-0">ARTICLE 13</span> Données Personnelles (RGPD)
+            </h2>
+            <p>
+                Dans le cadre habituel des prestations proposées, AM 2.0 intervient principalement sur des données publiques ou directement fournies par le Client. Si une prestation spécifique devait impliquer un traitement structuré de données personnelles pour le compte du Client au sens du RGPD (accès à des bases de données de formulaires non publiques, CRM, outils emailing, gestion de données d'abonnés, etc.), les parties conviendront préalablement des modalités techniques applicables et régulariseront un accord de sous-traitance conforme à la réglementation en vigueur.
+            </p>
+        </div>
+<!-- ARTICLE 14  -->
+        <div class="space-y-4">
+            <h2 class="text-xl font-bold text-white border-b border-white/5 pb-2 leading-snug">
+                <span class="text-[#a370f7] block md:inline-block md:mr-2 mb-1 md:mb-0">ARTICLE 14</span> Droit Applicable et Tribunal Compétent
+            </h2>
+            <p>
+                Les présentes CGV et les opérations qui en découlent sont régies de manière exclusive par le droit français.
+            </p>
+            <p>
+                En cas de litige ou de contestation relatif à la formation, l'interprétation, l'exécution ou la résiliation des prestations, et à défaut de résolution amiable préalable entre les parties :
+            </p>
+            <ul class="space-y-2 pl-6 list-none">
+                <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]">
+                    Pour les litiges opposant AM 2.0 à un <strong class="text-white font-medium">Client professionnel</strong>, compétence exclusive est attribuée au <strong class="text-white font-medium">Tribunal de Commerce de Strasbourg</strong>, nonobstant pluralité de défendeurs ou appel en garantie.
+                </li>
+                <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-cyan-400">
+                    Pour les litiges opposant AM 2.0 à une <strong class="text-white font-medium">Association non commerçante</strong>, les règles légales de répartition de compétence de droit commun s'appliqueront.
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- ================= FOOTER ================= -->
+<footer class="w-full relative left-0 bg-[#0B0C10]/60 backdrop-blur-xl border-t border-white/5 pt-20 pb-12 overflow-hidden">
+<!-- TEXTE GÉANT EN ARRIÈRE-PLAN  -->
+    <div class="absolute inset-x-0 bottom-6 flex justify-center items-center select-none overflow-hidden tracking-tighter opacity-[0.03] pointer-events-none z-0">
+        <span class="text-[18vw] font-black uppercase leading-none bg-gradient-to-b from-white to-transparent bg-clip-text text-transparent font-sans">
+            AM 2.0
+        </span>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10"> 
+<!-- PARTIE HAUTE -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-white/5">    
+        <div class="lg:col-span-7 space-y-5">
+            <h3 class="text-base font-medium text-gray-200 tracking-tight">
+                AM 2.0 à Obernai • Spécialisé dans l'optimisation de présence digitale <br>dans tout le Bas-Rhin, en Alsace et partout en France.
+            </h3>
+            <div class="flex items-center gap-5">
+                <div class="shrink-0 w-16 h-16 rounded-full overflow-hidden border border-white/10 shadow-inner bg-[#16171a]">
+                    <img src="images/logo/profil-aurore-am20.webp" 
+                        alt="Aurore - Consultante en optimisation de parcours digitaux" 
+                        width="500" height="500"
+                        class="w-full h-full object-cover"
+                        loading="lazy">
+                </div>
+                <div class="space-y-1">
+                    <ul class="space-y-0.5 list-disc list-outside pl-4">
+                        <li class="text-sm md:text-base text-gray-300 font-light leading-relaxed">
+                            Optimisation des parcours digitaux 
+                        </li>
+                        <li class="text-sm md:text-base text-gray-300 font-light leading-relaxed">
+                            Création de sites web orientés conversion
+                        </li>
+                        <li class="text-sm md:text-base text-gray-300 font-light leading-relaxed">
+                            Optimisation LinkedIn et Instagram
                         </li>
                     </ul>
                 </div>
-                <div class="space-y-4">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">3. Acceptation des CGV</h2>
-                    <p class="text-lg font-semibold border-l-4 border-accent rounded-2xl pl-4 bg-slate-50 p-2 text-primary">Toute commande implique l’acceptation pleine et entière des présentes CGV.</p>
-                    <p class="text-lg">Cette acceptation peut se matérialiser par :</p>
-                    <ul class="list-disc list-inside space-y-2 text-lg ml-4">
-                        <li>La signature d’un devis</li>
-                        <li>Le paiement d’un acompte</li>
-                        <li>Ou toute validation explicite d’une proposition commerciale</li>
-                    </ul>
-                </div>
-                <div class="space-y-4">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">4. Commande et devis</h2>
-                    <p class="text-lg">Toute prestation fait l’objet d’un devis préalable valable <strong>30 jours</strong>.</p>
-                    <p class="text-lg">La commande est considérée comme ferme et définitive à réception du devis signé et/ou du paiement de l’acompte.</p>
-                </div>
-                <div class="space-y-6">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">5. Prestations Proposées</h2>
-                    <p class="text-lg">Le Prestataire propose des services de stratégie digitale et de création de contenus personnalisés :</p>
-                    <div class="space-y-6 ml-4">
-                        <div class="space-y-2">
-                            <h3 class="text-xl font-bold">5.1. Refonte de Profil LinkedIn</h3>
-                            <p class="text-lg italic">La prestation comprend l'étude stratégique et la livraison des éléments suivants :</p>
-                            <ul class="list-disc list-inside space-y-1 text-lg ml-4">
-                                <li>Création d'une bannière visuelle personnalisée.</li>
-                                <li>Rédaction de la Headline (titre de profil) optimisée.</li>
-                                <li>Retouche de la photo de profil (colorimétrie/détourage).</li>
-                                <li>Réécriture complète de la Bio (section Infos) structurée pour la conversion.</li>
-                                <li>Création de 2 vignettes visuelles pour la section « Sélection ».</li>
-                            </ul>
-                        </div>
-                        <div class="space-y-2">
-                            <h3 class="text-xl font-bold">5.2. Création de Page Web & Site Web Sur-Mesure</h3>
-                            <ul class="list-disc list-inside space-y-1 text-lg ml-4">
-                                <li>Conception de Landing Pages ou de sites vitrines personnalisés.</li>
-                                <li>Copywriting (rédaction) et intégration technique par le Prestataire.</li>
-                                <li>Mise en ligne et configuration (le cas échéant) d'un nom de domaine.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="space-y-6">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">6. Tarifs et Paiement</h2>
-                    <div class="space-y-6">
-                        <div class="space-y-2">
-                            <h3 class="text-xl font-bold">6.1. Tarifs</h3>
-                            <p class="text-lg">
-                                Les tarifs sont indiqués en euros (Franchise en base - TVA non applicable, article 293 B du CGI.). Le Prestataire se réserve le droit de modifier ses prix à tout moment, mais les prestations seront facturées sur la base des tarifs en vigueur au moment de la validation de la commande. Le Prestataire se réserve le droit de refuser toute commande.
-                            </p>
-                        </div>
-                        <div class="space-y-4">
-                            <h3 class="text-xl font-bold">6.2. Modalités de paiement</h3>
-                            <p class="text-lg font-semibold italic text-gradient-accent">Le règlement s'effectue par carte bancaire via la plateforme sécurisée Stripe.</p>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="bg-slate-50 p-5 rounded-2xl border-l-4 border-secondary">
-                                    <p class="font-bold text-lg mb-2 underline text-accent">Prestations LinkedIn</p>
-                                    <ul class="list-disc list-inside space-y-2 text-base text-primary">
-                                        <li><strong>Acompte :</strong> 50% à la commande.</li>
-                                        <li><strong>Solde :</strong> Avant livraison, au maximum <strong>30 jours</strong> après l'acompte.</li>
-                                        <li><span class="text-secondary font-bold">Facilité :</span> Possibilité de règlement en <strong>2 mensualités</strong>.</li>
-                                    </ul>
-                                </div>  
-                                <div class="bg-slate-50 p-5 rounded-2xl border-l-4 border-secondary">
-                                    <p class="font-bold text-lg mb-2 underline text-accent">Prestations Web</p>
-                                    <ul class="list-disc list-inside space-y-2 text-base text-primary">
-                                        <li><strong>Acompte :</strong> 33% à la commande.</li>
-                                        <li><strong>Solde :</strong> Avant livraison, au maximum <strong>60 jours</strong> après l'acompte.</li>
-                                        <li><span class="text-secondary font-bold">Facilité :</span> Possibilité de règlement en <strong>3 mensualités</strong>.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <p class="text-sm italic bg-gray-100 p-3 rounded-lg mt-4 text-primary">
-                                Le paiement de l'acompte (ou de la première mensualité) valide la commande et vaut acceptation sans réserve des présentes CGV. La livraison finale n'intervient qu'après encaissement intégral des sommes dues.
-                            </p>
-                        </div>
-                        <div class="p-5 border-l-4 border-red-500 bg-red-50 rounded-2xl">
-                            <h3 class="text-lg font-bold text-red-700 underline mb-3">6.3. Retards de paiement (Art. L441-10 du Code de commerce)</h3>
-                            <div class="space-y-3 text-base text-red-700">
-                                <p>
-                                    Tout retard de paiement donnera lieu, de plein droit et sans rappel préalable, à l’application de <strong>pénalités de retard calculées au taux de 10 % annuel</strong> sur le montant impayé.
-                                </p>
-                                <p>
-                                    <strong>Indemnité forfaitaire :</strong> Une indemnité forfaitaire de <strong>40 €</strong> pour frais de recouvrement sera due par le Client pour chaque facture payée après l'échéance. Si les frais de recouvrement réels sont supérieurs, une indemnisation complémentaire pourra être réclamée sur justificatifs.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="space-y-4">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">7. Démarrage et délais</h2>
-                    <p class="text-lg">Le projet débute uniquement après réception du premier paiement (acompte ou paiement intégral) ET de l’ensemble des éléments nécessaires (brief, accès, contenus).</p>
-                    <p class="text-lg font-semibold">Délais indicatifs :</p>
-                    <ul class="list-disc list-inside space-y-2 text-lg ml-4">
-                        <li><strong>LinkedIn :</strong> 7 jours ouvrés</li>
-                        <li><strong>Web :</strong> 15 jours ouvrés</li>
-                    </ul>
-                    <p class="text-sm italic text-gray-500">Tout retard imputable au Client entraîne un décalage équivalent des délais.</p>
-                </div>
-                <div class="space-y-4">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">8. Révisions</h2>
-                    <p class="text-lg">Le Prestataire propose des <strong>révisions illimitées</strong> afin de garantir la pleine satisfaction du Client, sous réserve du respect du périmètre initial défini au devis.</p> 
-                    <div class="bg-slate-50 p-6 rounded-2xl space-y-4 border border-secondary text-primary">
-                        <p class="text-lg font-bold text-secondary italic underline">Durée et Fin de validité :</p>
-                        <p class="text-lg">La période de révisions s'étend sur un délai maximum de :</p>
-                        <ul class="list-disc list-inside space-y-2 text-lg ml-4">
-                            <li><strong>LinkedIn :</strong> 30 jours après le premier paiement.</li>
-                            <li><strong>Web :</strong> 60 jours après le premier paiement.</li>
-                        </ul>
-                        <div class="bg-white p-4 border-l-4 border-accent rounded-2xl rounded-r-xl">
-                            <p class="text-lg font-bold mb-2">⚠️ Clôture définitive des révisions :</p>
-                            <p class="text-base font-medium">
-                                La phase de révision prend fin automatiquement lors de la survenance du premier de ces événements :
-                            </p>
-                            <ul class="list-disc list-inside text-sm mt-2 space-y-1">
-                                <li>Le paiement du solde (lorsqu'il est effectué après la présentation des livrables).</li>
-                                <li>La livraison finale des fichiers sources, accès Canva ou mise en ligne technique.</li>
-                                <li>L'expiration du délai de 30 ou 60 jours mentionné ci-dessus.</li>
-                            </ul>
-                            <p class="text-sm mt-3 italic text-secondary">Note : En cas de paiement intégral à la commande, le Client conserve bien entendu son droit aux révisions jusqu'à la livraison finale ou l'expiration des délais.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="space-y-4">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">9. Livraison</h2>
-                    <p class="text-lg">
-                        La livraison finale (fichiers HD, accès éditeur, mise en ligne) intervient <strong>uniquement après encaissement du paiement intégral</strong> des sommes dues.
-                    </p>
-                    <p class="text-lg">
-                        Les éléments présentés avant paiement complet sont fournis à titre de prévisualisation uniquement et ne peuvent en aucun cas être exploités, diffusés ou utilisés par le Client.
-                    </p>
-                    <p class="text-lg">Formats possibles selon la prestation :</p>
-                    <ul class="list-disc list-inside space-y-2 text-lg ml-4">
-                        <li>Fichiers visuels (PNG, JPG)</li>
-                        <li>Accès Canva</li>
-                        <li>Mise en ligne web ou remise des accès techniques</li>
-                    </ul>
-                    <p class="text-lg font-semibold border-l-4 border-accent rounded-2xl pl-4 bg-slate-50 p-2 text-primary">
-                        Le Prestataire se réserve le droit de suspendre toute livraison, de bloquer ou de désactiver un accès technique en cas de défaut de paiement, jusqu’à régularisation complète de la situation.
-                    </p>
-                </div>
-                <div class="space-y-4">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">10. Obligations du Client</h2>
-                    <ul class="list-disc list-inside space-y-2 text-lg ml-4">
-                        <li>Fournir des informations exactes</li>
-                        <li>Transmettre les éléments nécessaires dans les délais</li>
-                        <li>Valider les livrables dans un délai raisonnable</li>
-                    </ul>
-                    <p class="text-lg font-semibold border-l-4 border-accent rounded-2xl pl-4 bg-slate-50 p-2 text-primary">Le Client est seul responsable des contenus (images, logos, textes) qu'il fournit au Prestataire. Il garantit détenir les droits nécessaires à leur exploitation.</p>
-                </div>
-                <div class="space-y-4">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">11. Responsabilité</h2>
-                    <p class="text-lg">Le Prestataire est tenu à une obligation de moyens. Il s'engage à réaliser les prestations avec tout le soin nécessaire.</p>
-                    <p class="text-lg">Toutefois, il ne peut garantir les résultats commerciaux (nombre de vues, de leads ou de ventes) liés à l'utilisation des livrables, ceux-ci dépendant de facteurs extérieurs (algorithmes, marché, activité du Client).</p>
-                    <p class="text-lg">Le Prestataire ne pourra être tenu responsable des dommages indirects, perte de chiffre d’affaires, perte de données ou préjudice commercial.</p>
-                    <p class="text-lg">Le Client est seul responsable de l’exploitation des livrables et des résultats obtenus suite à leur utilisation.</p>
-                    <p class="text-lg font-semibold border-l-4 border-accent rounded-2xl pl-4 bg-slate-50 p-2 text-primary">La responsabilité du Prestataire est strictement limitée au montant de la prestation facturée.</p>
-                </div>
-                <div class="space-y-4">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">12. Propriété intellectuelle</h2>
-                    <p class="text-lg font-semibold">
-                        Le Prestataire cède au Client un droit d’usage non exclusif, non transférable et strictement limité à ses besoins professionnels, portant sur les visuels et textes créés, et ce uniquement après paiement intégral de la prestation.
-                    </p>
-                    <p class="text-lg">
-                        Cette cession n’emporte aucun transfert de propriété intellectuelle sur les méthodes, concepts, structures, templates, systèmes ou outils utilisés par le Prestataire, qui restent sa propriété exclusive.
-                    </p>
-                    <p class="text-lg">
-                        Toute reproduction, revente, diffusion ou exploitation des livrables en dehors du cadre prévu initialement devra faire l’objet d’un accord écrit préalable du Prestataire.
-                    </p>
-                    <p class="text-lg font-semibold border-l-4 border-secondary rounded-2xl pl-4 bg-slate-50 p-2 text-primary">
-                        Le Prestataire se réserve le droit de présenter les réalisations (y compris avant/après) dans son portfolio et ses supports de communication, sauf demande écrite contraire du Client.
-                    </p>
-                </div>
-                <div class="space-y-4">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">13. Données personnelles</h2>
-                    <p class="text-lg">
-                        Les données personnelles collectées (nom, prénom, email, informations professionnelles) sont utilisées exclusivement dans le cadre de la gestion de la relation commerciale et de l’exécution des prestations.
-                    </p>
-                    <p class="text-lg">
-                        Ces données sont conservées pendant une durée maximale de 3 ans à compter de la fin de la relation commerciale, sauf obligation légale contraire.
-                    </p>
-                    <p class="text-lg">
-                        Conformément au Règlement Général sur la Protection des Données (RGPD), le Client dispose d’un droit d’accès, de rectification, de suppression et d’opposition au traitement de ses données.
-                    </p>
-                    <p class="text-lg">
-                        Toute demande peut être adressée à : <strong>contact@am20.fr</strong>
-                    </p>
-                </div>
-                <div class="space-y-4">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">14. Annulation</h2>
-                    <ul class="list-disc list-inside space-y-2 text-lg ml-4">
-                        <li><strong>Annulation par le Client :</strong> l’acompte versé reste acquis au Prestataire et ne pourra faire l’objet d’aucun remboursement.</li>
-                        <li><strong>Abandon de projet :</strong> toute prestation commencée est due dans son intégralité. Les sommes déjà versées ne sont pas remboursées.</li>
-                    </ul>
-                    <div class="bg-red-50 p-4 border-l-4 border-red-500 rounded-2xl">
-                        <p class="text-lg font-bold text-red-700">Annulation par le Prestataire :</p>
-                        <p class="text-base mt-2 text-red-700">
-                            Le Prestataire se réserve le droit d’interrompre ou d’annuler une prestation en cas de manquement du Client, notamment:
-                        </p>
-                        <ul class="list-disc list-inside text-base ml-4 mt-2 text-red-700">
-                            <li>Non-paiement ou retard de paiement</li>
-                            <li>Absence de réponse ou de collaboration du Client</li>
-                            <li>Fourniture d’informations erronées ou incomplètes</li>
-                            <li>Comportement abusif ou inapproprié</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="space-y-4">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">15. Force majeure</h2>
-                    <p class="text-lg">La responsabilité du Prestataire ne peut être engagée en cas de force majeure (panne des réseaux, cyberattaques, indisponibilité des plateformes tierces comme LinkedIn ou les hébergeurs).</p>
-                    <p class="text-lg">Le Prestataire ne saurait être tenu responsable des problèmes liés à l’hébergement, au nom de domaine ou aux services tiers.</p>
-                </div>
-                <div class="space-y-4">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">16. Loi applicable</h2>
-                    <p class="text-lg">Les présentes CGV sont régies par le droit français. En cas de litige et après tentative de résolution amiable, compétence exclusive est attribuée aux tribunaux compétents du ressort de Strasbourg.</strong></p>
-                </div>
             </div>
         </div>
-    </section>
-</main>
-<!-- FOOTER -->
-<footer class="border-t border-secondary pt-20 pb-10 footer-main">
-    <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
-        <defs>
-            <linearGradient id="gradient-hero-icon" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#5b3cc4" />
-                <stop offset="100%" stop-color="#886bdd" />
-            </linearGradient>
-        </defs>
-    </svg>
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
-            <div class="lg:col-span-4 space-y-8">
-                <div class="flex items-center gap-5">
-                    <div class="relative flex-shrink-0">
-                        <div class="absolute inset-0 bg-gradient-accent rounded-full blur-sm opacity-50"></div>
-                        <img src="images/logo/profil-aurore-am20.webp" alt="Aurore - AM 2.0" class="relative w-20 h-20 aspect-square rounded-full border-2 border-white object-cover shadow-xl" loading="lazy" width="500" height="500">
-                    </div>
-                    <div>
-                        <p class="text-xl font-bold uppercase tracking-widest text-gradient-accent leading-tight">Aurore - AM 2.0</p>
-                        <p class="text-gradient-accent italic text-sm">Branding LinkedIn & Sites web</p>
-                    </div>
-                </div>
-                <h2 class="text-xl leading-relaxed font-normal text-handwrite text-light italic">
-                    Je structure la présence digitale & l’image des solopreneurs & freelances pour générer des opportunités.
-                </h2>
+        <div class="lg:col-span-5 grid grid-cols-2 gap-8">
+    <!-- Plan du site -->
+            <div class="space-y-4">
+                <p class="text-[11px] font-bold tracking-widest text-[#a370f7] uppercase">[ Plan du site ]</p>
+                <ul class="space-y-2.5 text-sm">
+                    <li>
+                        <a href="index.html#approche" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2 group">
+                            <span class="w-1.5 h-1.5 bg-[#8449d9] rounded-full opacity-40 group-hover:opacity-100 transition-opacity duration-300 shrink-0"></span> 
+                            Solution
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#projets" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2 group">
+                            <span class="w-1.5 h-1.5 bg-[#8449d9] rounded-full opacity-40 group-hover:opacity-100 transition-opacity duration-300 shrink-0"></span> 
+                            Réalisations
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#avis" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2 group">
+                            <span class="w-1.5 h-1.5 bg-[#8449d9] rounded-full opacity-40 group-hover:opacity-100 transition-opacity duration-300 shrink-0"></span> 
+                            Avis
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#faq" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2 group">
+                            <span class="w-1.5 h-1.5 bg-[#8449d9] rounded-full opacity-40 group-hover:opacity-100 transition-opacity duration-300 shrink-0"></span> 
+                            FAQ
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <div class="lg:col-span-8">
-                <div class="bg-white rounded-3xl shadow-xl shadow-[#5b3cc4]/5 border border-accent/10 p-8 lg:p-10 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-accent opacity-[0.03] rounded-full -mr-16 -mt-16"></div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
-                        <div>
-                            <h3 class="text-xl font-black uppercase tracking-[0.2em] text-gradient mb-6">Navigation</h3>
-                            <nav class="space-y-4">
-                                <a href="index.html#solution" class="group flex items-center gap-3 text-primary hover:text-[#5b3cc4] transition-all font-bold">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-[#5b3cc4] group-hover:bg-[#886bdd] transition-all"></span>
-                                    Solution AM 2.0
-                                </a>
-                                <a href="index.html#portfolio" class="group flex items-center gap-3 text-primary hover:text-[#5b3cc4] transition-all font-bold">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-[#5b3cc4] group-hover:bg-[#886bdd] transition-all"></span>
-                                    Réalisations
-                                </a>
-                                <a href="index.html#tarifs" class="group flex items-center gap-3 text-primary hover:text-[#5b3cc4] transition-all font-bold">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-[#5b3cc4] group-hover:bg-[#886bdd] transition-all"></span>
-                                    Offres
-                                </a>
-                                <a href="index.html#avis" class="group flex items-center gap-3 text-primary hover:text-[#5b3cc4] transition-all font-bold">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-[#5b3cc4] group-hover:bg-[#886bdd] transition-all"></span>
-                                    Avis
-                                </a>
-                            </nav>
-                        </div>
-                        <div class="flex flex-col justify-between">
-                            <div>
-                                <h3 class="text-xl font-black uppercase tracking-[0.2em] text-gradient mb-6">Contact</h3>
-                                <div class="flex gap-4">
-                                    <a href="https://www.linkedin.com/in/aurore-am20/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 flex items-center justify-center bg-slate-50 rounded-2xl hover:bg-gradient-accent hover:text-white transition-all group shadow-sm">
-                                        <svg class="w-6 h-6 group-hover:fill-[#886bdd]" fill="url(#gradient-hero-icon)" viewBox="0 0 24 24" role="img" aria-label="logo linkedIn"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                                    </a>
-                                    <a href="https://wa.me/33367999081" target="_blank" rel="noopener noreferrer" class="w-12 h-12 flex items-center justify-center bg-slate-50 rounded-2xl hover:bg-gradient-accent hover:text-white transition-all group shadow-sm">
-                                        <svg class="w-6 h-6 group-hover:fill-[#886bdd]" fill="url(#gradient-hero-icon)" viewBox="0 0 24 24" role="img" aria-label="logo whatsapp"><path d="M12.031 2c-5.511 0-9.989 4.478-9.989 9.989 0 1.762.457 3.479 1.323 4.992l-1.405 5.127 5.251-1.378c1.472.802 3.125 1.225 4.815 1.225h.005c5.511 0 9.989-4.478 9.989-9.989 0-2.663-1.037-5.166-2.921-7.051-1.884-1.884-4.387-2.922-7.068-2.922zM16.669 16.445c-.255.717-1.492 1.314-2.062 1.393-.517.073-1.191.131-3.238-.72-2.618-1.088-4.303-3.748-4.433-3.921-.131-.173-1.066-1.417-1.066-2.705 0-1.288.675-1.921.916-2.181.241-.26.526-.325.7-.325s.349.001.5.01c.158.009.371-.06.58.444.214.517.733 1.787.797 1.918.064.131.107.283.021.454-.086.173-.131.283-.26.433-.129.151-.272.337-.389.454-.129.13-.264.271-.114.526.151.255.671 1.107 1.44 1.791.99.882 1.825 1.155 2.083 1.285.257.129.407.108.558-.065.151-.173.649-.757.822-1.016.173-.259.346-.216.584-.129.239.086 1.514.714 1.774.843.26.13.433.195.498.303.064.108.064.627-.191 1.344z"/></svg>
-                                    </a>
-                                    <a href="#" class="protected-mail w-12 h-12 flex items-center justify-center bg-slate-50 rounded-2xl hover:bg-gradient-accent hover:text-white transition-all group shadow-sm" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg==">
-                                        <svg class="w-6 h-6 group-hover:fill-[#886bdd]" fill="url(#gradient-hero-icon)" viewBox="0 0 24 24" role="img" aria-label="icon mail"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                                    </a>
-                                </div>
-                            </div>
-                            <a href="#" class="mt-8 md:mt-0 text-sm font-bold text-[#5b3cc4] flex items-center gap-2 hover:translate-x-1 transition-transform">
-                                Retour en haut <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="pt-8 border-t border-gray-200/60 flex flex-col md:flex-row justify-between items-center gap-6 text-[13px] font-medium text-gray-400">
-            <p>© <span id="current-year"></span> AM 2.0 • Tous droits réservés.</p>
-            <div class="flex gap-6">
-                <a href="mentions-legales.html" class="hover:text-[#886bdd] transition-colors">Mentions</a>
-                <a href="politique-confidentialite.html" class="hover:text-[#886bdd] transition-colors">RGPD</a>
-                <a href="#" class="text-[#886bdd] italic">CGV</a>
+<!-- Contact -->
+            <div class="space-y-4">
+                <p class="text-[11px] font-bold tracking-widest text-[#a370f7] uppercase">[ Contact ]</p>
+                <ul class="space-y-2.5 text-sm">
+                    <li>
+                        <a href="#" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg==" class="protected-mail text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2 group">
+                            <svg class="w-4 h-4 text-white/40 group-hover:text-white transition-colors duration-300 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                            </svg>
+                            <span class="mail-text"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/aurore-am20/" target="_blank" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2 group">
+                            <svg class="w-4 h-4 fill-current text-white/40 group-hover:text-white transition-colors duration-300 shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                            LinkedIn
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://wa.me/33367999081" target="_blank" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2 group">
+                            <svg class="w-4 h-4 fill-current text-white/40 group-hover:text-white transition-colors duration-300 shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.003 5.37 5.373 0 12 0c3.212.001 6.231 1.253 8.5 3.528C22.77 5.804 24 8.824 24 12c-.003 6.63-5.373 12-12 12-2.003-.001-3.974-.501-5.729-1.457L0 24zm6.59-4.846c1.665.988 3.308 1.48 4.938 1.482 5.503 0 9.977-4.475 9.98-9.984C21.568 5.483 17.26 1.196 12 1.196 6.74 1.196 2.44 5.485 2.437 10.747c-.002 1.714.463 3.39 1.346 4.877l-.462 1.687 1.733-.455c1.428.778 2.915 1.189 4.413 1.193l.58-.004z"/>
+                            </svg>
+                            WhatsApp
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
+<!-- PARTIE BASSE -->
+    <div class="pt-12 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400 font-mono">
+        <div>
+            &copy; <span id="current-year"></span> AM 2.0. Tous droits réservés.
+        </div>
+        <div class="flex gap-4 tracking-wider relative z-20">
+            <a href="mentions-legales.html" class="hover:text-white transition-colors">MENTIONS & RGPD</a>
+            <span class="text-gray-400">|</span>
+            <a href="#" class="text-white underline">CGV</a>
+        </div>
+    </div>
 </footer>
-<script src="dist/script.min.js"></script>
+<script src="dist/script.min.js" defer></script>
 </body>
 </html>

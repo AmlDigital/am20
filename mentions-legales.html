@@ -4,10 +4,10 @@
 <!-- Metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow" /><!-- Page indexée -->
-<!-- Title & description -->
-    <title>Mentions Légales | AM 2.0 – Informations légales et identification</title>
-    <meta name="description" content="Mentions légales de AM 2.0 : identification de l'entreprise, hébergement, responsabilité, propriété intellectuelle et conditions d'utilisation du site.">
+    <meta name="robots" content="index,follow">
+<!-- SEO -->
+    <title>Mentions Légales | AM 2.0</title>
+    <meta name="description" content="Consultez les mentions légales du site AM 2.0, spécialisé en parcours digitaux et optimisation de conversion.">
 <!-- Canonical -->
     <link rel="canonical" href="https://www.am20.fr/mentions-legales" />
 <!-- Favicon -->
@@ -17,234 +17,331 @@
     <link rel="icon" href="images/favicon/android192.png" sizes="192x192"/>
     <link rel="icon" href="images/favicon/android512.png" sizes="512x512"/>    
     <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png"/>
+<!-- Open Graph -->
+    <meta property="og:title" content="Mentions Légales - AM 2.0">
+    <meta property="og:description" content="Informations éditoriales et légales du site AM 2.0.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.am20.fr/mentions-legales">
+    <meta property="og:image" content="https://www.am20.fr/images/og-img.jpg">
+<!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Mentions Légales - AM 2.0">
+    <meta name="twitter:description" content="Informations éditoriales et légales du site AM 2.0.">
 <!-- CSS -->
     <link rel="stylesheet" href="dist/style.css">
 </head>
-<body class="text-light text-base lg:text-lg bg-bg-1">
-<!-- HEADER -->
-<header class="fixed top-0 left-0 w-full z-[100] bg-white/90 backdrop-blur-md border-b border-gray-100 header-main">
+<body class="bg-[#0B0C10] text-white font-sans antialiased m-0 p-0 relative min-h-screen overflow-x-hidden selection:bg-[#8449d9]/30">
+    <div class="fixed inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_-10%,rgba(132,73,217,0.18),transparent)] pointer-events-none z-0"></div>
+    <div class="fixed bottom-[-10%] right-[10%] w-[450px] h-[450px] bg-cyan-500/10 blur-[120px] rounded-full pointer-events-none z-0"></div>
+    <div class="fixed inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none z-0"></div>
+    <div class="relative z-10 w-full">
+<!-- ===== HEADER ===== -->
+<header class="fixed top-0 left-0 w-full z-[100] bg-[#0B0C10]/60 backdrop-blur-xl border-b border-white/5 transition-all duration-500">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="index.html#hero" class="logo-group group shrink-0">
-            <img src="images/logo/logo-am20.webp" alt="Logo AM 2.0" class="h-10 w-auto" width="500" height="500">
+<!-- Logo -->
+        <a href="index.html#hero" class="logo-group group shrink-0 transition-transform duration-300 hover:scale-105">
+            <img src="images/logo/logo-am20.webp" alt="Logo AM 2.0" class="h-9 w-auto brightness-110" width="500" height="500">
         </a>
-<!-- Menu desktop -->
-        <nav class="hidden lg:flex items-center gap-8" aria-label="Navigation principale">
-            <a href="index.html#solution" class="text-sm font-bold text-gradient-accent transition-all duration-300 hover:underline">SOLUTION AM 2.0</a>
-            <a href="index.html#portfolio" class="text-sm font-bold text-gradient-accent transition-all duration-300 hover:underline">REALISATIONS</a>
-            <a href="index.html#tarifs" class="text-sm font-bold text-gradient-accent transition-all duration-300 hover:text-transparent hover:underline">OFFRES</a>
-            <a href="index.html#avis" class="text-sm font-bold text-gradient-accent transition-all duration-300 hover:text-transparent hover:underline">AVIS</a>
-            <a href="index.html#faq" class="text-sm font-bold text-gradient-accent transition-all duration-300 hover:text-transparent hover:underline">FAQ</a>
-            <a href="index.html#contact" class="bg-gradient-to-r from-[#3a2791] to-[#8449d9] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:shadow-lg hover:shadow-[#5b3cc4]/30 transition-all">LANCER MA VITRINE</a>
+<!-- Navigation Desktop -->
+        <nav class="hidden lg:flex items-center gap-10" aria-label="Navigation principale">
+            <a href="index.html#hero" class="nav-link text-xs font-semibold tracking-widest text-gray-400 hover:text-white transition-all duration-300 uppercase flex items-center gap-2">
+                <span class="bullet w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse opacity-0 transition-opacity duration-300"></span> Accueil
+            </a>
+            <a href="index.html#approche" class="nav-link text-xs font-semibold tracking-widest text-gray-400 hover:text-white transition-all duration-300 uppercase flex items-center gap-2">
+                <span class="bullet w-1.5 h-1.5 bg-[#8449d9] rounded-full animate-pulse opacity-0 transition-opacity duration-300"></span> Solution
+            </a>
+            <a href="index.html#projets" class="nav-link text-xs font-semibold tracking-widest text-gray-400 hover:text-white transition-all duration-300 uppercase flex items-center gap-2">
+                <span class="bullet w-1.5 h-1.5 bg-[#8449d9] rounded-full animate-pulse opacity-0 transition-opacity duration-300"></span> Réalisations
+            </a>
+            <a href="index.html#avis" class="nav-link text-xs font-semibold tracking-widest text-gray-400 hover:text-white transition-all duration-300 uppercase flex items-center gap-2">
+                <span class="bullet w-1.5 h-1.5 bg-[#8449d9] rounded-full animate-pulse opacity-0 transition-opacity duration-300"></span> Avis
+            </a>
+            <a href="index.html#about" class="nav-link text-xs font-semibold tracking-widest text-gray-400 hover:text-white transition-all duration-300 uppercase flex items-center gap-2">
+                <span class="bullet w-1.5 h-1.5 bg-[#8449d9] rounded-full animate-pulse opacity-0 transition-opacity duration-300"></span> A propos
+            </a>
+            <a href="index.html#faq" class="nav-link text-xs font-semibold tracking-widest text-gray-400 hover:text-white transition-all duration-300 uppercase flex items-center gap-2">
+                <span class="bullet w-1.5 h-1.5 bg-[#8449d9] rounded-full animate-pulse opacity-0 transition-opacity duration-300"></span> FAQ
+            </a>
+            <a href="index.html#contact" class="relative group overflow-hidden bg-white text-black px-7 py-3 rounded-full font-bold text-xs tracking-wider uppercase transition-all duration-300 hover:bg-[#8449d9] hover:text-white hover:shadow-[0_0_30px_rgba(132,73,217,0.4)]">
+                Obtenir mon diagnostic
+            </a>
         </nav>
-        <button id="menu-btn" aria-controls="mobile-menu" aria-expanded="false" aria-label="Ouvrir le menu" class="lg:hidden text-gray-900 w-10 h-10 flex items-center justify-center">
-            <svg id="burger-icon" class="w-8 h-8" fill="url(#gradient-hero-icon)" viewBox="0 0 640 640">
-                <path d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/>
-            </svg>
-            <svg id="close-icon" class="hidden w-8 h-8 fill-[#886bdd]" viewBox="0 0 640 640">
-                <path d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM231 231C240.4 221.6 255.6 221.6 264.9 231L319.9 286L374.9 231C384.3 221.6 399.5 221.6 408.8 231C418.1 240.4 418.2 255.6 408.8 264.9L353.8 319.9L408.8 374.9C418.2 384.3 418.2 399.5 408.8 408.8C399.4 418.1 384.2 418.2 374.9 408.8L319.9 353.8L264.9 408.8C255.5 418.2 240.3 418.2 231 408.8C221.7 399.4 221.6 384.2 231 374.9L286 319.9L231 264.9C221.6 255.5 221.6 240.3 231 231z"/>
-            </svg>
+<!-- BOUTON BURGER -->
+        <button id="menu-btn" aria-controls="mobile-menu" aria-expanded="false" aria-label="Ouvrir le menu" class="lg:hidden text-white w-10 h-10 flex flex-col items-center justify-center gap-1.5 relative z-[110]">
+            <span id="burger-top" class="w-7 h-0.5 bg-white transition-all duration-300 origin-center"></span>
+            <span id="burger-bottom" class="w-7 h-0.5 bg-white transition-all duration-300 origin-center"></span>
         </button>
     </div>
-<!-- Menu mobile -->
-    <div id="mobile-menu" role="menu" class="hidden lg:hidden absolute top-20 left-0 w-full bg-[#15171e] border-b border-gray-100 shadow-xl flex flex-col p-6 gap-6 animate-slide-down text-center">
-        <a href="index.html#solution" class="mobile-link text-lg font-bold text-gradient-accent">SOLUTION AM 2.0</a>
-        <a href="index.html#portfolio" class="mobile-link text-lg font-bold text-gradient-accent">REALISATIONS</a>
-        <a href="index.html#tarifs" class="mobile-link text-lg font-bold text-gradient-accent">OFFRES</a>
-        <a href="index.html#avis" class="mobile-link text-lg font-bold text-gradient-accent">AVIS</a>
-        <a href="index.html#faq" class="mobile-link text-lg font-bold text-gradient-accent">FAQ</a>
-        <a href="index.html#contact" class="bg-gradient-to-r from-[#3a2791] to-[#8449d9] text-white px-6 py-4 rounded-full font-bold text-center">LANCER MA VITRINE</a>
-    </div>
 </header>
-<main>
-<!-- MAIN CONTENT -->
-<main>
-    <section id="mentions-legales" class="mt-40 mb-20 bg-bg-1"> 
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="block mt-20 mb-12">
-                <h1 class="text-3xl lg:text-5xl font-extrabold uppercase tracking-tight text-center">
-                    <span class="text-gradient-accent italic block mb-2">Mentions</span> Légales
-                </h1>
-                <p class="pt-2 text-center">(Conformément à la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique)</p>
-                <p class="text-center text-xs mt-1">Dernière mise à jour : Avril 2026</p>
+<!-- Navigation Mobile -->
+<div id="mobile-menu" class="fixed inset-0 z-[95] bg-[#0B0C10]/98 backdrop-blur-2xl transform -translate-y-full transition-transform duration-500 ease-out flex flex-col justify-center items-center lg:hidden">
+    <nav class="flex flex-col items-center gap-8 text-center">
+        <a href="index.html#hero" class="mobile-nav-link text-lg font-bold tracking-widest text-gray-400 hover:text-white transition-colors uppercase">Accueil</a>
+        <a href="index.html#approche" class="mobile-nav-link text-lg font-bold tracking-widest text-gray-400 hover:text-white transition-colors uppercase">Solution</a>
+        <a href="index.html#projets" class="mobile-nav-link text-lg font-bold tracking-widest text-gray-400 hover:text-white transition-colors uppercase">Réalisations</a>
+        <a href="index.html#avis" class="mobile-nav-link text-lg font-bold tracking-widest text-gray-400 hover:text-white transition-colors uppercase">Avis</a>
+        <a href="index.html#about" class="mobile-nav-link text-lg font-bold tracking-widest text-gray-400 hover:text-white transition-colors uppercase">A propos</a>
+        <a href="index.html#faq" class="mobile-nav-link text-lg font-bold tracking-widest text-gray-400 hover:text-white transition-colors uppercase">FAQ</a>
+        <a href="index.html#contact" class="mobile-nav-link mt-4 inline-flex bg-gradient-to-r from-[#8449d9] to-cyan-400 text-white px-8 py-4 rounded-full font-bold text-sm tracking-wider uppercase">
+            Obtenir mon diagnostic
+        </a>
+    </nav>
+</div>
+<!-- ================= MENTIONS LÉGALES ET POLITIQUE DE CONFIDENTIALITÉ ================= -->
+<section id="mentions-legales" class="py-24 px-4 max-w-5xl mx-auto border-t border-white/10 mt-20 text-gray-300 font-light leading-relaxed">
+    <div class="mb-16 text-center relative group">
+        <div class="absolute -inset-4 bg-gradient-to-r from-[#8449d9] via-[#a370f7] to-cyan-400 rounded-3xl opacity-10 blur-xl"></div>
+        <span class="text-sm md:text-base font-bold tracking-widest text-[#a370f7] uppercase block mb-2">
+            [ Transparence et Réglementation ]
+        </span>
+        <h1 class="text-3xl md:text-5xl font-black text-white tracking-tight">
+            Mentions Légales<br>
+            <span class="bg-gradient-to-r from-[#8449d9] to-cyan-400 bg-clip-text text-transparent italic text-2xl md:text-4xl">et Politique de Confidentialité (RGPD)</span>
+        </h1>
+        <p class="text-sm text-gray-400 mt-4 max-w-xl mx-auto">
+            Document d'information conforme à l'article 6 de la loi n° 2004-575 du 21 juin 2004 (LCEN) et au Règlement Général sur la Protection des Données (RGPD).
+        </p>
+    </div>
+    <div class="space-y-12 bg-[#16171a] p-8 md:p-12 rounded-2xl border border-white/10 shadow-2xl mb-20"> 
+<!-- PARTIE 1 : MENTIONS LÉGALES -->
+        <div class="space-y-6">
+            <h2 class="text-2xl font-black text-gray-200 tracking-tight border-b border-white/10 pb-3 uppercase bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+                I. Mentions Légales
+            </h2>
+            <div class="space-y-4">
+                <h3 class="text-base font-bold text-gray-200">1. Éditeur du Site</h3>
+                <ul class="space-y-2 pl-6 list-none relative text-sm">
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]"><strong class="text-gray-200 font-medium">Nom commercial :</strong> AM 2.0</li>
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]"><strong class="text-gray-200 font-medium">Statut juridique :</strong> Entrepreneur Individuel (EI) - Régime de la Micro-entreprise</li>
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]"><strong class="text-gray-200 font-medium">Responsable légal :</strong> Mme Muller Aurore</li>
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]"><strong class="text-gray-200 font-medium">Siège social :</strong> 8 rue du Général Leclerc, 67210 Obernai, France</li>
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]"><strong class="text-gray-200 font-medium">Numéro SIRET :</strong> 999 214 158 00019</li>
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]"><strong class="text-gray-200 font-medium">Immatriculation :</strong> Inscrite au Registre National des Entreprises (RNE) sous le numéro 999 214 158</li>
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]"><strong class="text-gray-200 font-medium">Code APE :</strong> 62.01Z (Programmation informatique)</li>
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]"><strong class="text-gray-200 font-medium">Téléphone :</strong> (+33) 3 67 99 90 81</li>
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]">
+                        <strong class="text-gray-200 font-medium">E-mail :</strong> 
+                        <a href="#" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg==" class="protected-mail text-cyan-400 font-medium hover:text-white transition-colors duration-300 inline-flex items-center gap-1.5 group">
+                            <span class="mail-text"></span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="bg-white/5 p-3 rounded-xl border border-white/10 text-xs italic max-w-max">
+                    <strong class="text-gray-200 font-medium">Régime de TVA :</strong> Franchise en base – TVA non applicable, article 293 B du Code Général des Impôts (CGI).
+                </div>
             </div>
-            <div class="max-w-4xl mx-auto text-left space-y-12"> 
-                <div class="space-y-4">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">1. Éditeur du Site</h2>
-                    <ul class="list-none space-y-2 text-lg">
-                        <li><strong>Nom commercial :</strong> AM 2.0</li>
-                        <li><strong>Statut juridique :</strong> Entrepreneur Individuel (Micro-entreprise)</li>
-                        <li><strong>Nom et Prénom du responsable :</strong> Muller Aurore</li>
-                        <li><strong>Adresse du siège social :</strong> 8 rue du Général Leclerc 67210 Obernai</li>
-                        <li><strong>Numéro SIRET :</strong> 999 214 158 00019</li>
-                        <li><strong>Immatriculée au RNE :</strong> 999 214 158</li>
-                        <li><strong>Code APE :</strong> 62.01Z</li>
-                        <li><strong>Téléphone :</strong> (+33) 3 67 99 90 81</li>
-                        <li><strong>E-mail :</strong> <a href="#" class="protected-mail text-secondary hover:underline" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg=="></a></li>
-                        <li>
-                            <strong>Régime de TVA :</strong> Franchise en base – TVA non applicable, 
-                            <span class="font-semibold italic text-sm">article 293 B du Code Général des Impôts</span>.
-                        </li>
-                    </ul>
+            <div class="space-y-2 pt-2">
+                <h3 class="text-base font-bold text-gray-200">2. Direction de la Publication</h3>
+                <p class="text-sm">
+                    Le Directeur de la publication du site est <span class="text-gray-200 font-medium">Mme Aurore Muller</span>, en sa qualité de représentante légale de l'entreprise individuelle AM 2.0.
+                </p>
+            </div>
+            <div class="space-y-2 pt-2">
+                <h3 class="text-base font-bold text-gray-200">3. Hébergement du Site</h3>
+                <ul class="space-y-1 pl-6 list-none relative text-sm">
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]"><strong class="text-gray-200 font-medium">Raison sociale :</strong> Netlify, Inc.</li>
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]"><strong class="text-gray-200 font-medium">Adresse :</strong> 512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis</li>
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-[#a370f7]"><strong class="text-gray-200 font-medium">Site internet :</strong> https://www.netlify.com</li>
+                </ul>
+            </div>
+            <div class="space-y-2 pt-2">
+                <h3 class="text-base font-bold text-gray-200">4. Propriété Intellectuelle</h3>
+                <p class="text-sm">
+                    L'ensemble du contenu présent sur ce site (structure, textes, logos, design graphique, icônes) est la propriété exclusive d'AM 2.0. Toute reproduction, représentation, modification ou adaptation de tout ou partie des éléments du site est strictement interdite sans l'autorisation écrite préalable d'Aurore Muller.
+                </p>
+            </div>
+        </div>
+    </div>
+ <!-- PARTIE 2 : POLITIQUE DE CONFIDENTIALITÉ -->
+    <div class="space-y-12 bg-[#16171a] p-8 md:p-12 rounded-2xl border border-white/10 shadow-2xl">
+        <div class="space-y-6">
+            <h2 class="text-2xl font-black text-gray-200 tracking-tight border-b border-white/10 pb-3 uppercase bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+                II. Politique de Confidentialité (RGPD)
+            </h2>
+            <div class="p-5 bg-gradient-to-b from-[#16171a] to-[#8449d9]/5 rounded-xl border-2 border-[#8449d9]/30 flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#a370f7] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+                <div class="text-sm leading-relaxed">
+                    <strong class="text-white font-bold uppercase tracking-wider block mb-1">Gestions des Cookies et Traceurs</strong>
+                    AM 2.0 n'utilise aucun cookie publicitaire, de mesure d'audience ou de suivi comportemental. Aucune donnée de navigation n'est exploitée à des fins d'analyse marketing ou de ciblage publicitaire. Pour des impératifs de sécurité et de maintenance technique, l'hébergeur Netlify génère automatiquement des journaux serveur (logs) pouvant enregistrer des données techniques temporaires (comme l'adresse IP), sans aucune interconnexion marketing.
                 </div>
-                <div class="space-y-4">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">2. Direction de la Publication</h2>
-                    <p class="text-lg">
-                        Le Directeur de la publication est <strong>Aurore Muller</strong>, en sa qualité de représentante légale de AM 2.0.
-                    </p>
+            </div>
+            <div class="space-y-3 pt-2">
+                <h3 class="text-base font-bold text-gray-200">1. Base légale du traitement & Responsable de traitement</h3>
+                <p class="text-sm">
+                    Les données personnelles collectées via les formulaires du site sont traitées de manière licite sur la base :
+                </p>
+                <ul class="space-y-1.5 pl-6 list-none text-sm relative mb-4">
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-cyan-400">De <span class="text-gray-200 font-medium">l'exécution de mesures précontractuelles</span> lorsqu'une demande de contact ou de diagnostic offert est effectuée par l'utilisateur ;</li>
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-cyan-400">De <span class="text-gray-200 font-medium">l'exécution du contrat</span> lorsque les données s'avèrent nécessaires à la réalisation effective d'une prestation de services validée ;</li>
+                    <li class="relative before:content-['•'] before:absolute before:-left-4 before:text-cyan-400">De <span class="text-gray-200 font-medium">l'intérêt légitime</span> d'AM 2.0 pour assurer le suivi, la pertinence et la sécurité de la relation commerciale.</li>
+                </ul>
+                <div class="bg-white/5 p-4 rounded-xl border border-white/10 text-sm">
+                    <strong class="text-gray-200 font-semibold">Responsable du traitement des données :</strong>
+                    Mme Aurore Muller, AM 2.0 -
+                    <a href="#" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg==" class="protected-mail text-cyan-400 font-medium hover:text-white transition-colors duration-300 inline-flex items-center gap-1.5 group">
+                        <span class="mail-text"></span>
+                    </a>
                 </div>
-                <div class="space-y-4">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">3. Hébergement</h2>
-                    <p class="text-lg">
-                        Le site est hébergé par : <strong>Netlify, Inc.</strong>
-                    </p>
-                    <address class="not-italic text-lg">
-                        2325 3rd Street, Suite 215<br>
-                        San Francisco, California 94107, USA
-                    </address>
-                    <p class="text-lg italic text-sm">
-                        Site web : <a href="https://www.netlify.com" class="text-secondary hover:underline" target="_blank" rel="noopener noreferrer">www.netlify.com</a>
-                    </p>
+            </div>
+            <div class="space-y-3 pt-2">
+                <h3 class="text-base font-bold text-gray-200">2. Collecte, Finalité et Sous-traitance</h3>
+                <p class="text-sm">
+                    Le site propose plusieurs formulaires (contact, onboarding, diagnostic). Les informations recueillies (nom, adresse e-mail, liens de réseaux sociaux, besoins professionnels) sont <span class="text-white underline decoration-cyan-400">strictement et exclusivement utilisées</span> pour traiter vos demandes d'informations et assurer le suivi commercial de vos projets avec AM 2.0.
+                </p>
+                <div class="p-5 bg-gradient-to-b from-[#16171a] to-[#8449d9]/5 rounded-xl border-2 border-amber-400 flex items-start gap-3">
+                <svg class="w-5 h-5 text-amber-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+                <div class="text-sm font-medium leading-relaxed">
+                    Les données peuvent être traitées via les services techniques tiers utilisés par AM 2.0 pour la gestion des formulaires, des rendez-vous, des paiements et des demandes de contact (notamment Netlify, Fillout, Calendly et Stripe).
                 </div>
-                <div class="space-y-4">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">4. Propriété Intellectuelle</h2>
-                    <p class="text-lg">
-                        L’ensemble du site (textes, images, graphismes, logo, éléments visuels, vidéos, fichiers, structure, code, etc.) est protégé par le Code de la propriété intellectuelle.
-                    </p>
-                    <p class="text-lg">
-                        Sauf mention contraire, ces éléments sont la propriété exclusive de <strong>Aurore Muller (AM 2.0)</strong>.
-                    </p>
-                    <p class="text-lg font-semibold bg-slate-50 p-4 border-l-4 border-accent rounded-2xl text-primary">
-                        Toute reproduction, représentation, modification, adaptation, redistribution ou exploitation, totale ou partielle, des contenus du site est strictement interdite sans autorisation écrite préalable d'Aurore Muller.
-                    </p>
-                </div>
-                <div class="space-y-4">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">5. Responsabilité</h2>
-                    <p class="text-lg">
-                        AM 2.0 met tout en œuvre pour assurer l'exactitude des informations diffusées, mais ne saurait être tenue responsable :
-                    </p>
-                    <ul class="list-disc list-inside space-y-2 text-lg ml-4">
-                        <li>d’erreurs ou d’omissions dans le contenu du site,</li>
-                        <li>d’une interruption ou indisponibilité technique du service,</li>
-                        <li>des dommages indirects résultant de l'utilisation du site,</li>
-                        <li>du contenu des liens externes pointant vers d'autres sites web.</li>
-                    </ul>
-                </div>
-                <div class="space-y-4">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">6. Protection des Données & Cookies</h2>
-                    <p class="text-lg font-semibold text-gradient-accent">Respect de la vie privée et transparence :</p>
-                    <ul class="list-disc list-inside space-y-4 text-lg ml-4">
-                        <li>
-                            <strong>Collecte limitée :</strong> Le site am20.fr limite la collecte de données au strict nécessaire. Seul le formulaire "Analyse offerte" (via l'outil tiers Fillout) recueille des informations (nom, email, URL LinkedIn) dans le but exclusif de traiter votre demande et d'assurer le suivi commercial.
-                        </li>
-                        <li>
-                            <strong>Absence de cookies :</strong> Le site principal n'utilise aucun cookie publicitaire ou de profilage. Aucun traceur n'est déposé sur votre terminal lors de votre navigation sur am20.fr. Lors de l'utilisation du formulaire, le prestataire Fillout peut utiliser des cookies techniques indispensables au fonctionnement du service.
-                        </li>
-                        <li>
-                            <strong>Outils tiers :</strong> Les interactions s'effectuent via des plateformes externes (Fillout pour l'analyse, LinkedIn, WhatsApp). L'utilisateur est invité à consulter les politiques de confidentialité respectives de ces services.
-                        </li>
-                        <li>
-                            <strong>Vos droits :</strong> Pour toute demande d'accès, de modification ou de suppression de vos données, contactez : <a href="#" class="protected-mail text-secondary underline" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg=="></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="space-y-4">
-                    <h2 class="text-2xl lg:text-3xl font-bold border-b pb-2 border-accent">7. Loi Applicable & Juridiction</h2>
-                    <p class="text-lg">
-                        Les présentes mentions légales sont régies par le droit français. 
-                    </p>
-                    <p class="text-lg font-semibold">
-                        Tout litige relatif à l’utilisation du site ou aux prestations fournies sera soumis aux tribunaux compétents du ressort de <strong>Strasbourg</strong>.
-                    </p>
+            </div>
+            </div>
+            <div class="space-y-2 pt-2">
+                <h3 class="text-base font-bold text-gray-200">3. Transferts de données hors Union Européenne</h3>
+                <p class="text-sm">
+                    Certains des prestataires techniques et sous-traitants mentionnés ci-dessus (notamment Netlify, Calendly, Fillout et Stripe) possèdent leurs infrastructures ou serveurs situés en dehors de l'Union Européenne (particulièrement aux États-Unis). Lorsque cela est le cas, les transferts de données s'effectuent dans le strict respect des mécanismes prévus par le RGPD, notamment via l'adhésion de ces fournisseurs au Cadre de protection des données (Data Privacy Framework) ou par la signature de Clauses Contractuelles Types (CCT) approuvées par la Commission européenne.
+                </p>
+            </div>
+            <div class="space-y-2 pt-2">
+                <h3 class="text-base font-bold text-gray-200">4. Durée de conservation</h3>
+                <p class="text-sm">
+                    Les données personnelles des prospects et clients sont conservées pendant la durée strictement nécessaire à la gestion de la relation commerciale ou, à défaut, pour une durée maximale de trois (3) ans à compter du dernier échange resté à l'initiative du Client.
+                </p>
+            </div>
+            <div class="space-y-4 pt-2">
+                <h3 class="text-base font-bold text-gray-200">5. Vos Droits et Recours (Loi Informatique et Libertés & RGPD)</h3>
+                <p class="text-sm">
+                    Vous disposez d'un droit d'accès, de rectification, de limitation, de portabilité et de suppression des données personnelles vous concernant. Pour exercer ces droits, vous pouvez envoyer votre demande signée par e-mail au responsable du traitement à l'adresse : 
+                <a href="#" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg==" class="protected-mail text-cyan-400 font-medium hover:text-white transition-colors duration-300 inline-flex items-center gap-1.5 group">
+                    <span class="mail-text"></span>
+                </a>
+                </p>
+                <div class="bg-white/5 p-4 rounded-xl border border-cyan-400 text-sm">
+                    <strong class="text-gray-200 font-semibold">Réclamation auprès de l'autorité de contrôle :</strong>
+                    <p>Si vous estimez, après nous avoir contactés, que vos droits Informatique et Libertés ne sont pas respectés, vous pouvez adresser une réclamation officielle auprès de la <span class="text-gray-200 font-medium">Commission Nationale de l'Informatique et des Libertés (CNIL)</span> sur leur site internet (cnil.fr).</p>
                 </div>
             </div>
         </div>
-    </section>
-</main>
-<!-- FOOTER -->
-<footer class="border-t border-secondary pt-20 pb-10 footer-main">
-    <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
-        <defs>
-            <linearGradient id="gradient-hero-icon" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#5b3cc4" />
-                <stop offset="100%" stop-color="#886bdd" />
-            </linearGradient>
-        </defs>
-    </svg>
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
-            <div class="lg:col-span-4 space-y-8">
-                <div class="flex items-center gap-5">
-                    <div class="relative flex-shrink-0">
-                        <div class="absolute inset-0 bg-gradient-accent rounded-full blur-sm opacity-50"></div>
-                        <img src="images/logo/profil-aurore-am20.webp" alt="Aurore - AM 2.0" class="relative w-20 h-20 aspect-square rounded-full border-2 border-white object-cover shadow-xl" loading="lazy" width="500" height="500">
-                    </div>
-                    <div>
-                        <p class="text-xl font-bold uppercase tracking-widest text-gradient-accent leading-tight">Aurore - AM 2.0</p>
-                        <p class="text-gradient-accent italic text-sm">Branding LinkedIn & Sites web</p>
-                    </div>
+    </div>
+</div>
+</section>
+<!-- ================= FOOTER ================= -->
+<footer class="w-full relative left-0 bg-[#0B0C10]/60 backdrop-blur-xl border-t border-white/5 pt-20 pb-12 overflow-hidden">
+<!-- TEXTE GÉANT EN ARRIÈRE-PLAN  -->
+    <div class="absolute inset-x-0 bottom-6 flex justify-center items-center select-none overflow-hidden tracking-tighter opacity-[0.03] pointer-events-none z-0">
+        <span class="text-[18vw] font-black uppercase leading-none bg-gradient-to-b from-white to-transparent bg-clip-text text-transparent font-sans">
+            AM 2.0
+        </span>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10"> 
+<!-- PARTIE HAUTE -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-white/5">    
+        <div class="lg:col-span-7 space-y-5">
+            <h3 class="text-base font-medium text-gray-200 tracking-tight">
+                AM 2.0 à Obernai • Spécialisé dans l'optimisation de présence digitale <br>dans tout le Bas-Rhin, en Alsace et partout en France.
+            </h3>
+            <div class="flex items-center gap-5">
+                <div class="shrink-0 w-16 h-16 rounded-full overflow-hidden border border-white/10 shadow-inner bg-[#16171a]">
+                    <img src="images/logo/profil-aurore-am20.webp" 
+                        alt="Aurore - Consultante en optimisation de parcours digitaux" 
+                        width="500" height="500"
+                        class="w-full h-full object-cover"
+                        loading="lazy">
                 </div>
-                <h2 class="text-xl leading-relaxed font-normal text-handwrite text-light italic">
-                    Je structure la présence digitale & l’image des solopreneurs & freelances pour générer des opportunités.
-                </h2>
-            </div>
-            <div class="lg:col-span-8">
-                <div class="bg-white rounded-3xl shadow-xl shadow-[#5b3cc4]/5 border border-accent/10 p-8 lg:p-10 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-accent opacity-[0.03] rounded-full -mr-16 -mt-16"></div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
-                        <div>
-                            <h3 class="text-xl font-black uppercase tracking-[0.2em] text-gradient mb-6">Navigation</h3>
-                            <nav class="space-y-4">
-                                <a href="index.html#solution" class="group flex items-center gap-3 text-primary hover:text-[#5b3cc4] transition-all font-bold">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-[#5b3cc4] group-hover:bg-[#886bdd] transition-all"></span>
-                                    Solution AM 2.0
-                                </a>
-                                <a href="index.html#portfolio" class="group flex items-center gap-3 text-primary hover:text-[#5b3cc4] transition-all font-bold">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-[#5b3cc4] group-hover:bg-[#886bdd] transition-all"></span>
-                                    Réalisations
-                                </a>
-                                <a href="index.html#tarifs" class="group flex items-center gap-3 text-primary hover:text-[#5b3cc4] transition-all font-bold">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-[#5b3cc4] group-hover:bg-[#886bdd] transition-all"></span>
-                                    Offres
-                                </a>
-                                <a href="index.html#avis" class="group flex items-center gap-3 text-primary hover:text-[#5b3cc4] transition-all font-bold">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-[#5b3cc4] group-hover:bg-[#886bdd] transition-all"></span>
-                                    Avis
-                                </a>
-                            </nav>
-                        </div>
-                        <div class="flex flex-col justify-between">
-                            <div>
-                                <h3 class="text-xl font-black uppercase tracking-[0.2em] text-gradient mb-6">Contact</h3>
-                                <div class="flex gap-4">
-                                    <a href="https://www.linkedin.com/in/aurore-am20/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 flex items-center justify-center bg-slate-50 rounded-2xl hover:bg-gradient-accent hover:text-white transition-all group shadow-sm">
-                                        <svg class="w-6 h-6 group-hover:fill-[#886bdd]" fill="url(#gradient-hero-icon)" viewBox="0 0 24 24" role="img" aria-label="logo linkedIn"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                                    </a>
-                                    <a href="https://wa.me/33367999081" target="_blank" rel="noopener noreferrer" class="w-12 h-12 flex items-center justify-center bg-slate-50 rounded-2xl hover:bg-gradient-accent hover:text-white transition-all group shadow-sm">
-                                        <svg class="w-6 h-6 group-hover:fill-[#886bdd]" fill="url(#gradient-hero-icon)" viewBox="0 0 24 24" role="img" aria-label="logo whatsapp"><path d="M12.031 2c-5.511 0-9.989 4.478-9.989 9.989 0 1.762.457 3.479 1.323 4.992l-1.405 5.127 5.251-1.378c1.472.802 3.125 1.225 4.815 1.225h.005c5.511 0 9.989-4.478 9.989-9.989 0-2.663-1.037-5.166-2.921-7.051-1.884-1.884-4.387-2.922-7.068-2.922zM16.669 16.445c-.255.717-1.492 1.314-2.062 1.393-.517.073-1.191.131-3.238-.72-2.618-1.088-4.303-3.748-4.433-3.921-.131-.173-1.066-1.417-1.066-2.705 0-1.288.675-1.921.916-2.181.241-.26.526-.325.7-.325s.349.001.5.01c.158.009.371-.06.58.444.214.517.733 1.787.797 1.918.064.131.107.283.021.454-.086.173-.131.283-.26.433-.129.151-.272.337-.389.454-.129.13-.264.271-.114.526.151.255.671 1.107 1.44 1.791.99.882 1.825 1.155 2.083 1.285.257.129.407.108.558-.065.151-.173.649-.757.822-1.016.173-.259.346-.216.584-.129.239.086 1.514.714 1.774.843.26.13.433.195.498.303.064.108.064.627-.191 1.344z"/></svg>
-                                    </a>
-                                    <a href="#" class="protected-mail w-12 h-12 flex items-center justify-center bg-slate-50 rounded-2xl hover:bg-gradient-accent hover:text-white transition-all group shadow-sm" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg==">
-                                        <svg class="w-6 h-6 group-hover:fill-[#886bdd]" fill="url(#gradient-hero-icon)" viewBox="0 0 24 24" role="img" aria-label="icon mail"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                                    </a>
-                                </div>
-                            </div>
-                            <a href="#" class="mt-8 md:mt-0 text-sm font-bold text-[#5b3cc4] flex items-center gap-2 hover:translate-x-1 transition-transform">
-                                Retour en haut <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
-                            </a>
-                        </div>
-                    </div>
+                <div class="space-y-1">
+                    <ul class="space-y-0.5 list-disc list-outside pl-4">
+                        <li class="text-sm md:text-base text-gray-300 font-light leading-relaxed">
+                            Optimisation des parcours digitaux 
+                        </li>
+                        <li class="text-sm md:text-base text-gray-300 font-light leading-relaxed">
+                            Création de sites web orientés conversion
+                        </li>
+                        <li class="text-sm md:text-base text-gray-300 font-light leading-relaxed">
+                            Optimisation LinkedIn et Instagram
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="pt-8 border-t border-gray-200/60 flex flex-col md:flex-row justify-between items-center gap-6 text-[13px] font-medium text-gray-400">
-            <p>© <span id="current-year"></span> AM 2.0 • Tous droits réservés.</p>
-            <div class="flex gap-6">
-                <a href="#" class="text-[#886bdd] italic">Mentions</a>
-                <a href="politique-confidentialite.html" class="hover:text-[#886bdd] transition-colors">RGPD</a>
-                <a href="cgv.html" class="hover:text-[#886bdd] transition-colors">CGV</a>
+        <div class="lg:col-span-5 grid grid-cols-2 gap-8">
+    <!-- Plan du site -->
+            <div class="space-y-4">
+                <p class="text-[11px] font-bold tracking-widest text-[#a370f7] uppercase">[ Plan du site ]</p>
+                <ul class="space-y-2.5 text-sm">
+                    <li>
+                        <a href="index.html#approche" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2 group">
+                            <span class="w-1.5 h-1.5 bg-[#8449d9] rounded-full opacity-40 group-hover:opacity-100 transition-opacity duration-300 shrink-0"></span> 
+                            Solution
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#projets" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2 group">
+                            <span class="w-1.5 h-1.5 bg-[#8449d9] rounded-full opacity-40 group-hover:opacity-100 transition-opacity duration-300 shrink-0"></span> 
+                            Réalisations
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#avis" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2 group">
+                            <span class="w-1.5 h-1.5 bg-[#8449d9] rounded-full opacity-40 group-hover:opacity-100 transition-opacity duration-300 shrink-0"></span> 
+                            Avis
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#faq" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2 group">
+                            <span class="w-1.5 h-1.5 bg-[#8449d9] rounded-full opacity-40 group-hover:opacity-100 transition-opacity duration-300 shrink-0"></span> 
+                            FAQ
+                        </a>
+                    </li>
+                </ul>
             </div>
+<!-- Contact -->
+            <div class="space-y-4">
+                <p class="text-[11px] font-bold tracking-widest text-[#a370f7] uppercase">[ Contact ]</p>
+                <ul class="space-y-2.5 text-sm">
+                    <li>
+                        <a href="#" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg==" class="protected-mail text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2 group">
+                            <svg class="w-4 h-4 text-white/40 group-hover:text-white transition-colors duration-300 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                            </svg>
+                            <span class="mail-text"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/aurore-am20/" target="_blank" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2 group">
+                            <svg class="w-4 h-4 fill-current text-white/40 group-hover:text-white transition-colors duration-300 shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                            LinkedIn
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://wa.me/33367999081" target="_blank" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-2 group">
+                            <svg class="w-4 h-4 fill-current text-white/40 group-hover:text-white transition-colors duration-300 shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.003 5.37 5.373 0 12 0c3.212.001 6.231 1.253 8.5 3.528C22.77 5.804 24 8.824 24 12c-.003 6.63-5.373 12-12 12-2.003-.001-3.974-.501-5.729-1.457L0 24zm6.59-4.846c1.665.988 3.308 1.48 4.938 1.482 5.503 0 9.977-4.475 9.98-9.984C21.568 5.483 17.26 1.196 12 1.196 6.74 1.196 2.44 5.485 2.437 10.747c-.002 1.714.463 3.39 1.346 4.877l-.462 1.687 1.733-.455c1.428.778 2.915 1.189 4.413 1.193l.58-.004z"/>
+                            </svg>
+                            WhatsApp
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<!-- PARTIE BASSE -->
+    <div class="pt-12 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400 font-mono">
+        <div>
+            &copy; <span id="current-year"></span> AM 2.0. Tous droits réservés.
+        </div>
+        <div class="flex gap-4 tracking-wider relative z-20">
+            <a href="#" class="text-white underline">MENTIONS & RGPD</a>
+            <span class="text-gray-400">|</span>
+            <a href="cgv.html" class="hover:text-white transition-colors">CGV</a>
         </div>
     </div>
 </footer>
-<script src="dist/script.min.js"></script>
+<script src="dist/script.min.js" defer></script>
 </body>
 </html>

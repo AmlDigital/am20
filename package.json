@@ -1,20 +1,22 @@
 {
-  "name": "vitrine-express",
+  "name": "am20",
   "version": "1.0.0",
-  "description": "Build system for vitrine-express Website",
+  "description": "Build system for am20 Website",
   "main": "script.js",
   "scripts": {
     "watch:css": "npx tailwindcss -i style.css -o ./dist/style.css --watch",
     "watch:script-js": "npx terser script.js -o dist/script.min.js --compress --mangle --watch",
+    "watch:form-js": "npx terser form.js -o dist/form.min.js --compress --mangle --watch",
     "watch": "npm-run-all --parallel watch:css watch:script-js",
     "minify:tailwind": "postcss style.css -o dist/style.css",
     "minify:custom-css": "cross-env NODE_ENV=production postcss style.css -o dist/style.min.css",
     "build:script-js": "npx terser script.js -o dist/script.min.js --compress --mangle",
-    "build": "npm run minify:tailwind && npm run build:script-js"
+    "build:form-js": "npx terser form.js -o dist/form.min.js --compress --mangle",
+    "build": "npm run minify:tailwind && npm run build:script-js && npm run build:form-js"
   },
   "keywords": [
     "tailwind",
-    "vitrine-express",
+    "am20",
     "postcss",
     "terser"
   ],
