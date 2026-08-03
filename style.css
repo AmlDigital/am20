@@ -1,11 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* =================== BASE & RESET ===================== */
-:root {
-  --color-primary: #5b3cc4;
-  --color-background: #15171e;
-}
 body,
 html {
   overflow-x: hidden;
@@ -15,125 +10,47 @@ html {
 .no-scroll {
   overflow: hidden;
 }
-.no-scrollbar::-webkit-scrollbar { display: none; }
-.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-#banners-container::-webkit-scrollbar { display: none; }
-.project-cat .no-scrollbar::-webkit-scrollbar { display: none; }
-/* =================== POLICES NATIVES ===================== */
+.no-scrollbar::-webkit-scrollbar {
+    display: none; 
+}
+.no-scrollbar {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  color : #252e4b;
+  font-family: 'Trebuchet MS', 'Segoe UI', Arial, sans-serif;
   line-height: 1.6;
 }
 h1,
 h2,
-h3 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  font-weight: 700;
-  line-height: 1.2;
-  text-shadow: 2px 2px 4px var(--shadow-heavy);
+h3
+ {
+  font-family: 'Impact', 'Trebuchet MS', -apple-system, sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #2e3d59;
+  }
+.font-impact-title {
+  font-family: 'Impact', 'Trebuchet MS', -apple-system, sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #2e3d59;
+  }
+  .font-gradient-title {
+  font-family: 'Impact', 'Trebuchet MS', -apple-system, sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
-/* =================== FOND ORGANIQUE ===================== */
-.bg-organic-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; 
-    overflow: hidden;
-    background-color: var(--color-background);
-}
-.blob {
-    position: absolute;
-    filter: blur(50px); 
-    opacity: 0.2;      
-    border-radius: 50%;
-    animation: move-blob 20s infinite alternate ease-in-out;
-}
-.blob-1 {
-    width: 250px;
-    height: 250px;
-    background-color: var(--color-primary);
-    top: -5%;
-    right: -10%;
-}
-.blob-2 {
-    width: 300px;
-    height: 300px;
-    background-color: var(--color-primary);
-    bottom: -10%;
-    left: -15%;
-    animation-duration: 25s;
-    animation-delay: -5s;
-}
-.blob-3 {
-    display: none; 
-}
-/* =================== ANIMATIONS ===================== */
-@keyframes move-blob {
-  0% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -50px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
-  100% { transform: translate(0, 0) scale(1); }
-}
-@keyframes shine {
-  100% { left: 125%; }
-}
-.group:hover .group-hover\:animate-shine {
-    animation: shine 0.8s ease-in-out;
-}
-@keyframes swipeHand {
-  0%, 100% { transform: rotate(-12deg); }
-  50% { transform: rotate(12deg); }
-}
-@keyframes shine {
-  100% { left: 125%; }
-}
-.animate-shine {
-  animation: shine 1s ease-in-out infinite;
-}
-.animate-swipe-hand {
-  animation: swipeHand 1.8s ease-in-out infinite;
-}
-/* =================== LEGENDE PHOTO A PROPOS ===================== */
-.about-photo-card.mobile-open .manifesto-content {
-    max-height: 200px !important;
-    opacity: 1 !important;
-    margin-top: 0.75rem !important;
-}
-.about-photo-card.mobile-open .vision-trigger i {
-    transform: rotate(180deg);
-}
-/* =================== DESKTOP ===================== */
-@media (min-width: 768px) {
-  .blob {
-        filter: blur(80px); 
-        opacity: 0.15;     
-    }
-    .blob-1 {
-        width: 500px;
-        height: 500px;
-        top: -10%;
-        right: -5%;
-    }
-    .blob-2 {
-        width: 600px;
-        height: 600px;
-        bottom: -15%;
-        left: -10%;
-    }
-    .blob-3 {
-        display: block;
-        width: 400px;
-        height: 400px;
-        background-color: #5b3cc4;
-        top: 40%;
-        left: 20%;
-        opacity: 0.1;
-        animation-duration: 30s;
-    }
+.font-body-text {
+  font-family: 'Trebuchet MS', 'Segoe UI', Arial, sans-serif !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+  color: #252e4b;
+  }
+.nav-link.active {
+    color: #29c6dc !important;
 }
