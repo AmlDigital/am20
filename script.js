@@ -197,6 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (e) e.preventDefault();
             modal.classList.remove('opacity-0', 'pointer-events-none');
             modal.setAttribute('aria-hidden', 'false');
+            modal.removeAttribute('inert');
             modalContainer.classList.remove('scale-95');
             modalContainer.classList.add('scale-100');
             document.body.classList.add('overflow-hidden');
@@ -204,6 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const closeModal = () => {
             modal.classList.add('opacity-0', 'pointer-events-none');
             modal.setAttribute('aria-hidden', 'true');
+            modal.setAttribute('inert', '');
             modalContainer.classList.remove('scale-100');
             modalContainer.classList.add('scale-95');
             document.body.classList.remove('overflow-hidden');
