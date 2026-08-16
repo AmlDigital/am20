@@ -448,11 +448,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (mobileProgressBar) mobileProgressBar.style.width = `${percentage}%`;
         if (mobileProgressPercentage) mobileProgressPercentage.textContent = `${percentage}%`;
     }
-    function renderStep() {
+    function renderStep(isInitial = false) {
         if (cardContent) cardContent.scrollTop = 0;
-        const cardContainer = document.querySelector('.lg\\:col-span-8');
-        if (cardContainer) {
-            cardContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (!isInitial) {
+            const cardContainer = document.querySelector('.lg\\:col-span-8');
+            if (cardContainer) {
+                cardContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         }
         const step = steps[currentStepIndex];
         cardBadge.textContent = step.badge;
@@ -531,7 +533,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     `;
                 btn.addEventListener('click', () => {
                     userAnswers[step.id] = optLabel;
-                    renderStep();
+                    renderStep(true);
                 });
                 cardContent.appendChild(btn);
             });
@@ -566,7 +568,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             alert(`Tu peux sélectionner jusqu'à ${step.maxChoices} choix maximum.`);
                         }
                     }
-                    renderStep();
+                    renderStep(true);
                 });
                 cardContent.appendChild(btn);
             });
@@ -847,7 +849,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btnNext.addEventListener('click', () => {
         if (currentStepIndex < steps.length - 1) {
             currentStepIndex++;
-            renderStep();
+            renderStep(false);
         } else {
             showResults();
         }
@@ -855,8 +857,8 @@ document.addEventListener('DOMContentLoaded', () => {
     btnBack.addEventListener('click', () => {
         if (currentStepIndex > 0) {
             currentStepIndex--;
-            renderStep();
+            renderStep(false);
         }
     });
-    renderStep();
+    renderStep(true);
 });
