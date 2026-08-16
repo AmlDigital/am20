@@ -449,6 +449,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (mobileProgressPercentage) mobileProgressPercentage.textContent = `${percentage}%`;
     }
     function renderStep() {
+        if (cardContent) cardContent.scrollTop = 0;
+        const cardContainer = document.querySelector('.lg\\:col-span-8');
+        if (cardContainer) {
+            cardContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
         const step = steps[currentStepIndex];
         cardBadge.textContent = step.badge;
         cardTitle.textContent = step.title; 
