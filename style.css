@@ -1,6 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Limelight";
+  src: url("../fonts/Limelight-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Marck Script";
+  src: url("../fonts/MarckScript-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
 body,
 html {
   overflow-x: hidden;
@@ -21,38 +35,49 @@ html {
 }
 body {
   color : #252e4b;
-  font-family: 'Trebuchet MS', 'Segoe UI', Arial, sans-serif;
-  line-height: 1.6;
-}
-h1,
-h2,
-h3
- {
-  font-family: 'Impact', 'Trebuchet MS', -apple-system, sans-serif;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #2e3d59;
-  }
-.font-impact-title {
-  font-family: 'Impact', 'Trebuchet MS', -apple-system, sans-serif;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #2e3d59;
-  }
-  .font-gradient-title {
-  font-family: 'Impact', 'Trebuchet MS', -apple-system, sans-serif;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-.font-body-text {
   font-family: 'Trebuchet MS', 'Segoe UI', Arial, sans-serif !important;
   letter-spacing: normal !important;
   text-transform: none !important;
   color: #252e4b;
+  line-height: 1.6;
+}
+
+h1 {
+  font-family: "Limelight", sans-serif;
+  text-transform: uppercase;
+  color: #2e3d59;
+}
+h2,
+h3
+ {
+  font-family: "Marck Script", cursive;
   }
 .nav-link.active {
-    color: #29c6dc !important;
+    color: #0891b2 !important;
+}
+.nav-font {
+  font-family: "Limelight", sans-serif;
+  text-transform: uppercase;
+}
+/* Arrière-plans responsive */
+.bg-hero-custom {
+  background-image: url('../images/hero/background-mob.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.bg-section-main {
+  background-image: url('../images/background/main-mob.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media (min-width: 768px) {
+  .bg-hero-custom {
+    background-image: url('../images/hero/background-desk.webp');
+  }
+.bg-section-main {
+    background-image: url('../images/background/main-desk.webp');
+  }
 }
