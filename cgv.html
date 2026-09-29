@@ -30,713 +30,1027 @@
 <!-- CSS -->
     <link rel="stylesheet" href="dist/style.css">
 </head>
-<body class="min-h-screen flex flex-col justify-between text-slate-800 font-sans antialiased relative
-  bg-[linear-gradient(to_right,rgba(226,232,240,0.35)_1px,transparent_1px),linear-gradient(to_bottom,rgba(226,232,240,0.35)_1px,transparent_1px),linear-gradient(to_bottom,rgb(255,255,255)_30%,rgba(41,198,220,0.45)_100%)]
-  bg-[length:38px_38px,38px_38px,100%_100%]
-  bg-fixed">
-    <div class="fixed bottom-[-10%] right-[10%] w-[500px] h-[500px] bg-cyan-500/15 blur-[120px] rounded-full pointer-events-none z-0"></div>
-    <div class="relative z-10 w-full">
+<body class="min-h-screen flex flex-col relative bg-[#2e3d59]">
 <!-- ===== HEADER ===== -->
-<header class="fixed top-0 left-0 right-0 w-full z-[100] bg-white transition-all duration-500 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-gradient-to-r after:from-purple-700 after:to-[#29c6dc]">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<header class="fixed top-0 z-50 w-full bg-[#2e3d59]/80 backdrop-blur-md border-b border-slate-700/50">
+  <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
 <!-- Logo -->
-        <a href="index.html#hero" class="logo-group group shrink-0 transition-transform duration-300 hover:scale-105">
-            <img src="images/logo/logo-am20.webp" alt="Logo AM 2.0" class="h-9 w-auto brightness-110" width="100" height="100">
-        </a>
-<!-- Navigation Desktop -->
-        <nav class="hidden lg:flex items-center gap-10" aria-label="Navigation principale">
-            <a href="index.html#diag" class="nav-link text-base text-[#2e3d59] font-impact-title tracking-widest hover:text-[#29c6dc] transition-all duration-300 uppercase flex items-center gap-2">Auto-diag
-            </a>
-            <a href="index.html#offres" class="nav-link text-base text-[#2e3d59] font-impact-title tracking-widest hover:text-[#29c6dc] transition-all duration-300 uppercase flex items-center gap-2">Solutions
-            </a>
-            <a href="index.html#avis" class="nav-link text-base text-[#2e3d59] font-impact-title tracking-widest hover:text-[#29c6dc] transition-all duration-300 uppercase flex items-center gap-2">Avis
-            </a>
-            <a href="#" class="nav-link text-base text-[#2e3d59] font-impact-title tracking-widest hover:text-[#29c6dc] transition-all duration-300 uppercase flex items-center gap-2">Cas clients
-            </a>
-            <a href="index.html#about" class="nav-link text-base text-[#2e3d59] font-impact-title tracking-widest hover:text-[#29c6dc] transition-all duration-300 uppercase flex items-center gap-2">A propos
-            </a>
-            <a href="index.html#faq" class="nav-link text-base text-[#2e3d59] font-impact-title tracking-widest hover:text-[#29c6dc] transition-all duration-300 uppercase flex items-center gap-2">FAQ
-            </a>
-            <a href="https://calendly.com/rdv-aurore-am20/1er-clic" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-gradient-to-r from-purple-700 to-[#29c6dc] text-white font-bold text-base shadow-xl shadow-purple-500/20 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/30 active:scale-95 group">
-                Réserver mon RDV 1er clic
-                <svg class="w-4 h-4 fill-none stroke-current stroke-[2.5] transition-transform duration-300 group-hover:translate-x-1"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <polyline points="9 6 15 12 9 18"></polyline>
-                </svg>
-            </a>
-        </nav>
-<!-- BOUTON BURGER -->
-        <button id="menu-btn" aria-controls="mobile-menu" aria-expanded="false" aria-label="Ouvrir le menu" class="lg:hidden text-white w-10 h-10 flex flex-col items-center justify-center gap-1.5 relative z-[110]">
-            <span id="burger-top" class="w-7 h-0.5 bg-[#29c6dc] transition-all duration-300 origin-center"></span>
-            <span id="burger-bottom" class="w-7 h-0.5 bg-[#29c6dc] transition-all duration-300 origin-center"></span>
-        </button>
-    </div>
+    <a href="#cgv" class="inline-block" aria-label="Retour en haut de page">
+      <img src="images/logo/logo-am20.webp" alt="Logo AM 2.0" class="h-8 md:h-9 w-auto" width="36" height="36" loading="eager">
+    </a>
+<!-- Bouton Home -->
+    <a href="index.html" aria-label="Retour à l'accueil" class="group w-10 h-10 md:w-auto md:px-4 md:py-2 rounded-full bg-slate-800/80 border border-slate-700/80 hover:border-slate-600 text-white transition-all duration-200 flex items-center justify-center gap-2.5">
+<!-- Icônes SVG avec bascule au hover -->
+      <span class="relative w-5 h-5 flex items-center justify-center shrink-0">
+<!-- SVG Standard -->
+        <svg class="w-5 h-5 fill-current group-hover:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+          <path d="M341.8 72.6C329.5 61.2 310.5 61.2 298.3 72.6L74.3 280.6C64.7 289.6 61.5 303.5 66.3 315.7C71.1 327.9 82.8 336 96 336L112 336L112 512C112 547.3 140.7 576 176 576L464 576C499.3 576 528 547.3 528 512L528 336L544 336C557.2 336 569 327.9 573.8 315.7C578.6 303.5 575.4 289.5 565.8 280.6L341.8 72.6zM304 384L336 384C362.5 384 384 405.5 384 432L384 528L256 528L256 432C256 405.5 277.5 384 304 384z"/>
+        </svg>
+<!-- SVG Hover (Cheminée) -->
+        <svg class="w-5 h-5 fill-current hidden group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+          <path d="M298.2 72.6C310.5 61.2 329.5 61.2 341.7 72.6L432 156.3L432 144C432 126.3 446.3 112 464 112L496 112C513.7 112 528 126.3 528 144L528 245.5L565.8 280.6C575.4 289.6 578.6 303.5 573.8 315.7C569 327.9 557.2 336 544 336L528 336L528 512C528 547.3 499.3 576 464 576L176 576C140.7 576 112 547.3 112 512L112 336L96 336C82.8 336 71 327.9 66.2 315.7C61.4 303.5 64.6 289.5 74.2 280.6L298.2 72.6zM304 384C277.5 384 256 405.5 256 432L256 528L384 528L384 432C384 405.5 362.5 384 336 384L304 384z"/>
+        </svg>
+      </span>
+<!-- Texte affiché uniquement sur desktop -->
+      <span class="hidden md:inline text-base font-medium text-slate-200 group-hover:text-white transition-colors">
+        Retour à l'accueil
+      </span>
+    </a>
+  </div>
 </header>
-<!-- Navigation Mobile -->
-<div id="mobile-menu" class="fixed inset-0 z-[95] bg-[#0B0C10]/98 backdrop-blur-2xl transform -translate-y-full transition-transform duration-500 ease-out flex flex-col justify-center items-center lg:hidden">
-    <nav class="flex flex-col items-center gap-8 text-center" aria-label="Navigation mobile">
-        <a href="index.html#diag" class="mobile-nav-link font-impact-title tracking-widest">Auto-diag</a>
-        <a href="index.html#offres" class="mobile-nav-link font-impact-title tracking-widest">Solutions</a>
-        <a href="index.html#avis" class="mobile-nav-link font-impact-title tracking-widest">Avis</a>
-        <a href="#" class="mobile-nav-link font-impact-title tracking-widest">Cas clients</a>
-        <a href="index.html#about" class="mobile-nav-link font-impact-title tracking-widest">A propos</a>
-        <a href="index.html#faq" class="mobile-nav-link font-impact-title tracking-widest">FAQ</a>
-        <a href="https://calendly.com/rdv-aurore-am20/1er-clic" 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        class="mobile-nav-link mt-4 w-full inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-gradient-to-r from-purple-700 to-[#29c6dc] text-white font-bold text-base shadow-xl shadow-purple-500/20 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/30 active:scale-95 group">
-            Réserver mon RDV 1er clic
-            <svg class="w-4 h-4 fill-none stroke-current stroke-[2.5] transition-transform duration-300 group-hover:translate-x-1"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <polyline points="9 6 15 12 9 18"></polyline>
-            </svg>
-        </a>
-    </nav>
-</div>
 <main>
 <!-- ===== CONDITIONS GÉNÉRALES DE VENTE ===== -->
-<section id="cgv" class="relative py-20 md:py-28 px-4 overflow-hidden border-t border-slate-200/80 bg-slate-50/50">
+<section id="cgv" class="relative py-20 md:py-28 px-4 overflow-hidden text-slate-100">
     <div class="relative z-10 max-w-4xl mx-auto">
-        <div class="text-center mb-16">
-            <div class="inline-flex items-center rounded-full border border-purple-200 bg-white/80 backdrop-blur-sm px-4 py-2 shadow-sm mb-6">
-                <span class="text-base font-semibold text-purple-700">Cadre Contractuel</span>
-            </div>
-            <h1 class="font-impact-title text-4xl md:text-5xl lg:text-6xl leading-[0.95] mb-6">
-                Conditions Générales 
-                <span class="bg-gradient-to-r from-purple-700 to-[#29c6dc] bg-clip-text text-transparent">
-                    de Vente (CGV)
-                </span>
+<!-- EN-TÊTE -->
+        <div class="text-center mb-16 md:mb-20">
+            <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-[0.95] mb-6">
+                Conditions Générales de Vente
             </h1>
-            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
-                Les présentes Conditions Générales de Vente sont applicables aux <strong>prestations d'accompagnement, de conseil et de créations sur-mesure d'AM 2.0</strong>, à compter du 2 août 2026 et remplacent toute version antérieure.
+            <p class="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto">
+                Applicables aux prestations d'accompagnement, de conseil et de créations sur-mesure d'<strong>AM 2.0</strong> à compter du 28 septembre 2026.
             </p>
         </div>
-        <div class="space-y-8 text-slate-700 leading-relaxed text-sm md:text-base">
+<!-- CONTENU CGV -->
+        <div class="space-y-16 text-sm md:text-base leading-relaxed">
+
 <!-- ARTICLE 1 -->
-            <div class="rounded-3xl border border-slate-200/90 bg-white/90 backdrop-blur-md p-6 md:p-8 shadow-sm">
-                <h2 class="font-impact-title text-xl md:text-2xl text-slate-900 mb-4 pb-3 border-b border-slate-100 flex items-center gap-3">
-                    <span class="flex items-center justify-center w-7 h-7 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">1</span>
-                    Mentions Légales et Champ d'Application
+            <article class="border-b border-white/10 pb-12 text-base">
+                <h2 class="nav-font text-2xl md:text-3xl text-white font-semibold mb-6 flex items-center gap-3">
+                    01. Mentions Légales & Champ d'Application
                 </h2>
-                <p class="mb-4">
-                    Les présentes Conditions Générales de Vente (CGV) régissent sans réserve l'ensemble des prestations d'accompagnement individuel, de conseil et de créations sur-mesure fournies par :
-                </p>
-                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 mb-4 space-y-1 text-sm">
-                    <p><strong class="font-bold">Entreprise Individuelle (Micro-entreprise) :</strong> AM 2.0 • Mme Muller Aurore</p>
-                    <p><strong class="font-bold">Siège social :</strong> 8 rue du Général Leclerc, 67210 Obernai, France</p>
-                    <p><strong class="font-bold">SIRET :</strong> 999 214 158 00019</p>
-                    <p><strong class="font-bold">Immatriculée au Registre National des Entreprises :</strong> 999 214 158</p>
-                    <p><strong class="font-bold">Code APE :</strong> 62.01Z (Programmation informatique)</p>
-                    <p><strong class="font-bold">Téléphone :</strong> (+33) 3 67 99 90 81</p>
-                    <p><strong class="font-bold">E-mail :</strong> 
-                        <a href="#" class="protected-mail font-medium text-purple-700 hover:underline" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg==">
-                            <span class="mail-text"></span>
-                        </a>
+                <div class="space-y-4">
+                    <p class="text-base text-slate-100">
+                        Les présentes Conditions Générales de Vente (CGV) régissent l'ensemble des prestations d'accompagnement individuel, de conseil et de créations sur-mesure fournies par :
+                    </p>
+                    <div>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-base">
+                            <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-slate-200">
+                                <span class="font-semibold text-slate-100 block">Nom commercial :</span> AM 2.0
+                            </li>
+                            <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-slate-200">
+                                <span class="font-semibold text-slate-100 block">Statut juridique :</span> Entrepreneur Individuel (EI) - Micro-entreprise
+                            </li>
+                            <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-slate-200">
+                                <span class="font-bold text-slate-100 block">Responsable légal :</span> Mme Muller Aurore
+                            </li>
+                            <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-slate-200">
+                                <span class="font-bold text-slate-100 block">Siège social :</span> 8 rue du Général Leclerc, 67210 Obernai, France
+                            </li>
+                            <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-slate-200">
+                                <span class="font-bold text-slate-100 block">Numéro SIRET :</span> 999 214 158 00019
+                            </li>
+                            <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-slate-200">
+                                <span class="font-bold text-slate-100 block">Immatriculation :</span> Registre National des Entreprises (RNE) - 999 214 158
+                            </li>
+                            <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-slate-200">
+                                <span class="font-bold text-slate-100 block">Code APE :</span> 62.01Z (Programmation informatique)
+                            </li>
+                            <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-slate-200">
+                                <span class="font-bold text-slate-100 block">Téléphone :</span> (+33) 3 67 99 90 81
+                            </li>
+                            <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-slate-200">
+                                <span class="font-bold text-slate-100 block">E-mail :</span>
+                                <a href="#" class="protected-mail font-medium text-cyan-300 hover:underline" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg==">
+                                    <span class="mail-text">[Activer JavaScript pour afficher]</span>
+                                </a>
+                            </li>
+                            <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-slate-200">
+                                <span class="font-bold text-slate-100 block">Régime de TVA :</span> TVA non applicable, article 293 B du CGI
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="text-base text-slate-100">
+                        Les présentes CGV s'appliquent exclusivement aux clients professionnels (personnes physiques ou morales agissant dans le cadre de leur activité professionnelle, commerciale, artisanale, libérale) ainsi qu'aux associations (ci-après « le Client »). <strong class="text-white">AM 2.0 ne vend aucune prestation aux particuliers (B2C).</strong>
+                    </p>
+                    <p class="text-base text-slate-100">
+                        Elles constituent, avec le devis accepté, l'accord entre les parties. En cas de contradiction, les conditions particulières du devis signé prévalent sur les CGV. Le Client reconnaît avoir pris connaissance des CGV avant toute commande ; la signature ou l'acceptation du devis vaut acceptation pleine et entière des CGV, qui prévalent sur toutes conditions d'achat du Client.
                     </p>
                 </div>
-                <p class="text-slate-600">
-                    Les présentes CGV s’appliquent exclusivement aux clients professionnels (personnes physiques ou morales agissant dans le cadre de leur activité professionnelle, commerciale, artisanale, libérale) ainsi qu’aux associations (ci-après « le Client »). <strong class="font-bold">AM 2.0 ne vend aucune prestation aux particuliers (B2C).</strong>
-                </p>
-            </div>
-<!-- ARTICLE 2  -->
-            <div class="rounded-3xl border border-slate-200/90 bg-white/90 backdrop-blur-md p-6 md:p-8 shadow-sm">
-                <h2 class="font-impact-title text-xl md:text-2xl text-slate-900 mb-4 pb-3 border-b border-slate-100 flex items-center gap-3">
-                    <span class="flex items-center justify-center w-7 h-7 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">2</span>
-                    Outils Gratuits, Formation du Contrat et Rétractation
+            </article>
+
+<!-- ARTICLE 2 -->
+            <article class="border-b border-white/10 pb-12 text-base">
+                <h2 class="nav-font text-2xl md:text-3xl text-white font-semibold mb-6 flex items-center gap-3">
+                    02. Formation du Contrat & Droit de rétractation
                 </h2>
-    <!-- 2.1 -->
-                <h3 class="font-impact-title mb-2">2.1 Auto-diagnostic en ligne & Rendez-vous offert (« 1er Clic »)</h3>
-                <p class="mb-3 text-slate-600">
-                    AM 2.0 met à disposition sur son site un outil d'<strong>auto-diagnostic en ligne</strong> gratuit et ludique permettant d'identifier le pilier prioritaire à travailler sur son parcours client. Ce bilan informatif est fourni à titre indicatif sans valeur d'expertise scientifique ni engagement contractuel.
-                </p>
-                <p class="mb-4 text-slate-600">
-                    AM 2.0 propose également un <strong>rendez-vous découverte offert (« 1er Clic »)</strong> de 30 minutes en visioconférence pour échanger sur le projet du Client et cibler son premier point de blocage. Cet échange ne constitue pas une prestation payante et n'oblige aucune des parties à conclure une commande.
-                </p>
-    <!-- 2.2 -->
-                <h3 class="font-impact-title mb-2">2.2 Formation du contrat</h3>
-                <p class="mb-3 text-slate-600">
-                    La commande est valablement et fermement formée selon les modalités propres à chaque offre :
-                </p>
-                <ul class="list-disc pl-5 space-y-2 text-slate-600 mb-4">
-                    <li>
-                        <strong>Ateliers ciblés (« Les Katas ») :</strong> Prestations exécutées 100 % en visioconférence à distance. La commande est validée dès la sélection du créneau horaire sur l'outil de réservation (Calendly) et le règlement intégral préalable sur Stripe.
-                    </li>
-                    <li><strong>Ateliers ciblés (« Les Katas » - Format multi-sessions) :</strong> La commande est validée par la signature d'un devis ou l'acceptation explicite d'une proposition commerciale émise par AM 2.0 (valable 30 jours calendaires) et le règlement intégral de la prestation avant la tenue de la première session.</li>
-                    <li>
-                        <strong>Accompagnement (« Parcours Maître Zen ») :</strong> La commande est validée par la signature d'un devis ou l'acceptation explicite d'une proposition commerciale émise par AM 2.0 (valable 30 jours calendaires) et le règlement effectif du 1er versement/acompte (ou de l'intégralité du tarif) avant la tenue de la première session.
-                    </li>
-                    <li>
-                        <strong>Créations sur-mesure (« Les Mochis à emporter ») :</strong> La commande est validée par la signature d'un devis ou l'acceptation explicite d'une proposition commerciale émise par AM 2.0 (valable 30 jours calendaires) et le règlement effectif du 1er versement/acompte (ou de l'intégralité du tarif).
-                    </li>
-                </ul>
-    <!-- 2.3 -->
-                <h3 class="font-impact-title mb-2">2.3 Absence de droit de rétractation et engagement ferme</h3>
-                    <p class="text-slate-600 space-y-2">
-                        <span class="block">• <strong>Principe B2B :</strong> Les prestations proposées par AM 2.0 s'adressant exclusivement à des professionnels ou structures assimilées (associations, indépendants), <strong class="font-bold">aucun droit de rétractation n'est applicable par principe</strong>.</span>
+                <div class="space-y-8">
+<!-- 2.1 -->
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">2.1 Outils gratuits</h3>
+                        <p class="text-base text-slate-100">
+                            AM 2.0 met à disposition différents canaux d'échange et outils d'auto-évaluation adaptés au profil de chaque structure.
+                        </p>
+                        <p class="text-base text-slate-100">
+                            L'utilisation de ces outils gratuits, la prise de contact ou la participation au rendez-vous découverte ne constituent pas une commande et n'engagent pas le Client à souscrire une prestation. Toute commande est formée uniquement dans les conditions prévues à l'article 2.2.
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-base">
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Indépendants & Freelances</span>
+                                <p class="text-slate-200 text-base">Accès à l'<strong>auto-diagnostic en ligne</strong> gratuit et au rendez-vous découverte offert (<strong>« 1er Clic »</strong>) de 30 min en visio (bilan informatif sans engagement).</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Commerçants, Artisans & Assos</span>
+                                <p class="text-slate-200 text-base">Prise de contact directe via le lien <strong>WhatsApp</strong> du site (accès possible au 1er Clic visio ou à l'auto-diagnostic selon les besoins du projet).</p>
+                            </div>
+                        </div>
+                    </div>
+<!-- 2.2 -->
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">2.2 Formation du contrat</h3>
+                        <p class="text-base text-slate-100">
+                            Sauf mention contraire, un devis est valable <strong>30 jours calendaires</strong> à compter de son émission. La commande est valablement formée par la signature du devis ou par son acceptation expresse par écrit (e-mail ou message WhatsApp), accompagnée du versement de l'acompte ou du montant total selon les modalités propres à chaque type de prestation :
+                        </p>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-base">
+                            <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Maître Zen :</span>
+                                <span class="text-slate-200 text-base">Signature du devis ou accord écrit (e-mail / WhatsApp) et règlement intégral du module ou du pack complet avant la 1ère session d'accompagnement.</span>
+                            </li>
+                            <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Profil LinkedIn & Vitrine Instagram :</span>
+                                <span class="text-slate-200 text-base">Signature du devis ou accord écrit (e-mail / WhatsApp) et règlement intégral avant la session de brainstorming initial.</span>
+                            </li>
+                            <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Visuels Produits & Offres, PLV & Imprimés :</span>
+                                <span class="text-slate-200 text-base">Signature du devis ou accord écrit (e-mail / WhatsApp) et règlement intégral (commande ≤ 500 €) ou du 1er acompte prévu au devis (commande &gt; 500 €) avant le brainstorming et le lancement des travaux.</span>
+                            </li>
+                            <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Vitrine Web & Maintenance contenu :</span>
+                                <span class="text-slate-200 text-base">Signature du devis ou accord écrit (e-mail / WhatsApp) et règlement de la totalité ou du 1er versement avant le brainstorming. La maintenance est régie par l'article 6.6.</span>
+                            </li>
+                            <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Ateliers collectifs :</span>
+                                <span class="text-slate-200 text-base">Inscription et réservation fermes dès validation du règlement en ligne.</span>
+                            </li>
+                            <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Prestations récurrentes & sur-mesure :</span>
+                                <span class="text-slate-200 text-base">Signature d'un devis spécifique ou accord écrit fixant les conditions et l'échéancier propres au projet (ex : suivi ou gestion annuelle).</span>
+                            </li>
+                        </ul>
+                    </div>
+<!-- 2.3 -->
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">2.3 Droit de rétractation & Engagement</h3>
+                        <div class="space-y-3 text-base">
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Principe général B2B</span>
+                                <p class="text-slate-200 text-base leading-relaxed">
+                                    Les prestations d'AM 2.0 s'adressant à des professionnels (entreprises, indépendants, commerçants, artisans, associations), les dispositions du Code de la consommation relatives au droit de rétractation ne s'appliquent pas, sauf exception ci-dessous. Toute commande est ferme et définitive dès sa validation.
+                                </p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Exception légale (Art. L. 221-3 du Code de la consommation)</span>
+                                <p class="text-slate-200 text-base leading-relaxed">
+                                    Le droit de rétractation de 14 jours peut s'appliquer aux contrats conclus hors établissement entre deux professionnels, lorsque l'objet du contrat n'entre pas dans le champ de l'activité principale du Client et que celui-ci emploie au maximum cinq (5) salariés.
+                                </p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Exécution immédiate & conséquences d'une rétractation</span>
+                                <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                    Lorsque l'article L.221-3 du Code de la consommation est applicable, l'exécution de la prestation avant l'expiration du délai de rétractation est subordonnée à une demande expresse du Client recueillie sur support durable, conformément à l'article L.221-25 du Code de la consommation. Les conditions et conséquences de cette demande sont précisées dans le devis ou tout autre document contractuel concerné. La demande d'exécution immédiate permet notamment :
+                                </p>
+                                <ul class="list-disc pl-5 text-slate-200 text-base space-y-1">
+                                    <li><strong>Maître Zen & Ateliers :</strong> Le blocage du créneau, la réservation de la place et la préparation des supports.</li>
+                                    <li><strong>Créations graphiques, Web, PLV & Réseaux sociaux :</strong> La planification du brainstorming, les recherches artistiques et le lancement de la création.</li>
+                                </ul>
+                                <p class="text-slate-200 text-base leading-relaxed my-3">
+                                    Si le Client exerce son droit de rétractation après le début de l'exécution, il reste redevable du montant correspondant aux prestations effectivement réalisées jusqu'à la communication de sa décision de se rétracter, dans les conditions prévues par l'article L.221-25.
+                                </p>
+                                <p class="text-slate-200 text-base leading-relaxed my-3">
+                                    Lorsque la prestation est entièrement exécutée avant l'expiration du délai de rétractation à la demande expresse du Client, celui-ci reconnaît qu'il ne dispose plus de ce droit à l'issue de l'exécution complète.
+                                </p>
+                            </div>
+                        </div>
+                        <p class="text-base text-slate-100">
+                            Hors cette exception, toute commande validée engage fermement le Client. Sauf accord préalable et écrit d'AM 2.0, cas d'inexécution imputable à AM 2.0 (article 6.8) ou disposition légale impérative, aucun remboursement ni annulation ne peut être accordé après validation ou démarrage des travaux.
+                        </p>
+                    </div>
+                </div>
+            </article>
 
-                        <span class="block">• <strong>Exécution immédiate du service et contenu numérique :</strong> En validant sa commande (paiement intégral d'un Kata, versement de l'acompte d'un Mochi ou du Parcours Maître Zen), le Client demande et accepte expressément le commencement immédiat de la prestation avant tout délai légal de rétractation :</span>
-                    </p>
-
-                    <ul class="list-disc pl-5 my-2 space-y-1.5 text-slate-600">
-                        <li><strong>Ateliers « Les Katas » :</strong> La réservation d'un créneau déclenche immédiatement le travail d'analyse, d'audit préalable et de préparation des supports par AM 2.0 en vue du rendez-vous.</li>
-                        <li><strong>Accompagnement « Parcours Maître Zen » :</strong> Le paiement de la commande ou du 1er acompte réserve la disponibilité d'AM 2.0 pour l'ensemble du parcours, bloque les créneaux d'accompagnement et enclenche le travail initial de cadrage et de préparation stratégique (le Workbook d'accompagnement étant remis lors du premier rendez-vous)</li>
-                        <li><strong>Créations « Les Mochis » :</strong> Le versement de l'acompte marque le démarrage immédiat de la prestation créative (phase de cadrage, recherches graphiques, conception et croquis).</li>
-                    </ul>
-
-                    <p class="text-slate-600 mt-2">
-                        En conséquence, toute commande validée engage fermement le Client. Sauf accord préalable et écrit d'AM 2.0 ou disposition légale impérative, aucun remboursement ni droit d'annulation ne pourra être accordé après validation de la commande ou mise à disposition des accès/supports.
-                    </p>
-            </div>
 <!-- ARTICLE 3 -->
-            <div class="rounded-3xl border border-slate-200/90 bg-white/90 backdrop-blur-md p-6 md:p-8 shadow-sm">
-                <h2 class="font-impact-title text-xl md:text-2xl text-slate-900 mb-4 pb-3 border-b border-slate-100 flex items-center gap-3">
-                    <span class="flex items-center justify-center w-7 h-7 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">3</span>
-                    Tarifs et Révision
+            <article class="border-b border-white/10 pb-12 text-base">
+                <h2 class="nav-font text-2xl md:text-3xl text-white font-semibold mb-6 flex items-center gap-3">
+                    03. Tarifs & Descriptif des Prestations
                 </h2>
-                <p class="mb-3">
-                    Les prix des Prestations sont ceux figurant sur le site internet au moment de la réservation ou sur le devis accepté :
-                </p>
-                <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-4">
-                    <li><strong>Parcours Maître Zen (8h) :</strong> 800 € HT</li>
-                    <li><strong>Kata Google (1h) :</strong> 140 € HT</li>
-                    <li><strong>Kata LinkedIn (2h) :</strong> 240 € HT</li>
-                    <li><strong>Kata Page Web (2h) :</strong> 240 € HT</li>
-                    <li><strong>Kata Multi-sessions (3h) :</strong> 340 € HT</li>
-                    <li><strong>Les Mochis à emporter :</strong> Sur devis spécifique.</li>
-                </ul>
-                <p class="text-slate-600">
-                    Les prix sont exprimés en Euros (€) Net de taxe : <strong class="font-bold">« TVA non applicable, article 293 B du CGI »</strong>. AM 2.0 se réserve le droit de modifier ses tarifs à tout moment. Les commandes régularisées ou devis signés restent soumis au tarif en vigueur au moment de leur validation.
-                </p>
-            </div>
+                <div class="space-y-8">
+                    <p class="text-base text-slate-100">
+                        Les prix des Prestations sont ceux figurant sur le site internet au moment de la commande ou précisés sur le devis personnalisé accepté :
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-base">
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 flex flex-col justify-between">
+                            <div>
+                                <span class="font-bold text-white block mb-1">Accompagnement « Maître Zen »</span>
+                                <p class="text-slate-200 text-base mb-2">Accompagnement individuel à la carte (Message, Parcours client ou Rendez-vous commerciaux) :</p>
+                            </div>
+                            <div>
+                                <p class="text-white font-bold text-base">350 € / module <span class="font-normal text-slate-300">(3h en 3 sessions d'1h)</span></p>
+                                <p class="text-slate-200 text-base font-medium mt-1">900 € pour la commande simultanée des 3 modules (9h)</p>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 flex flex-col justify-between">
+                            <div>
+                                <span class="font-bold text-white block mb-1">Profil LinkedIn & Vitrine Instagram</span>
+                                <p class="text-slate-200 text-base mb-2">Optimisation, rédaction de contenu, création de bannière, triptyque de posts épinglés ou visuels de présentation :</p>
+                            </div>
+                            <p class="text-white font-bold text-base">350 € / prestation</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 flex flex-col justify-between">
+                            <div>
+                                <span class="font-bold text-white block mb-1">Produits & Offres</span>
+                                <p class="text-slate-200 text-base mb-2">Mise en valeur visuelle pour arrivages, offres spéciales, coffrets ou animations (tarif ajusté selon le format et le besoin de prise de vue) :</p>
+                            </div>
+                            <p class="text-white font-bold text-base">À partir de 140 €</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 flex flex-col justify-between">
+                            <div>
+                                <span class="font-bold text-white block mb-1">Ateliers Collectifs</span>
+                                <p class="text-slate-200 text-base mb-2">Sessions de travail thématiques en visioconférence ou en présentiel (durée variable) :</p>
+                            </div>
+                            <p class="text-white font-bold text-base">Tarif indiqué lors de la réservation en ligne</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 flex flex-col justify-between md:col-span-2">
+                            <div>
+                                <span class="font-bold text-white block mb-1">PLV & Imprimés</span>
+                                <p class="text-slate-200 text-base mb-2">Création graphique sur-mesure pour affiches, flyers, supports de comptoir, kakémonos, roll-ups et banderoles :</p>
+                            </div>
+                            <p class="text-white font-bold text-base">Sur devis spécifique selon l'ampleur du projet</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 md:col-span-2 space-y-4">
+                            <span class="font-bold text-white block text-lg border-b border-slate-700/60 pb-2">Vitrine Web & Maintenance Contenu</span>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-1">
+                                <div>
+                                    <span class="font-semibold text-slate-100 block mb-1">Création de site web :</span>
+                                    <p class="text-slate-200 text-base mb-2">Page d'accueil (6 sections dont Accueil) + mentions légales & RGPD minimales :</p>
+                                    <p class="text-white font-bold text-base">À partir de 600 € <span class="text-sm font-normal text-slate-300">(comptant)</span></p>
+                                    <p class="text-slate-300 text-base mt-1">(+ 100 € / section supp. • + 200 € / page comp.)</p>
+                                </div>
+                                <div class="pt-4 md:pt-0 md:pl-6">
+                                    <span class="font-semibold text-slate-100 block mb-1">Maintenance de contenu :</span>
+                                    <p class="text-slate-200 text-base mb-2">Retouches de textes, remplacement de photos, mise à jour d'agenda :</p>
+                                    <p class="text-white font-bold text-base mb-2">140 € / mois</p>
+                                    <p class="text-slate-300 text-base italic">Note : Toute autre modification fait l'objet d'un devis.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 md:col-span-2">
+                            <span class="font-bold text-white block mb-1">Prestations spécifiques, récurrentes ou annuelles</span>
+                            <p class="text-slate-200 text-base">Pour toute demande spécifique ou engagement dans le temps (notamment la gestion intégrale de réseaux sociaux sur une période trimestrielle ou annuelle), les conditions tarifaires, le périmètre d'intervention et le calendrier d'exécution sont fixés sur devis sur-mesure et peuvent déroger aux présentes dispositions tarifaires générales.</p>
+                        </div>
+                    </div>
+                    <p class="text-base text-slate-100">
+                        Les prix sont exprimés en Euros (€), net de taxe : <strong>« TVA non applicable, article 293 B du CGI »</strong>. AM 2.0 peut modifier ses tarifs à tout moment pour les commandes futures ; les prestations commandées et les devis signés restent soumis au tarif en vigueur au moment de leur validation. Pour les abonnements et prestations récurrentes, toute évolution tarifaire est notifiée au Client par écrit avec un préavis d'au moins trente (30) jours, pendant lesquels il peut résilier sans frais.
+                    </p>
+                </div>
+            </article>
+
 <!-- ARTICLE 4 -->
-            <div class="rounded-3xl border border-slate-200/90 bg-white/90 backdrop-blur-md p-6 md:p-8 shadow-sm">
-                <h2 class="font-impact-title text-xl md:text-2xl text-slate-900 mb-4 pb-3 border-b border-slate-100 flex items-center gap-3">
-                    <span class="flex items-center justify-center w-7 h-7 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">4</span>
-                    Modalités de Paiement et Échéanciers
+            <article class="border-b border-white/10 pb-12 text-base">
+                <h2 class="nav-font text-2xl md:text-3xl text-white font-semibold mb-6 flex items-center gap-3">
+                    04. Modalités de Paiement & Échéanciers
                 </h2>
-    <!-- 4.1 -->
-                <div class="mb-6">
-                    <h3 class="font-impact-title mb-2">4.1 Parcours d'accompagnement global (« Maître Zen » - 800 € HT)</h3>
-                    <p class="text-slate-600 mb-2">
-                        Le Client peut choisir de régler l'intégralité du montant (800 € HT) avant la 1ère heure d'accompagnement, ou de bénéficier du paiement échelonné en trois (3) fois selon l'échéancier strict suivant :
-                    </p>
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2 text-sm mb-3">
-                        <p class="flex justify-between items-center">
-                            <span>• <strong>1er versement (Acompte) :</strong> 300 € HT</span>
-                            <span class="text-purple-700 font-semibold">Impérativement avant la 1ère heure</span>
-                        </p>
-                        <p class="flex justify-between items-center border-t border-slate-200/60 pt-2">
-                            <span>• <strong>2ème versement :</strong> 250 € HT</span>
-                            <span class="text-slate-600 font-medium">En cours d'accompagnement</span>
-                        </p>
-                        <p class="flex justify-between items-center border-t border-slate-200/60 pt-2">
-                            <span>• <strong>3ème versement (Solde) :</strong> 250 € HT</span>
-                            <span class="text-purple-700 font-semibold">Impérativement avant la 7ème heure</span>
-                        </p>
+                <div class="space-y-8">
+<!-- 4.1 -->
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">4.1 Accompagnement individuel (« Maître Zen »)</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-base">
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Module à l'unité (350 €)</span>
+                                <p class="text-slate-200 text-base">Le règlement intégral de 350 € est exigé avant la tenue de la première session du module commandé.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Pack complet 3 modules (900 €)</span>
+                                <p class="text-slate-200 text-base">Le règlement intégral du tarif préférentiel de 900 € est exigé en un seul versement avant la tenue de la première session du premier module.</p>
+                            </div>
+                        </div>
                     </div>
-                    <p class="text-sm text-slate-500 italic">
-                        <strong>Offres promotionnelles :</strong> En cas de tarif préférentiel ou promotionnel accordé sur le Parcours Maître Zen, le principe demeure identique : un acompte est exigé avant la 1ère heure de rendez-vous, et le solde intégral doit être réglé avant la 7ème heure d'accompagnement.
-                    </p>
-                </div>
-    <!-- 4.2 -->
-                <div class="mb-6">
-                    <h3 class="font-impact-title mb-2">4.2 Ateliers ciblés (« Les Katas »)</h3>
-                        <p class="text-slate-600 space-y-2">
-                            <span class="blcd ock">• <strong>Katas en session unique (1h ou 2h) :</strong> Le paiement intégral de la prestation est obligatoire au moment de la réservation du créneau sur la plateforme en ligne (Calendly / Stripe). Aucun créneau ne sera réservé sans règlement effectif préalable.</span>
-                            <span class="block">• <strong>Kata multi-sessions :</strong> Sauf modalité particulière ou échéancier spécifique accordé sur le devis, le paiement intégral du forfait (340 € HT) est exigé avant la tenue du premier rendez-vous en visioconférence. La planification des sessions est fixée conjointement après réception du règlement (ou du premier versement).</span>
+<!-- 4.2 -->
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">4.2 Prestations graphiques, PLV & réseaux sociaux</h3>
+                        <p class="text-base text-slate-100">
+                            Chaque prestation comprend une session préalable de brainstorming (définition de la direction artistique et échange sur les objectifs) suivie de la phase de création, d'une session de clôture et d'un aller-retour de corrections. Les modalités de paiement dépendent de la nature de la prestation et du montant total de la commande :
                         </p>
-                </div>
-    <!-- 4.3 -->
-                <div class="mb-6">
-                    <h3 class="font-impact-title mb-2">4.3 Délégation et créations sur-mesure (« Les Mochis à emporter »)</h3>
-                        <p class="text-slate-600">
-                            Pour les prestations exécutées directement par AM 2.0 (Landing page, site web, kit visuel, flyers, etc.), l'échéancier de paiement est précisé sur le devis personnalisé émis (possibilité de règlement en 2 ou 3 fois). À défaut de mention spécifique sur le devis, un acompte de 50 % est exigé à la commande, et le solde de 50 % est dû avant la livraison. Dans tous les cas, le règlement intégral du solde demeure obligatoire avant la mise en ligne ou la livraison finale des fichiers sources et visuels.
+                        <div class="space-y-3 text-base">
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Profil LinkedIn & Vitrine Instagram (350 € / prestation)</span>
+                                <p class="text-slate-200 text-base">Le règlement intégral du tarif (350 €) est exigé avant la tenue de la session de brainstorming initial.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 space-y-3">
+                                <span class="font-bold text-white block">PLV, Imprimés & Visuels Produits / Offres (à l'unité ou en lot)</span>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+                                    <div class="p-3 rounded-lg bg-slate-900/50 border border-slate-700/40">
+                                        <span class="font-semibold text-slate-100 block mb-1">Commande inférieure ou égale à 500 € :</span>
+                                        <p class="text-slate-200 text-base">Le règlement intégral du montant est exigé avant la tenue de la session de brainstorming initial.</p>
+                                    </div>
+                                    <div class="p-3 rounded-lg bg-slate-900/50 border border-slate-700/40">
+                                        <span class="font-semibold text-slate-100 block mb-1">Commande supérieure à 500 € :</span>
+                                        <p class="text-slate-200 text-base">Un paiement échelonné peut être mis en place. Les modalités et l'échéancier sont fixés sur mesure dans le devis validé par le Client, le 1er versement étant exigé avant le brainstorming.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!-- 4.3 -->
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">4.3 Créations de sites internet (« Vitrine Web ») & Maintenance de contenu</h3>
+                        <p class="text-base text-slate-100">
+                            La création web débute par une session initiale de brainstorming. Le règlement s'effectue selon la formule et les options choisies au devis (tarifs de base à partir de 600 € pour la page principale de 6 sections, augmentés de 100 € par section supplémentaire et 200 € par page complémentaire) :
                         </p>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-stretch text-base">
+                            <div class="p-5 rounded-xl bg-slate-800/60 border border-slate-700/60 flex flex-col justify-between">
+                                <div class="space-y-3">
+                                    <span class="font-bold text-white text-lg block border-b border-slate-700/60 pb-2">Paiement au comptant</span>
+                                    <p class="text-slate-200 text-base leading-relaxed">
+                                        Règlement intégral (100 %) du montant total du devis avant la tenue de la session de brainstorming initial.
+                                    </p>
+                                </div>
+                                <div class="mt-4 pt-3 border-t border-slate-700/40">
+                                    <span class="text-base uppercase tracking-wider text-cyan-400 font-semibold block">Avantage</span>
+                                    <p class="text-slate-100 text-base">Formule la plus économique, sans frais d'échelonnement.</p>
+                                </div>
+                            </div>
+                            <div class="p-5 rounded-xl bg-slate-800/60 border border-slate-700/60 flex flex-col justify-between">
+                                <div class="space-y-3">
+                                    <span class="font-bold text-white text-lg block border-b border-slate-700/60 pb-2">Paiement échelonné en 3 fois</span>
+                                    <p class="text-slate-200 text-base leading-relaxed">
+                                        Pour la création de la page principale, le paiement en trois fois est proposé au tarif de 750 € au lieu de 600 €, soit 3 versements de 250 €.
+                                    </p>
+                                    <p class="text-slate-200 text-base leading-relaxed">
+                                        Les éventuelles sections supplémentaires et pages complémentaires sont facturées aux tarifs unitaires prévus au devis, sans majoration supplémentaire liée à l'échelonnement.
+                                    </p>
+                                    <ul class="space-y-2 text-slate-200 text-base pt-1">
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-cyan-400 font-bold">•</span>
+                                            <span><strong>1er versement (1/3 du total) :</strong> à la commande, avant le brainstorming initial ;</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-cyan-400 font-bold">•</span>
+                                            <span><strong>2e versement (1/3 du total) :</strong> 30 jours calendaires après le premier versement ;</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span class="text-cyan-400 font-bold">•</span>
+                                            <span><strong>Solde (1/3 du total) :</strong> avant la livraison finale et la mise en ligne.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                            <span class="font-bold text-white block mb-1">Paiement de la Maintenance de contenu (140 € / mois)</span>
+                            <p class="text-slate-200 text-base leading-relaxed">
+                                La maintenance de contenu (140 € / mois) est un abonnement mensuel payable d'avance, <strong>au plus tard le 5 de chaque mois</strong> pour couvrir le mois en cours. En cas de défaut ou de retard de paiement à cette date, les interventions sont suspendues dans les conditions de l'article 5. La durée, la reconduction et la résiliation de l'abonnement sont fixées à l'article 6.6.
+                            </p>
+                        </div>
+                    </div>
+<!-- 4.4 -->
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">4.4 Ateliers collectifs & Prestations récurrentes</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-base">
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Ateliers collectifs</span>
+                                <p class="text-slate-200 text-base">Les frais d'inscription sont payables en totalité au moment de la réservation en ligne via l'outil Calendly (paiement sécurisé Stripe). L'accès à l'atelier n'est garanti qu'après confirmation du règlement.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Prestations récurrentes ou annuelles sur devis</span>
+                                <p class="text-slate-200 text-base">Pour les contrats spécifiques (ex. gestion de réseaux sociaux à l'année), les modalités et échéanciers de paiement sont définis dans le devis ou le contrat sur-mesure signé par le Client.</p>
+                            </div>
+                        </div>
+                    </div>
+<!-- 4.5 -->
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">4.5 Moyens de paiement & Retenue de livrables</h3>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                            <span class="font-bold text-white block mb-1">Virement bancaire & Espèces</span>
+                            <p class="text-slate-200 text-base leading-relaxed">
+                                Sauf pour les ateliers collectifs réglés en ligne, les règlements s'effectuent par <strong>virement bancaire</strong> ou en <strong>espèces remises en main propre</strong> dans le respect des plafonds légaux en vigueur en France. Tant que l'échéance de paiement correspondante n'a pas été intégralement honorée, AM 2.0 peut suspendre les rendez-vous d'accompagnement, reporter les sessions de brainstorming ou différer la livraison des visuels et fichiers sources ainsi que la mise en ligne du site web.
+                            </p>
+                        </div>
+                    </div>
+<!-- 4.6 -->
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">4.6 Facturation & Délai de règlement</h3>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                            <span class="font-bold text-white block mb-1">Factures & Échéances</span>
+                            <p class="text-slate-200 text-base leading-relaxed">
+                                Une facture est émise pour chaque règlement ou prestation. Lorsque le paiement n'est pas exigé avant le démarrage de la prestation (devis sur mesure, prestations récurrentes), les factures sont payables à réception, et au plus tard dans un délai de <strong>trente (30) jours</strong> à compter de leur date d'émission, sauf autre échéance, qui ne peut excéder soixante (60) jours, précisée au devis. En cas de facturation électronique, le Client communique les informations nécessaires à la bonne réception de ses factures.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-    <!-- 4.4 -->
-                <div>
-                    <h3 class="font-impact-title mb-2">4.4 Moyens de paiement et retenue de livrables</h3>
-                    <p class="text-slate-600">
-                        Les règlements s'effectuent par carte bancaire via la plateforme sécurisée Stripe ou par virement bancaire. AM 2.0 se réserve le droit de suspendre les sessions d'accompagnement ou de différer toute livraison de supports tant que l'échéance de paiement correspondante n'a pas été honorée.
-                    </p>
-                </div>
-            </div>
+            </article>
+
 <!-- ARTICLE 5 -->
-            <div class="rounded-3xl border border-slate-200/90 bg-white/90 backdrop-blur-md p-6 md:p-8 shadow-sm mb-8">
-                <h2 class="font-impact-title text-xl md:text-2xl text-slate-900 mb-4 pb-3 border-b border-slate-100 flex items-center gap-3">
-                    <span class="flex items-center justify-center w-7 h-7 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">5</span>
-                    Exécution, Prérequis et Reports
+            <article class="border-b border-white/10 pb-12 text-base">
+                <h2 class="nav-font text-2xl md:text-3xl text-white font-semibold mb-6 flex items-center gap-3">
+                    05. Retards de Paiement & Pénalités Légales
                 </h2>
-    <!-- 5.1 -->
-                <h3 class="font-impact-title mb-2">5.1 Format principal en visioconférence & Prérequis matériels</h3>
-                <p class="text-slate-600 mb-3">
-                    Par principe, l'ensemble des Ateliers Katas et les sessions synchrones du Parcours Maître Zen sont réalisés <strong class="font-bold">à distance en visioconférence</strong>.
-                </p>
-                <div class="p-4 rounded-2xl bg-purple-50/60 border border-purple-100 text-sm text-slate-700 space-y-2 mb-4">
-                    <p>• <strong>Équipement informatique requis :</strong> L'exécution optimale des prestations nécessitant du partage d'écran, de la lecture de supports visuels et la manipulation d'outils numériques partagés, le Client s'engage à disposer d'un <strong>ordinateur (de préférence)</strong> ou, à minima, d'une tablette/appareil mobile doté d'une connexion internet stable et d'un écran d'une taille suffisante pour lire les documents partagés.</p>
-                    <p>• <strong>Nécessité de vidéo (Caméra allumée) :</strong> Afin de favoriser la qualité des échanges, l'utilisation de la caméra est fortement recommandée pendant les sessions. En cas d'absence prolongée ou de conditions empêchant un échange efficace, AM 2.0 pourra proposer un report ou adapter les modalités de la séance.</p>
-                </div>
-    <!-- 5.2 -->
-                <h3 class="font-impact-title mb-2">5.2 Option Présentiel (Maître Zen, Katas Multi-sessions & Mochis)</h3>
-                <p class="text-slate-600 mb-3">
-                    À la demande du Client, tout ou partie des séances de travail (accompagnement « Maître Zen », atelier Kata multi-sessions ou points d'étape projets dans le cadre des offres « Mochis ») peuvent, à titre exceptionnel, se dérouler en présentiel dans le secteur du Bas-Rhin (67).
-                </p>
-                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 text-sm text-slate-700 space-y-2 mb-4">
-                    <p>• <strong>Droit de réserve :</strong> AM 2.0 se réserve le droit d'accepter ou de refuser toute demande de session en présentiel, sans que ce refus ne constitue un motif d'annulation de la commande par le Client.</p>
-                    <p>• <strong>Frais annexes en présentiel :</strong> Les coûts supplémentaires générés (réservation d'une salle/espace de coworking, frais de déplacement au barème fiscal et/ou hébergement) seront intégralement facturés au Client après accord préalable écrit.</p>
-                </div>
-    <!-- 5.3 -->
-                <h3 class="font-impact-title mb-2">5.3 Politique de report de rendez-vous et Non-présentation</h3>
-                <p class="text-slate-600 mb-3">
-                    Afin de garantir le respect du planning et un accompagnement optimal, les demandes de report de rendez-vous obéissent à un principe de réciprocité :
-                </p>
-                <ul class="list-disc pl-5 text-slate-600 space-y-2 mb-4">
-                    <li>
-                        <strong>Règle du préavis (24h ouvrées) :</strong> Toute demande de report, qu'elle émane du Client ou d'AM 2.0 (en cas d'imprévu majeur ou d'incapacité temporaire), doit être notifiée par écrit (e-mail ou whatsApp) au moins <strong class="font-bold font-bold">24 heures ouvrées avant le début du rendez-vous</strong>.
-                    </li>
-                    <li>
-                        <p>
-                            <strong>Engagement d'AM 2.0 :</strong> Si AM 2.0 est contrainte de reporter une session (dans le respect du préavis de 24h ouvrées ou en cas de force majeure), le rendez-vous est re-planifié dans les meilleurs délais en concertation avec le Client, sans pénalité pour ce dernier et sans impacter son quota de reports ni la durée globale de sa prestation.
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <p class="text-base text-slate-100">
+                            AM 2.0 applique des principes de paiement préalable ou d'échéancier conditionnant l'exécution, la réservation des créneaux et la livraison finale des livrables :
                         </p>
-                    </li>
-                </ul>
-                <p class="text-slate-600 mb-3">
-                    Les règles d'annulation tardive et d'absence non prévenue du Client sont appliquées comme suit :
-                </p>
-    <!-- 5.3.1 -->
-                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 text-sm text-slate-700 space-y-2 mb-3">
-                    <h4 class="font-impact-title text-slate-900">5.3.1 Ateliers ciblés (« Les Katas »)</h4>
-                    <ul class="list-disc pl-5 text-sm text-slate-600 space-y-2">
-                        <li>
-                            <strong>Katas en session unique (1h ou 2h) :</strong> Un même rendez-vous peut être reporté une seule et unique fois, sous réserve de respecter le préavis de 24h ouvrées. En cas d'annulation tardive (-24h) ou d'absence du Client sans notification préalable, l'atelier est considéré comme définitivement effectué et consommé. Aucun remboursement ni report ne sera accordé.
-                        </li>
-                        <li>
-                            <strong>Kata multi-sessions :</strong> Chaque session peut être reportée une (1) fois sous réserve du respect du préavis de 24h ouvrées. L'ensemble des 3 sessions doit être impérativement consommé dans un délai maximal de <strong>45 jours calendaires</strong> à compter du 1er rendez-vous. Tout rendez-vous manqué sans prévenance de 24h ouvrées sera décompté du forfait et considéré comme consommé.
-                        </li>
-                    </ul>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-base">
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Prestations sur paiement préalable & Rétention des livrables</span>
+                                <p class="text-slate-200 text-base">Pour les prestations payables à 100 % à la commande ou avant le brainstorming (ex : <i>Maître Zen, Profil LinkedIn, Vitrine Instagram, Ateliers</i>, devis &le; 500 €), aucun rendez-vous ne sera fixé ou maintenu tant que le règlement complet n'est pas encaissé. De même, pour les créations Web, PLV ou imprimés sous échéancier, <strong>aucune mise en ligne, remise des fichiers sources ou livraison physique</strong> ne sera effectuée avant l'encaissement intégral du solde dû.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Forfaits mensuels & Prestations récurrentes</span>
+                                <p class="text-slate-200 text-base">Les forfaits de <i>Maintenance de contenu Web</i> ainsi que les <i>prestations récurrentes</i> (ex : gestion annuelle de réseaux sociaux) sont payables <strong>d'avance, au plus tard le 5 de chaque mois</strong>. En cas de défaut de paiement à cette date, l'exécution des travaux est suspendue après une relance écrite restée sans effet pendant 48 heures. En cas de deux (2) retards ou impayés consécutifs, AM 2.0 peut résilier la prestation de plein droit, par écrit, et refuser toute demande ultérieure de renouvellement.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">5.1 Pénalités de retard & Indemnité forfaitaire de recouvrement</h3>
+                        <p class="text-base text-slate-100">
+                            Conformément à l'article L. 441-10 du Code de commerce, tout retard de paiement (règlement d'une échéance intermédiaire, du solde d'une commande ou d'une mensualité après la date limite du 5 du mois) entraîne de plein droit, sans rappel ni mise en demeure préalable :
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-base">
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Pénalités de retard</span>
+                                <p class="text-slate-200 text-base">L'application de pénalités de retard calculées au taux d'intérêt appliqué par la Banque centrale européenne (BCE) à son opération de refinancement la plus récente, majoré de <strong>10 points de pourcentage</strong> sans pouvoir être inférieur à trois fois le taux d'intérêt légal. Elles sont exigibles dès le lendemain de la date d'échéance figurant sur la facture et courent jusqu'au paiement intégral des sommes dues.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Indemnité forfaitaire pour frais de recouvrement</span>
+                                <p class="text-slate-200 text-base">L'exigibilité de plein droit d'une <strong>indemnité forfaitaire pour frais de recouvrement de 40 €</strong> (Art. L. 441-10 et D. 441-5 du Code de commerce). Si les frais de recouvrement réellement engagés (honoraires d'huissier, d'avocat ou de société de recouvrement) dépassent ce montant, une indemnisation complémentaire peut être réclamée sur justification.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 md:col-span-2">
+                                <span class="font-bold text-white block mb-1">Escompte</span>
+                                <p class="text-slate-200 text-base">Aucun escompte n'est accordé en cas de paiement anticipé.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">5.2 Suspension des prestations & Exigibilité immédiate</h3>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base space-y-3">
+                            <p class="text-slate-200 leading-relaxed">
+                                Le retard de paiement d'une échéance ou d'une facture, resté sans effet huit (8) jours après une relance écrite, rend immédiatement exigibles l'ensemble des sommes restant dues par le Client à AM 2.0, même si elles font l'objet d'échéances ultérieures.
+                            </p>
+                            <p class="text-slate-200 leading-relaxed">
+                                Dans ce cas, AM 2.0 peut suspendre l'exécution des prestations en cours pour le compte du Client (maintenance, gestion de réseaux sociaux, développements Web, créations graphiques). Cette suspension ne constitue pas une inexécution imputable à AM 2.0 et n'ouvre droit à aucune indemnité au profit du Client. Les prestations reprennent après règlement des sommes dues, les délais étant prolongés d'autant.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-    <!-- 5.3.2 -->
-                <div class="p-4 rounded-2xl bg-purple-50/50 border border-purple-100/80 text-sm text-slate-700 space-y-2 mb-3">
-                    <h4 class="font-impact-title text-slate-900">5.3.2 Accompagnement individuel (« Parcours Maître Zen »)</h4>
-                    <p>• <strong>Limite de report prévenu :</strong> Un même rendez-vous de session synchrone peut être reporté au maximum <strong>deux (2) fois</strong> (sous réserve de respecter le préavis de 24h ouvrées et impérativement dans la limite du cadre temporel strict de 3 mois / 90 jours calendaires).</p>
-                    <p>• <strong>Non-présentation sans prévenance :</strong> 
-                        <br>- <em>1ère absence non prévenue :</em> La session manquée est définitivement perdue et comptabilisée comme consommée. L'accompagnement se poursuit pour les heures restantes.
-                        <br>- <em>2ème absence non prévenue :</em> À partir de la seconde non-présentation sans prévenance au cours d'un même parcours, <strong>l'accompagnement est immédiatement et définitivement interrompu</strong> du fait du Client. La prestation est clôturée sans qu'aucun remboursement ne puisse être exigé.
-                    </p>
-                </div>
-    <!-- 5.3.3 -->
-                <div class="p-4 rounded-2xl bg-amber-50/80 border border-amber-200/80 text-amber-900 text-sm space-y-2 mb-4">
-                    <h4 class="font-impact-title">5.3.3 Demande dérogatoire / Cas de force majeure (Prestations créatives Mochis uniquement)</h4>
-                    <p>
-                        Si le Client rencontre un cas de force majeure ou un motif grave nécessitant de suspendre temporairement une prestation sur-mesure (« Mochis »), il doit <strong>impérativement adresser une demande écrite et motivée par e-mail à <a href="#" class="protected-mail font-medium text-purple-700 hover:underline" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg=="><span class="mail-text"></span></a></strong>.
-                    </p>
-                    <p>
-                        <strong>AM 2.0 se réserve le droit d'accepter ou de refuser cette dérogation.</strong> En cas d'accord écrit d'AM 2.0, la prestation créative sera suspendue mais devra obligatoirement être achevée dans un <strong>délai maximal de quatre-vingt-dix (90) jours calendaires</strong> à compter de la confirmation écrite. <em>(Rappel : le Parcours Maître Zen ne fait l'objet d'aucune possibilité de suspension).</em>
-                    </p>
-                </div>
-    <!-- 5.4 -->
-                <h3 class="font-impact-title mb-2">5.4 Mise en relation avec le réseau de partenaires (Mochis sur-mesure)</h3>
-                <p class="text-slate-600">
-                    Si la réalisation de certains supports requiert des compétences spécifiques externes, AM 2.0 peut présenter le Client à un indépendant de son réseau de confiance. <strong class="font-bold">Cette introduction n'est pas une opération de sous-traitance</strong> : la prestation et la facturation s'effectuent en direct entre le Client et le partenaire tiers. AM 2.0 ne saurait être tenue responsable des réalisations fournies directement par ces intervenants externes.
-                </p>
-    <!-- 5.5 -->
-                <h3 class="font-impact-title mb-2 mt-6">5.5 Modalités d'exécution des créations sur-mesure (« Les Mochis »)</h3>
-                <p class="text-slate-600 mb-3">
-                    Les prestations déléguées de création visuelle et numérique (« Mochis ») exécutées directement par AM 2.0 obéissent à des spécificités techniques et de livraison strictement encadrées :
-                </p>
-    <!-- 5.5.1 Sites web & Mises à jour -->
-                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 text-sm text-slate-700 space-y-3 mb-3">
-                    <h4 class="font-impact-title text-slate-900">5.5.1 Sites Web, Landing Pages & Mises à jour de contenu</h4>  
-                    <p>• <strong>Hébergement exclusif Netlify & Raccordement Domaine :</strong> Par principe, les sites web et pages de vente conçus par AM 2.0 sont hébergés sur l'infrastructure <strong>Netlify</strong>. Si le Client souhaite qu'AM 2.0 procède à la liaison du nom de domaine, il s'engage à fournir les accès d'administration à son registrar (ex: OVH, Gandi, GoDaddy). À défaut, AM 2.0 transférera la propriété du compte Netlify du projet au Client, qui devra exécuter lui-même les redirections DNS.</p>
-                    <p>• <strong>Absence de maintenance technique obligatoire :</strong> Les sites web et landing pages conçus par AM 2.0 reposent sur une architecture optimisée en code natif, ne nécessitant aucune maintenance technique spécifique, mise à jour de plugins, de système CMS ou d'extension de sécurité tierce de la part du Client.</p>
-                    <p>• <strong>Modalités des prestations de Mise à jour de contenu :</strong> Si le Client souhaite faire appel à AM 2.0 pour des modifications ou mises à jour de contenu (ponctuellement sur devis ou via un contrat de mise à jour récurrent) :</p>
-                    <ul class="list-disc pl-5 space-y-1.5 text-sm text-slate-600">
-                        <li><strong>Accès Netlify requis :</strong> Si le site est hébergé sur Netlify, le Client doit fournir à AM 2.0 les accès d'administration nécessaires pour déployer la nouvelle version mise à jour.</li>
-                        <li><strong>Hébergement alternatif / Externe :</strong> Si le site est hébergé en dehors de Netlify sur un serveur tiers, AM 2.0 réalisera les modifications de contenu et livrera au Client l'archive numérique à jour du code source. La mise en ligne et le déploiement sur le serveur externe incombent alors sous la seule responsabilité du Client.</li>
-                        <li><strong>Périmètre d'intervention & Altération du code par le Client :</strong> Toute mise à jour est réalisée <strong>exclusivement sur la dernière version officielle du code source livrée et conservée par AM 2.0</strong>. Si le Client (ou un tiers) a directement modifié ou manipulé le code source de son côté :
-                            <ul class="list-square pl-4 mt-1 space-y-1">
-                                <li>AM 2.0 intervient uniquement sur la version du code source qu'elle a elle-même livrée et conservée. Par conséquent, toutes les modifications effectuées directement sur le site et mises en ligne par le Client ou par un tiers seront écrasées et perdues lors de la nouvelle livraison, sans qu'AM 2.0 ne puisse en être tenue pour responsable.</li>
-                                <li>AM 2.0 se réserve le droit de <strong>refuser l'intervention de mise à jour</strong> ou de la soumettre à un devis préalable de remise en état / nettoyage du code.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <p>• <strong>Propriété des composants & Évolution :</strong> Les composants, bibliothèques et méthodes de développement préexistants restent la propriété d'AM 2.0. Le Client bénéficie des droits d'exploitation de son site et reste totalement libre de le faire évoluer ultérieurement avec le prestataire de son choix.</p>
-                </div>
-    <!-- 5.5.2 LinkedIn & Canva -->
-                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 text-sm text-slate-700 space-y-2 mb-3">
-                    <h4 class="font-impact-title text-slate-900">5.5.2 Kits Visuels & Refontes de profil LinkedIn (Canva)</h4>
-                    <p>• <strong>Livraison via lien Canva :</strong> Les créations et habillages graphiques pour les réseaux sociaux (bannières, modèles de carrousels, etc.) sont livrés directement sous la forme d'un lien de partage de modèle Canva.</p>
-                    <p>• <strong>Version de compte Canva (Pro vs Gratuit) :</strong> Par défaut, les créations sont réalisées avec les fonctionnalités et ressources de <strong>Canva Pro</strong> pour garantir la meilleure qualité visuelle. Si le Client utilise la version gratuite de Canva, il est <strong>strictement tenu d'en informer AM 2.0 expressément et par écrit avant le démarrage des créations</strong>. Dans ce cas, AM 2.0 adaptera le choix des ressources (éléments graphiques, typographies, images) pour garantir leur pleine utilisation sur un compte Canva Gratuit sans frais additionnels imposés par Canva au Client lors du téléchargement.</p>
-                </div>
-    <!-- 5.5.3 Print -->
-                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 text-sm text-slate-700 space-y-2 mb-3">
-                    <h4 class="font-impact-title text-slate-900">5.5.3 Supports Imprimables (Flyers, Brochures, Cartes de visite)</h4>
-                    <p>• Les éléments destinés à l'impression sont livrés par e-mail au Client sous la forme de fichiers numériques haute définition au format PDF (normes d'impression standard). La gestion de l'impression physique et le choix de l'imprimeur restent à la charge exclusive du Client.</p>
-                </div>
-    <!-- 5.5.4 Transmission des éléments -->
-                <div class="p-4 rounded-2xl bg-amber-50/80 border border-amber-200/80 text-amber-900 text-sm space-y-2 mb-4">
-                    <h4 class="font-impact-title">5.5.4 Obligation de fourniture des contenus par le Client & Clause d'annulation</h4>
-                    <p>
-                        Pour permettre la réalisation des travaux (Mochis), le Client s'engage à fournir l'ensemble des éléments requis (charte graphique, logos en haute définition, visuels, photographies, contenus textuels) dès la commande.
-                    </p>
-                    <p>
-                        <strong>Règle des 3 relances :</strong> Si l'absence de transmission d'un élément essentiel entrave le bon déroulement du projet, et que le Client reste sans réponse après <strong>trois (3) relances écrites adressées par AM 2.0</strong>, la prestation sera résiliée de plein droit pour faute du Client. Aucun remboursement ne sera effectué et les acomptes versés resteront définitivement acquis à AM 2.0.
-                    </p>
-                </div>
-            </div>
+            </article>
+
 <!-- ARTICLE 6 -->
-            <div class="rounded-3xl border border-slate-200/90 bg-white/90 backdrop-blur-md p-6 md:p-8 shadow-sm">
-                <h2 class="font-impact-title text-xl md:text-2xl text-slate-900 mb-4 pb-3 border-b border-slate-100 flex items-center gap-3">
-                    <span class="flex items-center justify-center w-7 h-7 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">6</span>
-                    Durée, Implication et Clauses d'Abandon
+            <article class="border-b border-white/10 pb-12 text-base">
+                <h2 class="nav-font text-2xl md:text-3xl text-white font-semibold mb-6 flex items-center gap-3">
+                    06. Modalités d'Exécution, Délais & Conditions Techniques
                 </h2>
-
-    <!-- 6.1 -->
-                <h3 class="font-impact-title mb-2">6.1 Cadres temporels des accompagnements et ateliers multi-sessions</h3>
-                <p class="text-slate-600 mb-3">
-                    Afin de garantir un rythme de travail efficace et la concrétisation des objectifs fixés, les prestations étalées dans le temps sont soumises à des délais stricts de consommation :
-                </p>
-                <ul class="list-disc pl-5 space-y-2 text-slate-600 mb-4">
-                    <li>
-                        <strong>Parcours « Maître Zen » (8h) :</strong> L'ensemble des 8 heures d'accompagnement individuel (sessions synchrones et suivi asynchrone) doit impérativement être consommé dans un délai maximal de <strong class="font-bold">trois (3) mois (soit 90 jours calendaires)</strong> à compter de la date du premier versement.
-                    </li>
-                    <li>
-                        <strong>Atelier « Les Katas » (Format multi-sessions) :</strong> L'ensemble des trois (3) sessions d'une heure doit impérativement être consommé dans un délai maximal de <strong class="font-bold">quarante-cinq (45) jours calendaires</strong> à compter de la date du premier rendez-vous (ou du premier versement).
-                    </li>
-                </ul>
-                <p class="text-slate-600 mb-4">
-                    Compte tenu de ces calendriers resserrés, <strong class="font-bold">aucune demande de suspension globale de projet ne sera accordée</strong>. Passé ces délais respectifs (90 jours ou 45 jours), les sessions non planifiées ou non effectuées du fait du Client seront définitivement perdues et non remboursables.
-                </p>
-
-    <!-- 6.2 -->
-                <h3 class="font-impact-title mb-2">6.2 Engagements réciproques, travaux asynchrones et politique de report</h3>
-                <p class="text-slate-600 mb-3">
-                    La réussite et l'efficacité des séances reposent sur un engagement mutuel et rigoureux entre AM 2.0 et le Client :
-                </p>
-                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 text-sm text-slate-700 space-y-3 mb-4">
-                    <p>• <strong>Engagement d'AM 2.0 :</strong> AM 2.0 s'engage à être présente aux rendez-vous convenus en visioconférence ou en présentiel, à en assurer l'animation pédagogique et stratégique, et à fournir le suivi nécessaire à la progression du Client.</p>
-                    
-                    <p>• <strong>Remise des exercices 24h avant RDV (Maître Zen & Katas multi-sessions) :</strong> Le bon déroulement des sessions synchrones nécessitant un temps d'analyse préalable, le Client s'engage expressément à réaliser et transmettre l'ensemble des exercices préparatoires asynchrones requis <strong class="font-bold">au moins 24 heures avant le début de chaque visioconférence</strong>. À défaut, AM 2.0 ne pourra préparer efficacement la séance en amont.</p>
-                    
-                    <p>• <strong>Modalités de report et d'absence :</strong> Les conditions strictes de report de rendez-vous, d'annulation tardive (-24h ouvrées) et de gestion des absences sont régies par l'<strong>Article 5.3</strong> des présentes CGV (notamment la limite d'un seul report pour les Katas et deux reports pour Maître Zen).</p>
-                    
-                    <p>• <strong>Absence d'obligation de résultat :</strong> AM 2.0 est tenue à une obligation de moyens et ne saurait être garante quant à l'atteinte d'objectifs chiffrés ou de résultats spécifiques. AM 2.0 ne peut en aucun cas être tenue pour responsable d'un retard de progression ou d'une absence de résultat si le Client ne réalise pas ses travaux préparatoires dans les délais (24h avant), ne s'implique pas activement ou n'applique pas les méthodes recommandées.</p>
-                    
-                    <p>• <strong>Manquements répétés et manque d'implication :</strong> Si le Client fait preuve d'un manque d'implication manifeste et répété (notamment en se présentant à deux (2) sessions consécutives sans avoir transmis les exercices demandés), AM 2.0 se réserve le droit d'interrompre définitivement l'accompagnement, les sommes déjà versées restant intégralement acquises à AM 2.0.</p>
+                <div class="space-y-8">
+<!-- 6.1 -->
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">6.1 Dispositions communes</h3>
+                        <p class="text-base text-slate-100">
+                            Les dispositions ci-dessous s'appliquent à l'ensemble des prestations de création visuelle, graphique et web (hors accompagnement individuel « Maître Zen » et ateliers collectifs).
+                        </p>
+                        <div class="space-y-3 text-base">
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Session de Brainstorming & Démarrage</span>
+                                <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                    Séance initiale visant à définir l'orientation artistique, le message et les objectifs du projet. <strong>Toutes les prestations débutent par cette session de brainstorming, sans laquelle le projet ne peut pas démarrer.</strong>
+                                </p>
+                                <p class="text-slate-200 text-base leading-relaxed">
+                                    Si le Client n'a aucune idée précise de ce qu'il souhaite, il peut donner carte blanche à AM 2.0 pour la direction créative du projet, mais la tenue effective de cette session reste obligatoire.
+                                </p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Engagements, Ponctualité & Report</span>
+                                <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                    AM 2.0 s'engage à proposer des créneaux dans un délai maximal de <strong>15 jours calendaires</strong> suivant le paiement. Le Client s'engage à se rendre disponible pour effectuer la session dans ce même délai, à être présent à l'heure convenue et à fournir toutes les informations nécessaires.
+                                </p>
+                                <p class="text-slate-200 text-base leading-relaxed">
+                                    En cas de retard du Client supérieur ou égal à <strong>15 minutes</strong>, AM 2.0 peut couper la séance et la considérer comme annulée. Un report unique est alors proposé dans un délai de <strong>72 heures</strong>. Si le Client ne s'y rend pas disponible, le projet est considéré comme annulé du fait du Client et les sommes perçues restent acquises à AM 2.0 au titre du temps réservé et des travaux préparatoires engagés.
+                                </p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Format & Réserve de Déplacement</span>
+                                <p class="text-slate-200 text-base leading-relaxed">
+                                    La session s'effectue par défaut <strong>en visioconférence</strong>. À la demande du Client, elle peut se tenir en présentiel sous réserve d'acceptation et de la facturation de frais de déplacement (barème kilométrique officiel). AM 2.0 peut refuser un déplacement qu'elle ne juge pas nécessaire au projet ; ce refus ne constitue pas un motif d'annulation de la commande, la session se tenant alors en visioconférence.
+                                </p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Clause de carence Client & Abandon de projet (J+30)</span>
+                                <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                    Le Client s'engage à transmettre l'ensemble des contenus, informations et visuels indispensables à la réalisation de la prestation par e-mail ou WhatsApp.
+                                </p>
+                                <p class="text-slate-200 text-base leading-relaxed">
+                                    Si, après une première demande écrite d'AM 2.0 et au moins <strong>deux (2) relances écrites</strong> restées sans effet, le Client ne transmet pas les éléments requis et ne donne plus signe de vie pendant <strong>30 jours calendaires</strong>, le projet est considéré comme <strong>abandonné par le Client</strong>. Les sommes déjà perçues restent acquises à AM 2.0 et les sommes restantes au devis deviennent exigibles, dans la limite de la part du prix correspondant aux travaux réalisés ou aux créneaux réservés. Les délais d'AM 2.0 sont suspendus tant que les éléments requis ne sont pas transmis.
+                                </p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Réception des livrables & Validation</span>
+                                <p class="text-slate-200 text-base leading-relaxed">
+                                    Le Client dispose de <strong>huit (8) jours ouvrés</strong> après la présentation d'une version ou la remise d'un livrable pour formuler par écrit ses remarques ou sa validation. Passé le délai de <strong>quinze (15) jours ouvrés</strong> sans retour malgré une relance écrite, la version présentée est réputée validée. Les demandes de modification dépassant l'aller-retour inclus, ou modifiant le périmètre défini au brainstorming, font l'objet d'un devis complémentaire.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+<!-- 6.2 -->
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">6.2 Accompagnement individuel « Maître Zen »</h3>
+                        <p class="text-base text-slate-100">
+                            L'accompagnement individuel « Maître Zen » obéit à des règles d'assiduité, de délais et d'engagements réciproques :
+                        </p>
+                        <div class="space-y-3 text-base">
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Format Visioconférence, Ponctualité & Prérequis</span>
+                                <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                    Les sessions s'effectuent <strong>exclusivement par visioconférence</strong>. AM 2.0 s'engage à animer personnellement les sessions et à être présente à l'heure convenue. Le Client s'engage à disposer d'un équipement informatique adapté (ordinateur, connexion haut débit, micro et webcam) et à renseigner le support de travail partagé (<em>Workbook Google Doc</em>).
+                                </p>
+                                <p class="text-slate-200 text-base leading-relaxed">
+                                    Le Client s'engage à se connecter strictement à l'heure fixée. En cas de retard du Client supérieur ou égal à <strong>15 minutes</strong>, AM 2.0 peut quitter la visioconférence après 15 minutes d'attente. La session est alors <strong>considérée comme consommée et due</strong>, sans report ni remboursement.
+                                </p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Délais de réalisation & Durée de validité</span>
+                                <ul class="list-disc pl-5 text-slate-200 text-base space-y-1 mb-3">
+                                    <li><strong>1ère session :</strong> fixée dans un délai maximal de <strong>15 jours calendaires</strong> suivant le règlement complet.</li>
+                                    <li><strong>Module unique (3h) :</strong> les 3 sessions de 1h doivent être consommées dans un délai maximal de <strong>45 jours calendaires</strong> après le paiement.</li>
+                                    <li><strong>Parcours complet 3 modules (9h) :</strong> les 9 sessions doivent être consommées dans un délai maximal de <strong>90 jours calendaires</strong> après le paiement.</li>
+                                </ul>
+                                <p class="text-slate-200 text-base leading-relaxed">
+                                    Si, du fait du Client (reports répétés ou indisponibilité pour fixer des créneaux dans la période impartie), les sessions n'ont pas pu être effectuées dans ces délais, les sessions non réalisées sont <strong>considérées comme consommées et dues</strong>, sans prolongation ni remboursement. Ces délais sont prolongés d'autant en cas de report ou d'indisponibilité imputable à AM 2.0.
+                                </p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Restitution des exercices, Report & Abandon à J+30</span>
+                                <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                    Le Client s'engage à transmettre les exercices demandés au moins <strong>48 heures avant la session suivante</strong>. Un <strong>seul report par session</strong> est autorisé pour chacune des parties (Client ou AM 2.0) sous réserve d'un préavis écrit d'au moins 24 heures (e-mail ou WhatsApp). En l'absence de réponse du Client à une notification écrite de report émise par AM 2.0, la session est reportée à une date proposée par AM 2.0.
+                                </p>
+                                <p class="text-slate-200 text-base leading-relaxed">
+                                    Si le Client ne se présente pas à une visio, ne transmet pas ses exercices et ne répond pas aux relances d'AM 2.0 pendant <strong>30 jours calendaires à compter de la première visio manquée</strong>, l'accompagnement est considéré comme <strong>abandonné par le Client</strong>. Les sommes perçues restent acquises à AM 2.0 à titre d'indemnité forfaitaire couvrant les créneaux réservés et la préparation des sessions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+<!-- 6.3 -->
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">6.3 Ateliers collectifs</h3>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                            <span class="font-bold text-white block mb-1">Format, Lieu de déroulement & Ponctualité</span>
+                            <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                Les ateliers se déroulent soit en visioconférence (lien d'accès transmis au préalable), soit en présentiel dans des espaces professionnels ou salles de coworking. L'adresse exacte, la date et les horaires sont précisés lors de l'inscription et confirmés après paiement.
+                            </p>
+                            <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                Le Client s'engage à se connecter (en distanciel) ou à se présenter sur place (en présentiel) strictement à l'heure convenue. Afin de préserver la dynamique de groupe, <strong>un retard supérieur ou égal à 15 minutes pourra entraîner un refus d'accès à la session</strong>. La place est alors considérée comme consommée et due, sans report ni remboursement.
+                            </p>
+                            <p class="text-slate-200 text-base leading-relaxed">
+                                <strong>Annulation ou report par AM 2.0 :</strong> si un atelier est annulé (indisponibilité, nombre de participants insuffisant, cas de force majeure), AM 2.0 propose au Client un report sur une nouvelle date ou, à son choix, le remboursement intégral des sommes versées pour cet atelier. Le Client qui ne peut pas participer peut se faire remplacer par un collaborateur, sans frais, en prévenant AM 2.0 par écrit.
+                            </p>
+                        </div>
+                    </div>
+<!-- 6.4 -->
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">6.4 Profil LinkedIn & Vitrine Instagram</h3>
+                        <div class="space-y-3 text-base">
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Calendrier, Engagements & Validations</span>
+                                <p class="text-slate-200 text-base leading-relaxed">
+                                    À la suite de la session de brainstorming, AM 2.0 présente au Client une version finalisée de la proposition dans un délai maximal de <strong>15 jours ouvrés</strong>. À ce stade :
+                                </p>
+                                <ul class="list-disc pl-5 text-slate-200 text-base space-y-2 my-3">
+                                    <li><strong>Si le Client valide la proposition :</strong> la livraison définitive des éléments intervient dans un délai maximal de <strong>15 jours ouvrés</strong>.</li>
+                                    <li><strong>Si le Client souhaite utiliser l'aller-retour inclus :</strong> le Client transmet ses demandes de retouches et AM 2.0 présente la version corrigée pour validation finale dans un délai maximal de <strong>15 jours ouvrés</strong>.</li>
+                                </ul>
+                                <p class="text-slate-200 text-base leading-relaxed">
+                                    Tout au long du processus, des échanges réguliers par e-mail ou WhatsApp peuvent avoir lieu afin de faire le point sur l'avancée du projet.
+                                </p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Formats de livraison & Modèle Canva</span>
+                                <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                    La livraison des visuels s'effectue sous la forme d'un <strong>lien de modèle Canva (Template Canva)</strong> réutilisable et personnalisable par le Client.
+                                </p>
+                                <p class="text-slate-200 text-base leading-relaxed">
+                                    Le Client précise par écrit à AM 2.0 (au plus tard lors du brainstorming) s'il dispose d'une version gratuite ou d'un abonnement <em>Canva Pro</em>, afin que le modèle soit configuré avec des éléments graphiques et typographies adaptés à son compte. Les éléments issus de la bibliothèque Canva restent soumis aux conditions de licence de Canva. Les contenus rédactionnels associés sont transmis sous forme de fichier texte (.txt) ou dans le corps d'un e-mail.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+<!-- 6.5 -->
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">6.5 Visuels Produits, Offres, PLV & Imprimés</h3>
+                        <div class="space-y-3 text-base">
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Calendrier, Engagements & Validations</span>
+                                <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                    Chaque lot de 2 visuels suit le cycle standard de création. À la suite de la session de brainstorming, AM 2.0 présente au Client une version finalisée de la proposition dans un délai maximal de <strong>15 jours ouvrés</strong>. Tout visuel complémentaire au-delà du lot initial de 2 visuels allonge le délai de <strong>7 jours ouvrés</strong> par visuel additionnel.
+                                </p>
+                                <p class="text-slate-200 text-base leading-relaxed">À ce stade :</p>
+                                <ul class="list-disc pl-5 text-slate-200 text-base space-y-2 my-3">
+                                    <li><strong>Si le Client valide la proposition :</strong> la livraison définitive des éléments intervient dans un délai maximal de <strong>15 jours ouvrés</strong>.</li>
+                                    <li><strong>Si le Client souhaite utiliser l'aller-retour inclus :</strong> le Client transmet ses demandes de retouches et AM 2.0 présente la version corrigée pour validation finale dans un délai maximal de <strong>15 jours ouvrés</strong>.</li>
+                                </ul>
+                                <p class="text-slate-200 text-base leading-relaxed">
+                                    Tout au long du processus, des échanges réguliers par e-mail ou WhatsApp peuvent avoir lieu afin de faire le point sur l'avancée du projet.
+                                </p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Formats de livraison, Option Impression & Transport</span>
+                                <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                    Les livrables sont fournis sous forme de fichiers numériques : au format <strong>PDF haute définition prêt pour l'impression</strong> pour les supports imprimés, ou au format <strong>PDF digital (optimisé pour le web)</strong> si le visuel est destiné exclusivement à une diffusion en ligne.
+                                </p>
+                                <p class="text-slate-200 text-base leading-relaxed">
+                                    Lorsque AM 2.0 gère l'impression physique (sur devis complémentaire), elle n'est pas responsable des retards imputables au transporteur ni des erreurs de fabrication de l'imprimeur sous-traitant, sauf faute de sa part dans la transmission des fichiers. Le Client vérifie la conformité des épreuves avant tirage ; le bon à tirer validé décharge AM 2.0 des défauts qu'il aurait permis de déceler.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+<!-- 6.6 -->
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">6.6 Créations de sites internet (« Vitrine Web ») & Maintenance</h3>
+                        <div class="space-y-3 text-base">
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Jalons, Processus & Délais de livraison</span>
+                                <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                    Conformément aux dispositions communes, la prestation débute par la session de brainstorming fixée dans un délai maximal de <strong>15 jours calendaires</strong> suivant le paiement.
+                                </p>
+                                <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                    À la suite de cette session, une première version de la page d'accueil est présentée au Client dans un délai maximal de <strong>20 jours ouvrés</strong>. Le Client dispose d'un aller-retour inclus pour demander des ajustements, et AM 2.0 présente la version révisée pour validation finale dans un délai maximal de <strong>15 jours ouvrés</strong>.
+                                </p>
+                                <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                    Chaque page supplémentaire ajoute un délai de <strong>7 jours ouvrés</strong> pour sa présentation, puis de <strong>7 jours ouvrés</strong> pour sa validation finale.
+                                </p>
+                                <p class="text-slate-200 text-base leading-relaxed">
+                                    Une fois l'ensemble des pages validé, la livraison finale, les derniers réglages et la mise en ligne interviennent dans un délai maximal de <strong>15 jours ouvrés</strong>. Tout au long de la création, des échanges réguliers par e-mail ou WhatsApp permettent de faire le point sur l'avancement.
+                                </p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Hébergement Netlify, Nom de Domaine & Garantie de conformité</span>
+                                <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                    Les sites développés par AM 2.0 sont conçus sur mesure et ne nécessitent aucune maintenance technique. Ils sont hébergés via la plateforme <strong>Netlify</strong> (Netlify Inc., USA). À la demande du Client, AM 2.0 peut créer le compte Netlify en son nom. Le Client accepte que le répertoire de déploiement (GitHub / AM 2.0) soit connecté à son compte Netlify pour assurer le déploiement et la diffusion des mises à jour.
+                                </p>
+                                <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                    Le Client est seul propriétaire de son nom de domaine et doit en posséder un avant la mise en ligne. Il fournit à AM 2.0 les accès DNS nécessaires à la connexion du domaine à l'hébergement.
+                                </p>
+                                <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                    En cas de choix d'un hébergement tiers par le Client, les fichiers sources lui sont remis et il assure seul la mise en ligne de son site, sans assistance technique. La souscription au forfait de maintenance de contenu n'est alors pas possible.
+                                </p>
+                                <p class="text-slate-200 text-base leading-relaxed">
+                                    AM 2.0 corrige gratuitement, pendant <strong>30 jours</strong> après la mise en ligne, les anomalies de fonctionnement du site non conformes au devis validé. Cette garantie ne couvre ni les modifications apportées par le Client ou un tiers, ni les évolutions des services tiers.
+                                </p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Maintenance de contenu : périmètre, durée & résiliation</span>
+                                <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                    Le forfait de maintenance de contenu s'applique <strong>strictement sur le code source original développé par AM 2.0</strong>. Toute intervention ou modification du code par le Client ou un tiers autorise AM 2.0 à réinstaller la version officielle nettoyée, sans que sa responsabilité puisse être engagée pour les pertes de données qui en résulteraient.
+                                </p>
+                                <p class="text-slate-200 text-base leading-relaxed">
+                                    L'abonnement est conclu pour un mois, <strong>reconduit tacitement de mois en mois</strong>. Chaque partie peut y mettre fin par écrit (e-mail ou WhatsApp) moyennant un préavis de <strong>trente (30) jours</strong>, la résiliation prenant effet à la fin du mois en cours. Toute mensualité entamée reste due.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+<!-- 6.7 -->
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">6.7 Prestations récurrentes & Contrats sur-mesure</h3>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                            <span class="font-bold text-white block mb-1">Accompagnement régulier & Missions récurrentes</span>
+                            <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                Pour les besoins continus ou l'accompagnement à long terme (création régulière de visuels pour les réseaux sociaux, publication directe sur les comptes du Client, création périodique de flyers, d'imprimés ou d'autres supports de communication), AM 2.0 propose des formules mensuelles, trimestrielles ou annuelles.
+                            </p>
+                            <p class="text-slate-200 text-base leading-relaxed">
+                                Toute prestation récurrente fait l'objet d'un contrat spécifique ou d'un devis sur-mesure fixant le périmètre des interventions, le calendrier de livraison et de publication, la durée d'engagement ainsi que les conditions de reconduction et de résiliation.
+                            </p>
+                        </div>
+                    </div>
+<!-- 6.8 -->
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">6.8 Retard, indisponibilité ou annulation du fait d'AM 2.0</h3>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                            <span class="font-bold text-white block mb-1">Engagements réciproques</span>
+                            <p class="text-slate-200 text-base leading-relaxed">
+                                En cas d'empêchement d'AM 2.0 (maladie, indisponibilité, imprévu), les sessions et délais sont reportés d'un commun accord à la première date disponible, sans pénalité pour le Client. Si la prestation ne peut être réalisée dans un délai raisonnable, ou si AM 2.0 y met fin sans faute du Client, les sommes versées correspondant aux prestations non réalisées sont remboursées au Client dans un délai de trente (30) jours. Le Client peut également résilier par écrit si AM 2.0 n'a pas respecté un délai contractuel plus de 30 jours après une mise en demeure restée sans effet ; les prestations non réalisées lui sont alors remboursées.
+                            </p>
+                        </div>
+                    </div>
                 </div>
+            </article>
 
-    <!-- 6.3 -->
-                <h3 class="font-impact-title mb-2">6.3 Déroulement des Ateliers ciblés (« Les Katas ») & Autonomie</h3>
-                <p class="text-slate-600 mb-4">
-                    La durée de chaque atelier (session unique ou multi-sessions) est indiquée lors de la réservation ou sur le devis. L'atelier étant une session de travail et de déblocage intensif, si l'ensemble des supports (textes, visuels, profils) ne peut être intégralement rédigé ou finalisé pendant le temps synchrone, <strong class="font-bold">le Client dispose de tous les conseils, méthodes, trames et Workbooks fournis pour finaliser son projet en toute autonomie</strong>.
-                </p>
-
-    <!-- 6.4 -->
-                <h3 class="font-impact-title mb-2">6.4 Inactivité, Clause d'Abandon et Plafond de Suspension (Mochis)</h3>
-                <div class="p-4 rounded-2xl bg-amber-50/80 border border-amber-200/80 text-amber-900 text-sm space-y-3">
-                    <p>
-                        <strong>• Clause d'abandon à 30 jours (Maître Zen, Katas Multi-sessions & Mochis) :</strong> 
-                        Dans le cadre du Parcours « Maître Zen », des ateliers « Katas » multi-sessions ou de la réalisation de prestations sur-mesure (« Mochis »), si le Client demeure sans donner de réponse aux sollicitations d'AM 2.0 (notamment suite à un rendez-vous manqué, un e-mail sans retour ou une relance liée aux exercices à remettre) pendant plus de <strong>trente (30) jours calendaires consécutifs</strong>, le projet est considéré comme <strong>définitivement abandonné du fait du Client</strong>.
-                        <br>La prestation est clôturée de plein droit et l'ensemble des sommes déjà versées restent intégralement acquises à AM 2.0, sans possibilité de remboursement.
-                    </p>
-                    <p>
-                        <strong>• Reprise ou nouvelle demande post-abandon :</strong> 
-                        Si le Client souhaite réengager la prestation ou solliciter à nouveau AM 2.0 après l'expiration de ce délai de 30 jours, il devra formaliser une nouvelle demande. La prestation fera l'objet d'un nouveau devis au tarif en vigueur. <strong>AM 2.0 se réserve expressément le droit de refuser toute nouvelle prestation avec le Client.</strong>
-                    </p>
-                    <p>
-                        <strong>• Plafond ultime en cas de suspension acceptée (Prestations Mochis uniquement - 90 jours) :</strong> 
-                        Dans le cas exclusif des prestations de création (« Mochis ») pour lesquelles AM 2.0 a formellement accepté par écrit une demande dérogatoire de suspension (Article 5.3.3), la totalité du projet doit impérativement être achevée dans un délai maximal de <strong>quatre-vingt-dix (90) jours calendaires à compter de la confirmation écrite</strong>. Au-delà, la prestation est définitivement annulée et consommée.
-                    </p>
-                </div>
-
-    <!-- 6.5 -->
-                <h3 class="font-impact-title mb-2 mt-6">6.5 Déroulement des prestations Mochis, Validation de la DA, Retouches et Délais Maxima</h3>
-                <div class="p-4 rounded-2xl bg-purple-50/60 border border-purple-100 text-sm text-slate-700 space-y-3">
-                    <p>
-                        <strong>• Étape 1 - Direction Artistique (Ébauche) :</strong> AM 2.0 soumet au Client une première ébauche pour valider la Direction Artistique (DA) globale. La validation explicite de cette ébauche par le Client fige la ligne créative. Elle sert de référence obligatoire pour la suite de la création et interdit tout changement ultérieur d'orientation esthétique globale.
-                    </p>
-                    <p>
-                        <strong>• Étape 2 - Projet finalisé & Limite de deux (2) sessions de retouches :</strong> Une fois le projet complet présenté, le Client dispose d'un droit de révision limité à <strong>deux (2) sessions maximum de retouches visuelles ou textuelles</strong>. Ces ajustements doivent impérativement porter sur des détails d'exécution (corrections de coquilles, ajustements de couleurs secondaires ou de disposition mineure) sans jamais remettre en cause la Direction Artistique validée à l'Étape 1. Toute demande de retouche supplémentaire ou de modification structurelle fera l'objet d'un avenant et d'une facturation complémentaire au tarif horaire en vigueur.
-                    </p>
-                    <p>
-                        <strong>• Délais maximaux d'exécution :</strong> Le Client s'engage à se rendre disponible pour valider les étapes et transmettre ses retours dans les délais suivants à compter du démarrage des travaux :
-                        <br>- <strong>30 jours calendaires :</strong> Pour les refontes de profils LinkedIn, visuels réseaux sociaux, flyers, brochures et supports imprimables.
-                        <br>- <strong>60 jours calendaires :</strong> Pour la création de sites internet et de landing pages.
-                    </p>
-                    <p>
-                        <strong>• Condition de livraison finale :</strong> La livraison définitive des fichiers sources, l'activation des liens Canva d'édition ou la mise en ligne effective du site web sont strictement conditionnées au <strong>règlement préalable et intégral du solde de la facture</strong>.
-                    </p>
-                </div>
-            </div>
 <!-- ARTICLE 7 -->
-            <div class="rounded-3xl border border-slate-200/90 bg-white/90 backdrop-blur-md p-6 md:p-8 shadow-sm">
-                <h2 class="font-impact-title text-xl md:text-2xl text-slate-900 mb-4 pb-3 border-b border-slate-100 flex items-center gap-3">
-                    <span class="flex items-center justify-center w-7 h-7 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">7</span>
-                    Retards de Paiement et Pénalités Légales
+            <article class="border-b border-white/10 pb-12 text-base">
+                <h2 class="nav-font text-2xl md:text-3xl text-white font-semibold mb-6 flex items-center gap-3">
+                    07. Comportement, Éthique & Contenus
                 </h2>
-                <p class="text-slate-600 mb-3">
-                    Tout retard de paiement d'une échéance convenue (notamment la 2ème ou 3ème tranche du Parcours Maître Zen ou le solde d'un devis Mochi) entraînera de plein droit, sans qu'il soit besoin d'une mise en demeure préalable :
-                </p>
-                <ul class="list-disc pl-5 space-y-2 text-slate-600 mb-4">
-                    <li>La suspension immédiate des sessions d'accompagnement en cours et de la remise des livrables.</li>
-                    <li>L'application de <strong>pénalités de retard</strong> calculées au taux de refinancement de la BCE majoré de 10 points de pourcentage.</li>
-                    <li>L'exigibilité d'une <strong>indemnité forfaitaire pour frais de recouvrement de 40 €</strong> (Code de commerce, art. L.441-10 et D.441-5).</li>
-                </ul>
-            </div>
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">7.1 Obligation de sobriété et de posture professionnelle</h3>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                            <span class="font-bold text-white block mb-1">Sobriété & Droit d'interruption immédiate</span>
+                            <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                Le Client s'engage à se présenter aux rendez-vous (en visioconférence ou en présentiel) dans des conditions physiques et mentales optimales. Il est interdit de se présenter à une session sous l'emprise d'alcool, de stupéfiants ou de toute substance altérant le comportement ou le discernement.
+                            </p>
+                            <p class="text-slate-200 text-base leading-relaxed">
+                                En cas de comportement irrespectueux, agressif ou d'état d'emprise évidente, AM 2.0 peut interrompre immédiatement le rendez-vous. La session est alors considérée comme effectuée et consommée, sans remboursement ni report.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">7.2 Responsabilité et conformité des contenus fournis par le Client</h3>
+                        <p class="text-base text-slate-100">
+                            Le Client est responsable des contenus, données et visuels qu'il transmet à AM 2.0. À ce titre, il garantit :
+                        </p>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-base">
+                            <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Droits d'auteur & Propriété intellectuelle</span>
+                                <span class="text-slate-200 text-base">Être titulaire de l'ensemble des droits nécessaires ou disposer des licences applicables sur tous les éléments transmis.</span>
+                            </li>
+                            <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Droit à l'image & Mineurs</span>
+                                <span class="text-slate-200 text-base">Avoir obtenu l'accord écrit préalable pour le droit à l'image de toute personne apparaissant sur les visuels, y compris l'accord des représentants légaux pour les mineurs.</span>
+                            </li>
+                            <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Contenus générés par IA</span>
+                                <span class="text-slate-200 text-base">Informer expressément AM 2.0 lorsque des contenus ont été générés ou substantiellement modifiés au moyen d'un système d'intelligence artificielle, afin de permettre l'application, le cas échéant, des obligations de transparence ou d'étiquetage applicables.</span>
+                            </li>
+                            <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Dégagement de responsabilité</span>
+                                <span class="text-slate-200 text-base">AM 2.0 ne vérifie pas les contenus fournis. Le Client garantit AM 2.0 contre toute réclamation de tiers consécutive à un manquement de sa part à ces garanties.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">7.3 Documents juridiques pour les sites web</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-base">
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Mentions Légales & Politique de Confidentialité</span>
+                                <p class="text-slate-200 text-base">AM 2.0 assure l'intégration technique des mentions légales, de la politique de confidentialité et, le cas échéant, des autres textes juridiques fournis ou validés par le Client.</p>
+                                <p class="text-slate-200 text-base my-3">Lorsque AM 2.0 fournit un modèle ou une trame indicative, celui-ci constitue uniquement un support destiné à faciliter l'intégration technique et ne constitue pas une consultation juridique. Le Client demeure seul responsable du contenu de ces documents et de leur conformité à sa situation.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Conditions Générales de Vente (CGV) du Client</span>
+                                <p class="text-slate-200 text-base">AM 2.0 ne rédige pas de CGV pour le Client. Le texte fourni par le Client est intégré tel quel, sous sa seule responsabilité.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">7.4 Clause d'éthique</h3>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                            <span class="font-bold text-white block mb-1">Refus de prestation & Résiliation</span>
+                            <p class="text-slate-200 text-base leading-relaxed">
+                                AM 2.0 peut refuser toute prestation ou résilier le contrat par écrit si le projet est lié à des activités illégales, des offres de gains irréalistes, des systèmes pyramidaux/MLM, ou des contenus à caractère violent, haineux, discriminatoire ou pour adultes. Lorsque la résiliation intervient en cours de prestation, les travaux déjà réalisés restent dus et les sommes correspondant à la partie non réalisée sont remboursées.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
 <!-- ARTICLE 8 -->
-            <div class="rounded-3xl border border-slate-200/90 bg-white/90 backdrop-blur-md p-6 md:p-8 shadow-sm">
-                <h2 class="font-impact-title text-xl md:text-2xl text-slate-900 mb-4 pb-3 border-b border-slate-100 flex items-center gap-3">
-                    <span class="flex items-center justify-center w-7 h-7 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">8</span>
-                    Comportement, Éthique et Contenus
+            <article class="border-b border-white/10 pb-12 text-base">
+                <h2 class="nav-font text-2xl md:text-3xl text-white font-semibold mb-6 flex items-center gap-3">
+                    08. Obligations, Responsabilité & Garanties
                 </h2>
-                <h3 class="font-impact-title mb-2">8.1 Obligation de sobriété et de posture professionnelle</h3>
-                <p class="text-slate-600 mb-3">
-                    Le Client s'engage à se présenter aux rendez-vous (en visioconférence ou en présentiel) dans des conditions physiques et mentales optimales permettant le bon déroulement de la prestation. <strong class="font-bold">Il est strictement interdit de se présenter à une session sous l'emprise d'alcool, de stupéfiants ou de toute substance altérant le comportement, le jugement ou le discernement.</strong>
-                </p>
-                <div class="p-4 rounded-2xl bg-rose-50/80 border border-rose-200/80 text-rose-950 text-sm mb-4">
-                    <strong>Droit d'interruption immédiate :</strong> En cas de comportement irrespectueux, agressif, inapproprié ou si AM 2.0 constate un état d'ébriété ou d'emprise évidente de substances, AM 2.0 se réserve le droit d'interrompre sur-le-champ le rendez-vous. La session interrompue sera considérée comme pleinement effectuée et consommée. Aucun remboursement ni report de créneau ne sera accordé, et AM 2.0 pourra suspendre ou résilier l'accompagnement aux torts exclusifs du Client.
-                </div>
-                <h3 class="font-impact-title mb-2">8.2 Responsabilité et conformité des contenus fournis par le Client</h3>
-                    <p class="text-slate-600 mb-3">
-                        Le Client est le seul et unique responsable des contenus, informations et supports qu'il transmet à AM 2.0 pour la réalisation des prestations. À ce titre, le Client garantit expressément :
-                    </p>
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 text-sm text-slate-700 space-y-2 mb-4">
-                        <p>• <strong>Droits d'auteur et propriété intellectuelle :</strong> Être titulaire de l'ensemble des droits de propriété intellectuelle nécessaires ou disposer des licences libres de droits applicables sur tous les visuels, photographies, logos, typographies, données et textes transmis à AM 2.0.</p>
-                        
-                        <p>• <strong>Droit à l'image (Personnes physiques & Mineurs) :</strong> Avoir obtenu au préalable l'accord écrit et signé relatif au droit à l'image de toute personne physique apparaissant sur les photographies ou vidéos fournies, y compris l'autorisation explicite et préalable des représentants légaux dans le cadre de clichés représentant des enfants/mineurs.</p>
-
-                        <p>• <strong>Contenus générés ou modifiés par Intelligence Artificielle (IA) :</strong> S'il transmet des images ou des visuels hyperréalistes représentant une personne physique ayant été générés, modifiés ou retravaillés par un outil d'IA, le Client s'engage à <strong>en informer expressément et par écrit AM 2.0 dès la remise des fichiers</strong>, afin de permettre l'apposition éventuelle des mentions légales obligatoires requises par la réglementation en vigueur.</p>
-
-                        <p>• <strong>Dégagement de responsabilité & Indemnisation :</strong> AM 2.0 ne procède à aucune vérification préalable de la provenance, des autorisations ou de la légalité des contenus transmis par le Client. La responsabilité d'AM 2.0 ne saurait en aucun cas être engagée en cas de réclamation, de litige, de poursuites ou d'action en contrefaçon intentée par un tiers. Le Client s'engage à garantir, indemniser et relever indemne AM 2.0 de l'ensemble des préjudices, frais, condamnation ou honoraires d'avocat consécutifs à un manquement du Client aux présentes garanties.</p>
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">8.1 Obligation de moyens & Absence d'obligation de résultat</h3>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                            <span class="font-bold text-white block mb-1">Engagement de moyens & Limites commerciales</span>
+                            <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                AM 2.0 est soumise à une <strong>obligation de moyens</strong>. Elle met en œuvre son savoir-faire et ses compétences pour conseiller le Client et optimiser ses supports.
+                            </p>
+                            <p class="text-slate-200 text-base leading-relaxed">
+                                AM 2.0 ne souscrit à aucune obligation de résultat quant aux retombées commerciales, financières ou d'audience. Aucun chiffre d'affaires, volume de leads ni positionnement dans les moteurs de recherche n'est garanti.
+                            </p>
+                        </div>
                     </div>
-        <!-- 8.3 -->
-                <h3 class="font-impact-title mb-2">8.3 Documents juridiques pour les sites web (Mentions légales, Politique de confidentialité, CGV)</h3>
-                    <p class="text-slate-600 mb-3">
-                        Dans le cadre de la création ou du développement de sites et pages web, la prise en charge des textes juridiques s'effectue selon les modalités suivantes :
-                    </p>
-                    <ul class="list-disc pl-5 mb-4 space-y-2 text-sm text-slate-600">
-                        <li><strong>Mentions légales et Politique de confidentialité :</strong> AM 2.0 rédige et intègre une version minimale standard et obligatoire, adaptée aux fonctionnalités techniques et au fonctionnement du site web livré (collecte de formulaires, hébergement, outils tiers).</li>
-                        <li><strong>Conditions Générales de Vente (CGV) du Client :</strong> AM 2.0 ne rédige en aucun cas de CGV pour le compte du Client. Si le Client souhaite faire figurer une page CGV sur son site web, il lui appartient de fournir le texte intégral et validé de ses propres CGV. Ce texte sera intégré tel quel, sous la seule responsabilité du Client. AM 2.0 ne saurait être tenue pour responsable du contenu, de la conformité ou de l'incomplétude des CGV fournies par le Client.</li>
-                    </ul>
-                <h3 class="font-impact-title mb-2">8.4 Clause d'éthique</h3>
-                <p class="text-slate-600">
-                    AM 2.0 se réserve le droit de refuser toute prestation ou de résilier immédiatement le contrat si le projet est lié à des activités illégales, des offres de gains financiers irréalistes, des systèmes pyramidaux/MLM, ou des contenus à caractère violent, haineux, discriminatoire ou à caractère adulte.
-                </p>
-            </div>
-<!-- ARTICLE 9  -->
-            <div class="rounded-3xl border border-slate-200/90 bg-white/90 backdrop-blur-md p-6 md:p-8 shadow-sm">
-                <h2 class="font-impact-title text-xl md:text-2xl text-slate-900 mb-4 pb-3 border-b border-slate-100 flex items-center gap-3">
-                    <span class="flex items-center justify-center w-7 h-7 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">9</span>
-                    Obligations, Responsabilité et Garanties
-                </h2>
-
-                <h3 class="font-impact-title mb-2">9.1 Obligation de moyens & Absence d'obligation de résultat</h3>
-                <p class="text-slate-600 mb-3">
-                    AM 2.0 est soumise à une <strong class="font-bold">obligation de moyens</strong>. Elle s'engage à mettre en œuvre tout son savoir-faire, ses méthodes et ses compétences pour conseiller le Client, structurer son parcours et optimiser ses supports de communication.
-                </p>
-                <div class="p-4 rounded-2xl bg-amber-50/80 border border-amber-200/80 text-amber-900 text-sm mb-4">
-                    <strong>Absence de garantie commerciale :</strong> AM 2.0 ne souscrit à aucune obligation de résultat quant aux retombées commerciales, financières ou d'audience découlant des prestations. AM 2.0 ne garantit <strong class="font-bold">aucun chiffre d'affaires, volume de leads, nombre de contacts précis ni aucun positionnement (ranking)</strong> dans les moteurs de recherche ou sur les réseaux sociaux.
-                </div>
-                <h3 class="font-impact-title mb-2">9.2 Responsabilité exclusive du Client dans l'application des conseils</h3>
-                <p class="text-slate-600 mb-4">
-                    AM 2.0 fournit des conseils, des tuteurs de réflexion, des frameworks et des supports pédagogiques. Le Client est <strong class="font-bold">seul et unique responsable de la mise en œuvre, de l'application effective, de la fréquence et de la qualité d'exécution de ces recommandations</strong>. La réussite de l'accompagnement dépend intrinsèquement de l'implication du Client, de sa stratégie globale et de son marché. AM 2.0 ne saurait être tenue pour responsable si le Client choisit de ne pas appliquer, d'appliquer partiellement ou de modifier les conseils et supports fournis.
-                </p>
-                <h3 class="font-impact-title mb-2">9.3 Périmètre technique des plateformes tierces</h3>
-                <p class="text-slate-600 mb-4">
-                    AM 2.0 n'exécute aucune prestation de gestion technique inhérente aux algorithmes des plateformes tierces (LinkedIn, Instagram, Google, etc.). Si une prestation implique la création ou l'optimisation d'un support (Profil, Page Web), AM 2.0 le fait selon les règles de l'art connues au moment de l'exécution. <strong class="font-bold">AM 2.0 ne saurait être tenue pour responsable si ces plateformes modifient leurs règles, leur design ou leurs algorithmes</strong> ultérieurement, la charge d'adaptation et de mise en conformité incombant exclusivement au Client.
-                </p>
-                <h3 class="font-impact-title mb-2">9.4 Limite et plafonnement de responsabilité</h3>
-                <p class="text-slate-600">
-                    Si la responsabilité d'AM 2.0 devait être établie pour un manquement avéré à son obligation de moyens, le montant total des dommages-intérêts auquel elle pourrait être condamnée est <strong class="font-bold">expressément plafonné à la somme HT effectivement perçue par AM 2.0 pour la prestation précise (à l'exclusion de tout abonnement en cours ou passé)</strong> à l'origine du litige.
-                </p>
-            </div>
-<!-- ARTICLE 10 (PROPRIÉTÉ INTELLECTUELLE, WORKBOOK, VERBATIMS ET PORTFOLIO) -->
-            <div class="rounded-3xl border border-slate-200/90 bg-white/90 backdrop-blur-md p-6 md:p-8 shadow-sm">
-                <h2 class="font-impact-title text-xl md:text-2xl text-slate-900 mb-4 pb-3 border-b border-slate-100 flex items-center gap-3">
-                    <span class="flex items-center justify-center w-7 h-7 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">10</span>
-                    Propriété Intellectuelle et Références
-                </h2>
-        <!-- 10.1 -->
-                <h3 class="font-impact-title mb-2">10.1 Propriété exclusive des méthodes, Workbook et Ressources offertes</h3>
-                <p class="text-slate-600 mb-3">
-                    AM 2.0 reste propriétaire exclusive de l'intégralité de ses méthodes, frameworks, processus pédagogiques, trames et concepts. 
-                </p>
-                <div class="p-4 rounded-2xl bg-purple-50/60 border border-purple-100 text-sm text-slate-700 space-y-2 mb-4">
-                    <p>• <strong>Strict usage personnel des Workbooks et des supports :</strong> Les Workbooks fournis dans le cadre du Parcours « Maître Zen » et du Kata multi-sessions, ainsi que l'ensemble des documents de travail, grilles d'analyse et fiches consignes sont remis au Client à titre strictement individuel, personnel et confidentiel. Le Client s'interdit formellement de les dupliquer, partager, diffuser ou revendre à des tiers, ainsi que de les réutiliser directement ou indirectement pour concevoir, animer ou commercialiser ses propres prestations d'accompagnement, de formation ou de conseil.</p>
-                    <p>• <strong>Ressources et Bonus mis à disposition :</strong> Toutes les ressources complémentaires, modèles, trames ou guides mis à disposition dans le cadre des Ateliers Katas (session unique ou multi-sessions), du Parcours Maître Zen ou des prestations Mochis demeurent la propriété intellectuelle exclusive d'AM 2.0. Ils ne peuvent sous aucun prétexte être transmis, copiés, revendus ou redistribués publiquement.</p>
-                </div>
-        <!-- 10.2 -->
-                <h3 class="font-impact-title mb-2">10.2 Questionnaires, Retours d'expérience et Verbatims Clients</h3>
-                <p class="text-slate-600 mb-3">
-                    Dans le cadre des prestations (Ateliers Katas, Parcours Maître Zen, Mochis sur-mesure), le Client pourra être invité à consentir séparément une autorisation d'utilisation de témoignage et/ou de droit à l'image.
-                </p>
-        <!-- 10.3 -->
-                <h3 class="font-impact-title mb-2">10.3 Créations sur-mesure (Mochis) & Droit de référence (Portfolio)</h3>
-                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 text-sm text-slate-700 space-y-2">
-                     <p>
-                        • <strong>Droits d'utilisation des livrables :</strong>
-                        Après règlement intégral de la prestation, le Client bénéficie d'un droit d'utilisation des créations réalisées par AM 2.0 dans le cadre de son activité professionnelle.
-                        Ce droit comprend notamment l'utilisation, la diffusion et la modification des supports livrés pour ses propres besoins de communication (site internet, réseaux sociaux, supports commerciaux ou documents internes).
-                    </p>
-                    <p>
-                        Le Client ne peut toutefois pas revendre, céder, distribuer ou exploiter commercialement les créations réalisées par AM 2.0 en tant que produits ou prestations destinés à des tiers, ni les utiliser pour créer une offre concurrente.
-                    </p>
-
-                    <p>
-                        • <strong>Droit de citation et Portfolio :</strong>
-                        Sauf opposition explicite et formulée par écrit par le Client lors de la validation de la commande, le Client autorise AM 2.0 à citer son nom commercial, intégrer son logo et présenter les réalisations effectuées ou des extraits de projets à titre de référence professionnelle sur son portfolio, son site internet et ses réseaux sociaux.
-                    </p>
-                </div>
-    <!-- 10.4 -->
-                <h3 class="font-impact-title mb-2 mt-6">10.4 Confidentialité et Secret Professionnel</h3>
-                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 text-sm text-slate-700 space-y-3">
-                    <p class="text-slate-600 mb-3">
-                        AM 2.0 s'engage expressément à maintenir la confidentialité la plus stricte concernant l'ensemble des informations, données, documents, fichiers et éléments stratégiques ou financiers (notamment le chiffre d'affaires, les listes de clients, les projets en cours de développement ou les données organisationnelles internes) transmis par le Client dans le cadre de l'exécution des prestations.
-                    </p>
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 text-sm text-slate-700 space-y-2 mb-4">
-                        <p>• <strong>Périmètre du secret :</strong> Ces informations ne seront en aucun cas divulguées, publiées ou transmises à des tiers sans l'accord préalable et écrit du Client.</p>
-                        <p>• <strong>Usage exclusif :</strong> AM 2.0 s'interdit d'exploiter ou de réutiliser les données d'affaires du Client pour son propre compte ou pour le compte d'un tiers.</p>
-                        <p>• <strong>Exception légale :</strong> Cette obligation ne s'applique pas aux informations déjà publiques au moment de leur transmission ou dont la divulgation est rendue obligatoire par une disposition légale ou réglementaire.</p>
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">8.2 Responsabilité du Client dans l'application des conseils</h3>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                            <span class="font-bold text-white block mb-1">Mise en œuvre des recommandations</span>
+                            <p class="text-slate-200 text-base leading-relaxed">
+                                Le Client est responsable de la mise en œuvre effective et de la qualité d'exécution des conseils et trames de travail fournis par AM 2.0. La responsabilité d'AM 2.0 ne peut être engagée si le Client choisit de ne pas appliquer ou de modifier les conseils remis.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">8.3 Périmètre technique des plateformes tierces</h3>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                            <span class="font-bold text-white block mb-1">Évolutions des algorithmes & Règles tierces</span>
+                            <p class="text-slate-200 text-base leading-relaxed">
+                                AM 2.0 réalise les prestations selon les règles connues au moment de l'exécution. Elle n'est pas responsable des modifications ultérieures des règles, designs ou algorithmes des plateformes tierces (LinkedIn, Instagram, Google, Canva, Netlify, etc.), ni de leurs interruptions de service.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">8.4 Limite et plafonnement de responsabilité</h3>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                            <span class="font-bold text-white block mb-1">Plafond des dommages-intérêts</span>
+                            <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                Si la responsabilité d'AM 2.0 est établie pour un manquement avéré, le montant total des dommages-intérêts est <strong>plafonné à la somme effectivement perçue par AM 2.0</strong> pour la prestation à l'origine du litige. AM 2.0 n'est pas tenue de réparer les dommages indirects (perte de chiffre d'affaires, de clientèle, d'image ou de chance).
+                            </p>
+                            <p class="text-slate-200 text-base leading-relaxed">
+                                Ce plafond ne s'applique pas en cas de faute lourde ou dolosive d'AM 2.0, de dommage corporel, ni de manquement à une obligation essentielle du contrat dont il viderait l'engagement de sa substance, ni dans les cas où la loi l'interdit.
+                            </p>
+                        </div>
                     </div>
                 </div>
-    <!-- 10.5 -->
-                <h3 class="font-impact-title mb-2 mt-6">10.5 Utilisation d'outils d'intelligence artificielle</h3>
-                    <p class="text-slate-600 mb-2">Afin d'optimiser certaines phases de création ou de réflexion, AM 2.0 peut avoir recours à des outils d'intelligence artificielle générative, notamment pour explorer des pistes créatives, produire certains éléments graphiques ou assister la rédaction de contenus.</p>
-                    <p class="text-slate-600">Ces outils interviennent uniquement comme une aide à la conception. L'ensemble des choix stratégiques, de la direction artistique, des adaptations, des assemblages, des vérifications et de la validation finale est réalisé par AM 2.0. Les livrables remis au Client résultent ainsi d'un travail de conception, de personnalisation et d'intervention humaine. L'utilisation ponctuelle d'outils d'intelligence artificielle ne remet pas en cause la nature de la prestation ni les droits d'utilisation accordés au Client dans les présentes CGV.</p>
-            </div>
+            </article>
+
+<!-- ARTICLE 9 -->
+            <article class="border-b border-white/10 pb-12 text-base">
+                <h2 class="nav-font text-2xl md:text-3xl text-white font-semibold mb-6 flex items-center gap-3">
+                    09. Propriété Intellectuelle, Confidentialité & Références
+                </h2>
+                <div class="space-y-8">
+<!-- 9.1 -->
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">9.1 Propriété des méthodes, Workbooks & Ressources</h3>
+                        <p class="text-base text-slate-100">
+                            AM 2.0 reste propriétaire de l'intégralité de ses méthodes, trames de travail, processus et concepts :
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-base">
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Usage personnel des Workbooks</span>
+                                <p class="text-slate-200 text-base">Les Workbooks (« Maître Zen ») sont remis à titre strictement personnel et confidentiel. Le Client s'interdit de les diffuser, revendre ou réutiliser pour concevoir ses propres offres.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Ressources & Bonus offerts</span>
+                                <p class="text-slate-200 text-base">Toutes les ressources complémentaires, guides ou modèles mis à disposition restent la propriété intellectuelle d'AM 2.0 et ne peuvent être redistribués.</p>
+                            </div>
+                        </div>
+                    </div>
+<!-- 9.2 -->
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">9.2 Questionnaires, Retours d'expérience & Verbatims</h3>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                            <span class="font-bold text-white block mb-1">Autorisation de témoignage</span>
+                            <p class="text-slate-200 text-base leading-relaxed">
+                                Le Client peut être invité à consentir séparément, par écrit, à l'utilisation de son témoignage et/ou de son droit à l'image dans le cadre des retours d'expérience. Ce consentement est libre et révocable.
+                            </p>
+                        </div>
+                    </div>
+<!-- 9.3 -->
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">9.3 Créations, Cession de droits & Portfolio</h3>
+                        <div class="space-y-3 text-base">
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Cession des droits d'exploitation</span>
+                                <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                    Sous réserve du paiement intégral du prix, AM 2.0 cède au Client, à titre non exclusif quant aux méthodes et à titre exclusif quant aux créations livrées, les droits d'exploitation suivants sur les créations originales réalisées pour lui :
+                                </p>
+                                <ul class="list-disc pl-5 text-slate-200 text-base space-y-1 mb-3">
+                                    <li><strong>Droit de reproduction :</strong> sur tous supports, imprimés et numériques (site web, réseaux sociaux, e-mailing, affichage, PLV, documents commerciaux) ;</li>
+                                    <li><strong>Droit de représentation :</strong> diffusion et communication au public par tout procédé, en ligne ou hors ligne ;</li>
+                                    <li><strong>Droit d'adaptation :</strong> modification, déclinaison et mise à jour des créations pour les besoins de communication propres du Client.</li>
+                                </ul>
+                                <p class="text-slate-200 text-base leading-relaxed">
+                                    Cette cession est consentie <strong>pour le monde entier</strong> et <strong>pour toute la durée de protection des droits d'auteur</strong>, aux seules fins de la communication du Client. Le Client ne peut ni revendre ni céder les créations à des tiers sous forme de produits concurrents ou de modèles à revendre. Les polices, images de banque, éléments Canva et autres éléments de tiers restent soumis à leurs licences propres.
+                                </p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
+                                <span class="font-bold text-white block mb-1">Droit de citation & Portfolio</span>
+                                <p class="text-slate-200 text-base leading-relaxed">
+                                    Sauf opposition écrite du Client lors de la commande, AM 2.0 est autorisée à citer son nom commercial, afficher son logo et présenter les réalisations à titre de référence professionnelle sur son portfolio et ses réseaux. Le Client peut retirer cet accord à tout moment par écrit.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+<!-- 9.4 -->
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">9.4 Confidentialité & Secret Professionnel</h3>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                            <span class="font-bold text-white block mb-1">Engagements de confidentialité</span>
+                            <p class="text-slate-200 text-base leading-relaxed">
+                                AM 2.0 s'engage à maintenir la confidentialité des informations, données financières, concepts commercialisables, codes sources, identifiants d'accès ou documents stratégiques transmis par le Client dans le cadre de la prestation. Ces données ne sont ni divulguées, ni cédées, ni réutilisées pour son propre compte ou celui d'un tiers.
+                            </p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                            <span class="font-bold text-white block mb-1">Exclusions du champ de confidentialité</span>
+                            <p class="text-slate-200 text-base leading-relaxed">
+                                Ne sont pas confidentielles les informations déjà tombées dans le domaine public au moment de leur communication, celles obtenues légitimement auprès d'un tiers sans obligation de secret, ou celles dont la divulgation est requise par une décision judiciaire ou une obligation légale.
+                            </p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                            <span class="font-bold text-white block mb-1">Protections techniques & Durée de la clause</span>
+                            <p class="text-slate-200 text-base leading-relaxed">
+                                AM 2.0 met en œuvre les mesures techniques et organisationnelles raisonnables pour préserver l'intégrité et la sécurité des données transmises. Ces obligations demeurent effectives pendant toute la durée du contrat et pendant trois (3) ans après la fin des prestations.
+                            </p>
+                        </div>
+                    </div>
+<!-- 9.5 -->
+                    <div class="space-y-4">
+                        <h3 class="text-3xl text-white font-medium">9.5 Utilisation d'outils d'intelligence artificielle</h3>
+                        <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                            <span class="font-bold text-white block mb-1">Assistance à la création & Intervention humaine</span>
+                            <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                Afin d'optimiser certaines phases de création ou de réflexion, AM 2.0 peut avoir recours à des outils d'intelligence artificielle générative, notamment pour explorer des pistes créatives, produire certains éléments graphiques ou assister la rédaction de contenus.
+                            </p>
+                            <p class="text-slate-200 text-base leading-relaxed mb-3">
+                                Ces outils interviennent comme une aide à la conception. Les choix stratégiques, la direction artistique, les adaptations, les assemblages, les vérifications et la validation finale sont réalisés par AM 2.0. Leur usage ponctuel ne remet pas en cause la nature de la prestation ni les droits d'utilisation accordés au Client. Le Client est informé que la protection par le droit d'auteur des éléments produits principalement par une IA reste juridiquement incertaine.
+                            </p>
+                            <p class="text-slate-200 text-base leading-relaxed">
+                                <strong>Confidentialité :</strong> AM 2.0 n'introduit pas d'informations confidentielles du Client (données financières, identifiants, documents stratégiques, données personnelles de ses clients) dans un outil d'IA susceptible de les conserver ou de les réutiliser pour entraîner ses modèles. Les contenus soumis à un outil d'IA sont limités à ce qui est nécessaire à la prestation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+<!-- ARTICLE 10 -->
+            <article class="border-b border-white/10 pb-12 text-base">
+                <h2 class="nav-font text-2xl md:text-3xl text-white font-semibold mb-6 flex items-center gap-3">
+                    10. Protection des Données Personnelles (RGPD)
+                </h2>
+                <div class="space-y-3 text-base">
+                    <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                        <span class="font-bold text-white block mb-1">Données du Client (AM 2.0 responsable de traitement)</span>
+                        <p class="text-slate-200 text-base leading-relaxed">
+                            Pour la gestion de la relation commerciale (devis, facturation, échanges, prise de rendez-vous), AM 2.0 traite les données du Client en qualité de responsable de traitement. Les finalités, durées de conservation et droits des personnes (accès, rectification, effacement, opposition, limitation, portabilité) sont détaillés dans la page <a href="mentions-legales.html" class="text-cyan-300 hover:underline">Mentions & RGPD</a> ; les demandes s'adressent à l'adresse e-mail indiquée à l'article 1.
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                        <span class="font-bold text-white block mb-1">Données traitées pour le compte du Client (AM 2.0 sous-traitante)</span>
+                        <p class="text-slate-200 text-base leading-relaxed">
+                            Lorsque, pour exécuter la prestation (création ou maintenance de site, gestion ou publication sur des comptes de réseaux sociaux), AM 2.0 accède à des données personnelles dont le Client est responsable (visiteurs, clients, abonnés), elle agit en qualité de sous-traitante au sens de l'article 28 du RGPD. Elle traite ces données uniquement sur instruction documentée du Client et pour la durée de la prestation, garantit la confidentialité de ces données, met en œuvre des mesures de sécurité appropriées, l'assiste pour répondre aux demandes d'exercice de droits et l'informe sans délai injustifié de toute violation de données la concernant. À la fin de la prestation, elle supprime ou restitue ces données, au choix du Client. Un accord de traitement de données écrit est conclu à la demande du Client ou lorsque la prestation le requiert ; le Client demeure responsable de la conformité de ses propres traitements.
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                        <span class="font-bold text-white block mb-1">Sous-traitants ultérieurs & Transferts</span>
+                        <p class="text-slate-200 text-base leading-relaxed">
+                            Le Client autorise AM 2.0 à recourir aux prestataires techniques nécessaires à l'exécution du contrat, notamment Netlify (hébergement), GitHub (code source), Google (Workbook et messagerie), Canva (modèles), Calendly et Stripe (réservation et paiement des ateliers) et WhatsApp (échanges). Certains sont établis hors de l'Union européenne, notamment aux États-Unis ; les transferts s'effectuent avec les garanties prévues par le RGPD (décision d'adéquation ou clauses contractuelles types). La liste à jour est disponible sur demande.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
 <!-- ARTICLE 11 -->
-            <div class="rounded-3xl border border-slate-200/90 bg-white/90 backdrop-blur-md p-6 md:p-8 shadow-sm">
-                <h2 class="font-impact-title text-xl md:text-2xl text-slate-900 mb-4 pb-3 border-b border-slate-100 flex items-center gap-3">
-                    <span class="flex items-center justify-center w-7 h-7 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">11</span>
-                    Droit Applicable et Juridiction Compétente
+            <article class="border-b border-white/10 pb-12 text-base">
+                <h2 class="nav-font text-2xl md:text-3xl text-white font-semibold mb-6 flex items-center gap-3">
+                    11. Force Majeure & Dispositions Générales
                 </h2>
-                <p class="text-slate-600 mb-3">
-                    Les présentes CGV sont soumises de manière exclusive au droit français.
-                </p>
-                <p class="text-slate-600">
-                    Pour les litiges avec des professionnels commerçants, compétence est attribuée au <strong class="font-bold"> Tribunal de Commerce de Strasbourg</strong>. Pour les autres clients professionnels, les règles légales de compétence territoriale s'appliqueront.
-                </p>
-            </div>
+                <div class="space-y-3 text-base">
+                    <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                        <span class="font-bold text-white block mb-1">Force majeure</span>
+                        <p class="text-slate-200 text-base leading-relaxed">
+                            Aucune partie n'est responsable d'un manquement dû à un cas de force majeure au sens de l'article 1218 du Code civil (notamment maladie grave, sinistre, panne prolongée d'électricité ou de réseau, défaillance d'un hébergeur, grève, décision administrative). L'exécution est suspendue et les délais sont prolongés pendant la durée de l'événement. Si l'empêchement dépasse soixante (60) jours, chaque partie peut résilier le contrat par écrit ; les prestations réalisées restent dues et les sommes correspondant aux prestations non réalisées sont remboursées. La force majeure ne dispense pas le Client de payer les sommes échues.
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                        <span class="font-bold text-white block mb-1">Intégralité, Nullité partielle & Preuve</span>
+                        <p class="text-slate-200 text-base leading-relaxed">
+                            Les CGV et le devis accepté constituent l'intégralité de l'accord entre les parties. Si une clause est déclarée nulle ou inapplicable, les autres clauses restent en vigueur. Le fait pour AM 2.0 de ne pas se prévaloir d'une clause ne vaut pas renonciation. Les échanges par e-mail et WhatsApp, ainsi que les registres de la plateforme de réservation, font foi entre les parties.
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                        <span class="font-bold text-white block mb-1">Évolution des CGV</span>
+                        <p class="text-slate-200 text-base leading-relaxed">
+                            Les CGV applicables sont celles en vigueur à la date de la commande. AM 2.0 peut les modifier pour l'avenir, sans effet sur les commandes en cours, sauf pour les abonnements, pour lesquels la modification est notifiée avec un préavis de trente (30) jours.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+<!-- ARTICLE 12 -->
+            <article class="pb-12 text-base">
+                <h2 class="nav-font text-2xl md:text-3xl text-white font-semibold mb-6 flex items-center gap-3">
+                    12. Droit applicable & Attribution de juridiction
+                </h2>
+                <div class="space-y-3 text-base">
+                    <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                        <span class="font-bold text-white block mb-1">Droit applicable & Langue</span>
+                        <p class="text-slate-200 text-base leading-relaxed">
+                            Les présentes CGV ainsi que les contrats, devis et prestations qui en découlent sont régis par le <strong>droit français</strong>. Ils sont rédigés en langue française ; en cas de traduction, seul le texte français fait foi.
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                        <span class="font-bold text-white block mb-1">Recherche de solution amiable</span>
+                        <p class="text-slate-200 text-base leading-relaxed">
+                            En cas de contestation ou de litige relatif à l'interprétation, la validité, l'exécution ou la résiliation des prestations, les parties recherchent d'abord une solution amiable. La partie la plus diligente adresse à l'autre une notification écrite motivée, par lettre recommandée avec accusé de réception ou par e-mail avec avis de réception.
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-base">
+                        <span class="font-bold text-white block mb-1">Attribution de compétence</span>
+                        <p class="text-slate-200 text-base leading-relaxed">
+                            Sous réserve des règles de compétence impératives, pour les litiges opposant AM 2.0 à un Client ayant contracté en qualité de commerçant, et conformément à l'article 48 du Code de procédure civile, compétence expresse est attribuée au Tribunal judiciaire de Strasbourg, chambre commerciale, sous réserve que la présente clause ait été spécifiée de façon très apparente dans l'engagement du Client.
+                        </p>
+                        <p class="text-slate-200 text-base leading-relaxed my-3">
+                            Pour les autres Clients, les règles légales de compétence territoriale s'appliquent.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
         </div>
     </div>
 </section>
 </main>
-<!-- ===== FOOTER ===== -->
-<footer class="relative bg-white text-slate-800 pt-16 pb-8 transition-all duration-500 before:absolute before:top-0 before:left-0 before:w-full before:h-[2px] before:bg-gradient-to-r before:from-purple-700 before:to-[#29c6dc]">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-12 border-b border-slate-100">
-<!-- Colonne 1  -->
-            <div class="lg:col-span-4 flex flex-col items-start gap-4">
-                <div class="flex items-center gap-4">
-                    <img src="images/logo/profil-aurore-am20.webp" alt="Photo de Aurore Muller" class="w-16 h-16 rounded-full object-cover border-2 border-cyan-400 shadow-md shrink-0" width="64" height="64">
-                    <div>
-                        <h3 class="font-impact-title text-xl text-slate-900 leading-tight">Aurore Muller</h3>
-                        <p class="text-sm font-medium text-cyan-600">Parcours client • Stratégie commerciale</p>
-                    </div>
-                </div>
-                <p class="text-slate-600 text-sm leading-relaxed mt-2">
-                    Du premier clic au premier client. Construisons un parcours qui attire et convainc tes prospects.
-                </p>
-                <a href="https://calendly.com/rdv-aurore-am20/1er-clic" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   class="mt-2 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-700 to-[#29c6dc] text-white font-bold text-sm shadow-lg shadow-purple-500/20 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 hover:shadow-xl hover:shadow-purple-500/30 active:scale-95 group">
-                    Réserver mon RDV Premier Clic
-                    <svg class="w-4 h-4 fill-none stroke-current stroke-[2.5] transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24">
-                        <polyline points="9 6 15 12 9 18"></polyline>
-                    </svg>
-                </a>
-            </div>
-<!-- Colonne 2  -->
-            <div class="lg:col-span-3">
-                <h4 class="font-impact-title text-base text-slate-900 tracking-wider uppercase mb-4">Navigation</h4>
-                <ul class="space-y-2.5 text-sm">
-                    <li><a href="index.html#hero" class="text-slate-600 hover:text-[#29c6dc] transition-colors">Accueil</a></li>
-                    <li><a href="index.html#offres" class="text-slate-600 hover:text-[#29c6dc] transition-colors">Solutions</a></li>
-                    <li><a href="index.html#avis" class="text-slate-600 hover:text-[#29c6dc] transition-colors">Avis</a></li>
-                    <li><a href="#" class="text-slate-600 hover:text-[#29c6dc] transition-colors">Cas clients</a></li>
-                    <li><a href="index.html#about" class="text-slate-600 hover:text-[#29c6dc] transition-colors">À propos</a></li>
-                    <li><a href="index.html#faq" class="text-slate-600 hover:text-[#29c6dc] transition-colors">FAQ</a></li>
-                </ul>
-            </div>
-<!-- Colonne 3  -->
-            <div class="lg:col-span-3">
-                <h4 class="font-impact-title text-base text-slate-900 tracking-wider uppercase mb-4">Contact</h4>
-                <ul class="space-y-3 text-sm text-slate-600">
-                    <li>
-                        <a href="https://wa.me/33367999081" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 hover:text-[#29c6dc] transition-colors">
-                            <svg class="w-5 h-5 text-cyan-500 shrink-0 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
-                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                            </svg>
-                            <span>WhatsApp</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="protected-mail inline-flex items-center gap-2.5 hover:text-[#29c6dc] transition-colors" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg==">
-                            <svg class="w-5 h-5 text-cyan-500 shrink-0 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                            <span class="mail-text">Mail</span>
-                        </a>
-                    </li>
-                    <li class="flex items-start gap-2.5">
-                        <svg class="w-5 h-5 text-cyan-500 shrink-0 mt-0.5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                        <div>
-                            <span class="block font-medium text-slate-700">Obernai, Alsace</span>
-                            <span class="text-xs text-slate-500">En présentiel ou à distance partout en France</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-<!-- Colonne 4  -->
-            <div class="lg:col-span-2">
-                <h4 class="font-impact-title text-base text-slate-900 tracking-wider uppercase mb-4">Restons connectés</h4>
-                <div class="flex items-center gap-3">
-                    <a href="https://www.linkedin.com/in/aurore-am20/" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    aria-label="LinkedIn" 
-                    class="w-10 h-10 rounded-full bg-cyan-50 text-[#29c6dc] flex items-center justify-center hover:bg-[#0A66C2] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.75a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.instagram.com/am2.0_strategie.digitale/" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    aria-label="Instagram" 
-                    class="w-10 h-10 rounded-full bg-cyan-50 text-[#29c6dc] flex items-center justify-center hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5">
-                        <svg class="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-<!-- Bas de footer  -->
-        <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-            <div class="flex items-center gap-2">
-                <img src="images/logo/logo-am20.webp" alt="Logo AM 2.0" class="h-5 w-auto" width="20" height="20">
-                <p>© <span id="current-year">2026</span> AM 2.0 • Tous droits réservés</p>
-            </div>
-            <nav class="flex items-center gap-4 sm:gap-6" aria-label="Liens légaux">
-                <a href="mentions-legales.html" class="hover:text-slate-800 transition-colors">Mentions & RGPD</a>
-                <span class="text-slate-300">|</span>
-                <a href="#" class="text-slate-800 underline">CGV</a>
-            </nav>
-        </div>
+<footer class="relative z-10 w-full py-6 text-center text-sm text-slate-200">
+  <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <a href="index.html" class="inline-flex items-center gap-2 hover:opacity-80 transition-opacity duration-200" aria-label="Retour à l'accueil">
+        <img src="images/logo/logo-am20.webp" alt="Logo AM 2.0" class="h-5 w-auto" width="20" height="20" loading="lazy">
+      </a>
+      <p>© <span id="current-year">2026</span> AM 2.0 • Tous droits réservés</p>
     </div>
+    <nav class="flex items-center gap-4 sm:gap-6" aria-label="Navigation secondaire et légale">
+      <a href="index.html" class="hover:text-white transition-colors duration-200">Accueil</a>
+      <a href="mentions-legales.html" class="hover:text-white transition-colors duration-200">Mentions & RGPD</a>
+      <a href="cgv.html" class="text-white italic">CGV</a>
+    </nav>
+  </div>
 </footer>
 <script src="dist/script.min.js" defer></script>
 </body>

@@ -188,41 +188,44 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     };
     const TESTIMONIALS = {
-        construction: {
+        parcours: {
             authorName: "Anne-Gaëlle B.",
             authorRole: "Assistante administrative",
-            beforeQuote: "« J'avais énormément d'idées mais je ne savais pas par où commencer. »",
+            photo: "images/profils-social/1.webp",
+            beforeQuote: "« J'étais sur plusieurs canaux mais je n'avais pas plus de contacts. »",
             duringProgram: [
-                "Clarification du positionnement",
-                "Construction du message",
-                "Mise en place du parcours client"
-            ],
-            afterResult: "1er client signé pendant l'accompagnement",
-            finalQuote: "« L'accompagnement m'a permis de poser des bases solides. »"
-        },
-        developpement: {
-            authorName: "Jacques M.",
-            authorRole: "Gérant centre culturel",
-            beforeQuote: "« Nous avions déjà une présence en ligne, mais elle manquait de cohérence. »",
-            duringProgram: [
-                "Refonte du message",
-                "Simplification du parcours client",
+                "Clarification du message",
+                "Mise en place du parcours client",
                 "Optimisation des points de contact"
             ],
-            afterResult: "+ 30 adhérents les 3 premiers mois",
-            finalQuote: "« Aujourd'hui, notre communication est beaucoup plus claire et les prises de contact sont plus nombreuses. »"
+            afterResult: "Mon téléphone n'arrête plus de sonner",
+            finalQuote: "« J'ai pu poser des bases solides et gagner en efficacité. »"
         },
-        progression: {
-            authorName: "Mickaël B.",
-            authorRole: "Gérant atelier automobile",
-            beforeQuote: "« J'avais déjà des résultats, mais plusieurs points freinaient encore mon développement. »",
+        message: {
+            authorName: "Marianne C.",
+            authorRole: "Communicatrice animalière",
+            photo: "images/profils-social/10.webp",
+            beforeQuote: "« Je manquais de confiance pour présenter mes services auprès de partenaires potentiels. »",
             duringProgram: [
-                "Clarification de la proposition de valeur",
-                "Optimisation du parcours client",
-                "Simplification des points de conversion"
+                "Construction du message",
+                "Parcours de contact",
+                "Optimisation du discours commercial"
             ],
-            afterResult: "+ 25% de prise de RDV dès le premier mois",
-            finalQuote: "« Quelques ajustements ont complètement changé la dynamique. »"
+            afterResult: "des RDV concrets après seulement quelques semaines",
+            finalQuote: "« J'ai pu passer rapidement à l'action et avoir mes premiers contacts. »"
+        },
+        conversion: {
+            authorName: "Annick M.",
+            authorRole: "Consultante relation client",
+            photo: "images/profils-social/9.webp",
+            beforeQuote: "« J'avais déjà des résultats, mais j'avais du mal à mener mes RDV jusqu'à la signature. »",
+            duringProgram: [
+                "Optimisation du parcours client",
+                "Mise en place d'un scénario de prospection",
+                "Optimisation du discours commercial"
+            ],
+            afterResult: "des RDV plus qualifiés dès la mise en place.",
+            finalQuote: "« J'ai gagné en sérénité, j'ai plus de facilité à décrocher des RDV qualifiés. »"
         }
     };
     const ctaData = {
@@ -650,7 +653,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const weakness = getMainWeakness(pillars);
         const currentCta = ctaData[weakness.pillar] || ctaData.message;
         const strengthsList = getStrengths(pillars);
-        const testimonial = TESTIMONIALS[progressLevel.key];
+        const testimonial = TESTIMONIALS[weakness.pillar];
         if (progressCircle) progressCircle.style.strokeDashoffset = 0;
         if (progressPercentage) progressPercentage.textContent = '100%';
         if (mobileProgressBar) mobileProgressBar.style.width = '100%';
@@ -665,7 +668,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cardFooter.classList.add('hidden');
         if (mobileScrollHint) mobileScrollHint.classList.add('hidden');
         cardBadge.textContent = 'Ton résultat';
-        cardTitle.textContent = `Ce que révèle ton diagnostic`.toUpperCase();
+        cardTitle.textContent = `Ce que révèle ton diagnostic`;
         cardSubtitle.textContent = `Bilan personnalisé de ${(userProfile.prenom || '').toUpperCase()}`;
         let html = `
             <div class="w-full rounded-2xl bg-gradient-to-r from-purple-700 to-[#29c6dc] p-[1px] shadow-xl">
@@ -714,9 +717,18 @@ document.addEventListener('DOMContentLoaded', () => {
                             <h4 class="text-xs sm:text-sm font-bold text-slate-500 uppercase tracking-wider mb-2">
                                 Exemple de transformation
                             </h4>
-                            <div>
-                                <p class="text-lg font-bold text-slate-900">${testimonial.authorName}</p>
-                                <p class="text-sm font-medium text-slate-500">${testimonial.authorRole}</p>
+                            <div class="flex items-center gap-3">
+                                ${testimonial.photo
+                                    ? `<img src="${testimonial.photo}" alt="${testimonial.authorName}" loading="lazy"
+                                            class="w-14 h-14 rounded-full object-cover border-2 border-white ring-2 ring-[#29c6dc] shadow-md shrink-0" />`
+                                    : `<div class="w-14 h-14 rounded-full bg-gradient-to-br from-purple-600 to-[#29c6dc] text-white flex items-center justify-center font-bold text-lg shadow-md shrink-0">
+                                            ${testimonial.authorName.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()}
+                                    </div>`
+                                }
+                                <div>
+                                    <p class="text-lg font-bold text-slate-900">${testimonial.authorName}</p>
+                                    <p class="text-sm font-medium text-slate-500">${testimonial.authorRole}</p>
+                                </div>
                             </div>
                         </div>
                         <div class="relative space-y-4 before:absolute before:left-[11px] before:top-3 before:bottom-3 before:w-[2px] before:bg-gradient-to-b before:from-purple-300 before:via-purple-400 before:to-[#29c6dc]"> 
