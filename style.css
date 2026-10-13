@@ -59,6 +59,9 @@ h3
   font-family: "Limelight", sans-serif;
   text-transform: uppercase;
 }
+.font-accent {
+  font-family: "Marck Script", cursive;
+}
 /* Arrière-plans responsive */
 .bg-hero-custom {
   background-image: url('../images/hero/background-mob.webp');
