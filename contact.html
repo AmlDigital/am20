@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="robots" content="index,follow">
-    <title>Contact & Prise de rendez-vous | AM 2.0 - Obernai</title>
+    <title>Contact AM 2.0 | Sites web & Communication • Obernai, Alsace</title>
     <meta name="description" content="Une question, un projet web, du design graphique ou besoin d'un accompagnement ? Contactez AM 2.0 à Obernai ou réservez un premier échange offert.">
     <link rel="canonical" href="https://www.am20.fr/contact">
     <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
@@ -18,7 +18,8 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.am20.fr/contact">
     <meta property="og:image" content="https://www.am20.fr/images/og-img4.jpg">
-    <link rel="stylesheet" href="dist/style.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="dist/style.min.css">
 <!-- Données structurées JSON-LD -->
     <script type="application/ld+json">
     {
@@ -129,61 +130,330 @@
     }
     </script>
 </head>
-<body class="min-h-screen flex flex-col justify-between text-slate-800 font-sans antialiased relative bg-[#2e3d59]">
-<!-- Halo lumineux d'ambiance global -->
-    <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/10 blur-[140px] rounded-full pointer-events-none z-0"></div>
-<!-- ===== HEADER ===== -->
-<header class="fixed top-0 z-50 w-full bg-[#2e3d59]/80 backdrop-blur-md border-b border-slate-700/50">
-  <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-<!-- Logo -->
-    <a href="#cgv" class="inline-block" aria-label="Retour en haut de page">
-      <img src="images/logo/logo-am20.webp" alt="Logo AM 2.0" class="h-8 md:h-9 w-auto" width="36" height="36" loading="eager">
+<body>
+<div id="scroll-progress"></div>
+<div class="custom-cursor" id="cursor"></div>
+<div class="custom-cursor-ring" id="cursor-ring"></div>
+<!-- Icône Google (définie une seule fois) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="g-logo" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/></symbol></svg>
+
+<!-- ================= HEADER ================= -->
+<header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex h-20 items-center justify-between pt-3 relative">
+    <a href="#top" class="group flex items-center gap-2.5 transition-transform duration-300 hover:scale-105 absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0">
+      <img src="images/logo/logo-am20.webp" alt="Logo AM 2.0" class="h-20 w-auto object-contain">
     </a>
-<!-- Bouton Home -->
-    <a href="index.html" aria-label="Retour à l'accueil" class="group w-10 h-10 md:w-auto md:px-4 md:py-2 rounded-full bg-slate-800/80 border border-slate-700/80 hover:border-slate-600 text-white transition-all duration-200 flex items-center justify-center gap-2.5">
-<!-- Icônes SVG avec bascule au hover -->
-      <span class="relative w-5 h-5 flex items-center justify-center shrink-0">
-<!-- SVG Standard -->
-        <svg class="w-5 h-5 fill-current group-hover:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-          <path d="M341.8 72.6C329.5 61.2 310.5 61.2 298.3 72.6L74.3 280.6C64.7 289.6 61.5 303.5 66.3 315.7C71.1 327.9 82.8 336 96 336L112 336L112 512C112 547.3 140.7 576 176 576L464 576C499.3 576 528 547.3 528 512L528 336L544 336C557.2 336 569 327.9 573.8 315.7C578.6 303.5 575.4 289.5 565.8 280.6L341.8 72.6zM304 384L336 384C362.5 384 384 405.5 384 432L384 528L256 528L256 432C256 405.5 277.5 384 304 384z"/>
-        </svg>
-<!-- SVG Hover (Cheminée) -->
-        <svg class="w-5 h-5 fill-current hidden group-hover:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-          <path d="M298.2 72.6C310.5 61.2 329.5 61.2 341.7 72.6L432 156.3L432 144C432 126.3 446.3 112 464 112L496 112C513.7 112 528 126.3 528 144L528 245.5L565.8 280.6C575.4 289.6 578.6 303.5 573.8 315.7C569 327.9 557.2 336 544 336L528 336L528 512C528 547.3 499.3 576 464 576L176 576C140.7 576 112 547.3 112 512L112 336L96 336C82.8 336 71 327.9 66.2 315.7C61.4 303.5 64.6 289.5 74.2 280.6L298.2 72.6zM304 384C277.5 384 256 405.5 256 432L256 528L384 528L384 432C384 405.5 362.5 384 336 384L304 384z"/>
-        </svg>
-      </span>
-<!-- Texte affiché uniquement sur desktop -->
-      <span class="hidden md:inline text-base font-medium text-slate-200 group-hover:text-white transition-colors">
-        Retour à l'accueil
-      </span>
-    </a>
+    <nav class="hidden items-center gap-8 md:flex ml-auto">
+      <a href="#approche" class="relative text-4xl tracking-wider text-main-85 hover:text-pink font-display">Mon approche</a>
+      <a href="#contact" class="relative text-4xl tracking-wider text-main-85 hover:text-pink font-display">Contact</a>
+      <a href="#contact-avis" class="relative text-4xl tracking-wider text-main-85 hover:text-pink font-display">Avis</a>
+    </nav>
   </div>
 </header>
-<main class="max-w-3xl w-full mx-auto py-4 sm:py-8 px-4 my-auto relative z-10">
-    <div class="bg-white/90 backdrop-blur-md border border-slate-200/80 shadow-2xl rounded-3xl p-6 sm:p-10 flex flex-col items-center text-center"> 
-        <h2 class="text-2xl sm:text-3xl font-bold text-[#252e4b] mb-3">
-            Contacte-moi directement sur WhatsApp
-        </h2>
-        <p class="text-slate-600 text-base sm:text-lg font-medium max-w-xl mb-6">
-            Une question ou un projet en tête ? Envoie-moi un message, je te répondrai dans un délai de 48h max !
-        </p>
-        <a href="https://wa.me/33367999081" target="_blank" rel="noopener noreferrer" class="transition-transform duration-300 hover:scale-105 inline-block">
-            <img src="images/logo/cta-whatsapp.webp" alt="Contacte-moi sur WhatsApp" class="max-w-xs sm:max-w-sm w-full h-auto mx-auto object-contain drop-shadow-md">
+ 
+<!-- ================= HERO ================= -->
+<section id="top" class="hero-bg-desktop relative overflow-hidden pt-28 md:pt-36 md:min-h-screen flex items-center">
+  <div class="cg-glow cg-pink" style="width:28rem;height:28rem;top:-6rem;right:-8rem"></div>
+  <div class="cg-glow cg-cyan" style="width:24rem;height:24rem;bottom:-6rem;left:-8rem"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid items-center gap-12 md:grid-cols-12 pb-20">
+    <div class="md:col-span-7 text-left">
+      <div data-hero class="mb-6 flex flex-wrap items-center justify-center md:justify-start gap-3">
+        <a href="index.html" class="text-xs uppercase tracking-[0.2em] text-main-70 font-semibold hover:text-[#ff66c4] transition-colors">Accueil <span class="font-extras text-pink text-base normal-case">d</span></a>
+        <span class="sticker uppercase"><span class="font-extras text-pink text-2xl normal-case">e</span> Contact</span>
+      </div>
+<!-- Titre -->
+      <h1 data-split class="font-display uppercase leading-[1.05] tracking-tight text-main text-6xl md:text-8xl mb-8">
+        <span class="text-main-85">Un projet?</span><span class="grad-text font-display">On en discute!</span><span class="text-main-85"></span>
+      </h1>
+<!-- Photo mobile -->
+      <figure class="cg-mob md:hidden" data-hero>
+        <img src="images/profils/am20-mob.webp" alt="Aurore, AM 2.0" fetchpriority="high">
+      </figure>
+<!-- Texte -->
+      <p data-hero class="max-w-xl text-lg md:text-xl leading-relaxed text-main-85 mb-8">
+        <span class="font-semibold text-main">Sites web, profils LinkedIn, vitrines Instagram ou supports imprimés :</span>
+        je crée la com' qui te ressemble et te distingue.
+      </p>
+<!-- Preuves sociales -->
+      <div data-hero class="mb-10 flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-5">
+        <a href="#contact-avis" class="cg-chip is-static hover:border-[var(--accent-pink)] transition-colors cursor-pointer"><svg class="h-4 w-4"><use href="#g-logo"/></svg>5/5 sur Google</a>
+        <div class="flex items-center gap-3">
+          <div class="flex items-center -space-x-3">
+            <img src="images/profils/2.webp" alt="" class="h-9 w-9 rounded-full border-2 border-[var(--bg-color)] object-cover">
+            <img src="images/profils/11.webp" alt="" class="h-9 w-9 rounded-full border-2 border-[var(--bg-color)] object-cover">
+            <img src="images/profils/17.webp" alt="" class="h-9 w-9 rounded-full border-2 border-[var(--bg-color)] object-cover">
+            <span class="grid h-9 w-9 place-items-center rounded-full border-2 border-[var(--bg-color)] bg-[var(--text-color)] font-display text-xs text-white">+20</span>
+          </div>
+          <span class="text-base text-main-70 hidden sm:inline">Ils m'ont fait confiance</span>
+        </div>
+      </div>
+<!-- CTA -->
+      <div data-hero class="cg-clear flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto">
+        <a href="#contact" class="btn-cta cg-magnet uppercase text-lg w-full max-w-xs sm:w-auto justify-center">Contacter AM 2.0</a>
+      </div>
+    </div>
+<!-- Photo desktop -->
+    <div class="hidden md:block md:col-span-5">
+      <div class="cg-portrait" data-hero-photo>
+        <img src="images/profils/am20.webp" alt="Aurore, AM 2.0" fetchpriority="high">
+        <div class="cg-chip" data-float style="bottom:8%;right:-1rem">Aurore · Designer d'expérience client</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ================= MARQUEE ================= -->
+<div class="cg-marquee" aria-hidden="true">
+  <div class="cg-track font-display-shadow text-4xl" id="cg-track">
+    <span>Projets uniques</span><span>Design</span><span>Expérience client</span><span>Créativité</span>
+    <span>Projets uniques</span><span>Design</span><span>Expérience client</span><span>Créativité</span>
+    <span>Projets uniques</span><span>Design</span><span>Expérience client</span><span>Créativité</span>
+    <span>Projets uniques</span><span>Design</span><span>Expérience client</span><span>Créativité</span>
+  </div>
+</div>
+ 
+<!-- ================= APPROCHE ================= -->
+<section id="approche" class="cg-sec">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center max-w-2xl mx-auto mb-14 md:mb-20">
+      <h2 data-split class="font-display text-3xl uppercase leading-[1.08] tracking-tight text-main-85 text-6xl md:text-8xl">Pourquoi choisir <span class="grad-text font-display">AM 2.0</span></h2>
+    </div>
+    <div class="grid gap-6 md:grid-cols-3">
+      <article class="cg-card" data-card><span class="cg-num font-display">01</span>
+        <p class="sticker uppercase text-xs mb-5 inline-block">Ce que je fais</p>
+        <h3 class="font-bold text-xl uppercase tracking-tight text-main-85 mb-3">Je crée ta com'</h3>
+        <p class="text-lg leading-relaxed text-main">Sites web, LinkedIn, Instagram ou supports imprimés : des créations sur mesure, au design soigné.</p></article>
+      <article class="cg-card" data-card><span class="cg-num font-display">02</span>
+        <p class="sticker uppercase text-xs mb-5 inline-block">Pourquoi</p>
+        <h3 class="font-bold text-xl uppercase tracking-tight text-main-85 mb-3">Je connais tes clients</h3>
+        <p class="text-lg leading-relaxed text-main">Plus de 10 ans dans le commerce m'ont appris ce qui influence leurs décisions. Je mets cette expérience au service de ta communication.</p></article>
+      <article class="cg-card" data-card><span class="cg-num font-display">03</span>
+        <p class="sticker uppercase text-xs mb-5 inline-block">Comment</p>
+        <h3 class="font-bold text-xl uppercase tracking-tight text-main-85 mb-3">Une expérience bien pensée</h3>
+        <p class="text-lg leading-relaxed text-main">Chaque projet est conçu pour te ressembler, rendre ton activité lisible et donner envie de te contacter.</p></article>
+    </div>
+  </div>
+</section>
+ 
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="cg-sec overflow-hidden">
+  <div class="cg-glow cg-cyan" style="width:26rem;height:26rem;top:10%;left:-10rem;opacity:.25"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center max-w-3xl mx-auto mb-14 md:mb-20">
+      <h2 data-split class="font-display uppercase leading-[1.08] tracking-tight text-main-85 text-6xl md:text-8xl">Message ou visio, <span class="grad-text font-display">à toi de choisir</span></h2>
+    </div>
+ <!-- Ligne 1 : mockup WhatsApp -->
+    <div class="grid gap-10 md:grid-cols-2 items-center max-w-5xl mx-auto mb-20 md:mb-28">
+      <div class="text-center md:text-left">
+        <h3 class="font-bold text-2xl md:text-3xl uppercase tracking-tight text-main-85 mb-4">On échange par message ?</h3>
+        <p class="text-lg leading-relaxed text-main mb-4">Une question, une idée ou un projet en tête ? Tu veux en savoir plus sur mes prestations ? Écris-moi, on en discute.</p>
+        <p class="text-sm font-semibold text-main-85 opacity-75">Réponse sous 2 heures <span class="font-normal">(moyenne en semaine)</span></p>
+      </div>
+      <div class="wa-phone mx-auto" id="wa-phone" data-card data-wa data-wa-number="33600000000" data-wa-msg="Bonjour, je souhaiterais discuter d'un projet de communication.">
+        <div class="wa-island"></div>
+        <div class="wa-status"><span id="wa-clock">9:41</span><span>5G ▮▮▮</span></div>
+        <div class="wa-head">
+          <span class="text-2xl leading-none">‹</span><img src="images/profils/vignette-am20.webp" alt="">
+          <div class="leading-tight flex-1"><div class="font-semibold text-base">Aurore // AM 2.0</div><div class="text-xs opacity-85">en ligne</div></div>
+        </div>
+        <div class="wa-chat">
+          <p class="wa-note">Tu vas être redirigé(e) vers WhatsApp. Voici une suggestion de message que tu pourras modifier avant envoi :</p>
+          <div class="wa-out" id="wa-bubble">
+            <p id="wa-text">Bonjour, je souhaiterais discuter d'un projet de communication.</p>
+            <div class="wa-meta"><span id="wa-time"></span>✓✓</div>
+            <button id="wa-copy" type="button" class="wa-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>Copier et ouvrir WhatsApp</span></button>
+          </div>
+        </div>
+        <a id="wa-custom" href="#" target="_blank" rel="noopener noreferrer" class="wa-input"><span>Écrire un message personnalisé</span><i>➤</i></a>
+      </div>
+    </div>
+<!-- Ligne 2 : cal.com widget -->
+  <div id="reservation" class="max-w-5xl mx-auto">
+    <div class="text-center mb-8">
+      <h3 class="font-bold text-2xl md:text-3xl uppercase tracking-tight text-main-85 mb-4">On se retrouve en visio ?</h3>
+      <p class="text-lg leading-relaxed text-main max-w-2xl mx-auto">Réserve ton créneau de 30 minutes offertes et sans engagement pour parler de ton projet, poser tes questions et faire connaissance.</p>
+    </div>
+    <div class="cg-card cg-notilt desktop-no-card" data-card style="padding:0">
+      <div id="cal-inline" style="width:100%;overflow:hidden;min-height:30rem"></div>
+    </div>
+  </div>
+</section>
+<script>
+/* Intégration officielle cal.com (inline) */
+(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "30min", { origin: "https://app.cal.com" });
+Cal.ns["30min"]("inline", { elementOrSelector: "#cal-inline", config: { layout: "month_view", theme: "light" }, calLink: "aurore-am20/30min" });
+Cal.ns["30min"]("ui", { theme: "light", hideEventTypeDetails: false, layout: "month_view" });
+</script>
+ 
+<!-- ================= AVIS ================= -->
+<section id="contact-avis" class="cg-sec overflow-hidden">
+  <div class="cg-glow cg-pink cg-avis-blob" style="width:30rem;height:30rem;top:6%;left:-12rem"></div>
+  <div class="cg-glow cg-cyan cg-avis-blob" style="width:28rem;height:28rem;bottom:4%;right:-10rem;animation-delay:-6s"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center max-w-3xl mx-auto mb-14 md:mb-20">
+      <h2 data-split class="font-display text-6xl md:text-8xl uppercase leading-[1.08] tracking-tight text-main-85">Leur expérience, <span class="grad-text font-display">leurs mots</span></h2>
+    </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:items-start mb-14 lg:mb-20">
+      <article class="cg-rev" data-card data-tilt style="--d:11s;--del:0s">
+        <img src="images/profils/17.webp" alt="" loading="lazy">
+        <div class="cg-rev-top-right"><svg class="h-4 w-4"><use href="#g-logo"/></svg><span class="stars text-sm">★★★★★</span></div>
+        <div class="cg-rev-content">
+          <h3 class="font-bold uppercase tracking-tight text-base mb-2">Justine W.</h3>
+          <p>« Un grand talent, créativité et professionnalisme. Je recommande vivement à toute personne qui souhaite améliorer sa communication digitale. »</p>
+        </div>
+      </article>
+      <article class="cg-rev" data-card data-tilt style="--d:13s;--del:-4s">
+        <img src="images/profils/11.webp" alt="" loading="lazy">
+        <div class="cg-rev-top-right"><svg class="h-4 w-4"><use href="#g-logo"/></svg><span class="stars text-sm">★★★★★</span></div>
+        <div class="cg-rev-content">
+          <h3 class="font-bold uppercase tracking-tight text-base mb-2">Jacques M.</h3>
+          <p>« Professionnalisme et efficacité ! Et surtout Aurore comprend très vite ce dont on a besoin, je recommande vivement. »</p>
+        </div>
+      </article>
+      <article class="cg-rev" data-card data-tilt style="--d:12s;--del:-8s">
+        <img src="images/profils/10.webp" alt="" loading="lazy">
+        <div class="cg-rev-top-right"><svg class="h-4 w-4"><use href="#g-logo"/></svg><span class="stars text-sm">★★★★★</span></div>
+        <div class="cg-rev-content">
+          <h3 class="font-bold uppercase tracking-tight text-base mb-2">Marianne C.</h3>
+          <p>« Je remercie Aurore pour sa gentillesse, sa disponibilité, sa simplicité et son écoute ! Je recommande vivement. »</p>
+        </div>
+      </article>
+    </div>
+    <div class="flex justify-center"><a href="https://share.google/GFDYyAatzEMwNiUGC" target="_blank" rel="noopener noreferrer" class="btn-cta-secondary cg-magnet uppercase text-base py-3 px-8 text-center justify-center">Voir tous les avis Google</a></div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="relative overflow-hidden bg-[#2e3d59] pt-20 pb-12 text-white border-t border-white/10">
+<!-- Logo ghost géant  -->
+  <div class="absolute inset-x-0 bottom-0 pointer-events-none select-none overflow-hidden z-0 flex justify-center lg:justify-end">
+    <img src="images/logo/logo-ghost.webp" alt="" class="h-[100%] w-auto object-contain translate-y-[5%] opacity-[0.03]">
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<!-- Grille principale -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 pb-16 border-b border-white/10 items-stretch">
+<!-- Bloc Photo + Contact (Groupé et resserré) -->
+      <div class="lg:col-span-8 flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-12">
+<!-- 1. Photo  -->
+        <div class="shrink-0">
+          <img src="images/profils/vignette-am20.webp" alt="Aurore Muller" class="w-32 h-32 sm:w-48 sm:h-48 object-cover rounded-none">
+        </div>
+<!-- 2. Contact -->
+        <div class="flex flex-col items-center text-center sm:items-start sm:text-left space-y-3">
+    <!-- Nom & Titre -->
+          <div>
+            <h3 class="font-display text-3xl uppercase tracking-tight text-white/90">
+              Aurore <span class="text-pink">// AM 2.0</span>
+            </h3>
+            <p class="text-base text-white/90">
+              Designer d'expérience client
+            </p>
+          </div>
+    <!-- Icônes réseaux sociaux  -->
+          <div class="flex items-center gap-3 pt-1">
+    <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/aurore-am20/" target="_blank" rel="noopener noreferrer" class="grid h-12 w-12 place-items-center rounded-full bg-[#22b8c2]/10 border border-[#22b8c2]/30 text-cyan hover:bg-[#22b8c2] hover:text-white transition-all duration-300" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="h-6 w-6 fill-current"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.4-48.37-79.4-48.4 0-55.8 37.7-55.8 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.6-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+            </a>
+    <!-- Instagram -->
+            <a href="https://www.instagram.com/am20.fr/" target="_blank" rel="noopener noreferrer" class="grid h-12 w-12 place-items-center rounded-full bg-[#ff66c4]/10 border border-[#ff66c4]/30 text-pink hover:bg-[#ff66c4] hover:text-white transition-all duration-300" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="h-6 w-6 fill-current"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+            </a>
+          </div>
+<!-- Localisation  -->
+          <div class="text-base text-white space-y-0.5 pt-1">
+            <p class="flex items-center justify-center sm:justify-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="h-4 w-4 text-pink fill-current shrink-0"><path d="M352 348.4C416.1 333.9 464 276.5 464 208C464 128.5 399.5 64 320 64C240.5 64 176 128.5 176 208C176 276.5 223.9 333.9 288 348.4L288 544C288 561.7 302.3 576 320 576C337.7 576 352 561.7 352 544L352 348.4zM328 160C297.1 160 272 185.1 272 216C272 229.3 261.3 240 248 240C234.7 240 224 229.3 224 216C224 158.6 270.6 112 328 112C341.3 112 352 122.7 352 136C352 149.3 341.3 160 328 160z"/></svg>
+              <span>Obernai • Alsace</span>
+            </p>
+            <p class="text-sm text-white/70 pl-6">Aussi à distance partout en France</p>
+          </div>
+        </div>
+      </div>
+<!-- 3. Colonne : CTA (même largeur sur desktop & centrés verticalement) -->
+      <div class="lg:col-span-4 flex flex-col items-center lg:items-end justify-center space-y-4 pt-6 lg:pt-0 h-full">
+        <a href="#" class="reveal btn-cta btn-wa-trigger cg-magnet uppercase text-base py-3 px-6 text-center flex items-center justify-center w-full lg:w-72" data-wa-msg="Bonjour, je souhaiterais discuter d'un projet de communication.">
+          Écrire sur WhatsApp
         </a>
-    </div>
-</main>
-<footer class="max-w-6xl w-full mx-auto py-4 px-2 text-center text-sm text-slate-200 border-t border-slate-200/60 flex flex-col sm:flex-row items-center justify-between gap-2 relative z-10">
-    <div class="flex items-center gap-2">
-        <a href="index.html" class="transition-transform duration-300 hover:scale-105 inline-flex items-center">
-            <img src="images/logo/logo-am20.webp" alt="Logo AM 2.0" class="h-5 w-auto" width="20" height="20">
+        <a href="#reservation" class="reveal delay-2 btn-cta-secondary cg-magnet group uppercase text-base py-3 px-6 text-center flex items-center justify-center w-full lg:w-72">
+          <span>Réserver une visio</span>
         </a>
-        <p>© <span id="current-year">2026</span> AM 2.0 • Tous droits réservés</p>
+      </div>
     </div>
-    <div class="flex gap-4">
-        <a href="mentions-legales.html" class="hover:text-slate-400 transition-colors">Mentions & RGPD</a>
-        <span>|</span>
-        <a href="cgv.html" class="hover:text-slate-400 transition-colors">CGV</a>
+<!-- Bas de footer -->
+    <div class="pt-8 grid grid-cols-1 md:grid-cols-3 items-center text-sm text-white/60 gap-4 text-center md:text-left">
+      <p>&copy; <span id="current-year"></span> AM 2.0 • Tous droits réservés.</p>
+<!-- Lien central -->
+      <div class="text-center">
+        <a href="index.html" class="text-white/90 hover:text-cyan-400 transition-colors font-medium">www.am20.fr</a>
+      </div>
+<!-- Liens légaux -->
+      <div class="flex items-center justify-center md:justify-end gap-3">
+        <a href="mentions-legales.html" class="hover:text-white transition-colors">Mentions légales</a>
+        <span class="text-white/30">|</span>
+        <a href="rgpd.html" class="hover:text-white transition-colors">RGPD</a>
+        <span class="text-white/30">|</span>
+        <a href="cgv.html" class="hover:text-white transition-colors">CGV</a>
+      </div>
     </div>
+  </div>
 </footer>
+
+<!-- ================= MODALE WHATSAPP ================= -->
+<div id="wa-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0b1020]/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+  <div id="wa-modal-card" class="wa-phone relative transition-transform duration-300 scale-90 mx-auto">
+<!-- Dynamic Island Mockup -->
+    <div class="wa-island"></div>
+<!-- Status Bar (Croix de fermeture agrandie à la place de la 5G) -->
+    <div class="wa-status flex items-center justify-between">
+      <span class="wa-modal-clock">9:41</span>
+      <button id="wa-modal-close" class="cursor-pointer flex items-center justify-center p-1 hover:opacity-80 transition-opacity" aria-label="Fermer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+<!-- En-tête WhatsApp -->
+    <div class="wa-head">
+      <span class="text-2xl leading-none">‹</span>
+      <img src="images/profils/vignette-am20.webp" alt="AM 2.0">
+      <div class="leading-tight flex-1">
+        <div class="font-semibold text-base">Aurore // AM 2.0</div>
+        <div class="text-xs opacity-85">en ligne</div>
+      </div>
+    </div>
+<!-- Zone de conversation -->
+    <div class="wa-chat">
+      <p class="wa-note">Tu vas être redirigé(e) vers WhatsApp. Voici une suggestion de message que tu pourras modifier avant envoi :</p> 
+      <div class="wa-out">
+        <p id="wa-modal-text" class="text-[1.2rem] leading-[1.35] text-[#111b21]"></p>
+        <div class="wa-meta">
+          <span class="wa-modal-time"></span>
+          ✓✓
+        </div>
+<!-- Bouton Copier et ouvrir dans la modale -->
+        <button id="wa-modal-copy-btn" type="button" class="wa-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+          <span>Copier et ouvrir WhatsApp</span>
+        </button>
+      </div>
+    </div>
+<!-- Input pour message personnalisé dans la modale -->
+    <a id="wa-raw-btn" href="#" target="_blank" rel="noopener noreferrer" class="wa-input">
+      <span>Écrire un message personnalisé</span>
+      <i>➤</i>
+    </a>
+  </div>
+</div>
+
+<!-- Script JS Externe -->
+<script src="dist/script.min.js"></script>
+<script src="Gsap.min.js"></script>
+<script src="ScrollTrigger.min.js"></script>
+<script src="SplitText.min.js"></script>
+<script src="Drawsvgplugin.min.js"></script>
+<script src="Motionpathplugin.min.js"></script>
 </body>
 </html>

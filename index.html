@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index,follow">
 <!-- SEO -->
-    <title>AM 2.0 | Communication & Création web - Obernai, Alsace</title>
+    <title>AM 2.0 | Sites web & Communication • Obernai, Alsace</title>
     <meta name="description" content="Développez votre visibilité avec AM 2.0 : stratégie de communication, création de sites web et supports de communication sur mesure à Obernai, en Alsace et partout en France.">
 <!-- Canonical -->
     <link rel="canonical" href="https://www.am20.fr">
@@ -31,7 +31,7 @@
 <!-- Preload -->
     <link rel="preload" href="/dist/style.css" as="style">
 <!-- CSS -->
-    <link rel="stylesheet" href="dist/style.css">
+    <link rel="stylesheet" href="dist/style.min.css">
 <!-- Données structurées JSON-LD -->
   <script type="application/ld+json">
   {
@@ -148,114 +148,1449 @@
   }
   </script>
 </head>
-<body class="min-h-screen flex flex-col justify-between text-slate-800 font-sans antialiased relative bg-hero-custom">
-  <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/10 blur-[140px] rounded-full pointer-events-none z-0"></div>
-  <header class="relative z-10 w-full max-w-6xl mx-auto px-4 pt-6 md:pt-8 flex items-center justify-center md:justify-between">
-    <a href="/" class="inline-block shrink-0">
-      <img src="images/logo/logo-am20.webp" alt="Logo AM 2.0" class="h-8 md:h-9 w-auto" width="36" height="36">
+<body>
+<!-- Barre de progression du scroll -->
+  <div id="scroll-progress"></div>
+<!-- Curseur personnalisé pochoir -->
+  <div class="custom-cursor" id="cursor"></div>
+  <div class="custom-cursor-ring" id="cursor-ring"></div>
+
+<!-- ================= HEADER ================= -->
+<header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20 pt-3 md:pt-0">
+<!-- Logo -->
+    <a href="#top" class="group flex items-center gap-2.5 transition-transform duration-300 hover:scale-105">
+      <img src="images/logo/logo-am20.webp" alt="Logo AM 2.0" class="h-20 w-auto object-contain">
     </a>
-    <a href="contact.html" 
-      aria-label="Accéder à la page contact"
-      class="hidden md:block shrink-0 transition-transform duration-300 hover:scale-105 self-start -mt-2 -mr-2 sm:mr-0">
-      <img src="images/logo/cta-kraft2.webp" alt="Réserver mon RDV 1er clic" width="300" height="300" class="h-28 sm:h-36 md:h-40 lg:h-48 w-auto object-contain object-top filter drop-shadow-md">
-    </a>
-  </header>
-<main class="relative z-10 flex-grow flex flex-col items-center justify-center px-4 pt-8 pb-4 md:pt-0 md:pb-6 md:-mt-12 max-w-6xl mx-auto w-full">
-  <div class="w-full text-center md:text-left mb-12 md:mb-8">
-    <h1 class="font-accent normal-case text-3xl font-bold tracking-wide text-[#2e3d59] drop-shadow-sm mb-8 md:mb-2">
-      Mets ton offre en valeur <br class="hidden sm:inline">et développe la visibilité de ton entreprise
-    </h1>
-    <p class="text-lg text-[#252e4b]/80 max-w-xl mx-auto md:mx-0">
-      Deux univers pour développer ta visibilité et faire avancer ton activité, que tu sois commerçant, artisan ou entrepreneur indépendant.
-    </p>
+<!-- Navigation Desktop -->
+    <nav class="hidden items-center gap-8 md:flex">
+      <a href="#methode" class="relative text-sm uppercase tracking-wider text-main transition-all duration-300 hover:text-pink hover:translate-x-1 font-medium group">
+        La Vibe AM 2.0
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-pink)] transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a href="#realisations" class="relative text-sm uppercase tracking-wider text-main transition-all duration-300 hover:text-pink hover:translate-x-1 font-medium group">
+        Réalisations
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-pink)] transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a href="#avis" class="relative text-sm uppercase tracking-wider text-main transition-all duration-300 hover:text-pink hover:translate-x-1 font-medium group">
+        Avis
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-pink)] transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a href="#offres" class="relative text-sm uppercase tracking-wider text-main transition-all duration-300 hover:text-pink hover:translate-x-1 font-medium group">
+        Offres
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-pink)] transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a href="#apropos" class="relative text-sm uppercase tracking-wider text-main transition-all duration-300 hover:text-pink hover:translate-x-1 font-medium group">
+        La story AM 2.0
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-pink)] transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      <a href="#faq" class="relative text-sm uppercase tracking-wider text-main transition-all duration-300 hover:text-pink hover:translate-x-1 font-medium group">
+        FAQ
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-pink)] transition-all duration-300 group-hover:w-full"></span>
+      </a>
+    </nav>
+<!-- CTA Desktop -->
+
+<!-- Bouton Burger Mobile -->
+    <button id="menu-toggle" aria-label="Menu" class="relative grid h-14 w-14 place-items-center md:hidden">
+      <!-- Icône Burger (Cyan #5ce1e6) -->
+      <img id="icon-burger" src="components/burger.svg" alt="Menu" class="h-12 w-12 transition-all duration-300 absolute" style="filter: invert(81%) sepia(41%) saturate(846%) hue-rotate(134deg) brightness(98%) contrast(91%);">
+<!-- Icône Croix -->
+      <img id="icon-cross" src="components/cross.svg" alt="Fermer" class="h-12 w-12 opacity-0 scale-75 transition-all duration-300 absolute" style="filter: invert(56%) sepia(80%) saturate(1800%) hue-rotate(295deg) brightness(100%) contrast(100%);">
+    </button>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 w-full max-w-6xl">
-<!-- Carte 1 : Créations Visuelles -->
-      <a href="creations-visuelles.html" aria-label="Accéder à la page Création de sites web & Design graphique" class="group relative flex flex-col rounded-3xl bg-white/90 backdrop-blur-xl p-4 sm:p-5 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-white/60">
-        <div class="relative w-full h-52 sm:h-64 bg-[#2e3d59] rounded-2xl overflow-visible flex items-center justify-center">
-          <div class="absolute inset-0 rounded-2xl bg-gradient-to-tr from-purple-500/20 to-transparent pointer-events-none"></div>
-          <img src="images/hero/choix-commercant.webp" 
-               alt="Illustration représentant un dossier adressé aux Artisans, commerçants et associations" 
-               loading="eager"
-               fetchpriority="high"
-               class="absolute -bottom-10 md:-bottom-12 w-auto h-64 sm:h-72 md:h-80 object-contain z-20 transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-2 filter drop-shadow-[0_20px_20px_rgba(0,0,0,0.4)]" />
-        </div>
-        <div class="pt-12 sm:pt-16 md:pt-16 pb-3 px-2 sm:px-4 flex flex-col justify-between flex-grow text-center items-center relative z-10">
-          <div>
-            <div class="inline-flex items-center gap-1.5 text-xs lg:text-sm font-bold tracking-wider text-purple-700 uppercase mb-2">
-              <span>🍡</span>
-              <span>Artisan · Commerçant · Association</span>
-            </div>
-            <h2 class="text-2xl text-[#2e3d59] mb-2 font-bold">
-              Tu veux mettre ton activité en valeur ?
-            </h2>
-            <p class="text-base text-slate-600 mb-4 leading-relaxed">
-              Visuels · Print · Sites web · PLV · Événementiel
-            </p>
+<!-- Mobile Menu Container -->
+  <div id="mobile-menu" class="md:hidden overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0 bg-[var(--card-color)]/95 backdrop-blur-xl border-b-2 border-[#2e3d59]/10 shadow-2xl rounded-b-3xl">
+    <nav class="max-w-7xl mx-auto px-6 flex flex-col gap-2 py-6">
+      <a href="#methode" class="mobile-link rounded-xl px-4 py-3 text-base uppercase tracking-wider text-main font-medium transition-all duration-300 hover:bg-[#ff66c4]/10 hover:text-pink hover:translate-x-2">La Vibe AM 2.0</a>
+      <a href="#realisations" class="mobile-link rounded-xl px-4 py-3 text-base uppercase tracking-wider text-main font-medium transition-all duration-300 hover:bg-[#ff66c4]/10 hover:text-pink hover:translate-x-2">Réalisations</a>
+      <a href="#avis" class="mobile-link rounded-xl px-4 py-3 text-base uppercase tracking-wider text-main font-medium transition-all duration-300 hover:bg-[#ff66c4]/10 hover:text-pink hover:translate-x-2">Avis</a>
+      <a href="#offres" class="mobile-link rounded-xl px-4 py-3 text-base uppercase tracking-wider text-main font-medium transition-all duration-300 hover:bg-[#ff66c4]/10 hover:text-pink hover:translate-x-2">Offres</a>
+      <a href="#apropos" class="mobile-link rounded-xl px-4 py-3 text-base uppercase tracking-wider text-main font-medium transition-all duration-300 hover:bg-[#ff66c4]/10 hover:text-pink hover:translate-x-2">La story AM 2.0</a>
+      <a href="#faq" class="mobile-link rounded-xl px-4 py-3 text-base uppercase tracking-wider text-main font-medium transition-all duration-300 hover:bg-[#ff66c4]/10 hover:text-pink hover:translate-x-2">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO SECTION ================= -->
+<section id="top" class="relative overflow-hidden bg-hero-pattern pt-24 md:pt-28 min-h-screen flex flex-col justify-between">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid items-center gap-8 pt-4 md:grid-cols-12 md:my-auto">
+<!-- Left Column -->
+    <div class="md:col-span-7 flex flex-col items-center md:items-start text-center md:text-left">
+<!-- Sticker -->
+      <div class="reveal mb-8 md:mb-4 flex flex-wrap justify-center md:justify-start items-center gap-3">
+        <span class="sticker uppercase">
+          <span class="font-extras text-pink text-2xl normal-case">a</span> Communication &amp; Design
+        </span>
+        <span class="text-xs uppercase tracking-[0.2em] text-main-70 font-semibold flex items-center gap-1.5">
+          <span class="font-extras text-pink text-base normal-case">d</span> Indépendants &amp; TPE
+        </span>
+      </div>
+<!-- Titre Principal Hero -->
+      <h1 class="reveal delay-1 font-display text-6xl uppercase leading-[1.05] tracking-tight text-main sm:text-5xl md:text-6xl mb-10 md:mb-0">
+        <span class="text-main-85">Besoin d'une com'</span> <span class="grad-text font-display">taillée</span> <span class="text-main-85">pour ton activité&nbsp;?</span>
+      </h1>
+<!-- Texte de Présentation -->
+      <p class="reveal delay-2 mt-0 md:mt-4 mb-10 md:mb-0 max-w-xl text-lg leading-relaxed text-main-85">
+        <span class="font-semibold text-main">Sites web, profils LinkedIn, vitrines Instagram et supports imprimés</span> : je crée la vitrine pro qui met ton activité en valeur et qui fait <span class="grad-text font-bold">cliquer tes visiteurs</span>.
+      </p>
+<!-- CTA Buttons -->
+      <div class="reveal delay-3 mt-0 md:mt-6 flex flex-col md:flex-row justify-center md:justify-start items-center gap-4 w-full">
+  <!-- CTA Principal -->
+        <a href="contact.html#contact" class="btn-cta text-base uppercase w-full max-w-xs md:w-auto justify-center">
+          Discuter de mon projet
+        </a>
+  <!-- CTA Secondaire -->
+        <a href="#realisations" class="btn-ghost text-base group uppercase w-full max-w-xs md:w-auto justify-center">
+          Voir les réalisations 
+        </a>
+      </div>
+<!-- Preuve Sociale -->
+      <div class="reveal delay-4 mt-6 md:mt-8 mb-4 md:mb-0 flex flex-col md:flex-row items-center gap-3 md:gap-5">
+  <!-- Ligne 1 : Étoiles + Note -->
+        <div class="flex items-center justify-center gap-2">
+          <div class="flex text-pink text-xl tracking-tighter">
+            ★★★★★
           </div>
-          <span class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-700 to-[#29c6dc] text-white font-bold text-base shadow-md transition-all duration-300 group-hover:shadow-purple-500/30 group-hover:scale-105">
-            Découvrir les créations
-            <svg class="w-4 h-4 fill-none stroke-current stroke-[2.5] transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24">
-              <polyline points="9 6 15 12 9 18"></polyline>
-            </svg>
-          </span>
+          <span class="text-sm font-medium text-main">5/5 sur Google</span>
         </div>
-      </a>
-<!-- Carte 2 : Accompagnement Entrepreneurs -->
-      <a href="accompagnement-entrepreneurs.html" aria-label="Accéder à la page Stratégie de communication & Parcours client" class="group relative flex flex-col rounded-3xl bg-white/90 backdrop-blur-xl p-4 sm:p-5 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-white/60">
-        <div class="relative w-full h-52 sm:h-64 bg-[#2e3d59] rounded-2xl overflow-visible flex items-center justify-center">
-          <div class="absolute inset-0 rounded-2xl bg-gradient-to-tr from-[#29c6dc]/20 to-transparent pointer-events-none"></div>
-          <img src="images/hero/choix-freelance.webp" 
-               alt="Illustration représentant un dossier adressé aux indépendants et freelances" 
-               loading="eager"
-               fetchpriority="high"
-               class="absolute -bottom-10 md:-bottom-12 w-auto h-64 sm:h-72 md:h-80 object-contain z-20 transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-2 filter drop-shadow-[0_20px_20px_rgba(0,0,0,0.4)]" />
-        </div>
-        <div class="pt-12 sm:pt-16 md:pt-16 pb-3 px-2 sm:px-4 flex flex-col justify-between flex-grow text-center items-center relative z-10">
-          <div>
-            <div class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold tracking-wider text-cyan-600 uppercase mb-2">
-              <span>🌸</span>
-              <span>Indépendant · Freelance</span>
-            </div>
-            <h2 class="text-2xl md:text-2xl text-[#2e3d59] mb-2 font-bold">
-              Tu veux attirer et convaincre tes prospects ?
-            </h2>
-            <p class="text-base text-slate-600 mb-4 leading-relaxed">
-              Message · Parcours client · Rendez-vous commerciaux
-            </p>
+  <!-- Trait vertical séparateur (visible uniquement sur desktop) -->
+        <div class="hidden md:block h-8 w-px bg-[#2e3d59]/15"></div>
+  <!-- Ligne 2 & 3 sur mobile : Avatars et Texte de confiance groupés -->
+        <div class="flex flex-col md:flex-row items-center gap-2 md:gap-3">
+          <div class="flex items-center -space-x-3">
+            <img src="images/profils/2.webp" alt="Client 1" class="h-10 w-10 rounded-full border-2 border-[var(--bg-color)] object-cover shadow-sm">
+            <img src="images/profils/11.webp" alt="Client 2" class="h-10 w-10 rounded-full border-2 border-[var(--bg-color)] object-cover shadow-sm">
+            <img src="images/profils/17.webp" alt="Client 3" class="h-10 w-10 rounded-full border-2 border-[var(--bg-color)] object-cover shadow-sm">
+            <img src="images/profils/4.webp" alt="Client 4" class="h-10 w-10 rounded-full border-2 border-[var(--bg-color)] object-cover shadow-sm">
+            <span class="grid h-10 w-10 place-items-center rounded-full border-2 border-[var(--bg-color)] bg-[var(--text-color)] font-display text-xs text-white">
+              +20
+            </span>
           </div>
-          <span class="inline-flex items-center justify-center gap-2 px-4 lg:px-6 py-3 rounded-full bg-gradient-to-r from-purple-700 to-[#29c6dc] text-white font-bold text-base shadow-md transition-all duration-300 group-hover:shadow-purple-500/30 group-hover:scale-105">
-            Découvrir l’accompagnement
-            <svg class="w-4 h-4 fill-none stroke-current stroke-[2.5] transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24">
-              <polyline points="9 6 15 12 9 18"></polyline>
-            </svg>
-          </span>
+          <span class="text-base text-main-70">Ils m'ont fait confiance</span>
         </div>
-      </a>
-    </div>
-</main>
-  <footer class="relative z-10 w-full py-6 text-center text-sm text-[#2e3d59]/90">
-    <div class="max-w-6xl mx-auto px-4 flex flex-col items-center gap-6">
-      <a href="contact.html" 
-        aria-label="Accéder à la page contact"
-        class="block md:hidden shrink-0 transition-transform duration-300 hover:scale-105 my-2">
-        <img src="images/logo/cta-kraft2.webp" 
-            alt="Réserver mon RDV 1er clic" 
-            width="300" 
-            height="300" 
-            class="h-40 w-auto object-contain object-top filter drop-shadow-md mx-auto">
-      </a>
-      <div class="w-full flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div class="flex items-center gap-2">
-          <img src="images/logo/logo-am20.webp" alt="Logo AM 2.0" class="h-5 w-auto" width="20" height="20">
-          <p>© <span id="current-year">2026</span> AM 2.0 • Tous droits réservés</p>
-        </div>
-        <nav class="flex items-center gap-4 sm:gap-6" aria-label="Liens légaux">
-          <a href="mentions-legales.html" class="hover:text-purple-700 transition-colors duration-200">Mentions & RGPD</a>
-        </nav>
       </div>
     </div>
-  </footer>
-  <script src="dist/script.min.js" defer></script>
+<!-- Right Column / Image Hero -->
+    <div class="md:col-span-5 -mb-8 sm:mb-0">
+      <div class="relative mx-auto max-w-lg md:max-w-none">
+        <img src="images/hero/hero-img-am20.webp" alt="Communication et design AM 2.0" fetchpriority="high" class="w-full h-auto object-cover md:scale-105">
+      </div>
+    </div>
+  </div>
+<!-- Marquee Banner Fantôme (Géré par JS) -->
+<div class="cg-marquee" aria-hidden="true">
+  <div class="cg-track font-display-shadow text-4xl" id="cg-track">
+    <span>Sites web</span><span>Profils LinkedIn</span><span>Vitrines Instagram</span><span>Supports imprimés</span>
+    <span>Sites web</span><span>Profils LinkedIn</span><span>Vitrines Instagram</span><span>Supports imprimés</span>
+    <span>Sites web</span><span>Profils LinkedIn</span><span>Vitrines Instagram</span><span>Supports imprimés</span>
+    <span>Sites web</span><span>Profils LinkedIn</span><span>Vitrines Instagram</span><span>Supports imprimés</span>
+  </div>
+</div>
+</section>
+
+<!-- ================= SECTION 2 : LE DIAG ================= -->
+<section id="miroir" class="reveal relative overflow-hidden py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<!-- En-tête de section -->
+    <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
+<!-- Sticker / Pill -->
+      <div class="mb-8 md:mb-16 flex items-center justify-center">
+        <span class="sticker uppercase">
+          <span class="font-extras text-pink text-2xl normal-case">e</span> Le diag
+        </span>
+      </div>
+<!-- Titre H2 -->
+      <h2 class="font-display text-6xl md:text-8xl uppercase leading-[1.08] tracking-tight text-main-85 sm:text-4xl md:text-5xl">
+        Marre de gérer ta com' <span class="grad-text font-display">entre 2 rendez-vous</span>&nbsp;?
+      </h2>
+<!-- Texte d'introduction -->
+      <p class="mt-8 text-lg sm:text-xl leading-relaxed text-main-85">
+        Tout faire soi-même, c’est possible. Mais entre les heures passées à chercher comment faire et les détails auxquels tu n’avais pas pensé, la facture peut vite grimper.
+      </p>
+    </div>
+<!-- Grille des 4 mini-cartes  -->
+    <div class="mt-8 md:mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
+<!-- Carte 01 -->
+      <div class="reveal group relative rounded-2xl p-[2px] bg-gradient-to-r from-[var(--accent-pink)] to-[var(--accent-cyan)] transition-all duration-500 hover:bg-gradient-to-r hover:from-[var(--accent-cyan)] hover:to-[var(--accent-pink)] shadow-md hover:shadow-xl hover:-translate-y-1">
+        <div class="h-full w-full rounded-[14px] bg-[var(--card-color)] p-6 md:p-8 flex flex-col justify-between relative overflow-hidden">
+    <!-- Numéro fantomisé -->
+          <span class="absolute right-4 bottom-0 font-display-shadow text-7xl md:text-8xl pointer-events-none select-none transition-transform duration-500 group-hover:scale-110" style="color: var(--accent-pink); opacity: 0.12;">
+            01
+          </span>
+          <div class="relative z-10">
+            <h3 class="font-bold text-lg uppercase tracking-tight text-main-85 mt-2 leading-snug">
+              Des visuels qui ne rendent pas justice à ton travail
+            </h3>
+            <p class="mt-4 text-lg leading-relaxed text-main">
+              Malgré tous tes efforts, tes supports ne reflètent pas la qualité de ce que tu proposes.
+            </p>
+          </div>
+        </div>
+      </div>
+<!-- Carte 02 (légèrement inclinée) -->
+      <div class="reveal group relative rounded-2xl p-[2px] bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-pink)] transition-all duration-500 hover:bg-gradient-to-r hover:from-[var(--accent-pink)] hover:to-[var(--accent-cyan)] shadow-md hover:shadow-xl hover:-translate-y-1 -rotate-1 hover:rotate-0">
+        <div class="h-full w-full rounded-[14px] bg-[var(--card-color)] p-6 md:p-8 flex flex-col justify-between relative overflow-hidden">
+    <!-- Numéro fantomisé -->
+          <span class="absolute right-4 bottom-0 font-display-shadow text-7xl md:text-8xl pointer-events-none select-none transition-transform duration-500 group-hover:scale-110" style="color: var(--accent-cyan); opacity: 0.12;">
+            02
+          </span>
+          <div class="relative z-10">
+            <h3 class="font-bold text-lg uppercase tracking-tight text-main-85 mt-2 leading-snug">
+              Des contacts qui se font attendre
+            </h3>
+            <p class="mt-4 text-lg leading-relaxed text-main">
+              Un parcours trop compliqué, une offre difficile à comprendre et des visiteurs qui hésitent avant de te contacter.
+            </p>
+          </div>
+        </div>
+      </div>
+<!-- Carte 03 (Border cyan unie + légèrement inclinée) -->
+      <div class="reveal group relative rounded-2xl border-2 border-[var(--accent-cyan)] bg-[var(--card-color)] p-6 md:p-8 shadow-md hover:shadow-xl rotate-1 hover:rotate-0 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+    <!-- Numéro fantomisé -->
+        <span class="absolute right-4 bottom-0 font-display-shadow text-7xl md:text-8xl pointer-events-none select-none transition-transform duration-500 group-hover:scale-110" style="color: var(--accent-pink); opacity: 0.12;">
+          03
+        </span>
+        <div class="relative z-10 flex flex-col justify-between h-full">
+          <div>
+            <h3 class="font-bold text-lg uppercase tracking-tight text-main-85 mt-2 leading-snug">
+              Un site toujours un peu en chantier
+            </h3>
+            <p class="mt-4 text-lg leading-relaxed text-main">
+              Un texte à retoucher, des photos à modifier… et des mois qui passent sans que tu trouves le temps de t'en occuper.
+            </p>
+          </div>
+        </div>
+      </div>
+<!-- Carte 04 -->
+      <div class="reveal group relative rounded-2xl p-[2px] bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-pink)] transition-all duration-500 hover:bg-gradient-to-r hover:from-[var(--accent-pink)] hover:to-[var(--accent-cyan)] shadow-md hover:shadow-xl hover:-translate-y-1">
+        <div class="h-full w-full rounded-[14px] bg-[var(--card-color)] p-6 md:p-8 flex flex-col justify-between relative overflow-hidden">
+    <!-- Numéro fantomisé -->
+          <span class="absolute right-4 bottom-0 font-display-shadow text-7xl md:text-8xl pointer-events-none select-none transition-transform duration-500 group-hover:scale-110" style="color: var(--accent-cyan); opacity: 0.12;">
+            04
+          </span>
+          <div class="relative z-10">
+            <h3 class="font-bold text-lg uppercase tracking-tight text-main-85 mt-2 leading-snug">
+              Des erreurs qui peuvent te coûter cher
+            </h3>
+            <p class="mt-4 text-lg leading-relaxed text-main">
+              Mentions légales manquantes, images utilisées sans autorisation… Des oublis qui peuvent avoir des conséquences.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SÉPARATEUR SECTION ================= -->
+<div class="relative overflow-hidden py-4 md:py-10 select-none pointer-events-none flex justify-center items-center">
+  <p class="font-extras text-3xl sm:text-5xl md:text-6xl uppercase tracking-[0.25em] text-center" style="color: #2e3d59; opacity: 0.12;">
+    <span class="inline">AEIDEHA</span>
+  </p>
+</div>
+
+<!-- ================= SECTION 3 : LA MÉTHODE AM 2.0 ================= -->
+<section id="methode" class="reveal relative overflow-hidden py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid items-stretch gap-12 lg:grid-cols-12">
+<!-- Colonne Gauche : Titre + Intro  -->
+    <div class="lg:col-span-5 flex flex-col justify-between h-full text-center lg:text-left">
+      <div>
+<!-- Sticker / Pill -->
+        <div class="mb-8 flex items-center justify-center lg:justify-start">
+          <span class="sticker uppercase">
+            <span class="font-extras text-pink text-2xl">j</span> La vibe AM 2.0
+          </span>
+        </div>
+<!-- Titre H2 -->
+        <h2 class="font-display text-6xl uppercase leading-[1.08] tracking-tight text-main-85 sm:text-4xl md:text-5xl">
+          Du design à l'expérience <span class="grad-text font-display">rien n'est laissé au hasard</span>
+        </h2>
+<!-- Texte d'introduction -->
+        <p class="mt-8 text-lg sm:text-xl leading-relaxed text-main-85">
+          Un support professionnel ne se résume pas à son apparence. Je travaille sur le design, le contenu et le parcours pour attirer l'attention, rendre ton offre attractive et encourager la prise de contact.
+        </p>
+      </div>
+<!-- CTA Principal (Visible uniquement sur desktop) -->
+      <div class="reveal mt-8 hidden lg:flex w-full justify-start">
+        <a href="contact.html#contact" class="btn-cta text-base uppercase w-auto justify-center">
+        Discuter de mon projet
+      </a>
+      </div>
+    </div>
+<!-- Colonne Droite : Grille de 4 cartes -->
+    <div class="lg:col-span-7 flex flex-col gap-6">
+      <div class="grid gap-6 grid-cols-1 md:grid-cols-2">
+  <!-- Carte 1 : Attractivité -->
+        <div class="rounded-2xl border-2 border-[var(--accent-pink)] bg-[var(--card-color)] p-6 md:p-8 shadow-sm transition-transform duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-4">
+            <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-pink-400 bg-pink-400/10 text-pink font-extras text-2xl">
+              h
+            </span>
+            <h3 class="font-bold text-xl uppercase tracking-tight text-main-85">
+              L'attractivité
+            </h3>
+          </div>
+          <p class="mt-4 text-lg leading-relaxed text-main">
+            Un design qui attire l'œil, affirme ton identité et donne envie de découvrir ce que tu proposes.
+          </p>
+        </div>
+  <!-- Carte 2 : Expérience Utilisateur -->
+        <div class="group relative rounded-2xl p-[2px] bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-pink)] transition-all duration-500 hover:bg-gradient-to-r hover:from-[var(--accent-pink)] hover:to-[var(--accent-cyan)] shadow-md hover:shadow-xl hover:-translate-y-1">
+          <div class="h-full w-full rounded-[14px] p-6 md:p-8 flex flex-col justify-between relative overflow-hidden" style="background: radial-gradient(circle at 15% 20%, rgba(92, 225, 230, 0.25) 0%, transparent 70%), radial-gradient(circle at 85% 80%, rgba(255, 102, 196, 0.25) 0%, transparent 70%), var(--bg-color);">
+            <div class="relative z-10">
+              <div class="flex items-center gap-4">
+                <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-cyan-400 bg-[#eef7ff]/50 text-cyan font-extras text-2xl">
+                  e
+                </span>
+                <h3 class="font-bold text-xl uppercase tracking-tight text-main-85">
+                  L'expérience utilisateur
+                </h3>
+              </div>
+              <p class="mt-4 text-lg leading-relaxed text-main">
+                Un parcours fluide pensé pour guider les visiteurs sur n'importe quel support.
+              </p>
+            </div>
+          </div>
+        </div>
+  <!-- Carte 3 : Prise de Contact -->
+        <div class="rounded-2xl border-2 border-[var(--accent-cyan)] bg-[var(--card-color)] p-6 md:p-8 shadow-sm transition-transform duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-4">
+            <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-cyan-400 bg-cyan-400/10 text-cyan font-extras text-2xl">
+              i
+            </span>
+            <h3 class="font-bold text-xl uppercase tracking-tight text-main-85">
+              La prise de contact
+            </h3>
+          </div>
+          <p class="mt-4 text-lg leading-relaxed text-main">
+            Des infos claires pour savoir comment demander un devis, réserver ou prendre rendez-vous.
+          </p>
+        </div>
+  <!-- Carte 4 : Fiabilité -->
+        <div class="rounded-2xl border-2 border-[var(--accent-pink)] bg-[var(--card-color)] p-6 md:p-8 shadow-sm transition-transform duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-4">
+            <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-pink-400 bg-pink-400/10 text-pink font-extras text-2xl">
+              a
+            </span>
+            <h3 class="font-bold text-xl uppercase tracking-tight text-main-85">
+              La fiabilité
+            </h3>
+          </div>
+          <p class="mt-4 text-lg leading-relaxed text-main">
+            Des supports conformes et soignés, pour éviter les erreurs coûteuses et inspirer confiance.
+          </p>
+        </div>
+      </div>
+<!-- CTA Principal (Visible uniquement sur mobile) -->
+      <div class="reveal mt-2 flex lg:hidden w-full justify-center">
+        <a href="contact.html#contact" class="btn-cta text-base uppercase w-full max-w-xs justify-center">
+          Discuter de mon projet
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= SECTION 4 : RÉALISATIONS ================= -->
+<section id="realisations" class="relative overflow-hidden bg-[#2e3d59] py-20 md:py-28 text-white">
+<!-- Titre "WORK" géant fantômisé en arrière-plan -->
+  <div class="absolute inset-x-0 top-0 pointer-events-none select-none overflow-hidden z-0 flex justify-center lg:justify-end">
+    <span class="font-display-shadow text-[32vw] lg:text-[18vw] uppercase leading-none text-center lg:text-right translate-y-[-10%] lg:translate-y-0" style="color: #eef7ff; opacity: 0.03;">
+      work
+    </span>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<!-- En-tête de section -->
+    <div class="flex flex-col items-center text-center lg:items-start lg:text-left max-w-3xl mb-16 md:mb-24">
+<!-- Sticker / Pill -->
+      <div class="mb-6 flex items-center justify-center lg:justify-start">
+        <span class="sticker uppercase">
+          <span class="font-extras text-pink text-2xl normal-case">h</span> Réalisations
+        </span>
+      </div>
+<!-- Titre H2 -->
+      <h2 class="font-display text-6xl md:text-8xl uppercase leading-[1.08] tracking-tight text-white sm:text-4xl md:text-5xl">
+        Des réalisations qui <span class="grad-text font-display">sortent du lot</span>
+      </h2>
+<!-- Texte d'introduction -->
+      <p class="mt-6 text-lg sm:text-xl leading-relaxed text-white/80">
+        Chaque activité a ses besoins. Voici quelques exemples.
+      </p>
+    </div>
+<!-- Conteneur des 4 blocs de réalisations -->
+    <div class="space-y-20 md:space-y-28">
+<!-- BLOC 1 : SITES WEB (Image à gauche / Texte à droite sur desktop) -->
+      <div class="grid items-center gap-12 lg:grid-cols-12">
+  <!-- Image (Order 2 sur mobile, Order 1 sur desktop) -->
+        <div class="order-2 lg:col-span-7 lg:order-1">
+          <picture>
+            <source media="(max-width: 768px)" srcset="images/realisations/web/main-site-mob.webp">
+            <img src="images/realisations/web/main-site-desktop.webp" alt="Site web principal AM 2.0" class="w-full h-auto rounded-2xl object-cover shadow-xl border border-white/10">
+          </picture>
+  <!-- CTA mobile uniquement (pleine largeur) -->
+          <div class="mt-8 flex justify-center lg:hidden w-full">
+            <a href="portfolio.html#sites-web" class="btn-cta-secondary uppercase text-base py-3 px-5 w-full max-w-xs justify-center reveal">
+              Voir les sites réalisés
+            </a>
+          </div>
+        </div>
+  <!-- Texte (Order 1 sur mobile, Order 2 sur desktop) -->
+        <div class="order-1 lg:col-span-5 lg:order-2 flex flex-col items-center text-center lg:items-start lg:text-left">
+          <div class="flex flex-col items-center lg:flex-row lg:items-center gap-4 mb-4">
+            <span class="grid h-14 w-14 shrink-0 place-items-center rounded-full border border-cyan-400 bg-cyan-400/10 text-cyan font-extras text-2xl">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="h-7 w-7 fill-current"><path d="M415.9 344L225 344C227.9 408.5 242.2 467.9 262.5 511.4C273.9 535.9 286.2 553.2 297.6 563.8C308.8 574.3 316.5 576 320.5 576C324.5 576 332.2 574.3 343.4 563.8C354.8 553.2 367.1 535.8 378.5 511.4C398.8 467.9 413.1 408.5 416 344zM224.9 296L415.8 296C413 231.5 398.7 172.1 378.4 128.6C367 104.2 354.7 86.8 343.3 76.2C332.1 65.7 324.4 64 320.4 64C316.4 64 308.7 65.7 297.5 76.2C286.1 86.8 273.8 104.2 262.4 128.6C242.1 172.1 227.8 231.5 224.9 296zM176.9 296C180.4 210.4 202.5 130.9 234.8 78.7C142.7 111.3 74.9 195.2 65.5 296L176.9 296zM65.5 344C74.9 444.8 142.7 528.7 234.8 561.3C202.5 509.1 180.4 429.6 176.9 344L65.5 344zM463.9 344C460.4 429.6 438.3 509.1 406 561.3C498.1 528.6 565.9 444.8 575.3 344L463.9 344zM575.3 296C565.9 195.2 498.1 111.3 406 78.7C438.3 130.9 460.4 210.4 463.9 296L575.3 296z"/></svg>
+            </span>
+            <h3 class="font-display text-3xl md:text-5xl uppercase tracking-tight text-white">
+              Sites web
+            </h3>
+          </div>
+          <p class="mt-4 text-lg md:text-xl leading-relaxed text-white/80">
+            Tes futurs clients te cherchent sur Google. Montre-leur une vitrine claire qui présente ton activité, répond à leurs questions et leur permet de te contacter 24h/24.
+          </p>
+  <!-- CTA desktop uniquement -->
+          <div class="mt-6 hidden lg:block">
+            <a href="portfolio.html#sites-web" class="btn-cta-secondary uppercase text-base py-3 px-5 reveal">
+              Voir les sites réalisés
+            </a>
+          </div>
+        </div>
+      </div>
+<!-- BLOC 2 : PROFILS LINKEDIN (Texte à gauche / Image à droite sur desktop) -->
+      <div class="grid items-center gap-12 lg:grid-cols-12">
+  <!-- Texte (Order 1 sur mobile et desktop) -->
+        <div class="order-1 lg:col-span-5 lg:order-1 flex flex-col items-center text-center lg:items-start lg:text-left">
+         <div class="flex flex-col items-center lg:flex-row lg:items-center gap-4 mb-4">
+            <span class="grid h-14 w-14 shrink-0 place-items-center rounded-full border border-blue-400 bg-blue-400/10 text-blue-400 font-extras text-2xl">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="h-7 w-7 fill-current"><path d="M196.3 512L103.4 512L103.4 212.9L196.3 212.9L196.3 512zM149.8 172.1C120.1 172.1 96 147.5 96 117.8C96 103.5 101.7 89.9 111.8 79.8C121.9 69.7 135.6 64 149.8 64C164 64 177.7 69.7 187.8 79.8C197.9 89.9 203.6 103.6 203.6 117.8C203.6 147.5 179.5 172.1 149.8 172.1zM543.9 512L451.2 512L451.2 366.4C451.2 331.7 450.5 287.2 402.9 287.2C354.6 287.2 347.2 324.9 347.2 363.9L347.2 512L254.4 512L254.4 212.9L343.5 212.9L343.5 253.7L344.8 253.7C357.2 230.2 387.5 205.4 432.7 205.4C526.7 205.4 544 267.3 544 347.7L544 512L543.9 512z"/></svg>
+            </span>
+            <h3 class="font-display text-3xl md:text-5xl uppercase tracking-tight text-white">
+              Profils LinkedIn
+            </h3>
+          </div>
+          <p class="mt-4 text-lg md:text-xl leading-relaxed text-white/80">
+            Plus de 30 millions de profils en France : le tien doit donner envie de s’arrêter. Un profil professionnel qui met ton expertise en valeur et donne envie de te contacter.
+          </p>
+  <!-- CTA desktop uniquement -->
+          <div class="mt-6 hidden lg:block">
+            <a href="portfolio.html#linkedin" class="btn-cta-secondary uppercase text-base py-3 px-5 reveal">
+              Voir les profils LinkedIn
+            </a>
+          </div>
+        </div>
+  <!-- Image (Order 2 sur mobile et desktop) -->
+        <div class="order-2 lg:col-span-7 lg:order-2">
+          <picture>
+            <source media="(max-width: 768px)" srcset="images/realisations/linkedin/main-link-mob.webp">
+            <img src="images/realisations/linkedin/main-link.webp" alt="Profil LinkedIn AM 2.0" class="w-full h-auto rounded-2xl object-cover">
+          </picture>
+  <!-- CTA mobile uniquement (pleine largeur) -->
+          <div class="mt-8 flex justify-center lg:hidden w-full">
+            <a href="portfolio.html#linkedin" class="btn-cta-secondary uppercase text-base py-3 px-5 w-full max-w-xs justify-center reveal">
+              Voir les profils LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+<!-- BLOC 3 : VITRINES INSTAGRAM (Image à gauche / Texte à droite sur desktop) -->
+      <div class="grid items-center gap-12 lg:grid-cols-12">
+  <!-- Image (Order 2 sur mobile, Order 1 sur desktop) -->
+        <div class="order-2 lg:col-span-7 lg:order-1">
+          <picture>
+            <source media="(max-width: 768px)" srcset="images/realisations/insta/main-insta-mob.webp">
+            <img src="images/realisations/insta/main-insta.webp" alt="Vitrine Instagram AM 2.0" class="w-full h-auto rounded-2xl object-cover md:shadow-xl md:border md:border-white/10">
+          </picture>
+  <!-- CTA mobile uniquement (pleine largeur) -->
+          <div class="mt-8 flex justify-center lg:hidden w-full">
+            <a href="portfolio.html#instagram" class="btn-cta-secondary uppercase text-base py-3 px-5 w-full max-w-xs justify-center reveal">
+              Voir les vitrines Instagram
+            </a>
+          </div>
+        </div>
+  <!-- Texte (Order 1 sur mobile, Order 2 sur desktop) -->
+        <div class="order-1 lg:col-span-5 lg:order-2 flex flex-col items-center text-center lg:items-start lg:text-left">
+          <div class="flex flex-col items-center lg:flex-row lg:items-center gap-4 mb-4">
+            <span class="grid h-14 w-14 shrink-0 place-items-center rounded-full border border-pink-400 bg-pink-400/10 text-pink font-extras text-2xl">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="h-7 w-7 fill-current"><path d="M320.3 205C256.8 204.8 205.2 256.2 205 319.7C204.8 383.2 256.2 434.8 319.7 435C383.2 435.2 434.8 383.8 435 320.3C435.2 256.8 383.8 205.2 320.3 205zM319.7 245.4C360.9 245.2 394.4 278.5 394.6 319.7C394.8 360.9 361.5 394.4 320.3 394.6C279.1 394.8 245.6 361.5 245.4 320.3C245.2 279.1 278.5 245.6 319.7 245.4zM413.1 200.3C413.1 185.5 425.1 173.5 439.9 173.5C454.7 173.5 466.7 185.5 466.7 200.3C466.7 215.1 454.7 227.1 439.9 227.1C425.1 227.1 413.1 215.1 413.1 200.3zM542.8 227.5C541.1 191.6 532.9 159.8 506.6 133.6C480.4 107.4 448.6 99.2 412.7 97.4C375.7 95.3 264.8 95.3 227.8 97.4C192 99.1 160.2 107.3 133.9 133.5C107.6 159.7 99.5 191.5 97.7 227.4C95.6 264.4 95.6 375.3 97.7 412.3C99.4 448.2 107.6 480 133.9 506.2C160.2 532.4 191.9 540.6 227.8 542.4C264.8 544.5 375.7 544.5 412.7 542.4C448.6 540.7 480.4 532.5 506.6 506.2C532.8 480 541 448.2 542.8 412.3C544.9 375.3 544.9 264.5 542.8 227.5zM495 452C487.2 471.6 472.1 486.7 452.4 494.6C422.9 506.3 352.9 503.6 320.3 503.6C287.7 503.6 217.6 506.2 188.2 494.6C168.6 486.8 153.5 471.7 145.6 452C133.9 422.5 136.6 352.5 136.6 319.9C136.6 287.3 134 217.2 145.6 187.8C153.4 168.2 168.5 153.1 188.2 145.2C217.7 133.5 287.7 136.2 320.3 136.2C352.9 136.2 423 133.6 452.4 145.2C472 153 487.1 168.1 495 187.8C506.7 217.3 504 287.3 504 319.9C504 352.5 506.7 422.6 495 452z"/></svg>
+            </span>
+            <h3 class="font-display text-3xl md:text-5xl uppercase tracking-tight text-white">
+              Vitrines Instagram
+            </h3>
+          </div>
+          <p class="mt-4 text-lg md:text-xl leading-relaxed text-white/80">
+            Une vitrine qui fait vivre ton activité. Un feed pro et harmonieux qui dévoile les coulisses de ton univers, donne envie de venir et de revenir te découvrir.
+          </p>
+  <!-- CTA desktop uniquement -->
+          <div class="mt-6 hidden lg:block">
+            <a href="portfolio.html#instagram" class="btn-cta-secondary uppercase text-base py-3 px-5 reveal">
+              Voir les vitrines Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+<!-- BLOC 4 : SUPPORTS IMPRIMÉS (Texte à gauche / Image à droite sur desktop) -->
+      <div class="grid items-center gap-12 lg:grid-cols-12">
+  <!-- Texte (Order 1 sur mobile et desktop) -->
+        <div class="order-1 lg:col-span-5 lg:order-1 flex flex-col items-center text-center lg:items-start lg:text-left">
+          <div class="flex flex-col items-center lg:flex-row lg:items-center gap-4 mb-4">
+            <span class="grid h-14 w-14 shrink-0 place-items-center rounded-full border border-cyan-400 bg-cyan-400/10 text-cyan font-extras text-2xl">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="h-7 w-7 fill-current"><path d="M128 128C128 92.7 156.7 64 192 64L405.5 64C422.5 64 438.8 70.7 450.8 82.7L493.3 125.2C505.3 137.2 512 153.5 512 170.5L512 208L128 208L128 128zM64 320C64 284.7 92.7 256 128 256L512 256C547.3 256 576 284.7 576 320L576 416C576 433.7 561.7 448 544 448L512 448L512 512C512 547.3 483.3 576 448 576L192 576C156.7 576 128 547.3 128 512L128 448L96 448C78.3 448 64 433.7 64 416L64 320zM192 480L192 512L448 512L448 416L192 416L192 480zM520 336C520 322.7 509.3 312 496 312C482.7 312 472 322.7 472 336C472 349.3 482.7 360 496 360C509.3 360 520 349.3 520 336z"/></svg>
+            </span>
+            <h3 class="font-display text-3xl md:text-5xl uppercase tracking-tight text-white">
+              Supports imprimés
+            </h3>
+          </div>
+          <p class="mt-4 text-lg md:text-xl leading-relaxed text-white/80">
+            Ta com’ continue sur le terrain. Cartes de visite, flyers et autres imprimés : des supports cohérents avec ton identité, qui laissent une impression durable.
+          </p>
+  <!-- CTA desktop uniquement -->
+          <div class="mt-6 hidden lg:block">
+            <a href="portfolio.html#print" class="btn-cta-secondary uppercase text-base py-3 px-5 reveal">
+              Voir les créations print
+            </a>
+          </div>
+        </div>
+  <!-- Image (Order 2 sur mobile et desktop) -->
+        <div class="order-2 lg:col-span-7 lg:order-2">
+          <picture>
+            <source media="(max-width: 768px)" srcset="images/realisations/print/main-flyer-mob.webp">
+            <img src="images/realisations/print/main-flyer.webp" alt="Support imprimé AM 2.0" class="w-full h-auto rounded-2xl object-cover shadow-xl border border-white/10">
+          </picture>
+  <!-- CTA mobile uniquement (pleine largeur) -->
+          <div class="mt-8 flex justify-center lg:hidden w-full">
+            <a href="portfolio.html#print" class="btn-cta-secondary uppercase text-base py-3 px-5 w-full max-w-xs justify-center reveal">
+              Voir les créations print
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION : AVIS CLIENTS ================= -->
+<section id="avis" class="reveal relative overflow-hidden py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<!-- En-tête de section -->
+    <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
+<!-- Sticker / Pill -->
+      <div class="mb-8 md:mb-16 flex items-center justify-center">
+        <span class="sticker uppercase">
+          <span class="font-extras text-pink text-2xl normal-case">a</span> Retours d'expérience
+        </span>
+      </div>
+<!-- Titre H2 -->
+      <h2 class="font-display text-6xl md:text-8xl uppercase leading-[1.08] tracking-tight text-main-85 sm:text-4xl md:text-5xl">
+        Ce sont eux qui en <span class="grad-text font-display">parlent le mieux</span>
+      </h2>
+<!-- Texte d'introduction -->
+      <p class="mt-8 text-lg sm:text-xl leading-relaxed text-main-85">
+        Ils m'ont fait confiance. Découvrez leurs témoignages.
+      </p>
+    </div>
+<!-- ================= TOP 2 : LES 2 GRANDS AVIS FEATURED ================= -->
+    <div class="mt-8 md:mt-16 grid gap-6 lg:grid-cols-2 items-stretch">
+    <!-- Carte Top 1 : MB Performance -->
+      <div class="rounded-2xl border-2 border-[var(--accent-pink)] bg-[var(--card-color)] p-6 md:p-8 shadow-sm transition-transform duration-300 hover:-translate-y-1 flex flex-col justify-between">
+        <div>
+      <!-- Profil Header & Badge Google -->
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
+            <div class="flex items-center gap-4">
+              <img src="images/profils/5.webp" alt="MB Performance" class="h-14 w-14 shrink-0 rounded-full object-cover border-2 border-pink-400 shadow-sm">
+              <div>
+                <h3 class="font-bold text-xl uppercase tracking-tight text-main-85">
+                  MB Performance
+                </h3>
+                <p class="text-sm font-semibold text-pink uppercase tracking-wider">
+                  Création de site vitrine
+                </p>
+              </div>
+            </div>
+      <!-- Badge Google & Étoiles -->
+            <div class="flex items-center justify-between sm:flex-col sm:items-end shrink-0 pt-2 sm:pt-0 border-t border-main/10 sm:border-t-0">
+              <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/5 border border-main/10 shadow-sm sm:mb-1.5">
+                <svg viewBox="0 0 24 24" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/></svg>
+                <span class="text-xs font-bold uppercase tracking-wider text-main">Google</span>
+              </div>
+              <div class="flex text-cyan text-xl tracking-tighter">
+                ★★★★★
+              </div>
+            </div>
+          </div>
+      <!-- Citation -->
+          <p class="text-lg leading-relaxed text-main">
+            « La création du site m'a apporté plus de visibilité et une meilleure image face à la clientèle qui est de plus en plus exigeante. AM 2.0 m'a guidé de A à Z pour la création du site. Elle a su faire exactement ce que je voulais voir même mieux. Elle est de bon conseil, très professionnelle et à l'écoute.
+            <br><br>
+            Je suis sincèrement satisfait du travail de AM 2.0 le résultat final dépasse mes attentes. Je recommande son travail à 100% .Merci encore pour ce super travail »
+          </p>
+        </div>
+      </div>
+    <!-- Carte Top 2 : Dojo Shodokan -->
+      <div class="group relative rounded-2xl p-[2px] bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-pink)] transition-all duration-500 hover:bg-gradient-to-r hover:from-[var(--accent-pink)] hover:to-[var(--accent-cyan)] shadow-md hover:shadow-xl hover:-translate-y-1">
+        <div class="h-full w-full rounded-[14px] p-6 md:p-8 flex flex-col justify-between relative overflow-hidden" style="background: radial-gradient(circle at 15% 20%, rgba(92, 225, 230, 0.25) 0%, transparent 70%), radial-gradient(circle at 85% 80%, rgba(255, 102, 196, 0.25) 0%, transparent 70%), var(--bg-color);">
+          <div class="relative z-10 flex flex-col justify-between h-full">
+            <div>
+      <!-- Profil Header & Badge Google -->
+              <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
+                <div class="flex items-center gap-4">
+                  <img src="images/profils/3.webp" alt="Dojo Shodokan" class="h-14 w-14 shrink-0 rounded-full object-cover border-2 border-cyan-400 shadow-sm">
+                  <div>
+                    <h3 class="font-bold text-xl uppercase tracking-tight text-main-85">
+                      Dojo Shodokan
+                    </h3>
+                    <p class="text-sm font-semibold text-cyan uppercase tracking-wider">
+                      Refonte site web & Stratégie Instagram
+                    </p>
+                  </div>
+                </div>
+      <!-- Badge Google & Étoiles -->
+                <div class="flex items-center justify-between sm:flex-col sm:items-end shrink-0 pt-2 sm:pt-0 border-t border-main/10 sm:border-t-0">
+                  <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/5 border border-main/10 shadow-sm sm:mb-1.5">
+                    <svg viewBox="0 0 24 24" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/></svg>
+                    <span class="text-xs font-bold uppercase tracking-wider text-main">Google</span>
+                  </div>
+                  <div class="flex text-pink text-xl tracking-tighter">
+                    ★★★★★
+                  </div>
+                </div>
+              </div>
+      <!-- Citation -->
+              <p class="text-lg leading-relaxed text-main">
+                « Nous sommes ravis de la collaboration avec AM 2.0. Nous lui avons confié la refonte et la gestion de notre site web et de notre Instagram.
+                <br><br>
+                Nous avons gagné en visibilité sur notre région. Et nous avons gagné de nombreuses demandes et de nouveaux adhérents grâce à la stratégie de communication et d'acquisition mises en place.
+                <br><br>
+                On recommande fortement cette entreprise qui sait écouter et proposer des solutions adaptées. Merci encore pour la qualité du travail fourni. »
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- ================= GRILLE DES AUTRES AVIS (3 LIGNES DE 3 COLONNES) ================= -->
+    <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
+<!-- ================= LIGNE 1  ================= -->
+<!-- Avis 01 : Lucie F. -->
+      <div class="group relative rounded-2xl p-[2px] bg-gradient-to-r from-[var(--accent-pink)] to-[var(--accent-cyan)] transition-all duration-500 hover:bg-gradient-to-r hover:from-[var(--accent-cyan)] hover:to-[var(--accent-pink)] shadow-md hover:shadow-xl hover:-translate-y-1">
+        <div class="h-full w-full rounded-[14px] bg-[var(--card-color)] p-6 md:p-8 flex flex-col justify-between relative overflow-hidden">
+          <div class="relative z-10">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <div class="flex items-center gap-4">
+                <img src="images/profils/17.webp" alt="Lucie F." class="h-12 w-12 shrink-0 rounded-full object-cover border border-pink-400">
+                <h3 class="font-bold text-lg uppercase tracking-tight text-main-85">Lucie F.</h3>
+              </div>
+              <div class="flex flex-col items-end shrink-0">
+                <div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/5 border border-main/10 mb-1">
+                  <svg viewBox="0 0 24 24" class="w-3 h-3" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/></svg>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-main">Google</span>
+                </div>
+                <div class="flex text-pink text-lg tracking-tighter">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-lg leading-relaxed text-main">
+              « Travail soigné. Nous avons été parfaitement accompagnés et conseillés, merci Aurore d'avoir fait évoluer notre site ainsi que tout notre marketing. Je recommande vivement. »
+            </p>
+          </div>
+        </div>
+      </div>
+<!-- Avis 02 : Steve B. -->
+      <div class="group relative rounded-2xl p-[2px] bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-pink)] transition-all duration-500 hover:bg-gradient-to-r hover:from-[var(--accent-pink)] hover:to-[var(--accent-cyan)] shadow-md hover:shadow-xl hover:-translate-y-1 -rotate-1 hover:rotate-0">
+        <div class="h-full w-full rounded-[14px] bg-[var(--card-color)] p-6 md:p-8 flex flex-col justify-between relative overflow-hidden">
+          <div class="relative z-10">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <div class="flex items-center gap-4">
+                <img src="images/profils/105.webp" alt="Steve B." class="h-12 w-12 shrink-0 rounded-full object-cover border border-cyan-400">
+                <h3 class="font-bold text-lg uppercase tracking-tight text-main-85">Steve B.</h3>
+              </div>
+              <div class="flex flex-col items-end shrink-0">
+                <div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/5 border border-main/10 mb-1">
+                  <svg viewBox="0 0 24 24" class="w-3 h-3" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/></svg>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-main">Google</span>
+                </div>
+                <div class="flex text-cyan text-lg tracking-tighter">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-lg leading-relaxed text-main">
+              « De la réflexion stratégique à la réalisation technique, en passant par la définition des objectifs, Aurore aura su restituer notre vision et nos valeurs à travers des outils orientés acquisition. Après quelques mois de recul, force est de constater que cela porte ses fruits. Merci pour la qualité du travail effectué et enthousiaste pour la suite. »
+            </p>
+          </div>
+        </div>
+      </div>
+<!-- Avis 03 : Prescilia D.G -->
+      <div class="group relative rounded-2xl border-2 border-[var(--accent-cyan)] bg-[var(--card-color)] p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+        <div class="relative z-10 flex flex-col justify-between h-full">
+          <div>
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <div class="flex items-center gap-4">
+                <img src="images/profils/2.webp" alt="Prescilia D.G" class="h-12 w-12 shrink-0 rounded-full object-cover border border-cyan-400">
+                <h3 class="font-bold text-lg uppercase tracking-tight text-main-85">Prescilia D.G</h3>
+              </div>
+              <div class="flex flex-col items-end shrink-0">
+                <div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/5 border border-main/10 mb-1">
+                  <svg viewBox="0 0 24 24" class="w-3 h-3" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/></svg>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-main">Google</span>
+                </div>
+                <div class="flex text-pink text-lg tracking-tighter">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-lg leading-relaxed text-main">
+              « Aurore effectue un travail clair, très lisible et agencé de manière très intuitive. Ses graphismes sont extraordinaires, tout simplement magnifiques. Je recommande+++ »
+            </p>
+          </div>
+        </div>
+      </div>
+<!-- ================= LIGNE 2 ================= -->
+<!-- Avis 04 : Aswulf -->
+      <div class="group relative rounded-2xl p-[2px] border-2 border-[var(--accent-pink)] transition-all duration-500 shadow-md hover:shadow-xl hover:-translate-y-1">
+        <div class="h-full w-full rounded-[14px] bg-[var(--card-color)] p-6 md:p-8 flex flex-col justify-between relative overflow-hidden">
+          <div class="relative z-10">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <div class="flex items-center gap-4">
+                <img src="images/profils/12.webp" alt="Aswulf" class="h-12 w-12 shrink-0 rounded-full object-cover border border-pink-400">
+                <h3 class="font-bold text-lg uppercase tracking-tight text-main-85">Aswulf</h3>
+              </div>
+              <div class="flex flex-col items-end shrink-0">
+                <div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/5 border border-main/10 mb-1">
+                  <svg viewBox="0 0 24 24" class="w-3 h-3" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/></svg>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-main">Google</span>
+                </div>
+                <div class="flex text-cyan text-lg tracking-tighter">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-lg leading-relaxed text-main">
+              « La capacité d'Aurore à comprendre nos motivations et nos besoins, puis à les exprimer de façon claire et cohérente, est un exemple remarquable de professionnalisme. J'ai particulièrement apprécié son design visuel élégant et expressif qui reflète parfaitement l'esthétique recherchée. »
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Avis 05 : Bernard R. -->
+      <div class="group relative rounded-2xl p-[2px] bg-gradient-to-r from-[var(--accent-pink)] to-[var(--accent-cyan)] transition-all duration-500 hover:bg-gradient-to-r hover:from-[var(--accent-cyan)] hover:to-[var(--accent-pink)] shadow-md hover:shadow-xl hover:-translate-y-1 rotate-1 hover:rotate-0">
+        <div class="h-full w-full rounded-[14px] bg-[var(--card-color)] p-6 md:p-8 flex flex-col justify-between relative overflow-hidden">
+          <div class="relative z-10">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <div class="flex items-center gap-4">
+                <img src="images/profils/20.webp" alt="Bernard R." class="h-12 w-12 shrink-0 rounded-full object-cover border border-pink-400">
+                <h3 class="font-bold text-lg uppercase tracking-tight text-main-85">Bernard R.</h3>
+              </div>
+              <div class="flex flex-col items-end shrink-0">
+                <div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/5 border border-main/10 mb-1">
+                  <svg viewBox="0 0 24 24" class="w-3 h-3" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/></svg>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-main">Google</span>
+                </div>
+                <div class="flex text-pink text-lg tracking-tighter">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-lg leading-relaxed text-main">
+              « Particulièrement impressionné par la qualité de la carte d'invitation. Une composition à la fois élégante, dynamique et parfaitement équilibrée. Le soin apporté aux détails et l'équilibre dans la réalisation témoignent d'un véritable savoir-faire graphique. »
+            </p>
+          </div>
+        </div>
+      </div>
+<!-- Avis 06 : Anne-Gaëlle B. -->
+      <div class="group relative rounded-2xl p-[2px] bg-gradient-to-r from-[var(--accent-pink)] to-[var(--accent-cyan)] transition-all duration-500 hover:bg-gradient-to-r hover:from-[var(--accent-cyan)] hover:to-[var(--accent-pink)] shadow-md hover:shadow-xl hover:-translate-y-1">
+        <div class="h-full w-full rounded-[14px] bg-[var(--card-color)] p-6 md:p-8 flex flex-col justify-between relative overflow-hidden">
+          <div class="relative z-10">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <div class="flex items-center gap-4">
+                <img src="images/profils/1.webp" alt="Anne-Gaëlle B." class="h-12 w-12 shrink-0 rounded-full object-cover border border-pink-400">
+                <h3 class="font-bold text-lg uppercase tracking-tight text-main-85">Anne-Gaëlle B.</h3>
+              </div>
+              <div class="flex flex-col items-end shrink-0">
+                <div class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/5 border border-main/10 mb-1">
+                  <svg viewBox="0 0 24 24" class="w-3 h-3" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/></svg>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-main">Google</span>
+                </div>
+                <div class="flex text-cyan text-lg tracking-tighter">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-lg leading-relaxed text-main">
+              « Aurore a complètement repensé mon profil LinkedIn pour qu'il reflète vraiment qui je suis et ce que je propose. Au-delà du visuel, elle a mis en place une vraie stratégie qui m'aide à être plus visible et plus crédible. Une collaboration que je recommande sans hésiter. »
+            </p>
+          </div>
+        </div>
+      </div>
+</section>
+
+<!-- ================= SÉPARATEUR SECTION ================= -->
+<div class="relative overflow-hidden py-4 md:py-10 select-none pointer-events-none flex justify-center items-center">
+  <p class="font-extras text-3xl sm:text-5xl md:text-6xl uppercase tracking-[0.25em] text-center" style="color: #2e3d59; opacity: 0.12;">
+    <span class="inline">AEIDEHA</span>
+  </p>
+</div>
+
+<!-- ================= SECTION : OFFRES ================= -->
+<section id="offres" class="reveal relative overflow-hidden py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<!-- En-tête de section -->
+    <div class="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 md:mb-24">
+<!-- Sticker / Pill -->
+      <div class="mb-8 md:mb-16 flex items-center justify-center">
+        <span class="sticker uppercase">
+          <span class="font-extras text-pink text-2xl normal-case">a</span> Les offres
+        </span>
+      </div>
+<!-- Titre H2 -->
+      <h2 class="font-display text-6xl md:text-8xl uppercase leading-[1.08] tracking-tight text-main-85 sm:text-4xl md:text-5xl">
+        Donne une image pro <span class="grad-text font-display">à ton activité</span>
+      </h2>
+<!-- Texte d'introduction -->
+      <p class="mt-8 text-lg sm:text-xl leading-relaxed text-main-85">
+        Site web, profil LinkedIn, vitrine Instagram ou supports imprimés : choisis ce dont ton activité a besoin.
+      </p>
+    </div>
+<!-- Grille des 4 cartes -->
+    <div class="grid gap-8 md:grid-cols-2 items-stretch">
+<!-- ================= CARTE 1 : SITES WEB  ================= -->
+      <div class="group relative rounded-2xl p-[2px] bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-pink)] transition-all duration-500 hover:bg-gradient-to-r hover:from-[var(--accent-pink)] hover:to-[var(--accent-cyan)] shadow-md hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between">
+        <div class="h-full w-full rounded-[14px] p-6 md:p-8 flex flex-col justify-between relative overflow-hidden" style="background: radial-gradient(circle at 15% 20%, rgba(92, 225, 230, 0.25) 0%, transparent 70%), radial-gradient(circle at 85% 80%, rgba(255, 102, 196, 0.25) 0%, transparent 70%), var(--bg-color);">
+          <div class="relative z-10 flex flex-col justify-between h-full">
+            <div>
+  <!-- En-tête de carte -->
+              <div class="flex items-center gap-4 mb-6">
+                <span class="grid h-14 w-14 shrink-0 place-items-center rounded-full border border-cyan-400 bg-cyan-400/10 text-cyan font-extras text-2xl">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="h-7 w-7 fill-current"><path d="M415.9 344L225 344C227.9 408.5 242.2 467.9 262.5 511.4C273.9 535.9 286.2 553.2 297.6 563.8C308.8 574.3 316.5 576 320.5 576C324.5 576 332.2 574.3 343.4 563.8C354.8 553.2 367.1 535.8 378.5 511.4C398.8 467.9 413.1 408.5 416 344zM224.9 296L415.8 296C413 231.5 398.7 172.1 378.4 128.6C367 104.2 354.7 86.8 343.3 76.2C332.1 65.7 324.4 64 320.4 64C316.4 64 308.7 65.7 297.5 76.2C286.1 86.8 273.8 104.2 262.4 128.6C242.1 172.1 227.8 231.5 224.9 296zM176.9 296C180.4 210.4 202.5 130.9 234.8 78.7C142.7 111.3 74.9 195.2 65.5 296L176.9 296zM65.5 344C74.9 444.8 142.7 528.7 234.8 561.3C202.5 509.1 180.4 429.6 176.9 344L65.5 344zM463.9 344C460.4 429.6 438.3 509.1 406 561.3C498.1 528.6 565.9 444.8 575.3 344L463.9 344zM575.3 296C565.9 195.2 498.1 111.3 406 78.7C438.3 130.9 460.4 210.4 463.9 296L575.3 296z"/></svg>
+                </span>
+                <h3 class="font-bold text-xl md:text-3xl uppercase tracking-tight text-main-85">
+                  Site web
+                </h3>
+              </div>
+              <p class="text-lg leading-relaxed text-main-85 mb-6 font-bold">
+                Une vitrine à ton image, sans les limites d’un modèle.
+              </p>
+  <!-- Liste des prestations -->
+              <ul class="space-y-3 mb-8 text-main">
+                <li class="flex items-start gap-3">
+                  <span class="text-pink font-bold">✓</span>
+                  <span>Un design personnalisé, sans modèle prédéfini.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-pink font-bold">✓</span>
+                  <span>Une structure et des contenus organisés pour guider tes visiteurs.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-pink font-bold">✓</span>
+                  <span>Une navigation pensée pour faciliter la prise de contact.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-pink font-bold">✓</span>
+                  <span>Une structure technique pensée pour le référencement naturel.</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+  <!-- Trait de séparation -->
+              <div class="w-full h-[1px] bg-[#2e3d59]/10 mb-6"></div>
+  <!-- Prix et CTA  -->
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div class="text-center sm:text-left">
+                  <div class="text-2xl font-bold text-main-85">À partir de 600 €</div>
+                  <div class="text-xs text-main-85 opacity-75">TVA non applicable, art. 293 B du CGI</div>
+                </div>
+                <a href="#" class="btn-cta btn-wa-trigger uppercase text-base py-3 px-6 text-center justify-center" data-wa-msg="Bonjour, je souhaiterais discuter d'un projet de création de site web.">
+                  Créer mon site
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- ================= CARTE 2 : PROFILS LINKEDIN ================= -->
+      <div class="rounded-2xl border-2 border-[var(--accent-pink)] bg-[var(--card-color)] p-6 md:p-8 shadow-sm transition-transform duration-300 hover:-translate-y-1 flex flex-col justify-between">
+        <div class="flex flex-col justify-between h-full">
+          <div>
+  <!-- En-tête de carte -->
+            <div class="flex items-center gap-4 mb-6">
+              <span class="grid h-14 w-14 shrink-0 place-items-center rounded-full border border-[#0A66C2] bg-[#0A66C2]/10 text-[#0A66C2] font-extras text-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="h-7 w-7 fill-current"><path d="M196.3 512L103.4 512L103.4 212.9L196.3 212.9L196.3 512zM149.8 172.1C120.1 172.1 96 147.5 96 117.8C96 103.5 101.7 89.9 111.8 79.8C121.9 69.7 135.6 64 149.8 64C164 64 177.7 69.7 187.8 79.8C197.9 89.9 203.6 103.6 203.6 117.8C203.6 147.5 179.5 172.1 149.8 172.1zM543.9 512L451.2 512L451.2 366.4C451.2 331.7 450.5 287.2 402.9 287.2C354.6 287.2 347.2 324.9 347.2 363.9L347.2 512L254.4 512L254.4 212.9L343.5 212.9L343.5 253.7L344.8 253.7C357.2 230.2 387.5 205.4 432.7 205.4C526.7 205.4 544 267.3 544 347.7L544 512L543.9 512z"/></svg>
+              </span>
+              <h3 class="font-bold text-xl md:text-3xl uppercase tracking-tight text-main-85">
+                Profil LinkedIn
+              </h3>
+            </div>
+            <p class="text-lg leading-relaxed text-main-85 mb-6 font-bold">
+              Un profil qui donne envie de bosser avec toi.
+            </p>
+  <!-- Liste des prestations -->
+            <ul class="space-y-3 mb-8 text-main">
+              <li class="flex items-start gap-3">
+                <span class="text-cyan font-bold">✓</span>
+                <span>Réécriture des sections de ton profil.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-cyan font-bold">✓</span>
+                <span>1 bannière et 2 vignettes de sélection personnalisées.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-cyan font-bold">✓</span>
+                <span>Mise en valeur de ton expertise et de tes services.</span>
+              </li>
+              <li class="flex items-start gap-3 opacity-80">
+                <span class="text-cyan font-bold">+</span>
+                <span><em>En option : le brand board pour décliner ton identité visuelle.</em></span>
+              </li>
+            </ul>
+          </div>
+          <div>
+  <!-- Trait de séparation -->
+            <div class="w-full h-[1px] bg-[#2e3d59]/10 mb-6"></div>
+  <!-- Prix et CTA -->
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div class="text-center sm:text-left">
+                <div class="text-2xl font-bold text-main-85">À partir de 350 €</div>
+                <div class="text-xs text-main-85 opacity-75">TVA non applicable, art. 293 B du CGI</div>
+              </div>
+              <a href="#" class="btn-cta btn-wa-trigger uppercase text-base py-3 px-6 text-center justify-center" data-wa-msg="Bonjour, je souhaiterais discuter d'un projet d'optimisation de profil LinkedIn.">
+                Créer mon profil
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- ================= CARTE 3 : VITRINES INSTAGRAM ================= -->
+      <div class="rounded-2xl border-2 border-[var(--accent-cyan)] bg-[var(--card-color)] p-6 md:p-8 shadow-sm transition-transform duration-300 hover:-translate-y-1 flex flex-col justify-between">
+        <div class="flex flex-col justify-between h-full">
+          <div>
+  <!-- En-tête de carte -->
+            <div class="flex items-center gap-4 mb-6">
+              <span class="grid h-14 w-14 shrink-0 place-items-center rounded-full border border-pink-400 bg-pink-400/10 text-pink font-extras text-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="h-7 w-7 fill-current"><path d="M320.3 205C256.8 204.8 205.2 256.2 205 319.7C204.8 383.2 256.2 434.8 319.7 435C383.2 435.2 434.8 383.8 435 320.3C435.2 256.8 383.8 205.2 320.3 205zM319.7 245.4C360.9 245.2 394.4 278.5 394.6 319.7C394.8 360.9 361.5 394.4 320.3 394.6C279.1 394.8 245.6 361.5 245.4 320.3C245.2 279.1 278.5 245.6 319.7 245.4zM413.1 200.3C413.1 185.5 425.1 173.5 439.9 173.5C454.7 173.5 466.7 185.5 466.7 200.3C466.7 215.1 454.7 227.1 439.9 227.1C425.1 227.1 413.1 215.1 413.1 200.3zM542.8 227.5C541.1 191.6 532.9 159.8 506.6 133.6C480.4 107.4 448.6 99.2 412.7 97.4C375.7 95.3 264.8 95.3 227.8 97.4C192 99.1 160.2 107.3 133.9 133.5C107.6 159.7 99.5 191.5 97.7 227.4C95.6 264.4 95.6 375.3 97.7 412.3C99.4 448.2 107.6 480 133.9 506.2C160.2 532.4 191.9 540.6 227.8 542.4C264.8 544.5 375.7 544.5 412.7 542.4C448.6 540.7 480.4 532.5 506.6 506.2C532.8 480 541 448.2 542.8 412.3C544.9 375.3 544.9 264.5 542.8 227.5zM495 452C487.2 471.6 472.1 486.7 452.4 494.6C422.9 506.3 352.9 503.6 320.3 503.6C287.7 503.6 217.6 506.2 188.2 494.6C168.6 486.8 153.5 471.7 145.6 452C133.9 422.5 136.6 352.5 136.6 319.9C136.6 287.3 134 217.2 145.6 187.8C153.4 168.2 168.5 153.1 188.2 145.2C217.7 133.5 287.7 136.2 320.3 136.2C352.9 136.2 423 133.6 452.4 145.2C472 153 487.1 168.1 495 187.8C506.7 217.3 504 287.3 504 319.9C504 352.5 506.7 422.6 495 452z"/></svg>
+              </span>
+              <h3 class="font-bold text-xl md:text-3xl uppercase tracking-tight text-main-85">
+                Vitrine Instagram
+              </h3>
+            </div>
+            <p class="text-lg leading-relaxed text-main-85 mb-6 font-bold">
+              Un feed qui donne envie de découvrir ton activité.
+            </p>
+  <!-- Liste des prestations -->
+            <ul class="space-y-3 mb-8 text-main">
+              <li class="flex items-start gap-3">
+                <span class="text-cyan font-bold">✓</span>
+                <span>Réécriture de ta bio pour présenter clairement ton activité.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-cyan font-bold">✓</span>
+                <span>Création de 3 publications épinglées pour présenter ton activité et tes offres.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-cyan font-bold">✓</span>
+                <span>Création de 2 modèles de carrousels réutilisables pour tes prochains contenus.</span>
+              </li>
+              <li class="flex items-start gap-3 opacity-80">
+                <span class="text-cyan font-bold">+</span>
+                <span><em>En option : gestion complète du compte.</em></span>
+              </li>
+            </ul>
+          </div>
+          <div>
+  <!-- Trait de séparation -->
+            <div class="w-full h-[1px] bg-[#2e3d59]/10 mb-6"></div>
+  <!-- Prix et CTA -->
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div class="text-center sm:text-left">
+                <div class="text-2xl font-bold text-main-85">À partir de 350 €</div>
+                <div class="text-xs text-main-85 opacity-75">TVA non applicable, art. 293 B du CGI</div>
+              </div>
+              <a href="#" class="btn-cta btn-wa-trigger uppercase text-base py-3 px-6 text-center justify-center" data-wa-msg="Bonjour, je souhaiterais discuter d'un projet de création de vitrine Instagram.">
+                Créer ma vitrine
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- ================= CARTE 4 : SUPPORTS IMPRIMÉS ================= -->
+      <div class="rounded-2xl border-2 border-[var(--accent-pink)] bg-[var(--card-color)] p-6 md:p-8 shadow-sm transition-transform duration-300 hover:-translate-y-1 flex flex-col justify-between">
+        <div class="flex flex-col justify-between h-full">
+          <div>
+  <!-- En-tête de carte -->
+            <div class="flex items-center gap-4 mb-6">
+              <span class="grid h-14 w-14 shrink-0 place-items-center rounded-full border border-cyan-400 bg-cyan-400/10 text-cyan font-extras text-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="h-7 w-7 fill-current"><path d="M128 128C128 92.7 156.7 64 192 64L405.5 64C422.5 64 438.8 70.7 450.8 82.7L493.3 125.2C505.3 137.2 512 153.5 512 170.5L512 208L128 208L128 128zM64 320C64 284.7 92.7 256 128 256L512 256C547.3 256 576 284.7 576 320L576 416C576 433.7 561.7 448 544 448L512 448L512 512C512 547.3 483.3 576 448 576L192 576C156.7 576 128 547.3 128 512L128 448L96 448C78.3 448 64 433.7 64 416L64 320zM192 480L192 512L448 512L448 416L192 416L192 480zM520 336C520 322.7 509.3 312 496 312C482.7 312 472 322.7 472 336C472 349.3 482.7 360 496 360C509.3 360 520 349.3 520 336z"/></svg>
+              </span>
+              <h3 class="font-bold text-xl md:text-3xl uppercase tracking-tight text-main-85">
+                Supports imprimés
+              </h3>
+            </div>
+            <p class="text-lg leading-relaxed text-main-85 mb-6 font-bold">
+              Une communication qui se prolonge sur le terrain.
+            </p>
+  <!-- Liste des prestations -->
+            <ul class="space-y-3 mb-8 text-main">
+              <li class="flex items-start gap-3">
+                <span class="text-pink font-bold">✓</span>
+                <span>Cartes de visite, flyers et affiches.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-pink font-bold">✓</span>
+                <span>Supports de comptoir.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-pink font-bold">✓</span>
+                <span>Kakémonos, roll-up et banderoles.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-pink font-bold">✓</span>
+                <span>Supports événementiels.</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+  <!-- Trait de séparation -->
+            <div class="w-full h-[1px] bg-[#2e3d59]/10 mb-6"></div>
+  <!-- Prix et CTA -->
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div class="text-center sm:text-left">
+                <div class="text-2xl font-bold text-main-85">Sur devis</div>
+                <div class="text-xs text-main-85 opacity-75">Tarif selon la nature du projet.</div>
+              </div>
+              <a href="#" class="btn-cta btn-wa-trigger uppercase text-base py-3 px-6 text-center justify-center" data-wa-msg="Bonjour, je souhaiterais un devis pour la création de supports imprimés.">
+                Demander un devis
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION : À PROPOS ================= -->
+<section id="apropos" class="relative overflow-hidden bg-[#2e3d59] py-20 md:py-28 text-white">
+<!-- Mot "STORY" géant fantômisé (En haut & centré sur mobile / En bas & à gauche sur desktop) -->
+  <div class="absolute inset-x-0 top-0 lg:top-auto lg:bottom-0 pointer-events-none select-none overflow-hidden z-0 flex justify-center lg:justify-start">
+    <span class="font-display-shadow text-[32vw] lg:text-[18vw] uppercase leading-none text-center lg:text-left translate-y-[-10%] lg:translate-y-[15%]" style="color: #eef7ff; opacity: 0.03;">
+      story
+    </span>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid items-center gap-8 lg:gap-12 grid-cols-1 lg:grid-cols-12">
+<!-- 1. Pill (Mobile: order-1 / Desktop: col-span-7 à droite) -->
+      <div class="order-1 lg:order-2 lg:col-span-7 flex justify-center lg:justify-start">
+        <span class="sticker uppercase">
+          <span class="font-extras text-pink text-2xl normal-case">h</span> À propos
+        </span>
+      </div>
+<!-- 2. Titre H2 (Mobile: order-2 / Desktop: col-span-7 à droite) -->
+      <div class="order-2 lg:order-3 lg:col-span-7 text-center lg:text-left">
+        <h2 class="font-display text-6xl uppercase leading-[1.08] tracking-tight text-white sm:text-4xl md:text-5xl">
+          Pourquoi un client hésite&nbsp;? <span class="grad-text font-display">C’est mon sujet depuis plus de 10 ans</span>
+        </h2>
+      </div>
+<!-- 3. Texte d'introduction (Mobile: order-3 / Desktop: col-span-7 à droite) -->
+      <div class="order-3 lg:order-4 lg:col-span-7 text-center lg:text-left">
+        <p class="text-lg sm:text-xl leading-relaxed text-white/90 font-medium">
+          Avant de convaincre quelqu’un, il faut comprendre ce qui le fait hésiter.
+        </p>
+      </div>
+<!-- 4. Photo (Mobile: order-4 / Desktop: col-span-5 à gauche, s'étendant sur toutes les lignes) -->
+      <div class="order-4 lg:order-1 lg:col-span-5 lg:row-span-5 flex justify-center">
+        <img src="images/profils/am20-main.webp" alt="AM 2.0" class="w-full max-w-md lg:max-w-none h-auto rounded-2xl object-cover">
+      </div>
+<!-- 5. Corps du texte (Mobile: order-5 / Desktop: col-span-7 à droite) -->
+      <div class="order-5 lg:order-5 lg:col-span-7 text-center lg:text-left space-y-6 text-lg leading-relaxed text-white/80">
+        <p>
+          Pendant plus de 10 ans dans le commerce, j’ai appris à écouter les clients, à comprendre leurs attentes et à identifier ce qui pouvait les freiner avant un achat.
+        </p>
+        <p>
+          Aujourd’hui, j’applique cette réflexion à la communication digitale. Un visiteur découvre une activité, cherche à comprendre ce qu’on lui propose, se pose des questions… puis prend contact ou passe son chemin.
+        </p>
+        <p>
+          C’est cette expérience que je mets dans chaque projet : créer des supports qui attirent l’attention, rendent les informations faciles à comprendre et donnent envie d'aller plus loin.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION : FAQ ================= -->
+<section id="faq" class="relative overflow-hidden py-20 md:py-28">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<!-- En-tête de section -->
+    <div class="reveal flex flex-col items-center text-center max-w-3xl mx-auto mb-16 md:mb-20">
+<!-- Sticker / Pill -->
+      <div class="mb-8 md:mb-12 flex items-center justify-center">
+        <span class="sticker uppercase">
+          <span class="font-extras text-pink text-2xl normal-case">a</span> FAQ
+        </span>
+      </div>
+<!-- Titre H2 -->
+      <h2 class="font-display text-6xl md:text-8xl uppercase leading-[1.08] tracking-tight text-main-85 sm:text-4xl md:text-5xl">
+        Des questions&nbsp;? <span class="grad-text font-display">Les réponses</span>
+      </h2>
+<!-- Texte d'introduction -->
+      <p class="mt-8 text-lg sm:text-xl leading-relaxed text-main-85">
+        Tout ce que tu dois savoir avant de te lancer.
+      </p>
+    </div>
+<!-- Accordéon FAQ -->
+    <div class="space-y-4">
+<!-- ================= CATÉGORIE : SITE WEB ================= -->
+      <div class="reveal pt-6 pb-2 font-display-shadow text-2xl md:text-4xl tracking-wider text-cyan text-center">
+        Sites web
+      </div>
+<!-- Question 1 (OUVERTE par défaut) -->
+      <div class="faq-item rounded-2xl border-2 border-[#22b8c2] bg-[var(--card-color)] overflow-hidden shadow-sm transition-all duration-300" data-border-color="cyan">
+        <button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none" aria-expanded="true">
+          <span class="font-bold text-lg sm:text-xl text-main-85">Combien coûte la création d’un site web pour un indépendant ou une TPE ?</span>
+          <span class="relative h-8 w-8 shrink-0 grid place-items-center">
+<!-- Chevron  -->
+            <img src="components/chevron-down.svg" alt="Ouvrir" class="icon-chevron h-6 w-6 transition-all duration-300 absolute opacity-0 scale-75" style="filter: invert(67%) sepia(49%) saturate(497%) hue-rotate(134deg) brightness(94%) contrast(92%);">
+<!-- Croix  -->
+            <img src="components/cross.svg" alt="Fermer" class="icon-cross h-6 w-6 transition-all duration-300 absolute opacity-100 scale-100" style="filter: invert(56%) sepia(80%) saturate(1800%) hue-rotate(295deg) brightness(100%) contrast(100%);">
+          </span>
+        </button>
+        <div class="faq-content px-6 pb-6 text-lg leading-relaxed text-main">
+          Un site vitrine commence à 600 € pour une page de six sections, section d’accueil comprise.<br>
+          Compte 100 € par section supplémentaire et 200 € par page dédiée.<br><br>
+          On commence par définir ensemble le périmètre du projet pour que tu connaisses le tarif avant de te lancer.<br><br>
+            <div class="mt-6 flex justify-center md:justify-start">
+              <a href="contact.html#contact" class="btn-cta uppercase text-base py-3 px-6 w-full md:w-auto text-center justify-center inline-flex"> 
+                Discuter de mon projet
+              </a>
+            </div>
+        </div>
+      </div>
+<!-- Question 2  -->
+      <div class="faq-item rounded-2xl border-2 border-[#ff66c4]/40 bg-[var(--card-color)] overflow-hidden shadow-sm transition-all duration-300" data-border-color="pink">
+        <button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none" aria-expanded="false">
+          <span class="font-bold text-lg sm:text-xl text-main-85">J’ai déjà des réseaux sociaux : ai-je besoin d’un site web ?</span>
+          <span class="relative h-8 w-8 shrink-0 grid place-items-center">
+            <img src="components/chevron-down.svg" alt="Ouvrir" class="icon-chevron h-6 w-6 transition-all duration-300 absolute opacity-100 scale-100" style="filter: invert(67%) sepia(49%) saturate(497%) hue-rotate(134deg) brightness(94%) contrast(92%);">
+            <img src="components/cross.svg" alt="Fermer" class="icon-cross h-6 w-6 transition-all duration-300 absolute opacity-0 scale-75" style="filter: invert(56%) sepia(80%) saturate(1800%) hue-rotate(295deg) brightness(100%) contrast(100%);">
+          </span>
+        </button>
+        <div class="faq-content px-6 pb-6 text-lg leading-relaxed text-main hidden">
+          Les réseaux te font découvrir, mais tu dépends des algorithmes qui changent régulièrement.<br><br>
+          Ton site réunit tes informations au même endroit, présente tes offres comme tu le souhaites et répond aux questions de tes futurs clients, 24h/24.<br>
+          Il complète tes réseaux, il ne les remplace pas.
+        </div>
+      </div>
+<!-- Question 3  -->
+      <div class="faq-item rounded-2xl border-2 border-[#22b8c2]/40 bg-[var(--card-color)] overflow-hidden shadow-sm transition-all duration-300" data-border-color="cyan">
+        <button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none" aria-expanded="false">
+          <span class="font-bold text-lg sm:text-xl text-main-85">Est-ce que tu t’occupes du référencement de mon site ?</span>
+          <span class="relative h-8 w-8 shrink-0 grid place-items-center">
+            <img src="components/chevron-down.svg" alt="Ouvrir" class="icon-chevron h-6 w-6 transition-all duration-300 absolute opacity-100 scale-100" style="filter: invert(67%) sepia(49%) saturate(497%) hue-rotate(134deg) brightness(94%) contrast(92%);">
+            <img src="components/cross.svg" alt="Fermer" class="icon-cross h-6 w-6 transition-all duration-300 absolute opacity-0 scale-75" style="filter: invert(56%) sepia(80%) saturate(1800%) hue-rotate(295deg) brightness(100%) contrast(100%);">
+          </span>
+        </button>
+        <div class="faq-content px-6 pb-6 text-lg leading-relaxed text-main hidden">
+          Oui ! J'intègre le référencement naturel à la création de ton site : structure des pages, titres, métadonnées, recherche de mots-clés pertinents et rédaction de contenus adaptés à ton activité.<br><br>
+          L'objectif est d'aider Google à comprendre tes pages et de faciliter la découverte de ton activité par tes futurs clients.<br><br>
+          Le référencement prend toutefois du temps et dépend de nombreux facteurs : aucune position précise ne peut être garantie.
+        </div>
+      </div>
+<!-- Question 4  -->
+      <div class="faq-item rounded-2xl border-2 border-[#ff66c4]/40 bg-[var(--card-color)] overflow-hidden shadow-sm transition-all duration-300" data-border-color="pink">
+        <button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none" aria-expanded="false">
+          <span class="font-bold text-lg sm:text-xl text-main-85">Pourrai-je modifier mon site moi-même ?</span>
+          <span class="relative h-8 w-8 shrink-0 grid place-items-center">
+            <img src="components/chevron-down.svg" alt="Ouvrir" class="icon-chevron h-6 w-6 transition-all duration-300 absolute opacity-100 scale-100" style="filter: invert(67%) sepia(49%) saturate(497%) hue-rotate(134deg) brightness(94%) contrast(92%);">
+            <img src="components/cross.svg" alt="Fermer" class="icon-cross h-6 w-6 transition-all duration-300 absolute opacity-0 scale-75" style="filter: invert(56%) sepia(80%) saturate(1800%) hue-rotate(295deg) brightness(100%) contrast(100%);">
+          </span>
+        </button>
+        <div class="faq-content px-6 pb-6 text-lg leading-relaxed text-main hidden">
+          Non : il n’y a pas d’interface d’administration, donc rien à prendre en main et aucun risque de dérégler ta mise en page.<br><br>
+          Tu peux me solliciter pour actualiser tes contenus, ajouter une offre ou faire évoluer certaines pages.<br><br>
+          Ces interventions sont facturées séparément, ponctuellement ou dans le cadre d'un abonnement mensuel si tu as des besoins réguliers.
+        </div>
+      </div>
+<!-- Question 5  -->
+      <div class="faq-item rounded-2xl border-2 border-[#22b8c2]/40 bg-[var(--card-color)] overflow-hidden shadow-sm transition-all duration-300" data-border-color="cyan">
+        <button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none" aria-expanded="false">
+          <span class="font-bold text-lg sm:text-xl text-main-85">Serai-je propriétaire de mon site web ?</span>
+          <span class="relative h-8 w-8 shrink-0 grid place-items-center">
+            <img src="components/chevron-down.svg" alt="Ouvrir" class="icon-chevron h-6 w-6 transition-all duration-300 absolute opacity-100 scale-100" style="filter: invert(67%) sepia(49%) saturate(497%) hue-rotate(134deg) brightness(94%) contrast(92%);">
+            <img src="components/cross.svg" alt="Fermer" class="icon-cross h-6 w-6 transition-all duration-300 absolute opacity-0 scale-75" style="filter: invert(56%) sepia(80%) saturate(1800%) hue-rotate(295deg) brightness(100%) contrast(100%);">
+          </span>
+        </button>
+        <div class="faq-content px-6 pb-6 text-lg leading-relaxed text-main hidden">
+          Oui. Ton site est créé pour toi, le compte d’hébergement est ouvert à ton nom et relié à ton nom de domaine.<br><br>
+          Dans la configuration prévue, l’hébergement ne demande pas d’abonnement supplémentaire, et tu peux demander à récupérer les fichiers de ton site à tout moment.
+        </div>
+      </div>
+<!-- ================= CATÉGORIE : LINKEDIN ET INSTAGRAM ================= -->
+      <div class="reveal pt-8 pb-2 font-display-shadow text-2xl md:text-4xl tracking-wider grad-text text-center">
+        LinkedIn & Instagram
+      </div>
+<!-- Question 6  -->
+      <div class="faq-item rounded-2xl border-2 border-[#ff66c4]/40 bg-[var(--card-color)] overflow-hidden shadow-sm transition-all duration-300" data-border-color="pink">
+        <button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none" aria-expanded="false">
+          <span class="font-bold text-lg sm:text-xl text-main-85">Je n’aime pas LinkedIn : ai-je vraiment besoin d’y être ?</span>
+          <span class="relative h-8 w-8 shrink-0 grid place-items-center">
+            <img src="components/chevron-down.svg" alt="Ouvrir" class="icon-chevron h-6 w-6 transition-all duration-300 absolute opacity-100 scale-100" style="filter: invert(67%) sepia(49%) saturate(497%) hue-rotate(134deg) brightness(94%) contrast(92%);">
+            <img src="components/cross.svg" alt="Fermer" class="icon-cross h-6 w-6 transition-all duration-300 absolute opacity-0 scale-75" style="filter: invert(56%) sepia(80%) saturate(1800%) hue-rotate(295deg) brightness(100%) contrast(100%);">
+          </span>
+        </button>
+        <div class="faq-content px-6 pb-6 text-lg leading-relaxed text-main hidden">
+          Pas forcément. Tout dépend de ton activité et des personnes avec lesquelles tu souhaites travailler.<br><br>
+          LinkedIn peut être utile si tu proposes des services aux entreprises, recherches des partenariats ou souhaites développer ton réseau professionnel.<br><br>
+          Et tu n'as pas besoin de publier régulièrement pour avoir une vitrine professionnelle efficace. Je peux retravailler ton profil pour présenter clairement ton activité et ton expertise.<br><br>
+          L'objectif est que lorsqu'un prospect recherche ton nom ou découvre ton profil, il trouve une présentation professionnelle qui lui donne envie d'en savoir plus et de te contacter.
+        </div>
+      </div>
+<!-- Question 7  -->
+      <div class="faq-item rounded-2xl border-2 border-[#22b8c2]/40 bg-[var(--card-color)] overflow-hidden shadow-sm transition-all duration-300" data-border-color="cyan">
+        <button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none" aria-expanded="false">
+          <span class="font-bold text-lg sm:text-xl text-main-85">Peux-tu publier à ma place sur Instagram ?</span>
+          <span class="relative h-8 w-8 shrink-0 grid place-items-center">
+            <img src="components/chevron-down.svg" alt="Ouvrir" class="icon-chevron h-6 w-6 transition-all duration-300 absolute opacity-100 scale-100" style="filter: invert(67%) sepia(49%) saturate(497%) hue-rotate(134deg) brightness(94%) contrast(92%);">
+            <img src="components/cross.svg" alt="Fermer" class="icon-cross h-6 w-6 transition-all duration-300 absolute opacity-0 scale-75" style="filter: invert(56%) sepia(80%) saturate(1800%) hue-rotate(295deg) brightness(100%) contrast(100%);">
+          </span>
+        </button>
+        <div class="faq-content px-6 pb-6 text-lg leading-relaxed text-main hidden">
+          Je commence par créer ta vitrine professionnelle : une bio claire, trois publications d’accueil pour présenter ton activité et tes offres, ainsi que des modèles de carrousels personnalisés réutilisables. <br><br>
+          Tu peux ensuite publier à ton rythme, avec ton propre contenu, tout en conservant un feed professionnel et attractif.<br><br>
+          Si tu préfères déléguer entièrement la gestion de ton compte, je peux te proposer une prestation sur devis, selon ton activité et la fréquence de publication souhaitée.
+        </div>
+      </div>
+<!-- ================= CATÉGORIE : SUPPORTS IMPRIMÉS ================= -->
+      <div class="reveal pt-8 pb-2 font-display-shadow text-2xl md:text-4xl tracking-wider text-cyan text-center">
+        Supports imprimés
+      </div>
+<!-- Question 8  -->
+      <div class="faq-item rounded-2xl border-2 border-[#ff66c4]/40 bg-[var(--card-color)] overflow-hidden shadow-sm transition-all duration-300" data-border-color="pink">
+        <button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none" aria-expanded="false">
+          <span class="font-bold text-lg sm:text-xl text-main-85">Quels supports imprimés peux-tu créer, et à quel prix ?</span>
+          <span class="relative h-8 w-8 shrink-0 grid place-items-center">
+            <img src="components/chevron-down.svg" alt="Ouvrir" class="icon-chevron h-6 w-6 transition-all duration-300 absolute opacity-100 scale-100" style="filter: invert(67%) sepia(49%) saturate(497%) hue-rotate(134deg) brightness(94%) contrast(92%);">
+            <img src="components/cross.svg" alt="Fermer" class="icon-cross h-6 w-6 transition-all duration-300 absolute opacity-0 scale-75" style="filter: invert(56%) sepia(80%) saturate(1800%) hue-rotate(295deg) brightness(100%) contrast(100%);">
+          </span>
+        </button>
+        <div class="faq-content px-6 pb-6 text-lg leading-relaxed text-main hidden">
+          Cartes de visite, flyers, affiches, supports de comptoir, kakémonos, roll-up, banderoles, supports événementiels.<br><br>
+          Le prix dépend du support, du contenu et du format : c’est sur devis.<br><br>
+          Je te conseille aussi sur le format et la quantité à commander, pour éviter les 500 exemplaires devenus inutiles quand ton offre change.<br><br>
+          <div class="mt-6 flex justify-center md:justify-start">
+            <a href="#" class="btn-cta btn-wa-trigger uppercase text-base py-3 px-6 w-full md:w-auto text-center justify-center inline-flex" data-wa-msg="Bonjour, je souhaiterais un devis pour la création de supports imprimés.">
+              Demander un devis
+            </a>
+          </div>
+        </div>
+      </div>
+<!-- Question 9  -->
+      <div class="faq-item rounded-2xl border-2 border-[#22b8c2]/40 bg-[var(--card-color)] overflow-hidden shadow-sm transition-all duration-300" data-border-color="cyan">
+        <button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none" aria-expanded="false">
+          <span class="font-bold text-lg sm:text-xl text-main-85">Qui imprime mes supports ?</span>
+          <span class="relative h-8 w-8 shrink-0 grid place-items-center">
+            <img src="components/chevron-down.svg" alt="Ouvrir" class="icon-chevron h-6 w-6 transition-all duration-300 absolute opacity-100 scale-100" style="filter: invert(67%) sepia(49%) saturate(497%) hue-rotate(134deg) brightness(94%) contrast(92%);">
+            <img src="components/cross.svg" alt="Fermer" class="icon-cross h-6 w-6 transition-all duration-300 absolute opacity-0 scale-75" style="filter: invert(56%) sepia(80%) saturate(1800%) hue-rotate(295deg) brightness(100%) contrast(100%);">
+          </span>
+        </button>
+        <div class="faq-content px-6 pb-6 text-lg leading-relaxed text-main hidden">
+          Tu choisis.<br><br>
+          Soit je te livre les fichiers prêts à imprimer (PDF), et tu les fais imprimer où tu veux.<br>
+          Soit je m’occupe de la commande et de la livraison chez toi : les frais d'impression et de traitement de la commande sont alors facturés en plus.<br><br>
+          Dans les deux cas, je prévois le bon format et les bonnes informations avant de lancer, pour éviter les mauvaises surprises.
+        </div>
+      </div>
+<!-- ================= CATÉGORIE : POUR DÉMARRER ================= -->
+      <div class="reveal pt-8 pb-2 font-display-shadow text-2xl md:text-4xl tracking-wider text-pink text-center">
+        Pour démarrer
+      </div>
+<!-- Question 10  -->
+      <div class="faq-item rounded-2xl border-2 border-[#ff66c4]/40 bg-[var(--card-color)] overflow-hidden shadow-sm transition-all duration-300" data-border-color="pink">
+        <button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none" aria-expanded="false">
+          <span class="font-bold text-lg sm:text-xl text-main-85">Je ne sais pas par où commencer : que me conseilles-tu ?</span>
+          <span class="relative h-8 w-8 shrink-0 grid place-items-center">
+            <img src="components/chevron-down.svg" alt="Ouvrir" class="icon-chevron h-6 w-6 transition-all duration-300 absolute opacity-100 scale-100" style="filter: invert(67%) sepia(49%) saturate(497%) hue-rotate(134deg) brightness(94%) contrast(92%);">
+            <img src="components/cross.svg" alt="Fermer" class="icon-cross h-6 w-6 transition-all duration-300 absolute opacity-0 scale-75" style="filter: invert(56%) sepia(80%) saturate(1800%) hue-rotate(295deg) brightness(100%) contrast(100%);">
+          </span>
+        </button>
+        <div class="faq-content px-6 pb-6 text-lg leading-relaxed text-main hidden">
+          Commençons par faire le point sur ton activité, tes besoins et les pistes possibles.<br><br>
+          Pas besoin de tout créer en même temps. On identifie ensemble les supports qui ont vraiment leur place dans ta communication et chaque étape du projet.<br><br>
+          <div class="mt-6 flex justify-center md:justify-start">
+            <a href="contact.html#contact" class="btn-cta uppercase text-base py-3 px-6 w-full md:w-auto text-center justify-center inline-flex">
+              Discuter de mon projet
+            </a>
+          </div>
+        </div>
+      </div>
+<!-- Question 11  -->
+      <div class="faq-item rounded-2xl border-2 border-[#22b8c2]/40 bg-[var(--card-color)] overflow-hidden shadow-sm transition-all duration-300" data-border-color="cyan">
+        <button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none" aria-expanded="false">
+          <span class="font-bold text-lg sm:text-xl text-main-85">Je n’ai pas d’identité visuelle ni de logo : est-ce un problème ?</span>
+          <span class="relative h-8 w-8 shrink-0 grid place-items-center">
+            <img src="components/chevron-down.svg" alt="Ouvrir" class="icon-chevron h-6 w-6 transition-all duration-300 absolute opacity-100 scale-100" style="filter: invert(67%) sepia(49%) saturate(497%) hue-rotate(134deg) brightness(94%) contrast(92%);">
+            <img src="components/cross.svg" alt="Fermer" class="icon-cross h-6 w-6 transition-all duration-300 absolute opacity-0 scale-75" style="filter: invert(56%) sepia(80%) saturate(1800%) hue-rotate(295deg) brightness(100%) contrast(100%);">
+          </span>
+        </button>
+        <div class="faq-content px-6 pb-6 text-lg leading-relaxed text-main hidden">
+          Non. Je peux définir avec toi une direction graphique : couleurs, typographies, éléments graphiques, brand board.<br><br>
+          C’est une prestation à part, chiffrée selon ton besoin, comme la création d’un logo. Elle sert ensuite de fil conducteur à ton site, tes profils et tes imprimés.
+        </div>
+      </div>
+<!-- Question 12 -->
+      <div class="faq-item rounded-2xl border-2 border-[#ff66c4]/40 bg-[var(--card-color)] overflow-hidden shadow-sm transition-all duration-300" data-border-color="pink">
+        <button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none" aria-expanded="false">
+          <span class="font-bold text-lg sm:text-xl text-main-85">Peut-on travailler à distance ?</span>
+          <span class="relative h-8 w-8 shrink-0 grid place-items-center">
+            <img src="components/chevron-down.svg" alt="Ouvrir" class="icon-chevron h-6 w-6 transition-all duration-300 absolute opacity-100 scale-100" style="filter: invert(67%) sepia(49%) saturate(497%) hue-rotate(134deg) brightness(94%) contrast(92%);">
+            <img src="components/cross.svg" alt="Fermer" class="icon-cross h-6 w-6 transition-all duration-300 absolute opacity-0 scale-75" style="filter: invert(56%) sepia(80%) saturate(1800%) hue-rotate(295deg) brightness(100%) contrast(100%);">
+          </span>
+        </button>
+        <div class="faq-content px-6 pb-6 text-lg leading-relaxed text-main hidden">
+          Oui ! Que tu aies besoin d’un site web, d’une vitrine LinkedIn ou Instagram ou de supports de communication imprimés, nous pouvons travailler ensemble à distance, partout en France.<br><br>
+          On avance en trois étapes :
+          <ul class="list-disc pl-5 mt-3 space-y-2">
+            <li><strong>Premier échange</strong> : on fait le point sur ton activité, tes besoins et tes idées pour définir ensemble la direction à prendre.</li>
+            <li><strong>Création et points d’étape en visio</strong> : on fixe ensemble un calendrier avant de commencer, puis je crée, tu découvres les propositions, tu donnes tes retours et tu valides chaque étape.</li>
+            <li><strong>Livraison</strong> : je te remets les fichiers prêts à l’emploi ou je mets ton site en ligne, selon la prestation.</li>
+          </ul>
+          <p class="mt-3">Tu as donc une visibilité sur le déroulement du projet et des moments dédiés pour échanger et valider les propositions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="relative overflow-hidden bg-[#2e3d59] pt-20 pb-12 text-white border-t border-white/10">
+<!-- Logo ghost géant  -->
+  <div class="absolute inset-x-0 bottom-0 pointer-events-none select-none overflow-hidden z-0 flex justify-center lg:justify-end">
+    <img src="images/logo/logo-ghost.webp" alt="" class="h-[100%] w-auto object-contain translate-y-[5%] opacity-[0.03]">
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<!-- Grille principale -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 pb-16 border-b border-white/10 items-start">
+<!-- Bloc Photo + Contact (Groupé et resserré) -->
+      <div class="lg:col-span-8 flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-12">
+<!-- 1. Photo  -->
+        <div class="shrink-0">
+          <img src="images/profils/vignette-am20.webp" alt="Aurore Muller" class="w-32 h-32 sm:w-48 sm:h-48 object-cover rounded-none">
+        </div>
+<!-- 2. Contact -->
+        <div class="flex flex-col items-center text-center sm:items-start sm:text-left space-y-3">
+    <!-- Nom & Titre -->
+          <div>
+            <h3 class="font-display text-3xl uppercase tracking-tight text-white/90">
+              Aurore <span class="text-pink">// AM 2.0</span>
+            </h3>
+            <p class="text-base text-white/90">
+              Designer d'expérience client
+            </p>
+          </div>
+    <!-- Icônes réseaux sociaux  -->
+          <div class="flex items-center gap-3 pt-1">
+    <!-- WhatsApp -->
+            <a href="#" class="btn-wa-trigger grid h-12 w-12 place-items-center rounded-full bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all duration-300" aria-label="WhatsApp" data-wa-msg="Bonjour, je souhaiterais discuter d'un projet de communication.">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="h-6 w-6 fill-current"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18.1-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18.1-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.6 66.4 14 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+            </a>
+    <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/aurore-am20/" target="_blank" rel="noopener noreferrer" class="grid h-12 w-12 place-items-center rounded-full bg-[#22b8c2]/10 border border-[#22b8c2]/30 text-cyan hover:bg-[#22b8c2] hover:text-white transition-all duration-300" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="h-6 w-6 fill-current"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.4-48.37-79.4-48.4 0-55.8 37.7-55.8 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.6-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+            </a>
+    <!-- Instagram -->
+            <a href="https://www.instagram.com/am20.fr/" target="_blank" rel="noopener noreferrer" class="grid h-12 w-12 place-items-center rounded-full bg-[#ff66c4]/10 border border-[#ff66c4]/30 text-pink hover:bg-[#ff66c4] hover:text-white transition-all duration-300" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="h-6 w-6 fill-current"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+            </a>
+          </div>
+<!-- Localisation  -->
+          <div class="text-base text-white space-y-0.5 pt-1">
+            <p class="flex items-center justify-center sm:justify-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="h-4 w-4 text-pink fill-current shrink-0"><path d="M352 348.4C416.1 333.9 464 276.5 464 208C464 128.5 399.5 64 320 64C240.5 64 176 128.5 176 208C176 276.5 223.9 333.9 288 348.4L288 544C288 561.7 302.3 576 320 576C337.7 576 352 561.7 352 544L352 348.4zM328 160C297.1 160 272 185.1 272 216C272 229.3 261.3 240 248 240C234.7 240 224 229.3 224 216C224 158.6 270.6 112 328 112C341.3 112 352 122.7 352 136C352 149.3 341.3 160 328 160z"/></svg>
+              <span>Obernai • Alsace</span>
+            </p>
+            <p class="text-sm text-white/70 pl-6">Aussi à distance partout en France</p>
+          </div>
+        </div>
+      </div>
+<!-- 3. Colonne : Navigation -->
+      <div class="lg:col-span-4 flex flex-col items-center text-center lg:items-start lg:text-left space-y-3 pt-6 lg:pt-0">
+        <span class="font-display text-3xl uppercase tracking-wider text-cyan">Navigation</span>
+        <a href="#realisations" class="relative text-base text-white/80 transition-all duration-300 hover:text-cyan hover:translate-x-1 font-medium group inline-block">
+          Réalisations
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-cyan)] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+         <a href="#avis" class="relative text-base text-white/80 transition-all duration-300 hover:text-cyan hover:translate-x-1 font-medium group inline-block">
+          Avis
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-cyan)] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#offres" class="relative text-base text-white/80 transition-all duration-300 hover:text-cyan hover:translate-x-1 font-medium group inline-block">
+          Offres
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-cyan)] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#apropos" class="relative text-base text-white/80 transition-all duration-300 hover:text-cyan hover:translate-x-1 font-medium group inline-block">
+          Story AM 2.0
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-cyan)] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#faq" class="relative text-base text-white/80 transition-all duration-300 hover:text-cyan hover:translate-x-1 font-medium group inline-block">
+        FAQ
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--accent-cyan)] transition-all duration-300 group-hover:w-full"></span>
+      </a>
+      </div>
+    </div>
+<!-- Bas de footer -->
+    <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-white/60 gap-4">
+      <p>&copy; <span id="current-year"></span> AM 2.0 • Tous droits réservés.</p>
+<!-- Liens légaux -->
+      <div class="flex items-center gap-3">
+        <a href="mentions-legales.html" class="hover:text-white transition-colors">Mentions légales</a>
+        <span class="text-white/30">|</span>
+        <a href="rgpd.html" class="hover:text-white transition-colors">RGPD</a>
+        <span class="text-white/30">|</span>
+        <a href="cgv.html" class="hover:text-white transition-colors">CGV</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= MODALE WHATSAPP ================= -->
+<div id="wa-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0b1020]/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+  <div id="wa-modal-card" class="wa-phone relative transition-transform duration-300 scale-90 mx-auto">
+<!-- Dynamic Island Mockup -->
+    <div class="wa-island"></div>
+<!-- Status Bar (Croix de fermeture agrandie à la place de la 5G) -->
+    <div class="wa-status flex items-center justify-between">
+      <span class="wa-modal-clock">9:41</span>
+      <button id="wa-modal-close" class="cursor-pointer flex items-center justify-center p-1 hover:opacity-80 transition-opacity" aria-label="Fermer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+<!-- En-tête WhatsApp -->
+    <div class="wa-head">
+      <span class="text-2xl leading-none">‹</span>
+      <img src="images/profils/vignette-am20.webp" alt="AM 2.0">
+      <div class="leading-tight flex-1">
+        <div class="font-semibold text-base">Aurore // AM 2.0</div>
+        <div class="text-xs opacity-85">en ligne</div>
+      </div>
+    </div>
+<!-- Zone de conversation -->
+    <div class="wa-chat">
+      <p class="wa-note">Tu vas être redirigé(e) vers WhatsApp. Voici une suggestion de message que tu pourras modifier avant envoi :</p> 
+      <div class="wa-out">
+        <p id="wa-modal-text" class="text-[1.2rem] leading-[1.35] text-[#111b21]"></p>
+        <div class="wa-meta">
+          <span class="wa-modal-time"></span>
+          ✓✓
+        </div>
+<!-- Bouton Copier et ouvrir dans la modale -->
+        <button id="wa-modal-copy-btn" type="button" class="wa-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+          <span>Copier et ouvrir WhatsApp</span>
+        </button>
+      </div>
+    </div>
+<!-- Input pour message personnalisé dans la modale -->
+    <a id="wa-raw-btn" href="#" target="_blank" rel="noopener noreferrer" class="wa-input">
+      <span>Écrire un message personnalisé</span>
+      <i>➤</i>
+    </a>
+  </div>
+</div>
+
+<!-- Script JS Externe -->
+<script src="dist/script.min.js"></script>
+<script src="Gsap.min.js"></script>
+<script src="ScrollTrigger.min.js"></script>
+<script src="SplitText.min.js"></script>
+<script src="Drawsvgplugin.min.js"></script>
+<script src="Motionpathplugin.min.js"></script>
 </body>
 </html>
