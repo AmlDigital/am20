@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex,follow">
 <!-- SEO -->
-    <title>Mentions Légales | AM 2.0</title>
-    <meta name="description" content="Consultez les mentions légales du site AM 2.0, spécialisé en parcours clients digitaux.">
+    <title>Mentions légales & Politique de confidentialité | AM 2.0</title>
+    <meta name="description" content="Retrouve les informations légales du site AM 2.0 et les modalités de traitement et de protection des données personnelles.">
 <!-- Canonical -->
     <link rel="canonical" href="https://www.am20.fr/mentions-legales" />
 <!-- Favicon -->
@@ -18,17 +18,22 @@
     <link rel="icon" href="images/favicon/android512.png" sizes="512x512"/>    
     <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png"/>
 <!-- Open Graph -->
-    <meta property="og:title" content="Mentions Légales - AM 2.0">
-    <meta property="og:description" content="Informations éditoriales et légales du site AM 2.0.">
+    <meta property="og:title" content="Mentions légales & Politique de confidentialité | AM 2.0">
+    <meta property="og:description" content="Retrouve les informations légales du site AM 2.0 et les modalités de traitement et de protection des données personnelles.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.am20.fr/mentions-legales">
     <meta property="og:image" content="https://www.am20.fr/images/og-img.jpg">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="AM 2.0">
 <!-- Twitter -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Mentions Légales - AM 2.0">
-    <meta name="twitter:description" content="Informations éditoriales et légales du site AM 2.0.">
+    <meta name="twitter:title" content="Mentions légales & Politique de confidentialité | AM 2.0">
+    <meta name="twitter:description" content="Informations légales, traitement des données personnelles et politique de confidentialité du site AM 2.0.">
+<!-- Preload -->
+    <link rel="preload" href="/fonts/SpriteGraffiti-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/SpriteGraffiti-Shadow.woff2" as="font" type="font/woff2" crossorigin>
 <!-- CSS -->
-    <link rel="stylesheet" href="dist/style.css">
+    <link rel="stylesheet" href="dist/style.min.css">
 </head>
 <body class="min-h-screen flex flex-col relative bg-[#2e3d59]">
 <!-- ===== HEADER ===== -->
@@ -36,7 +41,7 @@
   <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
 <!-- Logo -->
     <a href="#mentions-legales" class="inline-block" aria-label="Retour en haut de page">
-      <img src="images/logo/logo-am20.webp" alt="Logo AM 2.0" class="h-8 md:h-9 w-auto" width="36" height="36" loading="eager">
+      <img src="images/logo/logo2-am20.webp" alt="Logo AM 2.0" class="h-12 md:h-20 w-auto" width="36" height="36" loading="eager">
     </a>
 <!-- Bouton Home -->
     <a href="index.html" aria-label="Retour à l'accueil" class="group w-10 h-10 md:w-auto md:px-4 md:py-2 rounded-full bg-slate-800/80 border border-slate-700/80 hover:border-slate-600 text-white transition-all duration-200 flex items-center justify-center gap-2.5">
@@ -59,7 +64,7 @@
   </div>
 </header>
 <main>
-<!-- ===== MENTIONS LÉGALES & POLITIQUE DE CONFIDENTIALITÉ ===== -->
+<!-- ======================    MENTIONS LÉGALES & POLITIQUE DE CONFIDENTIALITÉ     ====================== -->
 <section id="mentions-legales" class="relative py-20 md:py-28 px-4 overflow-hidden bg-[#2e3d59] text-slate-100">
   <div class="relative z-10 max-w-4xl mx-auto">
 <!-- En-tête -->
@@ -68,152 +73,257 @@
         Mentions Légales & Confidentialité
       </h1>
       <p class="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto">
-        Transparence, sécurité de vos données et cadre réglementaire de notre activité.
+        Transparence, sécurité de vos données et cadre réglementaire.
       </p>
     </div>
     <div class="space-y-16 leading-relaxed">
-<!-- PARTIE I : MENTIONS LÉGALES -->
-      <div class="space-y-8">
+<!-- ============================================================================  PARTIE I : MENTIONS LÉGALES -->
+      <div class="space-y-10">
         <h2 class="nav-font text-2xl md:text-3xl pb-4 border-b border-slate-700/80 flex items-center gap-3 text-white">
           Mentions Légales
         </h2>
-        <div class="space-y-8">
 <!-- 1. Éditeur du Site -->
-          <div>
-            <h3 class="text-3xl font-impact-title mb-4 flex items-center gap-2 text-white">
-              1. Éditeur du Site
-            </h3>
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-base">
-              <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
-                <span class="font-semibold text-slate-200 block">Nom commercial :</span> AM 2.0
+        <div>
+          <h3 class="text-3xl font-impact-title mb-4 flex items-center gap-2 text-white">
+            1. Éditeur du Site
+          </h3>
+          <div class="p-5 md:p-6 rounded-2xl bg-slate-800/70 border border-slate-700/80">
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-base">
+              <li>
+                <span class="font-bold text-white block">Nom commercial :</span>
+                AM 2.0
               </li>
-              <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
-                <span class="font-semibold text-slate-200 block">Statut juridique :</span> Entrepreneur Individuel (EI) - Micro-entreprise
+              <li>
+                <span class="font-bold text-white block">Statut juridique :</span>
+                Entrepreneur Individuel (EI) - Micro-entreprise
               </li>
-              <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
-                <span class="font-bold text-slate-200 block">Responsable légal :</span> Mme Muller Aurore
+              <li>
+                <span class="font-bold text-white block">Responsable légal :</span>
+                Mme Muller Aurore
               </li>
-              <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
-                <span class="font-bold text-slate-200 block">Siège social :</span> 8 rue du Général Leclerc, 67210 Obernai, France
+              <li>
+                <span class="font-bold text-white block">Siège social :</span>
+                8 rue du Général Leclerc, 67210 Obernai, France
               </li>
-              <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
-                <span class="font-bold text-slate-200 block">Numéro SIRET :</span> 999 214 158 00019
+              <li>
+                <span class="font-bold text-white block">Numéro SIRET :</span>
+                999 214 158 00019
               </li>
-              <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
-                <span class="font-bold text-slate-200 block">Immatriculation :</span> Registre National des Entreprises (RNE) - 999 214 158
+              <li>
+                <span class="font-bold text-white block">Immatriculation :</span>
+                Registre National des Entreprises (RNE) - 999 214 158
               </li>
-              <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
-                <span class="font-bold text-slate-200 block">Code APE :</span> 62.01Z (Programmation informatique)
+              <li>
+                <span class="font-bold text-white block">Code APE :</span>
+                62.01Z (Programmation informatique)
               </li>
-              <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
-                <span class="font-bold text-slate-200 block">Téléphone :</span> (+33) 3 67 99 90 81
+              <li>
+                <span class="font-bold text-white block">Régime de TVA :</span>
+                TVA non applicable, article 293 B du CGI
               </li>
-              <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
-                <span class="font-bold text-slate-200 block">E-mail :</span> 
-                <a href="#" class="protected-mail font-medium text-cyan-400 hover:underline" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg==">
+              <li>
+                <span class="font-bold text-white block">Téléphone :</span>
+                (+33) 3 67 99 90 81
+              </li>
+              <li>
+                <span class="font-bold text-white block">E-mail :</span>
+                <a href="#" class="protected-mail font-semibold text-cyan-400 hover:underline" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg==">
                   <span class="mail-text">[Activer JavaScript pour afficher]</span>
                 </a>
               </li>
-              <li class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
-                <span class="font-bold text-slate-200 block">Régime de TVA :</span> TVA non applicable, article 293 B du CGI 
-              </li>
             </ul>
           </div>
+        </div>
 <!-- 2. Direction de la Publication -->
-          <div class="pt-4 border-t border-slate-700/60">
-            <h3 class="text-3xl font-impact-title mb-2 text-white">2. Direction de la Publication</h3>
-            <p class="text-slate-100 text-base">
-              Le Directeur de la publication du site est <strong class="font-bold text-white">Mme Aurore Muller</strong>, en sa qualité de représentante légale de l'entreprise individuelle AM 2.0.
-            </p>
-          </div>
+        <div class="pt-6 border-t border-slate-700/60">
+          <h3 class="text-3xl font-impact-title mb-3 text-white">2. Direction de la Publication</h3>
+          <p class="text-slate-100 text-base">
+            Le Directeur de la publication du site est <strong class="font-bold text-white">Mme Aurore Muller</strong>, en sa qualité de représentante légale de l'entreprise individuelle <strong class="font-semibold text-white">AM 2.0</strong>.
+          </p>
+        </div>
 <!-- 3. Hébergement du Site -->
-          <div class="pt-4 border-t border-slate-700/60">
-            <h3 class="text-3xl font-impact-title mb-3 text-white">3. Hébergement du Site</h3>
-            <div class="p-4 rounded-2xl bg-slate-800/60 border border-slate-700/60 text-base space-y-1">
-              <p><strong class="text-slate-100">Raison sociale :</strong> Netlify, Inc.</p>
-              <p><strong class="text-slate-100">Adresse :</strong> 101 2nd Street, CA 94107, USA</p>
-              <p><strong class="text-slate-100">Téléphone :</strong> +1 (415) 691-1573</p>
-              <p><strong class="text-slate-100">Contact :</strong> <a href="mailto:support@netlify.com" class="text-cyan-400 hover:underline">support@netlify.com</a></p>
-            </div>
-          </div>
-<!-- 4. Propriété Intellectuelle -->
-          <div class="pt-4 border-t border-slate-700/60">
-            <h3 class="text-3xl font-impact-title mb-2 text-white">4. Propriété Intellectuelle</h3>
-            <p class="text-slate-100 text-base leading-relaxed">
-              L'ensemble du contenu présent sur ce site (structure, textes, logos, design graphique, icônes) est la propriété exclusive d'AM 2.0. Toute reproduction, représentation, modification ou adaptation de tout ou partie des éléments du site est strictement interdite sans l'autorisation écrite préalable d'Aurore Muller.
-            </p>
+        <div class="pt-6 border-t border-slate-700/60">
+          <h3 class="text-3xl font-impact-title mb-3 text-white">3. Hébergement du Site</h3>
+          <div class="p-5 rounded-2xl bg-slate-800/70 border border-slate-700/80 text-base space-y-1.5">
+            <p><strong class="text-white">Raison sociale :</strong> Netlify, Inc.</p>
+            <p><strong class="text-white">Adresse :</strong> 101 2nd Street, San Francisco, CA 94105, USA</p>
+            <p><strong class="text-white">Téléphone :</strong> +1 (415) 691-1573</p>
+            <p><strong class="text-white">Contact :</strong> <a href="mailto:support@netlify.com" class="text-cyan-400 font-medium hover:underline">support@netlify.com</a></p>
           </div>
         </div>
+<!-- 4. Propriété Intellectuelle -->
+        <div class="pt-6 border-t border-slate-700/60 space-y-3 text-base text-slate-100">
+          <h3 class="text-3xl font-impact-title mb-3 text-white">4. Propriété Intellectuelle</h3>
+          <p>
+            L'ensemble des créations originales présentes sur ce site (<strong class="font-semibold text-white">structure, textes, identité graphique, logos, illustrations et éléments de design</strong>) est protégé par le <strong class="font-semibold text-white">droit de la propriété intellectuelle</strong>.
+          </p>
+          <p>
+            Sauf mention contraire, ces créations sont la propriété d'<strong class="font-semibold text-white">AM 2.0</strong>. Toute <strong class="font-semibold text-white">reproduction, représentation, modification ou adaptation</strong>, totale ou partielle, est interdite sans <strong class="font-semibold text-white">autorisation écrite préalable d'Aurore Muller</strong>.
+          </p>
+          <p>
+            Les ressources appartenant à des tiers restent soumises aux droits et licences de leurs auteurs respectifs.
+          </p>
+        </div>
       </div>
-<!-- PARTIE II : POLITIQUE DE CONFIDENTIALITÉ (RGPD) -->
-      <div class="space-y-8">
+<!-- ============================================================================  PARTIE II : RGPD -->
+      <div class="space-y-10">
         <h2 class="nav-font text-2xl md:text-3xl pb-4 border-b border-slate-700/80 flex items-center gap-3 text-white">
           Politique de Confidentialité (RGPD)
         </h2>
-        <div class="space-y-8">
-          <div class="p-5 rounded-2xl bg-slate-800/80 border border-slate-700/80">
-            <h3 class="text-2xl font-impact-title mb-2 flex items-center gap-2 text-white">
-              🍪 Gestion des Cookies et Traceurs
-            </h3>
-            <p class="text-slate-100 text-base leading-relaxed">
-              <strong class="font-bold text-white">AM 2.0 n'utilise aucun cookie publicitaire, de mesure d'audience ou de suivi comportemental.</strong> Aucune donnée de navigation n'est exploitée à des fins d'analyse marketing ou de ciblage publicitaire. Pour des impératifs de sécurité et de maintenance technique, l'hébergeur Netlify génère automatiquement des journaux serveur (logs) pouvant enregistrer des données techniques temporaires (comme l'adresse IP), sans aucune interconnexion marketing.
-            </p>
-          </div>
+<!--  Gestion des Cookies et Traceurs -->
+        <div class="p-5 md:p-6 rounded-2xl bg-slate-800/85 border border-cyan-400/30 space-y-3 text-base text-slate-100">
+          <h3 class="text-2xl font-impact-title flex items-center gap-2 text-white">
+            🍪 Gestion des Cookies et Traceurs
+          </h3>
+          <p>
+            <strong class="font-bold text-white">AM 2.0 n'utilise aucun cookie publicitaire, de mesure d'audience ou de suivi comportemental.</strong>
+            Aucune donnée de navigation n'est exploitée à des fins d'analyse marketing ou de ciblage publicitaire.
+          </p>
+          <p>
+            Le module de réservation intégré au site, fourni par <strong class="font-bold text-white">Cal.com</strong>, peut déposer un <strong class="font-semibold text-white">cookie technique de sécurité</strong> fourni par <strong class="font-semibold text-white">Cloudflare</strong>, destiné à protéger le service contre les activités automatisées malveillantes. Ce traceur, lorsqu'il est utilisé exclusivement à cette fin, relève des <strong class="font-semibold text-white">exemptions de consentement</strong> prévues par la réglementation applicable aux cookies et autres traceurs.
+          </p>
+          <p>
+            Pour des impératifs de sécurité et de maintenance technique, l'hébergeur <strong class="font-semibold text-white">Netlify</strong> génère également des <strong class="font-semibold text-white">journaux serveur (logs)</strong> pouvant enregistrer des données techniques temporaires, comme l'adresse IP, sans exploitation à des fins marketing.
+          </p>
+        </div>
 <!-- 1. Base légale du traitement & Responsable -->
-          <div>
-            <h3 class="text-3xl font-impact-title mb-3 text-white">1. Base légale du traitement & Responsable de traitement</h3>
-            <p class="text-slate-100 text-base mb-4 leading-relaxed">
-              Les données personnelles collectées via les formulaires du site sont traitées de manière licite sur la base :
-            </p>
-            <ul class="list-disc pl-5 space-y-2 text-slate-100 text-base mb-4">
-              <li>De l'exécution de mesures précontractuelles lorsqu'une demande de contact ou de diagnostic offert est effectuée par l'utilisateur ;</li>
-              <li>De l'exécution du contrat lorsque les données s'avèrent nécessaires à la réalisation effective d'une prestation de services validée ;</li>
-              <li>De l'intérêt légitime d'AM 2.0 pour assurer le suivi, la pertinence et la sécurité de la relation commerciale.</li>
-            </ul>
-            <p class="text-base font-medium text-slate-100 p-4 rounded-xl bg-slate-800/60 border border-slate-700/60">
-              <strong class="text-white">Responsable du traitement des données :</strong> Mme Aurore Muller, AM 2.0 – 
-              <a href="#" class="protected-mail font-medium text-cyan-400 hover:underline" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg==">
-                <span class="mail-text">[Activer JavaScript pour afficher]</span>
-              </a>
-            </p>
+        <div class="space-y-4">
+          <h3 class="text-3xl font-impact-title text-white">1. Base légale du traitement & Responsable de traitement</h3>
+          <p class="text-slate-100 text-base">
+            Les données personnelles communiquées volontairement à AM 2.0 lors des échanges commerciaux ou de la réservation d'un rendez-vous sont traitées de manière licite sur les bases suivantes :
+          </p>
+          <ul class="list-disc pl-5 space-y-2 text-slate-100 text-base">
+            <li><strong class="font-bold text-white">L'exécution de mesures précontractuelles</strong>, lorsqu'une personne sollicite des informations ou souhaite échanger au sujet d'une prestation ;</li>
+            <li><strong class="font-bold text-white">L'exécution du contrat</strong>, lorsque les données sont nécessaires à la réalisation d'une prestation de services validée ;</li>
+            <li><strong class="font-bold text-white">L'intérêt légitime d'AM 2.0</strong>, notamment pour assurer le suivi de la relation commerciale, prévenir les utilisations abusives et garantir la sécurité de ses services.</li>
+          </ul>
+          <div class="p-4 rounded-xl bg-slate-800/70 border border-slate-700/80 text-base text-slate-100">
+            <strong class="font-bold text-white">Responsable du traitement des données :</strong> Mme Aurore Muller, AM 2.0 (
+            <a href="#" class="protected-mail font-semibold text-cyan-400 hover:underline" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg==">
+              <span class="mail-text">[Activer JavaScript pour afficher]</span>
+            </a>)
           </div>
+        </div>
 <!-- 2. Collecte, Finalité et Sous-traitance -->
-          <div class="pt-4 border-t border-slate-700/60">
-            <h3 class="text-3xl font-impact-title mb-2 text-white">2. Collecte, Finalité et Sous-traitance</h3>
-            <p class="text-slate-100 text-base leading-relaxed mb-3">
-              Le site propose plusieurs formulaires (contact, diagnostic). Les informations recueillies (nom, adresse e-mail, liens de réseaux sociaux, besoins professionnels) sont strictement et exclusivement utilisées pour traiter vos demandes d'informations et assurer le suivi commercial de vos projets avec AM 2.0.
-            </p>
-            <p class="text-slate-100 text-base leading-relaxed">
-              Les données peuvent être traitées via les services techniques tiers utilisés par AM 2.0 pour la gestion des formulaires, des rendez-vous, des paiements et des demandes de contact (notamment <strong class="font-bold text-white">Netlify, Calendly et Stripe</strong>).
+        <div class="pt-6 border-t border-slate-700/60 space-y-6 text-base text-slate-100">
+          <h3 class="text-3xl font-impact-title text-white">2. Collecte, Finalité et Sous-traitance</h3>
+          <p>
+            <strong class="font-bold text-white">Le site ne comporte aucun formulaire de collecte de données personnelles.</strong>
+          </p>
+<!-- Sous-point 2.1 -->
+          <div class="space-y-3">
+            <h4 class="text-lg font-bold text-white">2.1 Canaux de contact et fonctionnement</h4>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>
+                <strong class="font-bold text-white">Échanges via WhatsApp :</strong> Les visiteurs peuvent contacter AM 2.0 via WhatsApp. Ils sont alors redirigés vers le service de messagerie pour échanger directement avec AM 2.0. Les informations communiquées volontairement au cours de ces échanges sont utilisées pour répondre aux demandes et assurer le suivi des projets.
+              </li>
+              <li>
+                <strong class="font-bold text-white">Prise de rendez-vous via Cal.com :</strong> Un module de réservation fourni par Cal.com est intégré au site afin de permettre la prise de rendez-vous. Les informations renseignées lors de la réservation sont traitées par Cal.com et utilisées pour organiser et assurer le suivi des rendez-vous.
+              </li>
+              <li>
+                <strong class="font-bold text-white">Hébergement via Netlify :</strong> Le site est hébergé par Netlify, qui peut traiter certaines données techniques nécessaires à son fonctionnement, à sa sécurité et à sa maintenance.
+              </li>
+            </ul>
+          </div>
+<!-- Sous-point 2.2 -->
+          <div class="space-y-3">
+            <h4 class="text-lg font-bold text-white">2.2 Catégories de données traitées</h4>
+            <p>Les données susceptibles d'être traitées comprennent notamment :</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong class="font-bold text-white">Données d'identification :</strong> nom, prénom.</li>
+              <li><strong class="font-bold text-white">Données de contact :</strong> adresse e-mail, numéro de téléphone.</li>
+              <li><strong class="font-bold text-white">Données relatives aux échanges :</strong> contenu des messages et demandes formulées.</li>
+              <li><strong class="font-bold text-white">Données relatives aux rendez-vous :</strong> date, horaire et informations communiquées lors de la réservation.</li>
+              <li><strong class="font-bold text-white">Données techniques :</strong> adresse IP, informations relatives au navigateur et données de connexion.</li>
+            </ul>
+            <p class="text-slate-200">
+              Les données collectées dépendent du service utilisé et des informations volontairement communiquées par les visiteurs.
             </p>
           </div>
+<!-- Sous-point 2.3 -->
+          <div class="space-y-3">
+            <h4 class="text-lg font-bold text-white">2.3 Destinataires et sous-traitants</h4>
+            <p>
+              Les données personnelles sont accessibles à <strong class="font-semibold text-white">Mme Aurore Muller</strong>, responsable du traitement, et peuvent être communiquées aux prestataires techniques intervenant dans le fonctionnement des services utilisés :
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong class="font-bold text-white">Cal.com :</strong> gestion des réservations et des rendez-vous.</li>
+              <li><strong class="font-bold text-white">WhatsApp :</strong> échanges avec les visiteurs et clients.</li>
+              <li><strong class="font-bold text-white">Netlify :</strong> hébergement du site et traitement des données techniques.</li>
+            </ul>
+            <p class="text-slate-200">
+              Ces prestataires n'accèdent aux données que dans le cadre des traitements nécessaires à leurs services, selon leurs rôles et obligations respectifs.
+            </p>
+          </div>
+<!-- Sous-point 2.4 -->
+          <div class="space-y-3">
+            <h4 class="text-lg font-bold text-white">2.4 Finalités du traitement</h4>
+            <p>Les données personnelles sont utilisées exclusivement pour :</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Répondre aux <strong class="font-semibold text-white">demandes de renseignements</strong> et aux sollicitations commerciales.</li>
+              <li>Préparer et assurer le <strong class="font-semibold text-white">suivi des prestations</strong>.</li>
+              <li>Organiser et <strong class="font-semibold text-white">gérer les rendez-vous</strong>.</li>
+              <li>Assurer le <strong class="font-semibold text-white">suivi de la relation client</strong>.</li>
+              <li>Garantir la <strong class="font-semibold text-white">sécurité et le bon fonctionnement</strong> du site.</li>
+            </ul>
+          </div>
+        </div>
 <!-- 3. Transferts de données hors UE -->
-          <div class="pt-4 border-t border-slate-700/60">
-            <h3 class="text-3xl font-impact-title mb-2 text-white">3. Transferts de données hors Union Européenne</h3>
-            <p class="text-slate-100 text-base leading-relaxed">
-              Certains des prestataires techniques et sous-traitants mentionnés ci-dessus (notamment Netlify, Calendly et Stripe) possèdent leurs infrastructures ou serveurs situés en dehors de l'Union Européenne (particulièrement aux États-Unis). Lorsque cela est le cas, les transferts de données s'effectuent dans le strict respect des mécanismes prévus par le RGPD, notamment via l'adhésion de ces fournisseurs au Cadre de protection des données (<em>Data Privacy Framework</em>) ou par la signature de Clauses Contractuelles Types (CCT) approuvées par la Commission européenne.
-            </p>
-          </div>
+        <div class="pt-6 border-t border-slate-700/60 space-y-3 text-base text-slate-100">
+          <h3 class="text-3xl font-impact-title text-white">3. Transferts de données hors Union Européenne</h3>
+          <p>
+            Certains prestataires utilisés par AM 2.0, notamment <strong class="font-bold text-white">Netlify, Cal.com et WhatsApp</strong>, sont susceptibles de traiter des données personnelles en dehors de l'Union européenne, notamment aux <strong class="font-semibold text-white">États-Unis</strong>.
+          </p>
+          <p>
+            Lorsque des données personnelles sont transférées en dehors de l'Union européenne par les prestataires utilisés par AM 2.0, ces transferts sont encadrés conformément au <strong class="font-bold text-white">chapitre V du RGPD</strong>.
+          </p>
+          <p>
+            Selon les prestataires et les traitements concernés, ils reposent sur une <strong class="font-bold text-white">décision d'adéquation de la Commission européenne</strong>, notamment dans le cadre du <strong class="font-bold text-white">Data Privacy Framework UE-États-Unis</strong> pour les entreprises américaines certifiées, ou sur des <strong class="font-bold text-white">Clauses Contractuelles Types (CCT)</strong> approuvées par la Commission européenne.
+          </p>
+        </div>
 <!-- 4. Durée de conservation -->
-          <div class="pt-4 border-t border-slate-700/60">
-            <h3 class="text-3xl font-impact-title mb-2 text-white">4. Durée de conservation</h3>
-            <p class="text-slate-100 text-base leading-relaxed">
-              Les données personnelles des prospects et clients sont conservées pendant la durée strictement nécessaire à la gestion de la relation commerciale ou, à défaut, pour une durée maximale de <strong class="font-bold text-white">trois (3) ans</strong> à compter du dernier échange resté à l'initiative du Client.
-            </p>
-          </div>
+        <div class="pt-6 border-t border-slate-700/60 space-y-4 text-base text-slate-100">
+          <h3 class="text-3xl font-impact-title text-white">4. Durée de conservation</h3>
+          <p>Les données personnelles sont conservées pendant une durée adaptée à leur finalité :</p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li><strong class="font-bold text-white">Prospects :</strong> jusqu'à <strong class="font-semibold text-white">trois (3) ans</strong> à compter du dernier contact émanant du prospect.</li>
+            <li><strong class="font-bold text-white">Clients :</strong> pendant la durée nécessaire à la gestion de la relation commerciale, puis archivées conformément aux <strong class="font-semibold text-white">obligations légales applicables</strong>, notamment en matière comptable et fiscale.</li>
+            <li><strong class="font-bold text-white">Données de réservation :</strong> conservées pendant la durée nécessaire à l'organisation et au suivi des rendez-vous, puis supprimées selon les modalités de conservation applicables au service utilisé.</li>
+            <li><strong class="font-bold text-white">Données techniques :</strong> pendant la durée nécessaire aux besoins de sécurité, de fonctionnement et de maintenance du site.</li>
+          </ul>
+          <p>
+            À l'issue des durées applicables, les données sont <strong class="font-bold text-white">supprimées ou anonymisées</strong>.
+          </p>
+        </div>
 <!-- 5. Vos Droits et Recours -->
-          <div class="pt-4 border-t border-slate-700/60">
-            <h3 class="text-3xl font-impact-title mb-2 text-white">5. Vos Droits et Recours (Loi Informatique et Libertés & RGPD)</h3>
-            <p class="text-slate-100 text-base leading-relaxed mb-4">
-              Vous disposez d'un droit d'accès, de rectification, de limitation, de portabilité et de suppression des données personnelles vous concernant. Pour exercer ces droits, vous pouvez envoyer votre demande signée par e-mail au responsable du traitement à l'adresse :
-              <a href="#" class="protected-mail font-semibold text-cyan-400 hover:underline inline-block ml-1" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg==">
-                <span class="mail-text">[Activer JavaScript pour afficher]</span>
-              </a>
-            </p>
-            <div class="p-4 rounded-2xl bg-slate-800/60 border border-slate-700/60 text-base">
+        <div class="pt-6 border-t border-slate-700/60 space-y-5 text-base text-slate-100">
+          <h3 class="text-3xl font-impact-title text-white">5. Vos Droits et Recours (Loi Informatique et Libertés & RGPD)</h3>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>
+              <strong class="font-bold text-white">Droits sur vos données :</strong> Vous disposez, dans les conditions prévues par la réglementation, d'un droit d'<strong class="font-semibold text-white">accès, de rectification, d'effacement, de limitation du traitement, d'opposition et de portabilité</strong> de vos données personnelles.
+            </li>
+            <li>
+              <strong class="font-bold text-white">Droit d'opposition :</strong> Vous pouvez également vous opposer à tout moment aux traitements fondés sur l'intérêt légitime d'AM 2.0, pour des raisons tenant à votre situation particulière, sous réserve des conditions prévues par la réglementation.
+            </li>
+            <li>
+              <strong class="font-bold text-white">Retrait du consentement :</strong> Lorsque le traitement repose sur votre consentement, vous pouvez retirer celui-ci à tout moment, sans remettre en cause la licéité des traitements effectués avant ce retrait.
+            </li>
+          </ul>
+<!-- Encadré contact & réclamation -->
+          <div class="p-5 rounded-2xl bg-slate-800/70 border border-slate-700/80 space-y-4">
+            <div>
+              <h4 class="font-bold mb-1 text-white">Exercer vos droits :</h4>
+              <p>
+                Pour exercer vos droits, vous pouvez adresser votre demande par e-mail au responsable du traitement :
+                <a href="#" class="protected-mail font-semibold text-cyan-400 hover:underline inline-block ml-1" data-u="Y29udGFjdA==" data-d="YW0yMC5mcg==">
+                  <span class="mail-text">[Activer JavaScript pour afficher]</span>
+                </a>
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-700/60">
               <h4 class="font-bold mb-1 text-white">Réclamation auprès de l'autorité de contrôle :</h4>
-              <p class="text-slate-100">
-                Si vous estimez, après nous avoir contactés, que vos droits Informatique et Libertés ne sont pas respectés, vous pouvez adresser une réclamation officielle auprès de la <strong class="text-white">Commission Nationale de l'Informatique et des Libertés (CNIL)</strong> sur leur site internet (<a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" class="text-cyan-400 font-medium hover:underline">cnil.fr</a>).
+              <p>
+                Si vous estimez, après nous avoir contactés, que vos droits Informatique et Libertés ne sont pas respectés, vous pouvez adresser une réclamation officielle auprès de la <strong class="font-bold text-white">Commission Nationale de l'Informatique et des Libertés (CNIL)</strong> sur leur site internet (<a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" class="text-cyan-400 font-semibold hover:underline">cnil.fr</a>).
               </p>
             </div>
           </div>
@@ -226,14 +336,11 @@
 <footer class="relative z-10 w-full py-6 text-center text-sm text-slate-200">
   <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
     <div class="flex items-center gap-2">
-      <a href="index.html" class="inline-flex items-center gap-2 hover:opacity-80 transition-opacity duration-200" aria-label="Retour à l'accueil">
-        <img src="images/logo/logo-am20.webp" alt="Logo AM 2.0" class="h-5 w-auto" width="20" height="20" loading="lazy">
-      </a>
       <p>© <span id="current-year">2026</span> AM 2.0 • Tous droits réservés</p>
     </div>
     <nav class="flex items-center gap-4 sm:gap-6" aria-label="Navigation secondaire et légale">
-      <a href="index.html" class="hover:text-white transition-colors duration-200">Accueil</a>
-      <a href="mentions-legales.html" class="text-white italic">Mentions & RGPD</a>
+      <a href="index.html" class="hover:text-white transition-colors duration-200">Accueil</a>|
+      <a href="mentions-legales.html" class="text-white italic">Mentions & RGPD</a>|
       <a href="cgv.html" class="hover:text-white transition-colors duration-200">CGV</a>
     </nav>
   </div>
