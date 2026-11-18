@@ -224,6 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
         type: 'words,chars',
         charsClass: 'cg-ch',
         autoSplit: true,
+        aria: 'none',
         onSplit(self) {
           const targets = [];
           self.words.forEach(w => {
