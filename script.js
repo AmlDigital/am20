@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 3. Après le chargement : images hors écran (avis) et avatar de la modale WhatsApp
   onLoad(() => idle(() => {
-    document.querySelectorAll('#avAvis img[loading="lazy"]').forEach(img => { img.loading = 'eager'; });
-    loadWhatsappAvatar();
+    document.querySelectorAll('#avAvis img[loading="lazy"], #pf-ticker-track img[loading="lazy"]').forEach(img => { img.loading = 'eager'; });
+    if (document.querySelector('.btn-wa-trigger')) loadWhatsappAvatar();
   }));
   function loadWhatsappAvatar() {
     const img = document.querySelector('#wa-modal img[data-src]');
@@ -240,10 +240,11 @@ document.addEventListener('DOMContentLoaded', () => {
         splitTitle(e.target);
       });
     }, { rootMargin: '150% 0px' });
-    titles.forEach(el => io.observe(el));
+    titles.forEach(el => (el.tagName === 'H1' ? splitTitle(el) : io.observe(el))); // un H1 = titre de hero : animé tout de suite
   }
   function splitTitle(el) {
     const wordsOnly = el.tagName === 'P'; // paragraphes : par mots (bien moins d'éléments animés)
+    const hero = el.tagName === 'H1';      // titre de hero : entrée immédiate, sans scrub
     const run = targets => {
       gsap.set(el, { perspective: 700 });
       return gsap.from(targets, {
@@ -253,10 +254,11 @@ document.addEventListener('DOMContentLoaded', () => {
         rotate: () => gsap.utils.random(-12, 12),
         opacity: 0,
         filter: 'blur(10px)',
-        ease: 'power3.out',
-        duration: 1,
-        stagger: { each: wordsOnly ? .06 : .03, from: 'random' },
-        scrollTrigger: { trigger: el, start: 'top 88%', end: 'top 45%', scrub: .7 }
+        ease: hero ? 'expo.out' : 'power3.out',
+        duration: hero ? 1.3 : 1,
+        stagger: { each: wordsOnly ? .06 : .03, from: hero ? 'start' : 'random' },
+        delay: hero ? .2 : 0,
+        scrollTrigger: hero ? null : { trigger: el, start: 'top 88%', end: 'top 45%', scrub: .7 }
       });
     };
     if (!window.SplitText) return run(el);

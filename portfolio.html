@@ -33,6 +33,7 @@
     <meta name="twitter:image" content="https://www.am20.fr/images/og-img1.jpg">
     <meta name="twitter:image:alt" content="Portfolio AM 2.0 : exemples de créations web et graphiques">
 <!-- Preload -->
+    <link rel="preload" as="image" href="images/hero/hero-portfolio-desk.webp" media="(min-width:768px)" fetchpriority="high">
     <link rel="preload" href="/fonts/SpriteGraffiti-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/SpriteGraffiti-Shadow.woff2" as="font" type="font/woff2" crossorigin>
 <!-- CSS -->
@@ -101,7 +102,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20 pt-3 md:pt-0">
 <!-- Logo -->
     <a href="#top" class="group flex items-center gap-2.5 transition-transform duration-300 hover:scale-105">
-      <img id="main-header-logo" src="images/logo/logo2-am20.webp" alt="Logo AM 2.0" class="h-20 w-auto object-contain transition-all duration-300">
+      <img id="main-header-logo" src="images/logo/logo2-am20.webp" alt="Logo AM 2.0" width="80" height="80" decoding="async" class="h-20 w-auto object-contain transition-all duration-300">
     </a>
 <!-- Navigation Desktop -->
     <nav class="hidden items-center gap-8 md:flex">
@@ -121,9 +122,9 @@
 <!-- Bouton Burger Mobile -->
     <button id="menu-toggle" aria-label="Menu" class="relative grid h-14 w-14 place-items-center md:hidden">
       <!-- Icône Burger (Cyan #5ce1e6) -->
-      <img id="icon-burger" src="components/burger.svg" alt="Menu" class="h-12 w-12 transition-all duration-300 absolute" style="filter: invert(81%) sepia(41%) saturate(846%) hue-rotate(134deg) brightness(98%) contrast(91%);">
+      <img id="icon-burger" src="components/burger.svg" alt="Menu" width="48" height="48" class="h-12 w-12 transition-all duration-300 absolute" style="filter: invert(81%) sepia(41%) saturate(846%) hue-rotate(134deg) brightness(98%) contrast(91%);">
       <!-- Icône Croix -->
-      <img id="icon-cross" src="components/cross.svg" alt="Fermer" class="h-12 w-12 opacity-0 scale-75 transition-all duration-300 absolute" style="filter: invert(56%) sepia(80%) saturate(1800%) hue-rotate(295deg) brightness(100%) contrast(100%);">
+      <img id="icon-cross" src="components/cross.svg" alt="Fermer" width="48" height="48" class="h-12 w-12 opacity-0 scale-75 transition-all duration-300 absolute" style="filter: invert(56%) sepia(80%) saturate(1800%) hue-rotate(295deg) brightness(100%) contrast(100%);">
     </button>
   </div>
 <!-- Mobile Menu Container -->
@@ -165,7 +166,7 @@
       </h1>
 <!-- Bloc Image Mobile  -->
       <div class="block md:hidden w-full max-w-[340px] -mt-10 mx-auto z-10" data-hero-photo>
-        <img src="images/hero/hero-portfolio-mob.webp" alt="Portfolio AM 2.0" class="w-full h-auto object-contain">
+        <img src="images/hero/hero-portfolio-mob.webp" alt="Portfolio AM 2.0" width="500" height="500" fetchpriority="high" class="w-full h-auto object-contain">
       </div>
 <!-- Texte (Mobile uniquement) -->
       <div class="block md:hidden w-full max-w-xs mt-3 mb-4 mx-auto z-20">
@@ -177,7 +178,7 @@
 <!-- Colonne Image Desktop -->
     <div class="hidden md:block md:col-span-7 relative">
       <div class="relative flex justify-center items-center" data-hero-photo>
-        <img src="images/hero/hero-portfolio-desk.webp" alt="Portfolio AM 2.0" class="w-full max-w-[700px] h-auto object-contain max-h-[52vh]" fetchpriority="high">
+        <img src="images/hero/hero-portfolio-desk.webp" alt="Portfolio AM 2.0" loading="lazy" decoding="async" class="w-full max-w-[700px] h-auto object-contain max-h-[52vh]">
 <!-- Carte flottante Desktop -->
         <div class="absolute bottom-4 left-4 z-40 max-w-xs bg-[#0b1020]/85 backdrop-blur-md border border-white/15 p-5 rounded-xl shadow-2xl animate-float">
           <p class="m-0 text-left text-base leading-snug tracking-wide text-white">
@@ -190,19 +191,19 @@
 <!-- Ticker (Bandeau bannières défilant) -->
   <div class="relative z-30 w-screen -ml-[var(--pad)] overflow-hidden bg-transparent py-4 border-none mt-auto">
     <div class="flex gap-6 w-max" id="pf-ticker-track">
-      <img src="images/realisations/linkedin/ban1.webp" alt="" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
-      <img src="images/realisations/linkedin/ban2.webp" alt="" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
-      <img src="images/realisations/linkedin/ban3.webp" alt="" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
-      <img src="images/realisations/linkedin/ban4.webp" alt="" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
-      <img src="images/realisations/linkedin/ban5.webp" alt="" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
-      <img src="images/realisations/linkedin/ban6.webp" alt="" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
+      <img src="images/realisations/linkedin/ban1.webp" alt="" width="1584" height="396" decoding="async" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
+      <img src="images/realisations/linkedin/ban2.webp" alt="" width="1584" height="396" decoding="async" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
+      <img src="images/realisations/linkedin/ban3.webp" alt="" width="1584" height="396" decoding="async" loading="lazy" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
+      <img src="images/realisations/linkedin/ban4.webp" alt="" width="1584" height="396" decoding="async" loading="lazy" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
+      <img src="images/realisations/linkedin/ban5.webp" alt="" width="1584" height="396" decoding="async" loading="lazy" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
+      <img src="images/realisations/linkedin/ban6.webp" alt="" width="1584" height="396" decoding="async" loading="lazy" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
       <!-- Boucle infinie -->
-      <img src="images/realisations/linkedin/ban1.webp" alt="" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
-      <img src="images/realisations/linkedin/ban2.webp" alt="" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
-      <img src="images/realisations/linkedin/ban3.webp" alt="" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
-      <img src="images/realisations/linkedin/ban4.webp" alt="" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
-      <img src="images/realisations/linkedin/ban5.webp" alt="" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
-      <img src="images/realisations/linkedin/ban6.webp" alt="" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
+      <img src="images/realisations/linkedin/ban1.webp" alt="" width="1584" height="396" decoding="async" loading="lazy" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
+      <img src="images/realisations/linkedin/ban2.webp" alt="" width="1584" height="396" decoding="async" loading="lazy" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
+      <img src="images/realisations/linkedin/ban3.webp" alt="" width="1584" height="396" decoding="async" loading="lazy" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
+      <img src="images/realisations/linkedin/ban4.webp" alt="" width="1584" height="396" decoding="async" loading="lazy" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
+      <img src="images/realisations/linkedin/ban5.webp" alt="" width="1584" height="396" decoding="async" loading="lazy" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
+      <img src="images/realisations/linkedin/ban6.webp" alt="" width="1584" height="396" decoding="async" loading="lazy" class="h-[85px] md:h-[105px] w-auto aspect-[1584/396] object-cover rounded-md shrink-0">
     </div>
   </div>
 </section>
@@ -581,7 +582,7 @@
           <img class="block h-auto w-full" src="images/realisations/insta/insta-mob-2.webp" alt="Feed Instagram Dojo" loading="lazy">
         </figure>
         <div data-reel class="group/reel relative w-[min(80vw,19rem)] drop-shadow-[0_20px_40px_rgba(0,0,0,.7)] lg:pointer-events-auto lg:w-64 lg:flex-none">
-          <video class="block aspect-[9/16] h-auto w-full rounded-[1.6rem] object-cover lg:shadow-[0_25px_50px_-12px_rgba(0,0,0,.85),0_0_30px_rgba(34,184,194,.2)]" playsinline preload="metadata" poster="images/realisations/insta/couv-video.webp">
+          <video class="block aspect-[9/16] h-auto w-full rounded-[1.6rem] object-cover lg:shadow-[0_25px_50px_-12px_rgba(0,0,0,.85),0_0_30px_rgba(34,184,194,.2)]" playsinline preload="none" poster="images/realisations/insta/couv-video.webp">
             <source src="images/realisations/insta/video-insta.mp4" type="video/mp4">
           </video>
           <div class="pointer-events-none absolute inset-x-0 top-3 z-10 flex justify-center transition-opacity duration-300 group-[.is-playing]/reel:opacity-0">
@@ -720,7 +721,7 @@
 <footer class="relative overflow-hidden bg-[#2e3d59] pt-20 pb-12 text-white">
 <!-- Logo ghost géant -->
   <div class="absolute inset-x-0 bottom-0 pointer-events-none select-none overflow-hidden z-0 flex justify-center lg:justify-end">
-    <img src="images/logo/logo-ghost.webp" alt="" class="h-[100%] w-auto object-contain translate-y-[5%] opacity-[0.03]">
+    <img src="images/logo/logo-ghost.webp" alt="" loading="lazy" decoding="async" class="h-[100%] w-auto object-contain translate-y-[5%] opacity-[0.03]">
   </div>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 <!-- Grille principale -->
@@ -729,7 +730,7 @@
       <div class="lg:col-span-8 flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-12">
 <!-- 1. Photo -->
         <div class="shrink-0">
-          <img src="images/profils/vignette-am20.webp" alt="Aurore Muller" class="w-32 h-32 sm:w-48 sm:h-48 object-cover rounded-none">
+          <img src="images/profils/vignette-am20.webp" alt="Aurore Muller" width="192" height="192" loading="lazy" decoding="async" class="w-32 h-32 sm:w-48 sm:h-48 object-cover rounded-none">
         </div>
 <!-- 2. Contact -->
         <div class="flex flex-col items-center text-center sm:items-start sm:text-left space-y-3">
@@ -755,10 +756,10 @@
     <!-- Badges / Labels (desktop uniquement) -->
             <div class="hidden sm:flex items-center gap-4 pl-1">
               <a href="https://www.marque.alsace/partenaire/am-20" target="_blank" rel="noopener noreferrer" class="shrink-0 opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-300" aria-label="Marque Alsace">
-                <img src="components/Acoeur.svg" alt="Marque Alsace" class="h-10 w-auto object-contain">
+                <img src="components/Acoeur.svg" alt="Marque Alsace" loading="lazy" class="h-10 w-auto object-contain">
               </a>
               <a href="https://www.francenum.gouv.fr/activateurs/am-20" target="_blank" rel="noopener noreferrer" class="shrink-0 opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-300" aria-label="France Num - Activateur AM 2.0">
-                <img src="images/logo/france-num.webp" alt="France Num" class="h-10 w-auto object-contain">
+                <img src="images/logo/france-num.webp" alt="France Num" loading="lazy" decoding="async" class="h-10 w-auto object-contain">
               </a>
             </div>
           </div>
@@ -773,10 +774,10 @@
     <!-- Badges / Labels (mobile uniquement) -->
           <div class="flex sm:hidden flex-nowrap items-center justify-center gap-4 pt-2">
             <a href="https://www.marque.alsace/partenaire/am-20" target="_blank" rel="noopener noreferrer" class="shrink-0 opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-300" aria-label="Marque Alsace">
-              <img src="components/Acoeur.svg" alt="Marque Alsace" class="h-12 w-auto object-contain">
+              <img src="components/Acoeur.svg" alt="Marque Alsace" loading="lazy" class="h-12 w-auto object-contain">
             </a>
             <a href="https://www.francenum.gouv.fr/activateurs/am-20" target="_blank" rel="noopener noreferrer" class="shrink-0 opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-300" aria-label="France Num - Activateur AM 2.0">
-              <img src="images/logo/france-num.webp" alt="France Num" class="h-12 w-auto object-contain">
+              <img src="images/logo/france-num.webp" alt="France Num" loading="lazy" decoding="async" class="h-12 w-auto object-contain">
             </a>
           </div>
         </div>
@@ -825,7 +826,7 @@
 <!-- En-tête WhatsApp -->
     <div class="wa-head">
       <span class="text-2xl leading-none">‹</span>
-      <img src="images/profils/vignette-am20.webp" alt="AM 2.0">
+      <img data-src="images/profils/vignette-am20.webp" alt="" width="37" height="37">
       <div class="leading-tight flex-1">
         <div class="font-semibold text-base">Aurore // AM 2.0</div>
         <div class="text-xs opacity-85">en ligne</div>

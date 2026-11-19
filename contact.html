@@ -22,6 +22,7 @@
     <meta property="og:locale" content="fr_FR">
     <meta property="og:site_name" content="AM 2.0">
 <!-- Preload -->
+    <link rel="preload" as="image" href="images/profils/am20.webp" media="(min-width:768px)" fetchpriority="high">
     <link rel="preload" href="/fonts/SpriteGraffiti-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/SpriteGraffiti-Shadow.woff2" as="font" type="font/woff2" crossorigin>
 <!-- CSS -->
@@ -92,7 +93,7 @@
 <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex h-20 items-center justify-between pt-3 relative">
     <a href="#top" class="group flex items-center gap-2.5 transition-transform duration-300 hover:scale-105 absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0">
-      <img src="images/logo/logo-am20.webp" alt="Logo AM 2.0" class="h-20 w-auto object-contain">
+      <img src="images/logo/logo-am20.webp" alt="Logo AM 2.0" width="80" height="80" decoding="async" class="h-20 w-auto object-contain">
     </a>
     <nav class="hidden items-center gap-8 md:flex ml-auto">
       <a href="#approche" class="relative text-4xl tracking-wider text-main-85 font-display hover:text-[#ff66c4] hover:translate-x-1 font-display transition-all duration-300">Mon approche</a>
@@ -115,8 +116,8 @@
         <span class="sticker uppercase"><span class="font-extras text-pink text-2xl normal-case">e</span> Contact</span>
       </div>
 <!-- Titre -->
-      <h1 data-split class="font-display uppercase leading-[1.05] tracking-tight text-main text-6xl md:text-8xl mb-8">
-        <span class="text-main-85">Un projet?</span><span class="grad-text font-display">On en discute!</span><span class="text-main-85"></span>
+      <h1 class="font-display uppercase leading-[1.05] tracking-tight text-main text-6xl md:text-8xl mb-8">
+        <span class="hw text-main-85" style="--i:0">Un</span> <span class="hw text-main-85" style="--i:1">projet?</span> <span class="hw grad-text font-display" style="--i:2">On</span> <span class="hw grad-text font-display" style="--i:3">en</span> <span class="hw grad-text font-display" style="--i:4">discute!</span>
       </h1>
 <!-- Photo mobile -->
       <figure class="cg-mob md:hidden" data-hero>
@@ -135,9 +136,9 @@
       </a>
       <div class="flex items-center justify-center gap-3 shrink-0">
         <div class="flex items-center -space-x-3">
-          <img src="images/profils/17.webp" alt="" class="h-9 w-9 rounded-full border-2 border-[var(--bg-color)] object-cover">
-          <img src="images/profils/11.webp" alt="" class="h-9 w-9 rounded-full border-2 border-[var(--bg-color)] object-cover">
-          <img src="images/profils/10.webp" alt="" class="h-9 w-9 rounded-full border-2 border-[var(--bg-color)] object-cover">
+          <img src="images/profils/17.webp" alt="" width="36" height="36" decoding="async" class="h-9 w-9 rounded-full border-2 border-[var(--bg-color)] object-cover">
+          <img src="images/profils/11.webp" alt="" width="36" height="36" decoding="async" class="h-9 w-9 rounded-full border-2 border-[var(--bg-color)] object-cover">
+          <img src="images/profils/10.webp" alt="" width="36" height="36" decoding="async" class="h-9 w-9 rounded-full border-2 border-[var(--bg-color)] object-cover">
           <span class="grid h-9 w-9 place-items-center rounded-full border-2 border-[var(--bg-color)] bg-[var(--text-color)] font-display text-xs text-white">+20</span>
         </div>
         <span class="text-base text-main-70 hidden sm:inline">Ils m'ont fait confiance</span>
@@ -151,7 +152,7 @@
 <!-- Photo desktop -->
     <div class="hidden md:block md:col-span-5">
       <div class="cg-portrait" data-hero-photo>
-        <img src="images/profils/am20.webp" alt="Aurore, AM 2.0" fetchpriority="high">
+        <img src="images/profils/am20.webp" alt="Aurore, AM 2.0" loading="lazy" decoding="async">
         <div class="cg-chip" data-float style="bottom:8%;right:-1rem">Aurore · Designer d'expérience client</div>
       </div>
     </div>
@@ -209,7 +210,7 @@
         <div class="wa-island"></div>
         <div class="wa-status"><span id="wa-clock">9:41</span><span>5G ▮▮▮</span></div>
         <div class="wa-head">
-          <span class="text-2xl leading-none">‹</span><img src="images/profils/vignette-am20.webp" alt="">
+          <span class="text-2xl leading-none">‹</span><img src="images/profils/vignette-am20.webp" alt="" width="37" height="37" loading="lazy" decoding="async">
           <div class="leading-tight flex-1"><div class="font-semibold text-base">Aurore // AM 2.0</div><div class="text-xs opacity-85">en ligne</div></div>
         </div>
         <div class="wa-chat">
@@ -235,11 +236,30 @@
   </div>
 </section>
 <script>
-/* Intégration officielle cal.com (inline) */
-(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-Cal("init", "30min", { origin: "https://app.cal.com" });
-Cal.ns["30min"]("inline", { elementOrSelector: "#cal-inline", config: { layout: "month_view", theme: "light" }, calLink: "aurore-am20/30min" });
-Cal.ns["30min"]("ui", { theme: "light", hideEventTypeDetails: false, layout: "month_view" });
+/* cal.com : intégration officielle (inline), initialisée seulement quand le bloc approche de l'écran.
+   Avant, elle chargeait ~300 Kio de JS tiers et bloquait le thread principal dès l'arrivée sur la page. */
+(function () {
+  var host = document.getElementById('cal-inline');
+  if (!host) return;
+  var started = false;
+  function startCal() {
+    if (started) return;
+    started = true;
+    /* Intégration officielle cal.com (inline) */
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "30min", { origin: "https://app.cal.com" });
+    Cal.ns["30min"]("inline", { elementOrSelector: "#cal-inline", config: { layout: "month_view", theme: "light" }, calLink: "aurore-am20/30min" });
+    Cal.ns["30min"]("ui", { theme: "light", hideEventTypeDetails: false, layout: "month_view" });
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) { io.disconnect(); startCal(); }
+    }, { rootMargin: '700px 0px' });
+    io.observe(host);
+  } else {
+    window.addEventListener('load', startCal);
+  }
+})();
 </script>
  
 <!-- ================= SECTION 5 : AVIS CLIENTS ================= -->
@@ -265,7 +285,7 @@ Cal.ns["30min"]("ui", { theme: "light", hideEventTypeDetails: false, layout: "mo
 <!-- MB Performance (logo) -->
         <article data-i="1" class="av-card av-card--logo group relative isolate mr-4 flex min-h-[25rem] w-[80vw] max-w-[20rem] flex-none flex-col justify-end overflow-hidden rounded-[20px] bg-gradient-to-br from-[#17224d] to-[#0b1020] p-7 text-white transition-[transform,box-shadow] duration-500 after:absolute after:inset-0 after:-z-[1] after:content-[''] after:bg-[linear-gradient(to_top,#0b1020_0%,rgba(11,16,32,.9)_26%,rgba(11,16,32,.35)_52%,transparent_74%)] hover:-translate-y-1.5 hover:shadow-2xl lg:mr-6 lg:min-h-[26rem] lg:w-[21rem] lg:max-w-none">
           <div class="absolute left-7 top-20 z-[1] h-24 w-24 overflow-hidden rounded-full bg-white shadow-xl transition-transform duration-500 group-hover:scale-105">
-            <img src="images/profils/5.webp" alt="Logo MB Performance" draggable="false" class="pointer-events-none h-full w-full object-cover grayscale transition duration-1000 group-[.is-in]:grayscale-0">
+            <img src="images/profils/5.webp" alt="Logo MB Performance" loading="lazy" decoding="async" draggable="false" class="pointer-events-none h-full w-full object-cover grayscale transition duration-1000 group-[.is-in]:grayscale-0">
           </div>
           <div class="absolute right-5 top-[1.4rem] z-[1] flex items-center gap-2 rounded-full bg-white/90 px-3.5 py-[.45rem] shadow-lg backdrop-blur-md">
             <svg class="h-4 w-4" aria-hidden="true"><use href="#g-logo"/></svg>
@@ -278,7 +298,7 @@ Cal.ns["30min"]("ui", { theme: "light", hideEventTypeDetails: false, layout: "mo
         </article>
 <!-- Lucie F. -->
         <article data-i="4" class="av-card group relative isolate mr-4 flex min-h-[25rem] w-[80vw] max-w-[20rem] flex-none flex-col justify-end overflow-hidden rounded-[20px] bg-[#0b1020] p-7 text-white transition-[transform,box-shadow] duration-500 after:absolute after:inset-0 after:-z-[1] after:content-[''] after:bg-[linear-gradient(to_top,#0b1020_0%,rgba(11,16,32,.9)_26%,rgba(11,16,32,.35)_52%,transparent_74%)] hover:-translate-y-1.5 hover:shadow-2xl lg:mr-6 lg:min-h-[26rem] lg:w-[21rem] lg:max-w-none">
-          <img src="images/profils/15.webp" alt="" draggable="false" class="pointer-events-none absolute inset-0 -z-[3] h-full w-full object-cover grayscale saturate-[1.25] contrast-[1.08] transition-[transform,filter] duration-1000 group-hover:scale-[1.07] group-[.is-in]:grayscale-0">
+          <img src="images/profils/15.webp" alt="" loading="lazy" decoding="async" draggable="false" class="pointer-events-none absolute inset-0 -z-[3] h-full w-full object-cover grayscale saturate-[1.25] contrast-[1.08] transition-[transform,filter] duration-1000 group-hover:scale-[1.07] group-[.is-in]:grayscale-0">
           <div class="absolute right-5 top-[1.4rem] z-[1] flex items-center gap-2 rounded-full bg-white/90 px-3.5 py-[.45rem] shadow-lg backdrop-blur-md"><svg class="h-4 w-4" aria-hidden="true"><use href="#g-logo"/></svg><span class="text-sm tracking-[-.05em] text-[#fbbc05]">★★★★★</span></div>
           <div class="relative z-[1]">
             <h3 class="mb-2 text-base font-bold uppercase tracking-tight">Lucie F.</h3>
@@ -287,7 +307,7 @@ Cal.ns["30min"]("ui", { theme: "light", hideEventTypeDetails: false, layout: "mo
         </article>
 <!-- Justine W. -->
         <article data-i="2" class="av-card group relative isolate mr-4 flex min-h-[25rem] w-[80vw] max-w-[20rem] flex-none flex-col justify-end overflow-hidden rounded-[20px] bg-[#0b1020] p-7 text-white transition-[transform,box-shadow] duration-500 after:absolute after:inset-0 after:-z-[1] after:content-[''] after:bg-[linear-gradient(to_top,#0b1020_0%,rgba(11,16,32,.9)_26%,rgba(11,16,32,.35)_52%,transparent_74%)] hover:-translate-y-1.5 hover:shadow-2xl lg:mr-6 lg:min-h-[26rem] lg:w-[21rem] lg:max-w-none">
-          <img src="images/profils/17.webp" alt="" draggable="false" class="pointer-events-none absolute inset-0 -z-[3] h-full w-full object-cover grayscale saturate-[1.25] contrast-[1.08] transition-[transform,filter] duration-1000 group-hover:scale-[1.07] group-[.is-in]:grayscale-0">
+          <img src="images/profils/17.webp" alt="" loading="lazy" decoding="async" draggable="false" class="pointer-events-none absolute inset-0 -z-[3] h-full w-full object-cover grayscale saturate-[1.25] contrast-[1.08] transition-[transform,filter] duration-1000 group-hover:scale-[1.07] group-[.is-in]:grayscale-0">
           <div class="absolute right-5 top-[1.4rem] z-[1] flex items-center gap-2 rounded-full bg-white/90 px-3.5 py-[.45rem] shadow-lg backdrop-blur-md"><svg class="h-4 w-4" aria-hidden="true"><use href="#g-logo"/></svg><span class="text-sm tracking-[-.05em] text-[#fbbc05]">★★★★★</span></div>
           <div class="relative z-[1]">
             <h3 class="mb-2 text-base font-bold uppercase tracking-tight">Justine W.</h3>
@@ -297,7 +317,7 @@ Cal.ns["30min"]("ui", { theme: "light", hideEventTypeDetails: false, layout: "mo
 <!-- Dojo Shodokan (logo) -->
         <article data-i="3" class="av-card av-card--logo group relative isolate mr-4 flex min-h-[25rem] w-[80vw] max-w-[20rem] flex-none flex-col justify-end overflow-hidden rounded-[20px] bg-gradient-to-br from-[#17224d] to-[#0b1020] p-7 text-white transition-[transform,box-shadow] duration-500 after:absolute after:inset-0 after:-z-[1] after:content-[''] after:bg-[linear-gradient(to_top,#0b1020_0%,rgba(11,16,32,.9)_26%,rgba(11,16,32,.35)_52%,transparent_74%)] hover:-translate-y-1.5 hover:shadow-2xl lg:mr-6 lg:min-h-[26rem] lg:w-[21rem] lg:max-w-none">
           <div class="absolute left-7 top-20 z-[1] h-24 w-24 overflow-hidden rounded-full bg-white shadow-xl transition-transform duration-500 group-hover:scale-105">
-            <img src="images/profils/7.webp" alt="Logo Dojo Shodokan" draggable="false" class="pointer-events-none h-full w-full object-cover grayscale transition duration-1000 group-[.is-in]:grayscale-0">
+            <img src="images/profils/7.webp" alt="Logo Dojo Shodokan" loading="lazy" decoding="async" draggable="false" class="pointer-events-none h-full w-full object-cover grayscale transition duration-1000 group-[.is-in]:grayscale-0">
           </div>
           <div class="absolute right-5 top-[1.4rem] z-[1] flex items-center gap-2 rounded-full bg-white/90 px-3.5 py-[.45rem] shadow-lg backdrop-blur-md">
             <svg class="h-4 w-4" aria-hidden="true"><use href="#g-logo"/></svg>
@@ -310,7 +330,7 @@ Cal.ns["30min"]("ui", { theme: "light", hideEventTypeDetails: false, layout: "mo
         </article>
 <!-- Bernard R. -->
         <article data-i="7" class="av-card group relative isolate mr-4 flex min-h-[25rem] w-[80vw] max-w-[20rem] flex-none flex-col justify-end overflow-hidden rounded-[20px] bg-[#0b1020] p-7 text-white transition-[transform,box-shadow] duration-500 after:absolute after:inset-0 after:-z-[1] after:content-[''] after:bg-[linear-gradient(to_top,#0b1020_0%,rgba(11,16,32,.9)_26%,rgba(11,16,32,.35)_52%,transparent_74%)] hover:-translate-y-1.5 hover:shadow-2xl lg:mr-6 lg:min-h-[26rem] lg:w-[21rem] lg:max-w-none">
-          <img src="images/profils/20.webp" alt="" draggable="false" class="pointer-events-none absolute inset-0 -z-[3] h-full w-full object-cover grayscale saturate-[1.25] contrast-[1.08] transition-[transform,filter] duration-1000 group-hover:scale-[1.07] group-[.is-in]:grayscale-0">
+          <img src="images/profils/20.webp" alt="" loading="lazy" decoding="async" draggable="false" class="pointer-events-none absolute inset-0 -z-[3] h-full w-full object-cover grayscale saturate-[1.25] contrast-[1.08] transition-[transform,filter] duration-1000 group-hover:scale-[1.07] group-[.is-in]:grayscale-0">
           <div class="absolute right-5 top-[1.4rem] z-[1] flex items-center gap-2 rounded-full bg-white/90 px-3.5 py-[.45rem] shadow-lg backdrop-blur-md"><svg class="h-4 w-4" aria-hidden="true"><use href="#g-logo"/></svg><span class="text-sm tracking-[-.05em] text-[#fbbc05]">★★★★★</span></div>
           <div class="relative z-[1]">
             <h3 class="mb-2 text-base font-bold uppercase tracking-tight">Bernard R.</h3>
@@ -319,7 +339,7 @@ Cal.ns["30min"]("ui", { theme: "light", hideEventTypeDetails: false, layout: "mo
         </article>
 <!-- Anne-Gaëlle B. -->
         <article data-i="5" class="av-card group relative isolate mr-4 flex min-h-[25rem] w-[80vw] max-w-[20rem] flex-none flex-col justify-end overflow-hidden rounded-[20px] bg-[#0b1020] p-7 text-white transition-[transform,box-shadow] duration-500 after:absolute after:inset-0 after:-z-[1] after:content-[''] after:bg-[linear-gradient(to_top,#0b1020_0%,rgba(11,16,32,.9)_26%,rgba(11,16,32,.35)_52%,transparent_74%)] hover:-translate-y-1.5 hover:shadow-2xl lg:mr-6 lg:min-h-[26rem] lg:w-[21rem] lg:max-w-none">
-          <img src="images/profils/1.webp" alt="" draggable="false" class="pointer-events-none absolute inset-0 -z-[3] h-full w-full object-cover grayscale saturate-[1.25] contrast-[1.08] transition-[transform,filter] duration-1000 group-hover:scale-[1.07] group-[.is-in]:grayscale-0">
+          <img src="images/profils/1.webp" alt="" loading="lazy" decoding="async" draggable="false" class="pointer-events-none absolute inset-0 -z-[3] h-full w-full object-cover grayscale saturate-[1.25] contrast-[1.08] transition-[transform,filter] duration-1000 group-hover:scale-[1.07] group-[.is-in]:grayscale-0">
           <div class="absolute right-5 top-[1.4rem] z-[1] flex items-center gap-2 rounded-full bg-white/90 px-3.5 py-[.45rem] shadow-lg backdrop-blur-md"><svg class="h-4 w-4" aria-hidden="true"><use href="#g-logo"/></svg><span class="text-sm tracking-[-.05em] text-[#fbbc05]">★★★★★</span></div>
           <div class="relative z-[1]">
             <h3 class="mb-2 text-base font-bold uppercase tracking-tight">Anne-Gaëlle B.</h3>
@@ -328,7 +348,7 @@ Cal.ns["30min"]("ui", { theme: "light", hideEventTypeDetails: false, layout: "mo
         </article>
 <!-- Jacques M. -->
         <article data-i="6" class="av-card group relative isolate mr-4 flex min-h-[25rem] w-[80vw] max-w-[20rem] flex-none flex-col justify-end overflow-hidden rounded-[20px] bg-[#0b1020] p-7 text-white transition-[transform,box-shadow] duration-500 after:absolute after:inset-0 after:-z-[1] after:content-[''] after:bg-[linear-gradient(to_top,#0b1020_0%,rgba(11,16,32,.9)_26%,rgba(11,16,32,.35)_52%,transparent_74%)] hover:-translate-y-1.5 hover:shadow-2xl lg:mr-6 lg:min-h-[26rem] lg:w-[21rem] lg:max-w-none">
-          <img src="images/profils/11.webp" alt="" draggable="false" class="pointer-events-none absolute inset-0 -z-[3] h-full w-full object-cover grayscale saturate-[1.25] contrast-[1.08] transition-[transform,filter] duration-1000 group-hover:scale-[1.07] group-[.is-in]:grayscale-0">
+          <img src="images/profils/11.webp" alt="" loading="lazy" decoding="async" draggable="false" class="pointer-events-none absolute inset-0 -z-[3] h-full w-full object-cover grayscale saturate-[1.25] contrast-[1.08] transition-[transform,filter] duration-1000 group-hover:scale-[1.07] group-[.is-in]:grayscale-0">
           <div class="absolute right-5 top-[1.4rem] z-[1] flex items-center gap-2 rounded-full bg-white/90 px-3.5 py-[.45rem] shadow-lg backdrop-blur-md"><svg class="h-4 w-4" aria-hidden="true"><use href="#g-logo"/></svg><span class="text-sm tracking-[-.05em] text-[#fbbc05]">★★★★★</span></div>
           <div class="relative z-[1]">
             <h3 class="mb-2 text-base font-bold uppercase tracking-tight">Jacques M.</h3>
@@ -337,7 +357,7 @@ Cal.ns["30min"]("ui", { theme: "light", hideEventTypeDetails: false, layout: "mo
         </article>
 <!-- Prescilia D.G -->
         <article data-i="8" class="av-card group relative isolate mr-4 flex min-h-[25rem] w-[80vw] max-w-[20rem] flex-none flex-col justify-end overflow-hidden rounded-[20px] bg-[#0b1020] p-7 text-white transition-[transform,box-shadow] duration-500 after:absolute after:inset-0 after:-z-[1] after:content-[''] after:bg-[linear-gradient(to_top,#0b1020_0%,rgba(11,16,32,.9)_26%,rgba(11,16,32,.35)_52%,transparent_74%)] hover:-translate-y-1.5 hover:shadow-2xl lg:mr-6 lg:min-h-[26rem] lg:w-[21rem] lg:max-w-none">
-          <img src="images/profils/2.webp" alt="" draggable="false" class="pointer-events-none absolute inset-0 -z-[3] h-full w-full object-cover grayscale saturate-[1.25] contrast-[1.08] transition-[transform,filter] duration-1000 group-hover:scale-[1.07] group-[.is-in]:grayscale-0">
+          <img src="images/profils/2.webp" alt="" loading="lazy" decoding="async" draggable="false" class="pointer-events-none absolute inset-0 -z-[3] h-full w-full object-cover grayscale saturate-[1.25] contrast-[1.08] transition-[transform,filter] duration-1000 group-hover:scale-[1.07] group-[.is-in]:grayscale-0">
           <div class="absolute right-5 top-[1.4rem] z-[1] flex items-center gap-2 rounded-full bg-white/90 px-3.5 py-[.45rem] shadow-lg backdrop-blur-md"><svg class="h-4 w-4" aria-hidden="true"><use href="#g-logo"/></svg><span class="text-sm tracking-[-.05em] text-[#fbbc05]">★★★★★</span></div>
           <div class="relative z-[1]">
             <h3 class="mb-2 text-base font-bold uppercase tracking-tight">Prescilia D.G</h3>
@@ -346,7 +366,7 @@ Cal.ns["30min"]("ui", { theme: "light", hideEventTypeDetails: false, layout: "mo
         </article>
 <!-- Aswulf -->
         <article data-i="11" class="av-card group relative isolate mr-4 flex min-h-[25rem] w-[80vw] max-w-[20rem] flex-none flex-col justify-end overflow-hidden rounded-[20px] bg-[#0b1020] p-7 text-white transition-[transform,box-shadow] duration-500 after:absolute after:inset-0 after:-z-[1] after:content-[''] after:bg-[linear-gradient(to_top,#0b1020_0%,rgba(11,16,32,.9)_26%,rgba(11,16,32,.35)_52%,transparent_74%)] hover:-translate-y-1.5 hover:shadow-2xl lg:mr-6 lg:min-h-[26rem] lg:w-[21rem] lg:max-w-none">
-          <img src="images/profils/12.webp" alt="" draggable="false" class="pointer-events-none absolute inset-0 -z-[3] h-full w-full object-cover grayscale saturate-[1.25] contrast-[1.08] transition-[transform,filter] duration-1000 group-hover:scale-[1.07] group-[.is-in]:grayscale-0">
+          <img src="images/profils/12.webp" alt="" loading="lazy" decoding="async" draggable="false" class="pointer-events-none absolute inset-0 -z-[3] h-full w-full object-cover grayscale saturate-[1.25] contrast-[1.08] transition-[transform,filter] duration-1000 group-hover:scale-[1.07] group-[.is-in]:grayscale-0">
           <div class="absolute right-5 top-[1.4rem] z-[1] flex items-center gap-2 rounded-full bg-white/90 px-3.5 py-[.45rem] shadow-lg backdrop-blur-md"><svg class="h-4 w-4" aria-hidden="true"><use href="#g-logo"/></svg><span class="text-sm tracking-[-.05em] text-[#fbbc05]">★★★★★</span></div>
           <div class="relative z-[1]">
             <h3 class="mb-2 text-base font-bold uppercase tracking-tight">Aswulf</h3>
@@ -368,7 +388,7 @@ Cal.ns["30min"]("ui", { theme: "light", hideEventTypeDetails: false, layout: "mo
 <footer class="relative overflow-hidden bg-[#2e3d59] pt-20 pb-12 text-white border-t border-white/10">
 <!-- Logo ghost géant -->
   <div class="absolute inset-x-0 bottom-0 pointer-events-none select-none overflow-hidden z-0 flex justify-center lg:justify-end">
-    <img src="images/logo/logo-ghost.webp" alt="" class="h-[100%] w-auto object-contain translate-y-[5%] opacity-[0.03]">
+    <img src="images/logo/logo-ghost.webp" alt="" loading="lazy" decoding="async" class="h-[100%] w-auto object-contain translate-y-[5%] opacity-[0.03]">
   </div>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 <!-- Grille principale -->
@@ -377,7 +397,7 @@ Cal.ns["30min"]("ui", { theme: "light", hideEventTypeDetails: false, layout: "mo
       <div class="lg:col-span-8 flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-12">
 <!-- 1. Photo -->
         <div class="shrink-0">
-          <img src="images/profils/vignette-am20.webp" alt="Aurore Muller" class="w-32 h-32 sm:w-48 sm:h-48 object-cover rounded-none">
+          <img src="images/profils/vignette-am20.webp" alt="Aurore Muller" width="192" height="192" loading="lazy" decoding="async" class="w-32 h-32 sm:w-48 sm:h-48 object-cover rounded-none">
         </div>
 <!-- 2. Contact -->
         <div class="flex flex-col items-center text-center sm:items-start sm:text-left space-y-3">
@@ -403,10 +423,10 @@ Cal.ns["30min"]("ui", { theme: "light", hideEventTypeDetails: false, layout: "mo
     <!-- Badges / Labels (desktop uniquement) -->
             <div class="hidden sm:flex items-center gap-4 pl-1">
               <a href="https://www.marque.alsace/partenaire/am-20" target="_blank" rel="noopener noreferrer" class="shrink-0 opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-300" aria-label="Marque Alsace">
-                <img src="components/Acoeur.svg" alt="Marque Alsace" class="h-10 w-auto object-contain">
+                <img src="components/Acoeur.svg" alt="Marque Alsace" loading="lazy" class="h-10 w-auto object-contain">
               </a>
               <a href="https://www.francenum.gouv.fr/activateurs/am-20" target="_blank" rel="noopener noreferrer" class="shrink-0 opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-300" aria-label="France Num - Activateur AM 2.0">
-                <img src="images/logo/france-num.webp" alt="France Num" class="h-10 w-auto object-contain">
+                <img src="images/logo/france-num.webp" alt="France Num" loading="lazy" decoding="async" class="h-10 w-auto object-contain">
               </a>
             </div>
           </div>
@@ -421,10 +441,10 @@ Cal.ns["30min"]("ui", { theme: "light", hideEventTypeDetails: false, layout: "mo
     <!-- Badges / Labels (mobile uniquement) -->
           <div class="flex sm:hidden flex-nowrap items-center justify-center gap-4 pt-2">
             <a href="https://www.marque.alsace/partenaire/am-20" target="_blank" rel="noopener noreferrer" class="shrink-0 opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-300" aria-label="Marque Alsace">
-              <img src="components/Acoeur.svg" alt="Marque Alsace" class="h-12 w-auto object-contain">
+              <img src="components/Acoeur.svg" alt="Marque Alsace" loading="lazy" class="h-12 w-auto object-contain">
             </a>
             <a href="https://www.francenum.gouv.fr/activateurs/am-20" target="_blank" rel="noopener noreferrer" class="shrink-0 opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-300" aria-label="France Num - Activateur AM 2.0">
-              <img src="images/logo/france-num.webp" alt="France Num" class="h-12 w-auto object-contain">
+              <img src="images/logo/france-num.webp" alt="France Num" loading="lazy" decoding="async" class="h-12 w-auto object-contain">
             </a>
           </div>
         </div>
@@ -473,7 +493,7 @@ Cal.ns["30min"]("ui", { theme: "light", hideEventTypeDetails: false, layout: "mo
 <!-- En-tête WhatsApp -->
     <div class="wa-head">
       <span class="text-2xl leading-none">‹</span>
-      <img src="images/profils/vignette-am20.webp" alt="AM 2.0">
+      <img data-src="images/profils/vignette-am20.webp" alt="" width="37" height="37">
       <div class="leading-tight flex-1">
         <div class="font-semibold text-base">Aurore // AM 2.0</div>
         <div class="text-xs opacity-85">en ligne</div>
