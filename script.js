@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 // GLOBAL --------------------------------------------------------------
-// Barre de progression du scroll (transform = pas de recalcul de mise en page)
+// Barre de progression du scroll (transform)
   function initScrollProgress() {
     const bar = document.getElementById('scroll-progress');
     if (!bar) return;
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-// Curseur personnalisé (souris uniquement ; la boucle ne tourne que quand le curseur bouge)
+// Curseur personnalisé (souris uniquement)
   function initCustomCursor() {
     if (!fine) return;
     const cursor = document.getElementById('cursor');
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
     update();
   }
 
-// Scrollspy (menu desktop + mobile) : IntersectionObserver, aucune lecture de mise en page
+// Scrollspy (menu desktop + mobile)
   function initScrollspy() {
     const sections = [...document.querySelectorAll('section[id]')];
     const navLinks = [...document.querySelectorAll('header nav a[href^="#"], #mobile-menu a[href^="#"]')];
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
     reveals.forEach(el => observer.observe(el));
   }
 
-// Titres animés [data-split] : découpés seulement quand ils approchent de l'écran
+// Titres animés [data-split] 
   function initSplitTitles() {
     const titles = document.querySelectorAll('[data-split]');
     if (!titles.length) return;
@@ -240,11 +240,11 @@ document.addEventListener('DOMContentLoaded', () => {
         splitTitle(e.target);
       });
     }, { rootMargin: '150% 0px' });
-    titles.forEach(el => (el.tagName === 'H1' ? splitTitle(el) : io.observe(el))); // un H1 = titre de hero : animé tout de suite
+    titles.forEach(el => (el.tagName === 'H1' ? splitTitle(el) : io.observe(el))); // un H1 = animé tout de suite
   }
   function splitTitle(el) {
-    const wordsOnly = el.tagName === 'P'; // paragraphes : par mots (bien moins d'éléments animés)
-    const hero = el.tagName === 'H1';      // titre de hero : entrée immédiate, sans scrub
+    const wordsOnly = el.tagName === 'P'; // paragraphes : par mots 
+    const hero = el.tagName === 'H1';    // titre de hero : entrée immédiate, sans scrub
     const run = targets => {
       gsap.set(el, { perspective: 700 });
       return gsap.from(targets, {
@@ -341,7 +341,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a.protected-mail, #protected-email').forEach(link => {
       const u = link.dataset.u;
       const d = link.dataset.d;
-
       const email = (u && d)
         ? `${atob(u)}@${atob(d)}`
         : atob('Y29udGFjdEBhbTIwLmZy');
@@ -398,7 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
       imgs.forEach((el, k) => el.dataset.active = k === i);
       play();
     };
-  // Hover / focus / clic : même rendu que l'autoplay, mais on met l'autoplay en pause
+  // Hover / focus / clic : autoplay en pause
     items.forEach((el, i) => {
       el.addEventListener('pointerenter', () => go(i));
       el.addEventListener('focus', () => go(i));
@@ -729,7 +728,7 @@ document.addEventListener('DOMContentLoaded', () => {
     im.naturalWidth ? shape() : im.addEventListener('load', shape);
   }
 
-// Hero : l'entrée du texte et de la photo est en CSS (style.css) ; ici, les éléments flottants et le parallaxe
+// Hero : l'entrée du texte et de la photo est en CSS 
   function initContactHeroAnimations() {
     if (document.querySelector('.cg-chip[data-float]')) {
       gsap.from('.cg-chip[data-float]', { scale: 0, opacity: 0, duration: .8, ease: 'back.out(2)', stagger: .15, delay: 1.2 });

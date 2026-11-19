@@ -63,7 +63,7 @@ body {
 [data-hero]:nth-child(6) { animation-delay: .5s; }
 .hw { display: inline-block; animation: hero-word .8s cubic-bezier(.16, 1, .3, 1) calc(var(--i, 0) * 45ms) backwards; }
 [data-hero-photo] img { animation: hero-photo 1.1s cubic-bezier(.16, 1, .3, 1) .1s backwards; }
-/* Portrait desktop de la page contact : révélation "rideau" d'origine (cette image n'est jamais l'élément LCP sur mobile) */
+/* Portrait desktop de la page contact : révélation "rideau" d'origine */
 @keyframes hero-wipe { from { clip-path: inset(100% 0 0 0); transform: scale(1.15); } }
 .cg-portrait[data-hero-photo] img { animation: hero-wipe 1.4s cubic-bezier(.16, 1, .3, 1) .3s backwards; }
 @media (prefers-reduced-motion: reduce) {
@@ -204,7 +204,7 @@ body {
 
 /* MENUS DESKTOP & MOBILE */
 
-/* --- État Actif Desktop : Soulignement --- */
+/* --- État Actif Desktop : Couleur --- */
 @media (min-width: 768px) {
   header nav a.active-section {
     color: var(--accent-pink);
@@ -798,6 +798,7 @@ body {
 @media(min-width:1024px){.pf-row-wrap--desk{display:block}}
 
 /* ANIMATIONS */
+
 /* Carte flottante hero */
 @keyframes floatCard {
   0% { transform: translateY(0); }
