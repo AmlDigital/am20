@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (hasGsap && document.getElementById('pf')) {
     initPortfolio();
   }
+  initHashLanding();
 
 // 2. Décoratif : après le premier rendu, une tâche à la fois
   const deferred = [];
@@ -62,6 +63,32 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 // GLOBAL --------------------------------------------------------------
+// Arrivée par une ancre depuis une autre page (ex. portfolio.html#linkedin) :
+// ScrollTrigger (pins, refresh) + scroll-behavior:smooth annulent le saut natif du navigateur,
+// on recale donc la page sur la section une fois le layout GSAP en place.
+  function initHashLanding() {
+    const id = decodeURIComponent(location.hash.slice(1));
+    if (!id || id === 'top') return;
+    let userScrolled = false;
+    ['wheel', 'touchstart', 'keydown', 'pointerdown'].forEach(ev =>
+      addEventListener(ev, () => { userScrolled = true; }, { once: true, passive: true })
+    );
+    const jump = () => {
+      const el = document.getElementById(id);
+      if (!el || userScrolled) return;
+      const root = document.documentElement;
+      root.style.scrollBehavior = 'auto';
+      window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY);
+      root.style.scrollBehavior = '';
+    };
+    onLoad(() => {
+      if (window.ScrollTrigger) ScrollTrigger.refresh();
+      jump();
+      setTimeout(jump, 300);
+      setTimeout(jump, 1000);
+    });
+  }
+
 // Barre de progression du scroll (transform)
   function initScrollProgress() {
     const bar = document.getElementById('scroll-progress');
@@ -786,12 +813,19 @@ document.addEventListener('DOMContentLoaded', () => {
       pf.classList.add('pf-anim');
       pfHero();
       pfTicker();
-      pfSites();
-      pfLinkedin();
     }
-    pfInstagramCarousels();
-    pfReels();
-    if (animate) pfOffers();
+  // Tout ce qui est sous le hero est initialisé APRÈS le premier rendu (même ordre qu'avant,
+  // pour que les pins ScrollTrigger restent cohérents). Si on arrive par une ancre (#linkedin…),
+  // on initialise tout de suite pour que les positions soient justes.
+    const belowFold = [
+      () => { if (animate) { pfSites(); pfLinkedin(); } },
+      pfInstagramCarousels,
+      pfReels,
+      () => { if (animate) pfOffers(); },
+      () => { if (window.ScrollTrigger) ScrollTrigger.refresh(); }
+    ];
+    if (location.hash) belowFold.forEach(fn => fn());
+    else runIdle(belowFold);
 
 // Hero
   function pfHero() {
